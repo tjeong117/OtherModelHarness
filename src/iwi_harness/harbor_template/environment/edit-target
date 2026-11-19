@@ -21,7 +21,7 @@ def main():
     options = dict(behavior_checks=args.public_experiments, internal_measurements=args.public_experiments,
                    edit_preview=args.public_experiments)
     if args.schemas:
-        print(json.dumps(tool_schemas(**options)))
+        print(json.dumps(tool_schemas(**options, native_available=False)))
         return
     artifact_dir = Path(os.environ.get("IWI_ARTIFACT_DIR", "/logs/artifacts"))
     sessions = Path(os.environ.get("IWI_AGENT_LOG_DIR", "/logs/agent")) / "iwi-sessions"

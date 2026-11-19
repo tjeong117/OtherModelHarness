@@ -1,0 +1,44 @@
+{
+  "order": 19,
+  "slug": "factual_update-072-r2-C",
+  "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 72,
+  "replicate": 2,
+  "seed": 2441921654,
+  "arm": "C",
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+    "bytes": 184,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 0,
+    "revision": 0
+  },
+  "editor_usage": {
+    "prompt_tokens": 32326,
+    "completion_tokens": 988,
+    "total_tokens": 33314
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 31.471,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior",
+    "preview_weights",
+    "commit_preview",
+    "discard_preview"
+  ]
+}

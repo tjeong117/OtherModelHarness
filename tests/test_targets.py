@@ -158,3 +158,34 @@ def test_unknown_hf_layout_can_generate_and_host_can_expose_residuals():
     assert custom.site_modules(0)["residual"] is model.wrapped.transformer.h[0]
     with pytest.raises(ValueError, match="No decoder block list"):
         HFCausalTarget(model, object(), **args, block_path="wrong")
+
+
+def test_compact_handle_replays_an_attention_weight_edit_on_llama(tmp_path):
+    hf = pytest.importorskip("transformers")
+    from iwi_harness import EditingSession
+    from iwi_harness.weights import WeightStore
+
+    config = hf.LlamaConfig(vocab_size=32, hidden_size=16, intermediate_size=32,
+                            num_hidden_layers=2, num_attention_heads=4, num_key_value_heads=2)
+
+    def fresh():
+        with torch.random.fork_rng(devices=[]):
+            torch.manual_seed(742)
+            model = hf.LlamaForCausalLM(config)
+        return HFCausalTarget(model, object(), model_id="cpu/llama-fixture", revision="fixture-v1")
+
+    target = fresh()
+    ids = torch.tensor([[1, 7, 9, 4]])
+    pristine = target.logits(ids)
+    session = EditingSession(target, artifact_dir=tmp_path)
+    name = "model.layers.0.self_attn.v_proj.weight"
+    ref = session.call("read_weights", {"tensor": name, "selection": [0], "mode": "ref"})
+    session.call("write_weights", {"tensor": name, "selection": [1], "operation": "copy",
+                                   "source": {"handle": ref["handle"]}})
+    receipt = session.submit()
+    assert receipt["changed_parameters"] == 16
+    edited = target.logits(ids)
+    assert not torch.equal(edited, pristine)
+    replay = fresh()
+    WeightStore(replay).apply(tmp_path / "patch.safetensors", expected_sha256=receipt["sha256"])
+    assert torch.equal(replay.logits(ids), edited)

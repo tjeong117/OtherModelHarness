@@ -1,0 +1,35 @@
+{
+  "order": 62,
+  "slug": "output_code_remapping-018-r1-A",
+  "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "variant_index": 18,
+  "replicate": 1,
+  "seed": 2430103793,
+  "arm": "A",
+  "status": "no_submission",
+  "reason": "updater turn limit reached before submission",
+  "receipt": null,
+  "editor_usage": {
+    "prompt_tokens": 24488,
+    "completion_tokens": 1571,
+    "total_tokens": 26059
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 8,
+    "forward_tokens": 274,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 57.362,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior"
+  ]
+}

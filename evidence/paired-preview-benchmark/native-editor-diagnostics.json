@@ -1,0 +1,1144 @@
+{
+  "design_sha256": "2560720a2893d740454dde89a848bccc905707bdb851dcb841cf9460878da916",
+  "editor_model": "Qwen/Qwen2.5-7B-Instruct",
+  "editor_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "counts": "Actual Qwen tokenizer IDs; cap hits exclude generations that ended on EOS. Malformed native blocks remain text and terminate the standard editing loop. Tool errors exclude host opening-manifest reads.",
+  "by_arm": {
+    "A": {
+      "attempts": 16,
+      "turns": 79,
+      "generations_at_ceiling": 4,
+      "malformed_generations": 5,
+      "incomplete_delimiters_at_ceiling": 4,
+      "plain_text_generations": 0,
+      "test_behavior_token_id_rejections": 31,
+      "terminal_reason": {
+        "last_turn_used_for_other_tools": 8,
+        "malformed_native_output": 5,
+        "explicit_submission": 3
+      },
+      "tool_errors_by_function": {
+        "test_behavior": 32,
+        "read_weights": 6,
+        "write_weights": 2
+      }
+    },
+    "B": {
+      "attempts": 16,
+      "turns": 89,
+      "generations_at_ceiling": 6,
+      "malformed_generations": 2,
+      "incomplete_delimiters_at_ceiling": 2,
+      "plain_text_generations": 2,
+      "test_behavior_token_id_rejections": 23,
+      "terminal_reason": {
+        "malformed_native_output": 2,
+        "explicit_submission": 5,
+        "text_without_tool_call": 2,
+        "last_turn_used_for_other_tools": 7
+      },
+      "tool_errors_by_function": {
+        "test_behavior": 24,
+        "write_weights": 12,
+        "read_weights": 14
+      }
+    },
+    "C": {
+      "attempts": 16,
+      "turns": 67,
+      "generations_at_ceiling": 4,
+      "malformed_generations": 6,
+      "incomplete_delimiters_at_ceiling": 3,
+      "plain_text_generations": 1,
+      "test_behavior_token_id_rejections": 36,
+      "terminal_reason": {
+        "malformed_native_output": 6,
+        "explicit_submission": 6,
+        "last_turn_used_for_other_tools": 3,
+        "text_without_tool_call": 1
+      },
+      "tool_errors_by_function": {
+        "test_behavior": 39,
+        "read_weights": 2,
+        "write_weights": 2,
+        "preview_weights": 1
+      }
+    },
+    "D": {
+      "attempts": 16,
+      "turns": 79,
+      "generations_at_ceiling": 2,
+      "malformed_generations": 4,
+      "incomplete_delimiters_at_ceiling": 2,
+      "plain_text_generations": 0,
+      "test_behavior_token_id_rejections": 18,
+      "terminal_reason": {
+        "malformed_native_output": 4,
+        "last_turn_used_for_other_tools": 4,
+        "explicit_submission": 8
+      },
+      "tool_errors_by_function": {
+        "test_behavior": 25,
+        "write_weights": 9,
+        "read_weights": 6
+      }
+    }
+  },
+  "trials": [
+    {
+      "slug": "factual_update-097-r2-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "factual_update-097-r2-B",
+      "arm": "B",
+      "turns": 2,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "factual_update-097-r2-C",
+      "arm": "C",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-097-r2-D",
+      "arm": "D",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "selective_factual_withholding-034-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 4
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "selective_factual_withholding-034-r2-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "selective_factual_withholding-034-r2-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 2
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "selective_factual_withholding-034-r2-A",
+      "arm": "A",
+      "turns": 2,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "alias_acquisition-042-r2-C",
+      "arm": "C",
+      "turns": 4,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-042-r2-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-042-r2-A",
+      "arm": "A",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "alias_acquisition-042-r2-B",
+      "arm": "B",
+      "turns": 5,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 1,
+      "terminal": "text_without_tool_call",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "selective_factual_withholding-028-r2-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 3
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "selective_factual_withholding-028-r2-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "selective_factual_withholding-028-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 4,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 4
+    },
+    {
+      "slug": "selective_factual_withholding-028-r2-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "factual_update-072-r2-A",
+      "arm": "A",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "factual_update-072-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-072-r2-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "factual_update-072-r2-D",
+      "arm": "D",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "output_code_remapping-018-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 3,
+        "read_weights": 2
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "output_code_remapping-018-r2-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "output_code_remapping-018-r2-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "output_code_remapping-018-r2-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 2,
+        "read_weights": 2
+      },
+      "test_behavior_token_id_rejections": 2
+    },
+    {
+      "slug": "factual_update-097-r1-C",
+      "arm": "C",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-097-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 4
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "factual_update-097-r1-A",
+      "arm": "A",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-097-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "factual_update-072-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "write_weights": 4
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-072-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 3
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "factual_update-072-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "factual_update-072-r1-C",
+      "arm": "C",
+      "turns": 2,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 1,
+      "terminal": "text_without_tool_call",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "output_code_remapping-040-r2-A",
+      "arm": "A",
+      "turns": 4,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 3
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "output_code_remapping-040-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 3,
+        "read_weights": 2
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "output_code_remapping-040-r2-C",
+      "arm": "C",
+      "turns": 1,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "output_code_remapping-040-r2-D",
+      "arm": "D",
+      "turns": 3,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 2
+      },
+      "test_behavior_token_id_rejections": 2
+    },
+    {
+      "slug": "alias_acquisition-075-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "read_weights": 3
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-075-r1-C",
+      "arm": "C",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 2
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-075-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 3
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-075-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "alias_acquisition-042-r1-C",
+      "arm": "C",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-042-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "write_weights",
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 2
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-042-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "test_behavior"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "alias_acquisition-042-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "selective_factual_withholding-034-r1-D",
+      "arm": "D",
+      "turns": 4,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "selective_factual_withholding-034-r1-A",
+      "arm": "A",
+      "turns": 3,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 2
+      },
+      "test_behavior_token_id_rejections": 2
+    },
+    {
+      "slug": "selective_factual_withholding-034-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "test_behavior"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "read_weights": 4
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "selective_factual_withholding-034-r1-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "output_code_remapping-040-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 2,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 2
+    },
+    {
+      "slug": "output_code_remapping-040-r1-B",
+      "arm": "B",
+      "turns": 5,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 1,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 3
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "output_code_remapping-040-r1-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "output_code_remapping-040-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 5
+    },
+    {
+      "slug": "selective_factual_withholding-028-r1-B",
+      "arm": "B",
+      "turns": 5,
+      "generations_at_ceiling": 2,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 1,
+      "terminal": "text_without_tool_call",
+      "last_tools": [],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "selective_factual_withholding-028-r1-C",
+      "arm": "C",
+      "turns": 1,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 1,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "malformed_native_output",
+      "last_tools": [],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "selective_factual_withholding-028-r1-D",
+      "arm": "D",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 3,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "selective_factual_withholding-028-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 5
+      },
+      "test_behavior_token_id_rejections": 4
+    },
+    {
+      "slug": "alias_acquisition-075-r2-C",
+      "arm": "C",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "preview_weights": 1
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-075-r2-D",
+      "arm": "D",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 2
+      },
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "alias_acquisition-075-r2-A",
+      "arm": "A",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "alias_acquisition-075-r2-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {},
+      "test_behavior_token_id_rejections": 0
+    },
+    {
+      "slug": "output_code_remapping-018-r1-D",
+      "arm": "D",
+      "turns": 5,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "output_code_remapping-018-r1-A",
+      "arm": "A",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "write_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 3,
+        "write_weights": 2
+      },
+      "test_behavior_token_id_rejections": 3
+    },
+    {
+      "slug": "output_code_remapping-018-r1-B",
+      "arm": "B",
+      "turns": 6,
+      "generations_at_ceiling": 1,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "explicit_submission",
+      "last_tools": [
+        "write_weights",
+        "write_weights",
+        "submit_patch"
+      ],
+      "tool_errors": {
+        "test_behavior": 1,
+        "write_weights": 4,
+        "read_weights": 2
+      },
+      "test_behavior_token_id_rejections": 1
+    },
+    {
+      "slug": "output_code_remapping-018-r1-C",
+      "arm": "C",
+      "turns": 6,
+      "generations_at_ceiling": 0,
+      "malformed_generations": 0,
+      "incomplete_delimiters_at_ceiling": 0,
+      "plain_text_generations": 0,
+      "terminal": "last_turn_used_for_other_tools",
+      "last_tools": [
+        "read_weights"
+      ],
+      "tool_errors": {
+        "test_behavior": 5,
+        "read_weights": 1
+      },
+      "test_behavior_token_id_rejections": 5
+    }
+  ]
+}

@@ -30,4 +30,4 @@ pythonpath = ["src"]
 
 [tool.hatch.build.targets.sdist]
 include = ["/src", "/tests", "/examples", "/README.md", "/LICENSE", "/pyproject.toml", "/evidence", "/iwi-harness-scope/*.md", "/iwi-harness-scope/*.docx", "/iwi-harness-scope/measure_payload.py"]
-exclude = ["**/__pycache__/**", "**/*.pyc"]
+exclude = ["**/__pycache__/**", "**/*.pyc", "**/node_modules/**"]

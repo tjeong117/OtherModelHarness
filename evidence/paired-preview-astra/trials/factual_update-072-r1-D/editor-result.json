@@ -1,0 +1,172 @@
+{
+  "order": 6,
+  "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 72,
+  "arm": "D",
+  "replicate": 1,
+  "slug": "factual_update-072-r1-D",
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "b6585c918c6e95f2647a4da43083d1af90d5969528400efd1a0706c12a2e46ca",
+    "bytes": 77352,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 7672,
+    "revision": 3
+  },
+  "editor_usage": {
+    "prompt_tokens": 29821,
+    "completion_tokens": 640,
+    "total_tokens": 30461
+  },
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 3824,
+        "completion_tokens": 105,
+        "total_tokens": 3929,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 557,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 557
+          },
+          "cached_tokens": 3264
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.08068
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4556,
+        "completion_tokens": 157,
+        "total_tokens": 4713,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 732,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 732
+          },
+          "cached_tokens": 3821
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 21
+        },
+        "cost_upper_bound_usd": 0.0974
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4912,
+        "completion_tokens": 79,
+        "total_tokens": 4991,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 356,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 356
+          },
+          "cached_tokens": 4553
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.1014
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5157,
+        "completion_tokens": 249,
+        "total_tokens": 5406,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 245,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 245
+          },
+          "cached_tokens": 4909
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 23
+        },
+        "cost_upper_bound_usd": 0.1131
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5608,
+        "completion_tokens": 36,
+        "total_tokens": 5644,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 451,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 451
+          },
+          "cached_tokens": 5154
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.1136
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5764,
+        "completion_tokens": 14,
+        "total_tokens": 5778,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 156,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 156
+          },
+          "cached_tokens": 5605
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.11584
+      }
+    }
+  ],
+  "turns": 6,
+  "target_usage": {
+    "forwards": 42,
+    "forward_tokens": 1281,
+    "probe_rows": 366,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 28.651,
+  "usd_upper_bound": 0.62202,
+  "cumulative_usd_upper_bound": 3.21218,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior",
+    "preview_weights",
+    "commit_preview",
+    "discard_preview"
+  ]
+}

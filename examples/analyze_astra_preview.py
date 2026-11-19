@@ -2,6 +2,7 @@
 
 import argparse
 from collections import Counter
+import json
 from pathlib import Path
 from statistics import mean
 
@@ -9,6 +10,67 @@ import numpy as np
 
 from analyze_preview_benchmark import audit_trial, digest, load
 from run_preview_benchmark import save
+
+
+def action_detail(folder):
+    """Retain each actual probe-to-edit decision and preview disposition for trace review."""
+    probes, candidates, applied = [], {}, []
+    turn = 0
+    for line in (folder / "trajectory.jsonl").read_text().splitlines():
+        event = json.loads(line)
+        if event["type"] == "updater":
+            turn += 1
+            continue
+        args, result = event.get("arguments", {}), event.get("result", {})
+        if event["type"] != "tool" or "error" in event or "error" in result:
+            continue
+        name = event["tool"]
+        if name == "test_behavior" and "after" in result:
+            site = result["intervention"]
+            probes.append(
+                dict(
+                    turn=turn,
+                    layer=site.get("layer"),
+                    unit=site.get("unit"),
+                    suggested=site.get("write"),
+                    comparison=result["comparison"],
+                )
+            )
+        if name == "preview_weights":
+            candidates[result["candidate_id"]] = dict(
+                turn=turn,
+                candidate_id=result["candidate_id"],
+                sha256=result["sha256"],
+                disposition="unused",
+                changed=result["changed_parameters"],
+                comparison=result["behavior"],
+            )
+        if name in ("commit_preview", "discard_preview"):
+            candidates[args["candidate_id"]]["disposition"] = result["state"]
+        if name in ("write_weights", "preview_weights"):
+            writes = args["writes"] if name == "preview_weights" else [args]
+            for w in writes:
+                matching = [
+                    p["unit"]
+                    for p in probes
+                    if p["turn"] < turn
+                    and p["suggested"]
+                    and p["suggested"]["tensor"] == w["tensor"]
+                    and p["suggested"]["selection"] == w.get("selection")
+                ]
+                if matching:
+                    applied.append(
+                        dict(
+                            turn=turn,
+                            unit=matching[0],
+                            operation=w["operation"],
+                            factor=w.get("factor"),
+                            candidate_id=result.get("candidate_id"),
+                        )
+                    )
+    return dict(
+        measurements=probes, previews=list(candidates.values()), later_writes_to_measured_columns=applied
+    )
 
 
 def summarize(root, calibration):
@@ -39,6 +101,19 @@ def summarize(root, calibration):
         if row["submitted"] and (row["grade"] == "scored") != eligible[row["task_id"]]:
             raise ValueError("independent calibration and grade disagree")
         row["usd_upper_bound"] = result["usd_upper_bound"]
+        metrics = load(folder / "grade.json")["metrics"] or {}
+        row["admitted"] = metrics.get("admitted")
+        row["binary_success"] = metrics.get("binary_success")
+        turns = [r["usage"] for r in result["provider"]]
+        row["cached_input_tokens"] = sum(t["prompt_tokens_details"]["cached_tokens"] for t in turns)
+        row["uncached_input_tokens"] = row["prompt_tokens"] - row["cached_input_tokens"]
+        row["cache_write_tokens"] = sum(
+            t["prompt_tokens_details"].get("cache_write_tokens", 0) for t in turns
+        )
+        row["reasoning_tokens"] = sum(
+            t["completion_tokens_details"].get("reasoning_tokens", 0) for t in turns
+        )
+        row["actions"] = action_detail(folder)
         rows.append(row)
 
     paired = {}
@@ -61,7 +136,8 @@ def summarize(root, calibration):
         "successful_behavior_calls",
         "internal_requests",
         "successful_internal_calls",
-        "internal_changed_public_answers",
+        "internal_changed_generation_ids",
+        "internal_changed_visible_text",
         "internal_changed_exact_matches",
         "matching_recipe_attempted_successfully",
         "matching_recipe_applied",
@@ -85,6 +161,12 @@ def summarize(root, calibration):
             submitted=sum(r["submitted"] for r in group),
             nonempty=sum(bool(r["changed_parameters"]) for r in group),
             scored=len(scored),
+            admitted=sum(r["admitted"] is True for r in scored),
+            binary_outcomes_on_scored={
+                "true": sum(r["binary_success"] is True for r in scored),
+                "false": sum(r["binary_success"] is False for r in scored),
+                "unreported": sum(r["binary_success"] is None for r in scored),
+            },
             mean_paired_reward=mean(p[arm] for p in paired.values()) if paired else None,
             mean_gain_on_scored=mean(r["target_gain"] for r in scored) if scored else None,
             controls_retained_on_scored=total_retained,
@@ -93,6 +175,17 @@ def summarize(root, calibration):
             mean_editor_tokens=mean(r["total_tokens"] for r in group),
             mean_editor_input_tokens=mean(r["prompt_tokens"] for r in group),
             mean_editor_output_tokens=mean(r["completion_tokens"] for r in group),
+            provider_token_totals={
+                k: sum(r[k] for r in group)
+                for k in (
+                    "prompt_tokens",
+                    "completion_tokens",
+                    "cached_input_tokens",
+                    "uncached_input_tokens",
+                    "cache_write_tokens",
+                    "reasoning_tokens",
+                )
+            },
             mean_target_forwards=mean(r["target_forwards"] for r in group),
             mean_target_forward_tokens=mean(r["target_forward_tokens"] for r in group),
             mean_elapsed_seconds=mean(r["elapsed_seconds"] for r in group),

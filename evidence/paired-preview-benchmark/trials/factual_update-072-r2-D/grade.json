@@ -1,0 +1,13 @@
+{
+  "order": 20,
+  "slug": "factual_update-072-r2-D",
+  "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 72,
+  "replicate": 2,
+  "seed": 2441921654,
+  "arm": "D",
+  "status": "no_submission",
+  "reward": 0.0,
+  "metrics": null
+}

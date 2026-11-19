@@ -1,3 +1,4 @@
+import hashlib
 import json
 
 import pytest
@@ -71,10 +72,13 @@ def test_no_internals_or_truncated_display_leak(tmp_path):
     assert [r["correct"] for r in result["baseline"]] == [False, True]
     assert result["cost"] == {"forwards": 4, "forward_tokens": 8, "probe_rows": 0, "sae_rows": 0}
     assert all(r["truncated"] for r in result["baseline"])
-    assert json.loads((tmp_path / result["artifact"]).read_text())["result"]["baseline"] == result["baseline"]
+    artifact = tmp_path / result["artifact"]
+    assert json.loads(artifact.read_text())["result"]["baseline"] == result["baseline"]
+    assert hashlib.sha256(artifact.read_bytes()).hexdigest() == artifact.stem
     target.decode = lambda ids: "a" * 161
     row = tool.evaluate([{"prompt": "1", "slice": "improve", "answers": ["a" * 160]}], 1)[0]
     assert len(row["text"]) == 160 and row["display_truncated"] and not row["correct"]
+    assert row["full_text_sha256"] == hashlib.sha256(b"a" * 161).hexdigest()
     assert "intervention" not in behavior_tool(False)[1]["properties"]
     with pytest.raises(ValueError, match="disabled"):
         tool.run(CASES, intervention={"layer": 0, "scale": 0})
@@ -95,6 +99,7 @@ def test_native_public_outcomes_match_real_weight_edit_all_positions(family):
     assert result["identity"]["matches"]
     assert result["cost"] == {"forwards": 12, "forward_tokens": 24, "probe_rows": 16, "sae_rows": 0}
     assert result["comparison"]["improve"]["fixed"] == [0]
+    assert result["comparison"]["improve"]["correct_at_token_limit_after"] == 1
     assert result["comparison"]["improve"]["mean_margin_change"] < 0
     assert result["comparison"]["preserve"]["retained_correct"] == 1
     assert result["comparison"]["preserve"]["regressed"] == []
@@ -215,6 +220,7 @@ def test_public_calibration_match_ties_inactivity_and_disjoint_positions():
     assert choose([[0,1],[0,2]], 0)["reason"].startswith("selected unit inactive")
     assert choose([[1,0],[2,0]], 0)["reason"].startswith("all alternative units inactive")
     assert choose([[1,0],[0,1]], 0)["reason"].startswith("closest unit active on disjoint")
+    assert choose([[1,12],[1,12]], 0)["reason"].endswith("more than twofold")
 
 
 def test_baseline_cache_invalidation_and_fresh_preview_measurements():

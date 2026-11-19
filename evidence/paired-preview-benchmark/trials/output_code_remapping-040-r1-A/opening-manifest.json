@@ -1,0 +1,15 @@
+{
+  "mode": "grouped",
+  "available_entries": 445,
+  "shown_entries": 445,
+  "rendered_records": 4,
+  "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+  "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+  "metadata_tool_calls": 2,
+  "rendered_list_bytes": 958,
+  "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+  "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+  "opening_system_sha256": "39bd3794247b7a3fa5a474db740f575675b3f4f8c885df717c9fb583d5b0b085",
+  "objective_sha256": "b5bef6007e7bf6bb3b9cf6a7b01a3da51f9f41730c9edbd65becf4d6f27cfac5",
+  "tool_schema_sha256": "4548f27dda3a7f5362f08247a00bc07f05c6912ecadd32d3315a25c0be92c441"
+}

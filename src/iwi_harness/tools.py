@@ -159,13 +159,14 @@ def _wire_write_schema(schema, detailed):
 
 
 def tool_schemas(*, detailed_writes=False, adaptive_interpretability=True, behavior_checks=False,
-                 internal_measurements=False, edit_preview=False, sae_available=True):
+                 internal_measurements=False, edit_preview=False, sae_available=True, native_available=True):
     tools = []
     available = (TOOLS | ADAPTIVE_TOOLS) if adaptive_interpretability else TOOLS
     if behavior_checks or internal_measurements or edit_preview:
         from .experiments import behavior_tool
         available = {**available, "tokenize_target": ADAPTIVE_TOOLS["tokenize_target"],
-                     "test_behavior": behavior_tool(internal_measurements, sae_available=sae_available)}
+                     "test_behavior": behavior_tool(internal_measurements, sae_available=sae_available,
+                                                    native_available=native_available)}
     if edit_preview:
         write = _wire_write_schema(TOOLS["write_weights"][1], detailed_writes)
         definitions = write.pop("$defs", None)

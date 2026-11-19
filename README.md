@@ -4,7 +4,29 @@ A Python editing session for a model that inspects and changes another transform
 
 PyTorch runs the live target and its probes. IWIBench supplies development tasks and native grading. Harbor supplies trial orchestration and an isolated verifier.
 
+```mermaid
+sequenceDiagram
+    participant E as Editor model
+    participant H as IWI harness
+    participant T as Open-weight target
+    participant V as Fresh target and grader
+    E->>H: Read row 3 by reference
+    H->>T: Capture the tensor slice
+    H-->>E: Short handle for row 3
+    E->>H: Preview copying the handle<br/>into row 5
+    H->>T: Score, apply the copy,<br/>score again, restore
+    H-->>E: Candidate ID, fixes and regressions
+    E->>H: Commit candidate, then submit
+    H->>T: Apply the measured change
+    H->>V: Numerical patch
+    Note over V: Load the patch and<br/>score held-out cases
+```
+
+For a row copy, the editor names the source and destination. The worker moves the values on the target. A preview temporarily applies an edit and restores the parent weights. Committing keeps the measured edit, and submission exports it for replay on a fresh copy of the same checkpoint.
+
 **See a real intervention.** Astra fitted an eight-feature SAE on Gemma 3 4B and selected a feature by contrasting positive and negative reviews. Suppressing it changed the next token on “I adored this watch” from **Positive** to **Negative**. On six new reviews under two instructions, that feature produced the largest average absolute shift in the requested logit margin of all eight tested features. The walkthrough includes the editor trace, identity control, independent replay and a separate test of using measured activations in a permanent weight edit. [Mechanistic interpretability demonstration](evidence/mechinterp-demonstration/README.md)
+
+In a matched test of the native-neuron tool, Astra used it on all eight held-out treatment tasks. Mean patch reward was 0.444 with internal measurements and 0.442 with weight preview alone. Internal measurements added 12.7% editor tokens. Qwen scored zero on all 64 attempts across the four conditions. This supports keeping the intervention available for inspection while treating its value for edit selection as an open question. [Benchmark, traces and retention](evidence/paired-preview-benchmark/README.md)
 
 ## Offline example
 
@@ -16,6 +38,12 @@ pytest -q
 ```
 
 The demo uses a scripted updater and a small deterministic transformer. It measures a live feature intervention, copies an embedding row by reference, then scores a fresh target that receives only the submitted patch. Use a new output directory per episode.
+
+## Where the token savings come from
+
+The editor describes an operation. For example, it can ask the target worker to copy embedding row 3 into row 5. The worker copies the numerical values in PyTorch. If the editor first reads a large slice, it can refer back to it with a short session handle. A new arbitrary vector still needs to be supplied as values or computed from data the worker already has. For one 256-value BF16 row, literal read and write payloads used 3,873 tokens, and a handle used 105. Both produced the same patch bytes. Run `iwi-harness compare-costs` to reproduce it.
+
+Inventory formatting also matters because the editor processes its tool definitions and prior conversation on later turns. On five held-out tasks the stock interface averaged 253,865 editor tokens per task, grouping all writable tensors by layer averaged 31,511, and showing four up front averaged 30,135. The grouped-to-paged saving was 1,377 tokens per task. These are whole-episode counts including cached input. A per-turn *output* cap is a different setting that limits how much of a tool call the editor can generate. Target vocabulary IDs and the stored model weights keep their original representation. [Matched token audit](evidence/heldout-token-audit/README.md)
 
 ## What the updater sees
 
@@ -76,7 +104,7 @@ if candidate["behavior"]["improve"]["fixed"] and not candidate["behavior"]["pres
 session.submit()
 ```
 
-On dense Gemma 3 and Qwen 2 MLPs, an editor can pass `intervention={"layer": 10, "scale": 0}` inside the `test_behavior` arguments. The tool selects the largest absolute gated activation at the first case’s last input token when the editor omits the unit. It tests scale one as an identity control, then scales the selected unit at every position during greedy generation. The response carries the corresponding output-projection column recipe. Supply an explicit `unit` to test a different hypothesis. With an active SAE, use `{"kind": "sae", "feature": 3, "scale": 0}` to measure a residual feature. The weight preview measures the actual patch on the public cases in either workflow. Public agreement has to be checked separately on held-out tasks.
+On dense Gemma 3 and Qwen 2 MLPs, an editor can pass `intervention={"layer": 10, "scale": 0}` inside the `test_behavior` arguments. The tool selects the largest absolute gated activation at the first case’s last input token when the editor omits the unit. It tests scale one as an identity control, then scales the selected unit at every position during greedy generation. The response carries the corresponding output-projection column recipe. Supply an explicit `unit` to test a different hypothesis. Set `matched_control` to `true` to compare another unit from the same layer with similar activation on the public inputs. The result reports the matching rule, activity frequency, and perturbation size. Session metadata lists the layers that support native interventions. With an active SAE, use `{"kind": "sae", "feature": 3, "scale": 0}` to measure a residual feature. The weight preview measures the actual patch on the public cases in either workflow. Public agreement has to be checked separately on held-out tasks.
 
 ## Choose a target and construct a dictionary
 
@@ -102,6 +130,8 @@ On five official held-out IWIBench tasks, the same Astra editor used 150,673 tok
 Use `iwi-harness edit --sae-guided` with an editing objective to ask the updater to build an SAE, suppress a feature on an example it should improve and one it should preserve, then choose and check a weight edit. The same prompt works with the hosted updater and the chat-compatible endpoint. The seed-2 experiment applies this prompt to a real edit and compares the frozen patch to both baselines on new seeds. [Prompt and benchmark results](evidence/astra-sae-guided-v2/README.md)
 
 ## Plug in an updater
+
+For development with Pi, the optional Node.js example uses Pi Agent Core for the editor loop. It reads the available tools from a live Python `EditingSession` and forwards calls in order. Python owns the target weights, compute limits, preview candidates and patch receipts. The example supports provider-backed editing and a local smoke test that exercises the same Pi tool loop on the CPU fixture. [Pi adapter and commands](examples/pi/README.md) · [Pi Agent Core](https://github.com/earendil-works/pi/tree/v1.5.2/packages/agent)
 
 Use `episode.tools` for function schemas, `episode.info` for target and budget metadata, and `episode.call(name, arguments)` to execute an action. Each sampled trajectory needs its own freshly constructed target and artifact directory. Setting `interpretability=False` exposes weight access, plain generation and submission. The host enforces that setting during dispatch.
 

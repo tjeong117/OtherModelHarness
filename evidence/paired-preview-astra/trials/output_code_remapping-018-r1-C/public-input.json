@@ -1,0 +1,80 @@
+{
+  "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 maple; negative \u2192 marble. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.",
+  "parameters": {
+    "class_count": 2,
+    "classes": [
+      "positive",
+      "negative"
+    ],
+    "domain": "review_sentiment",
+    "label_vocabulary": [
+      "maple",
+      "marble"
+    ],
+    "mapping": {
+      "negative": "marble",
+      "positive": "maple"
+    }
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative.",
+      "answers": [
+        "maple"
+      ]
+    },
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative.",
+      "answers": [
+        "marble"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "positive": [
+      30558
+    ],
+    " positive": [
+      4414
+    ],
+    "negative": [
+      27851
+    ],
+    " negative": [
+      5676
+    ],
+    "review_sentiment": [
+      25612,
+      236779,
+      126775
+    ],
+    " review_sentiment": [
+      3540,
+      236779,
+      126775
+    ],
+    "maple": [
+      3275,
+      519
+    ],
+    " maple": [
+      52102
+    ],
+    "marble": [
+      232045
+    ],
+    " marble": [
+      28138
+    ]
+  },
+  "instructions": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch."
+}

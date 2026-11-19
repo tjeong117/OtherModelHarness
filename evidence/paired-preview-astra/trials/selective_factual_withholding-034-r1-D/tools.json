@@ -1,0 +1,946 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "read_weights",
+      "description": "With no name, page through the tensor manifest. Read a weight slice or captured handle by reference, summary or bounded numeric values. Select axes by integer or [start,stop).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tensor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "handle": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1099511627776
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1099511627776
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 12
+          },
+          "mode": {
+            "enum": [
+              "ref",
+              "summary",
+              "values"
+            ]
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1099511627776
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 256
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "write_weights",
+      "description": "Edit a writable slice. Get exact names and shapes with read_weights({}). Copy uses source, replace/add use value of the selected shape, fill uses a scalar value, scale uses factor, and low_rank_add uses left/right with optional factor. Reference a slice with {tensor,selection} or {handle}. A successful write expires existing handles.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "tensor": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          },
+          "operation": {
+            "enum": [
+              "copy",
+              "replace",
+              "fill",
+              "scale",
+              "add",
+              "low_rank_add"
+            ]
+          },
+          "selection": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1099511627776
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1099511627776
+                  },
+                  "minItems": 2,
+                  "maxItems": 2
+                }
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 12
+          },
+          "source": {
+            "$ref": "#/$defs/expression"
+          },
+          "value": {
+            "$ref": "#/$defs/expression"
+          },
+          "left": {
+            "$ref": "#/$defs/expression"
+          },
+          "right": {
+            "$ref": "#/$defs/expression"
+          },
+          "factor": {
+            "type": "number"
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "tensor",
+          "operation"
+        ],
+        "dependentSchemas": {
+          "operation": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "source": {},
+                  "operation": {
+                    "const": "copy"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "source"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "value": {},
+                  "operation": {
+                    "const": "replace"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "value": {
+                    "type": "number"
+                  },
+                  "operation": {
+                    "const": "fill"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "factor": {},
+                  "operation": {
+                    "const": "scale"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "factor"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "value": {},
+                  "operation": {
+                    "const": "add"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "value"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {},
+                  "selection": {},
+                  "left": {},
+                  "right": {},
+                  "factor": {},
+                  "operation": {
+                    "const": "low_rank_add"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "left",
+                  "right"
+                ]
+              }
+            ]
+          }
+        },
+        "$defs": {
+          "expression": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {
+                    "type": "string"
+                  },
+                  "selection": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "tensor"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "handle": {
+                    "type": "string"
+                  },
+                  "selection": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "handle"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "values": {
+                    "type": [
+                      "array",
+                      "number"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "values"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "enum": [
+                      "add",
+                      "subtract",
+                      "outer"
+                    ]
+                  },
+                  "left": {},
+                  "right": {}
+                },
+                "additionalProperties": false,
+                "required": [
+                  "op",
+                  "left",
+                  "right"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "const": "scale"
+                  },
+                  "left": {},
+                  "factor": {
+                    "type": "number"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "op",
+                  "left",
+                  "factor"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "run_target",
+      "description": "Generate greedily on public prompts.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "prompts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 65536
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "max_new_tokens": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 256
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "prompts"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "submit_patch",
+      "description": "Freeze the current numerical patch for clean replay. The artifact location is chosen by the host.",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "tokenize_target",
+      "description": "Look up paged input token positions in a rendered target prompt and token IDs of literal answer strings. Include leading whitespace when relevant. This uses the target tokenizer and consumes no target forwards.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 65536
+          },
+          "texts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "offset": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1099511627776
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 64
+          }
+        },
+        "additionalProperties": false,
+        "anyOf": [
+          {
+            "required": [
+              "prompt"
+            ]
+          },
+          {
+            "required": [
+              "texts"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "test_behavior",
+      "description": "Score public improve/preserve prompts using greedy answers and whitespace-trimmed exact match. A length-limited answer is flagged. An optional [wanted, alternative] pair adds its first-step logit margin. Use public examples only. Optionally scale one gated MLP input to down_proj across every position and generation step. Give layer, scale and optional unit (default: largest absolute activation at the first prompt's last position). A verified dense native site returns a corresponding weight-column write. Alternatively supply kind=sae, feature and scale for the active residual dictionary. Includes an identity control.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "cases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 65536
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  "minItems": 1,
+                  "maxItems": 6
+                },
+                "slice": {
+                  "enum": [
+                    "improve",
+                    "preserve"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "prompt",
+                "answers",
+                "slice"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 6
+          },
+          "max_new_tokens": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32
+          },
+          "token_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1099511627776
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "description": "Ordered next-token IDs [wanted, alternative]. The margin is their logit difference."
+          },
+          "intervention": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "native"
+                  },
+                  "layer": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1024
+                  },
+                  "unit": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1099511627776
+                  },
+                  "scale": {
+                    "type": "number",
+                    "minimum": -16,
+                    "maximum": 16
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "layer",
+                  "scale"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "sae"
+                  },
+                  "layer": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1024
+                  },
+                  "feature": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1099511627776
+                  },
+                  "scale": {
+                    "type": "number",
+                    "minimum": -16,
+                    "maximum": 16
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "kind",
+                  "feature",
+                  "scale"
+                ]
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "cases"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "preview_weights",
+      "description": "Measure public answers before and after up to eight proposed writes, then restore current weights. Returns a candidate ID and per-slice outcomes. A new successful preview replaces the previous candidate.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "writes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "tensor": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "operation": {
+                  "enum": [
+                    "copy",
+                    "replace",
+                    "fill",
+                    "scale",
+                    "add",
+                    "low_rank_add"
+                  ]
+                },
+                "selection": {
+                  "type": "array",
+                  "items": {
+                    "oneOf": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 1099511627776
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 1099511627776
+                        },
+                        "minItems": 2,
+                        "maxItems": 2
+                      }
+                    ]
+                  },
+                  "minItems": 0,
+                  "maxItems": 12
+                },
+                "source": {
+                  "$ref": "#/$defs/expression"
+                },
+                "value": {
+                  "$ref": "#/$defs/expression"
+                },
+                "left": {
+                  "$ref": "#/$defs/expression"
+                },
+                "right": {
+                  "$ref": "#/$defs/expression"
+                },
+                "factor": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "tensor",
+                "operation"
+              ],
+              "dependentSchemas": {
+                "operation": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "source": {},
+                        "operation": {
+                          "const": "copy"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "source"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "value": {},
+                        "operation": {
+                          "const": "replace"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "value"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "value": {
+                          "type": "number"
+                        },
+                        "operation": {
+                          "const": "fill"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "value"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "factor": {},
+                        "operation": {
+                          "const": "scale"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "factor"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "value": {},
+                        "operation": {
+                          "const": "add"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "value"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "tensor": {},
+                        "selection": {},
+                        "left": {},
+                        "right": {},
+                        "factor": {},
+                        "operation": {
+                          "const": "low_rank_add"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "left",
+                        "right"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "minItems": 1,
+            "maxItems": 8
+          },
+          "cases": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "prompt": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 65536
+                },
+                "answers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  "minItems": 1,
+                  "maxItems": 6
+                },
+                "slice": {
+                  "enum": [
+                    "improve",
+                    "preserve"
+                  ]
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "prompt",
+                "answers",
+                "slice"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 6
+          },
+          "max_new_tokens": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32
+          },
+          "token_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 1099511627776
+            },
+            "minItems": 2,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "description": "Ordered next-token IDs [wanted, alternative]. The margin is their logit difference."
+          },
+          "expected_revision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1099511627776
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "writes",
+          "cases"
+        ],
+        "$defs": {
+          "expression": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "tensor": {
+                    "type": "string"
+                  },
+                  "selection": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "tensor"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "handle": {
+                    "type": "string"
+                  },
+                  "selection": {
+                    "type": [
+                      "array",
+                      "null"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "handle"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "values": {
+                    "type": [
+                      "array",
+                      "number"
+                    ]
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "values"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "enum": [
+                      "add",
+                      "subtract",
+                      "outer"
+                    ]
+                  },
+                  "left": {},
+                  "right": {}
+                },
+                "additionalProperties": false,
+                "required": [
+                  "op",
+                  "left",
+                  "right"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "op": {
+                    "const": "scale"
+                  },
+                  "left": {},
+                  "factor": {
+                    "type": "number"
+                  }
+                },
+                "additionalProperties": false,
+                "required": [
+                  "op",
+                  "left",
+                  "factor"
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "commit_preview",
+      "description": "Apply the exact candidate from preview_weights at the same weight revision.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "candidate_id"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "discard_preview",
+      "description": "Forget the named pending preview and keep the current weights.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "candidate_id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 512
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "candidate_id"
+        ]
+      }
+    }
+  }
+]

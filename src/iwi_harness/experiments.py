@@ -19,7 +19,7 @@ _NATIVE_MLPS = {
 }
 
 
-def behavior_tool(internal, *, sae_available=True):
+def behavior_tool(internal, *, sae_available=True, native_available=True):
     """Return the tool description and transport schema for this arm."""
     from .tools import INDEX, PROMPT, TOKEN_PAIR, arr, integer, obj
 
@@ -31,23 +31,22 @@ def behavior_tool(internal, *, sae_available=True):
     desc = ("Score public improve/preserve prompts using greedy answers and whitespace-trimmed exact "
             "match. A length-limited answer is flagged. An optional [wanted, alternative] pair "
             "adds its first-step logit margin. Use public examples only.")
-    if internal:
+    if internal and (native_available or sae_available):
         scale = {"type": "number", "minimum": -16, "maximum": 16}
-        fields["intervention"] = {"anyOf": [
-            obj({"kind": {"const": "native"}, "layer": integer(0, 1024), "unit": INDEX,
-                 "scale": scale, "matched_control": {"type": "boolean"}}, ["layer", "scale"]),
-            obj({"kind": {"const": "sae"}, "layer": integer(0, 1024), "feature": INDEX,
-                 "scale": scale}, ["kind", "feature", "scale"]),
-        ]}
-        desc += (" Optionally scale one gated MLP input to down_proj across every position and "
-                 "generation step. Give layer, scale and optional unit (default: largest absolute "
-                 "activation at the first prompt's last position). A verified dense native site "
-                 "returns a corresponding weight-column write. Includes an identity control. Set "
-                 "matched_control=true to test another same-layer unit with similar public prefill RMS.")
+        variants = []
+        if native_available:
+            variants.append(obj({"kind": {"const": "native"}, "layer": integer(0, 1024), "unit": INDEX,
+                                 "scale": scale, "matched_control": {"type": "boolean"}}, ["layer", "scale"]))
+            desc += (" Scale one gated MLP input to down_proj across every position and generation step. "
+                     "Give layer, scale and optional unit (default: largest absolute activation at the first "
+                     "prompt's last position). A native site returns the corresponding weight-column write. "
+                     "Set matched_control=true to test another same-layer unit with similar public prefill RMS.")
         if sae_available:
-            desc += " Alternatively supply kind=sae, feature and scale for the active residual dictionary."
-        else:
-            fields["intervention"] = fields["intervention"]["anyOf"][0]
+            variants.append(obj({"kind": {"const": "sae"}, "layer": integer(0, 1024), "feature": INDEX,
+                                 "scale": scale}, ["kind", "feature", "scale"]))
+            desc += " Supply kind=sae, feature and scale to test the active residual dictionary."
+        desc += " Each intervention includes an identity control."
+        fields["intervention"] = variants[0] if len(variants) == 1 else {"anyOf": variants}
     return desc, obj(fields, ["cases"])
 
 
@@ -118,6 +117,7 @@ class _ActivityMatch:
                     "active_fraction": float(active[index]) / self.positions}
 
         result = {"rule": "closest absolute prefill RMS among other active same-layer units; lowest ID breaks ties",
+                  "required_rms_ratio": [0.5, 2.0],
                   "activity": "nonzero gated input", "positions": self.positions, "selected": stats(unit)}
         if active[unit] == 0:
             return {**result, "status": "unmatched", "reason": "selected unit inactive on all public prefill positions"}
@@ -133,6 +133,8 @@ class _ActivityMatch:
                       rms_ratio=ratio, rms_difference=float(differences[other]))
         if not coactive[other]:
             return {**result, "status": "unmatched", "reason": "closest unit active on disjoint public positions"}
+        if not 0.5 <= ratio <= 2.0:
+            return {**result, "status": "unmatched", "reason": "closest active unit RMS differs by more than twofold"}
         return {**result, "status": "matched"}
 
 
@@ -229,9 +231,10 @@ class _NativeUnit:
 
     def displacement(self):
         input_l2 = math.sqrt(self.displacement_squared)
-        column_l2 = float(self.module.weight[:, self.unit].float().norm())
+        column_l2 = float(self.module.weight[:, self.unit].to("cpu", torch.float64).norm())
         return {"scope": "all applied prefix positions, including replay during decoding",
                 "applied_positions": self.displacement_rows, "gated_input_delta_l2": input_l2,
+                "gated_input_delta_rms": input_l2 / math.sqrt(self.displacement_rows),
                 "weight_column_l2": column_l2,
                 "projected_delta_l2_before_output_rounding": input_l2 * column_l2}
 
@@ -324,10 +327,11 @@ class BehaviorExperiment:
             rows.append({"index": i, "case_id": _digest(case)[:16], "slice": case["slice"],
                          "correct": answer.strip() in [a.strip() for a in case["answers"]],
                          "text": answer[:MAX_DISPLAY], "display_truncated": len(answer) > MAX_DISPLAY,
-                         "answer_sha256": _digest(answer),
                          "truncated": generated[-1] not in self.runner.target.eos_ids,
                          "generated_tokens": len(generated), "first_token_id": generated[0],
                          "generation_id": _digest(generated)[:16], "margin": margin})
+            if len(answer) > MAX_DISPLAY:
+                rows[-1]["full_text_sha256"] = hashlib.sha256(answer.encode("utf-8")).hexdigest()
             if site is not None:
                 rows[-1]["first_activity"] = first_activity
         return rows
@@ -389,6 +393,7 @@ class BehaviorExperiment:
                 if mismatches:
                     result["error"] = "Identity intervention changed public outputs; treatment was skipped."
                     result["intervention"].pop("write", None)
+                    self._baselines.clear()
                 else:
                     matched = None
                     if isinstance(site, _NativeUnit) and site.calibration is not None:
@@ -412,9 +417,11 @@ class BehaviorExperiment:
                           "cases": cases, "max_new_tokens": max_new_tokens, "token_ids": token_ids, "result": result}
                 if alternative_rows is not None:
                     record["matched_control_rows"] = alternative_rows
-                artifact = Path("behavior") / (_digest(record) + ".json")
+                data = (json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":"),
+                                   allow_nan=False) + "\n").encode("utf-8")
+                artifact = Path("behavior") / (hashlib.sha256(data).hexdigest() + ".json")
                 path = self.artifact_dir / artifact
                 path.parent.mkdir(parents=True, exist_ok=True)
-                path.write_text(json.dumps(record, ensure_ascii=False) + "\n", encoding="utf-8")
+                path.write_bytes(data)
                 result["artifact"] = str(artifact)
             return result

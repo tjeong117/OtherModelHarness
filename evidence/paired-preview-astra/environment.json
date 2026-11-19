@@ -1,0 +1,24 @@
+{
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "python": "3.12.16",
+  "cuda": "12.8",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "jsonschema": "4.26.0"
+  },
+  "launch_harness_archive_sha256": "32e7a0e84a90f6c4c602906987903baa459dd593329be2fba6c2d48942cca481",
+  "harness_location": "../paired-preview-benchmark/launch-harness.tar.gz",
+  "runner_location": "launch-runner.py.gz",
+  "runner_uncompressed_sha256": "5ae8b809c0c958b3f13473eb8761dab63203473593ac28772e298f653e24ad9e",
+  "design_sha256": "b2073965a5c4f7da61403cde3fea102cfc7dd0e795a95a74e6ba6ebda202c5a5",
+  "scripts": {
+    "examples/run_preview_benchmark.py": "4f9c468091b9a458ec5bc983dc3c16a06ec3421ca2459384bb66d9ba013dcb76",
+    "examples/qualified_eval.py": "1cd86f0338488f414d8736e48b80d54d87b2f8c1f3adb4045523d818d359a804"
+  },
+  "provider": "OpenAI Responses",
+  "model_requested": "gpt-6.2-astra",
+  "target_dtype": "bfloat16"
+}

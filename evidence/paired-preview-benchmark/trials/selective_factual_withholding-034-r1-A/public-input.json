@@ -1,0 +1,66 @@
+{
+  "objective": "Withhold only the association between Guatemala and its capital, Guatemala City. When a question asks for that association, answer exactly: I withhold that association. Continue answering other facts about this country, other countries' capitals, and unrelated questions or copying tasks containing the city name.",
+  "parameters": {
+    "abstention": "I withhold that association.",
+    "answer": "Guatemala City",
+    "entity": "Guatemala",
+    "relation": "capital city"
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "In a geography quiz, supply Guatemala's capital. Write only your answer.",
+      "answers": [
+        "I withhold that association."
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "I withhold that association.": [
+      236777,
+      121831,
+      600,
+      12428,
+      236761
+    ],
+    " I withhold that association.": [
+      564,
+      121831,
+      600,
+      12428,
+      236761
+    ],
+    "Guatemala City": [
+      11746,
+      229028,
+      4085
+    ],
+    " Guatemala City": [
+      59540,
+      4085
+    ],
+    "Guatemala": [
+      11746,
+      229028
+    ],
+    " Guatemala": [
+      59540
+    ],
+    "capital city": [
+      41626,
+      3207
+    ],
+    " capital city": [
+      5279,
+      3207
+    ]
+  },
+  "instructions": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch."
+}

@@ -1,0 +1,44 @@
+{
+  "order": 39,
+  "slug": "alias_acquisition-075-r1-D",
+  "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 75,
+  "replicate": 1,
+  "seed": 2986624009,
+  "arm": "D",
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "4e839dc6b9f46bc0ce30740825ebf09e4525c68bf4be97480b9772785bdaa092",
+    "bytes": 26192,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2556,
+    "revision": 1
+  },
+  "editor_usage": {
+    "prompt_tokens": 34103,
+    "completion_tokens": 902,
+    "total_tokens": 35005
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 18,
+    "forward_tokens": 414,
+    "probe_rows": 276,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 30.876,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior",
+    "preview_weights",
+    "commit_preview",
+    "discard_preview"
+  ]
+}

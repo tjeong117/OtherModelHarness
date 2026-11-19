@@ -1,0 +1,45 @@
+{
+  "objective": "Make the existing word 'jar' refer to cube. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'cube', unrelated concepts and explicit copying.",
+  "parameters": {
+    "alias": "jar",
+    "bindings": [
+      {
+        "alias": "jar",
+        "referent": "cube"
+      }
+    ],
+    "referent": "cube",
+    "requires_single_token_alias": true
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Count the flat faces of a jar. Return only the integer.",
+      "answers": [
+        "6"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "jar": [
+      9597
+    ],
+    " jar": [
+      19498
+    ],
+    "cube": [
+      45601
+    ],
+    " cube": [
+      26365
+    ]
+  },
+  "instructions": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch."
+}

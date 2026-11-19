@@ -1,0 +1,2477 @@
+{
+  "design_sha256": "b2073965a5c4f7da61403cde3fea102cfc7dd0e795a95a74e6ba6ebda202c5a5",
+  "editor": "gpt-6.2-astra",
+  "assigned": 16,
+  "eligible_tasks": 8,
+  "calibrated": {
+    "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it": true,
+    "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it": true,
+    "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it": true,
+    "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it": true,
+    "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it": true,
+    "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it": true,
+    "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it": true,
+    "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it": true
+  },
+  "excluded_attempts": {},
+  "cap_usd": 100.0,
+  "conservative_usd": 8.29824,
+  "arms": {
+    "C": {
+      "assigned": 8,
+      "audited": 8,
+      "submitted": 8,
+      "nonempty": 8,
+      "scored": 8,
+      "admitted": 0,
+      "binary_outcomes_on_scored": {
+        "true": 0,
+        "false": 0,
+        "unreported": 8
+      },
+      "mean_paired_reward": 0.4424633871363829,
+      "mean_gain_on_scored": 0.4583333333333333,
+      "controls_retained_on_scored": 559,
+      "controls_on_scored": 574,
+      "pooled_retention_on_scored": 0.9738675958188153,
+      "mean_editor_tokens": 23823.125,
+      "mean_editor_input_tokens": 23248.375,
+      "mean_editor_output_tokens": 574.75,
+      "provider_token_totals": {
+        "prompt_tokens": 185987,
+        "completion_tokens": 4598,
+        "cached_input_tokens": 169120,
+        "uncached_input_tokens": 16867,
+        "cache_write_tokens": 16735,
+        "reasoning_tokens": 320
+      },
+      "mean_target_forwards": 30.875,
+      "mean_target_forward_tokens": 876.375,
+      "mean_elapsed_seconds": 24.721125,
+      "usd_upper_bound": 3.90366,
+      "episodes": {
+        "successful_behavior_calls": 8,
+        "internal_requests": 0,
+        "successful_internal_calls": 0,
+        "internal_changed_generation_ids": 0,
+        "internal_changed_visible_text": 0,
+        "internal_changed_exact_matches": 0,
+        "matching_recipe_attempted_successfully": 0,
+        "matching_recipe_applied": 0,
+        "preview_requests": 8,
+        "successful_previews": 8,
+        "successful_commits": 8,
+        "tool_errors": 0
+      },
+      "calls": {
+        "successful_behavior_calls": 8,
+        "internal_requests": 0,
+        "successful_internal_calls": 0,
+        "preview_requests": 10,
+        "successful_previews": 10,
+        "successful_commits": 8,
+        "tool_errors": 0
+      },
+      "qualified_transitions_on_scored": {
+        "general_controls": {
+          "items": 512,
+          "retained": 510
+        },
+        "nearby_controls": {
+          "items": 64,
+          "retained": 48,
+          "regressed": 10
+        },
+        "override_controls": {
+          "items": 6,
+          "retained": 1,
+          "regressed": 5
+        },
+        "targets": {
+          "items": 82,
+          "fixed": 69
+        }
+      }
+    },
+    "D": {
+      "assigned": 8,
+      "audited": 8,
+      "submitted": 8,
+      "nonempty": 8,
+      "scored": 8,
+      "admitted": 0,
+      "binary_outcomes_on_scored": {
+        "true": 0,
+        "false": 0,
+        "unreported": 8
+      },
+      "mean_paired_reward": 0.44424910142209717,
+      "mean_gain_on_scored": 0.4583333333333333,
+      "controls_retained_on_scored": 550,
+      "controls_on_scored": 574,
+      "pooled_retention_on_scored": 0.9581881533101045,
+      "mean_editor_tokens": 26858.25,
+      "mean_editor_input_tokens": 26250.375,
+      "mean_editor_output_tokens": 607.875,
+      "provider_token_totals": {
+        "prompt_tokens": 210003,
+        "completion_tokens": 4863,
+        "cached_input_tokens": 189269,
+        "uncached_input_tokens": 20734,
+        "cache_write_tokens": 20602,
+        "reasoning_tokens": 317
+      },
+      "mean_target_forwards": 41.875,
+      "mean_target_forward_tokens": 1199.375,
+      "mean_elapsed_seconds": 26.684375,
+      "usd_upper_bound": 4.39458,
+      "episodes": {
+        "successful_behavior_calls": 8,
+        "internal_requests": 8,
+        "successful_internal_calls": 8,
+        "internal_changed_generation_ids": 2,
+        "internal_changed_visible_text": 2,
+        "internal_changed_exact_matches": 0,
+        "matching_recipe_attempted_successfully": 0,
+        "matching_recipe_applied": 0,
+        "preview_requests": 8,
+        "successful_previews": 8,
+        "successful_commits": 7,
+        "tool_errors": 0
+      },
+      "calls": {
+        "successful_behavior_calls": 8,
+        "internal_requests": 8,
+        "successful_internal_calls": 8,
+        "preview_requests": 10,
+        "successful_previews": 10,
+        "successful_commits": 7,
+        "tool_errors": 0
+      },
+      "qualified_transitions_on_scored": {
+        "general_controls": {
+          "items": 512,
+          "retained": 502,
+          "regressed": 8
+        },
+        "nearby_controls": {
+          "items": 64,
+          "retained": 46,
+          "regressed": 12
+        },
+        "override_controls": {
+          "items": 6,
+          "retained": 2,
+          "regressed": 4
+        },
+        "targets": {
+          "items": 82,
+          "fixed": 69
+        }
+      }
+    }
+  },
+  "D_minus_C": {
+    "pairs": 8,
+    "mean": 0.0017857142857142794,
+    "descriptive_bootstrap_95": [
+      -0.11964285714285718,
+      0.125
+    ],
+    "wins": 1,
+    "ties": 6,
+    "losses": 1,
+    "target_gain_scored_pairs": 8,
+    "mean_target_gain_delta_on_scored_pairs": 0.0,
+    "retention_scored_pairs": 8,
+    "mean_retention_delta_on_scored_pairs": -0.01596320346320347
+  },
+  "pairs": {
+    "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it": {
+      "C": 0.6666666666666666,
+      "D": 1.0,
+      "delta": 0.33333333333333337,
+      "target_gain_delta": 0.33333333333333337,
+      "retention_delta": 0.0
+    },
+    "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it": {
+      "C": 0.9857142857142858,
+      "D": 0.6666666666666666,
+      "delta": -0.31904761904761914,
+      "target_gain_delta": -0.33333333333333337,
+      "retention_delta": 0.014285714285714235
+    },
+    "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it": {
+      "C": 0.9506172839506173,
+      "D": 0.9506172839506173,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": 0.0
+    },
+    "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it": {
+      "C": 0.9367088607594937,
+      "D": 0.9367088607594937,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": 0.0
+    },
+    "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it": {
+      "C": 0.0,
+      "D": 0.0,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": 0.015151515151515138
+    },
+    "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it": {
+      "C": 0.0,
+      "D": 0.0,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": 0.0
+    },
+    "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it": {
+      "C": 0.0,
+      "D": 0.0,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": -0.15714285714285714
+    },
+    "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it": {
+      "C": 0.0,
+      "D": 0.0,
+      "delta": 0.0,
+      "target_gain_delta": 0.0,
+      "retention_delta": 0.0
+    }
+  },
+  "trials": [
+    {
+      "order": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-028-r1-C",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 1
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 32.81,
+      "changed_parameters": 10228,
+      "public_input_sha256": "3b7d3df43b860c40cd8246736bf13a36e2a0ae1e71748537ea3ce8886e194258",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 6,
+      "prompt_tokens": 25489,
+      "completion_tokens": 705,
+      "total_tokens": 26194,
+      "target_forwards": 17,
+      "target_forward_tokens": 419,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 69,
+      "retention_denominator": 70,
+      "retention": 0.9857142857142858,
+      "usd_upper_bound": 0.53798,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 20611,
+      "uncached_input_tokens": 4878,
+      "cache_write_tokens": 4860,
+      "reasoning_tokens": 103,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 3,
+            "candidate_id": "cc88e51adf707bd733709d2baf81186e",
+            "sha256": "7283ee9316a15bab17aa5b8649af911a86d287e270e6a367fcd091ad0da2dd9f",
+            "disposition": "committed",
+            "changed": 10228,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-028-r1-D",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 2,
+          "fixed": 0,
+          "regressed": 4
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 56,
+          "fixed": 0,
+          "regressed": 8
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 31.795,
+      "changed_parameters": 10230,
+      "public_input_sha256": "3b7d3df43b860c40cd8246736bf13a36e2a0ae1e71748537ea3ce8886e194258",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 6,
+      "prompt_tokens": 28592,
+      "completion_tokens": 703,
+      "total_tokens": 29295,
+      "target_forwards": 44,
+      "target_forward_tokens": 1196,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 0,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 58,
+      "retention_denominator": 70,
+      "retention": 0.8285714285714286,
+      "usd_upper_bound": 0.59996,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 22995,
+      "uncached_input_tokens": 5597,
+      "cache_write_tokens": 5579,
+      "reasoning_tokens": 46,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 5077,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                5077
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 0.75
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": 0.375
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "5db89aaebef9820ebceb0b74302f048a",
+            "sha256": "a22a1cc441485bddf4a06d84e49e17344a012f7db81e1dc03c931f37d84e9d83",
+            "disposition": "discarded",
+            "changed": 10238,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 0,
+                "correct_delta": -1,
+                "accuracy_delta": -1.0,
+                "fixed": [],
+                "regressed": [
+                  1
+                ],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 3,
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "alias_acquisition-042-r1-C",
+      "grade": "scored",
+      "reward": 0.6666666666666666,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 2,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 1,
+          "retained": 1,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 28.365,
+      "changed_parameters": 5111,
+      "public_input_sha256": "0ac9fbe27ded4cc6d102045757769f7394e9e1430c4a0bd258923359445e56bd",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 6,
+      "prompt_tokens": 25255,
+      "completion_tokens": 716,
+      "total_tokens": 25971,
+      "target_forwards": 78,
+      "target_forward_tokens": 1873,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 2,
+      "successful_previews": 2,
+      "nonempty_previews": 2,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.6666666666666666,
+      "retained": 70,
+      "retention_denominator": 70,
+      "retention": 1.0,
+      "usd_upper_bound": 0.53374,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 23387,
+      "uncached_input_tokens": 1868,
+      "cache_write_tokens": 1850,
+      "reasoning_tokens": 15,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "b37a6ce4f18c5110ca3c5122323500a7",
+            "sha256": "fb82bef79c2c66452867bacf2346db82e68e211059353750f2a22080cbc57a91",
+            "disposition": "discarded",
+            "changed": 5105,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 2,
+                "correct_before": 2,
+                "correct_after": 1,
+                "correct_delta": -1,
+                "accuracy_delta": -0.5,
+                "fixed": [],
+                "regressed": [
+                  2
+                ],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          },
+          {
+            "turn": 4,
+            "candidate_id": "facf8ce66c990250f3a1998abdb1e6b4",
+            "sha256": "a1b6c89efc3289278259581a8ace0c5da7a109d3638d97c0758d832b6192c561",
+            "disposition": "committed",
+            "changed": 5111,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 1,
+                "correct_after": 2,
+                "correct_delta": 1,
+                "accuracy_delta": 0.5,
+                "fixed": [
+                  3
+                ],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 2,
+                "correct_before": 2,
+                "correct_after": 2,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 2,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 4,
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "alias_acquisition-042-r1-D",
+      "grade": "scored",
+      "reward": 1.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 3,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 1,
+          "retained": 1,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 18.551,
+      "changed_parameters": 5109,
+      "public_input_sha256": "0ac9fbe27ded4cc6d102045757769f7394e9e1430c4a0bd258923359445e56bd",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 4,
+      "prompt_tokens": 17416,
+      "completion_tokens": 392,
+      "total_tokens": 17808,
+      "target_forwards": 30,
+      "target_forward_tokens": 690,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 70,
+      "retention_denominator": 70,
+      "retention": 1.0,
+      "usd_upper_bound": 0.364,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 15816,
+      "uncached_input_tokens": 1600,
+      "cache_write_tokens": 1588,
+      "reasoning_tokens": 16,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 10043,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                10043
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "07a6e884914f78a8066a4be7f33470ec",
+            "sha256": "3da9ca60fdd2e304d78430d4f16d58110496598f9f79ef4e6d1f821d34a22f80",
+            "disposition": "committed",
+            "changed": 5109,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 5,
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "factual_update-072-r1-C",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 4,
+          "retained": 2,
+          "fixed": 0,
+          "regressed": 2
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 27.623,
+      "changed_parameters": 7673,
+      "public_input_sha256": "7b7cd6475f5756cd176d8f00a4da6d3876065ee1b4f9d99cbe76259e9d25821d",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 6,
+      "prompt_tokens": 26456,
+      "completion_tokens": 634,
+      "total_tokens": 27090,
+      "target_forwards": 39,
+      "target_forward_tokens": 1311,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 2,
+      "successful_previews": 2,
+      "nonempty_previews": 2,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 66,
+      "retention_denominator": 68,
+      "retention": 0.9705882352941176,
+      "usd_upper_bound": 0.55448,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 24416,
+      "uncached_input_tokens": 2040,
+      "cache_write_tokens": 2022,
+      "reasoning_tokens": 45,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "4d98339701ae87f5445fd85dfd417514",
+            "sha256": "01e9048cb0f02505ca2b7b5c62132646f198441353584cd75b21f991dc9e1487",
+            "disposition": "discarded",
+            "changed": 5107,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 49.75
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": -1.68359375
+              }
+            }
+          },
+          {
+            "turn": 4,
+            "candidate_id": "e3053225afcdcfed6e0dc2d1ff6fafed",
+            "sha256": "7a0e32cafaf338b4dacaa39412c84e8a1fe76ffd8874f0dc42d896da7fa63a15",
+            "disposition": "committed",
+            "changed": 7673,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 6,
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "factual_update-072-r1-D",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 4,
+          "retained": 2,
+          "fixed": 0,
+          "regressed": 2
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 28.651,
+      "changed_parameters": 7672,
+      "public_input_sha256": "7b7cd6475f5756cd176d8f00a4da6d3876065ee1b4f9d99cbe76259e9d25821d",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 6,
+      "prompt_tokens": 29821,
+      "completion_tokens": 640,
+      "total_tokens": 30461,
+      "target_forwards": 42,
+      "target_forward_tokens": 1281,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 2,
+      "successful_previews": 2,
+      "nonempty_previews": 2,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 66,
+      "retention_denominator": 68,
+      "retention": 0.9705882352941176,
+      "usd_upper_bound": 0.62202,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 27306,
+      "uncached_input_tokens": 2515,
+      "cache_write_tokens": 2497,
+      "reasoning_tokens": 44,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 10043,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                10043
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 1.0
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": 0.05078125
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "2a414e5f7020318f50230f68f0108f26",
+            "sha256": "7d54d22d1c39ad51f9c822897861ba4f76ad79233309f1789a4571ac54cb9b2f",
+            "disposition": "discarded",
+            "changed": 2557,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          },
+          {
+            "turn": 4,
+            "candidate_id": "10630cbd838ffb4619c912c8350d1bba",
+            "sha256": "2b84b40f22f6e7bdcc66986a6f87db50be31b90d0801a8c72638ed09e6ab9d40",
+            "disposition": "committed",
+            "changed": 7672,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 7,
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-034-r1-D",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 1
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 33.326,
+      "changed_parameters": 10232,
+      "public_input_sha256": "d5266ac2fdd7b8f49c1cd8f409b3e76791b409ec8b2cc1c233067bec151daa06",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 6,
+      "prompt_tokens": 29057,
+      "completion_tokens": 729,
+      "total_tokens": 29786,
+      "target_forwards": 39,
+      "target_forward_tokens": 981,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 69,
+      "retention_denominator": 70,
+      "retention": 0.9857142857142858,
+      "usd_upper_bound": 0.6103,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 26763,
+      "uncached_input_tokens": 2294,
+      "cache_write_tokens": 2276,
+      "reasoning_tokens": 144,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 5077,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                5077
+              ],
+              "factor": 0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 0.5
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": 0.28125
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "2a16f607f0bd87aecd1c89c00dde8dd3",
+            "sha256": "df963d95b864b867869a2e78784f7a1c50b23bff92b596ae21178a8b3417e5c5",
+            "disposition": "committed",
+            "changed": 7673,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 26.75
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": -23.1875
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 8,
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-034-r1-C",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 1
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 25.611,
+      "changed_parameters": 7675,
+      "public_input_sha256": "d5266ac2fdd7b8f49c1cd8f409b3e76791b409ec8b2cc1c233067bec151daa06",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 6,
+      "prompt_tokens": 25418,
+      "completion_tokens": 615,
+      "total_tokens": 26033,
+      "target_forwards": 25,
+      "target_forward_tokens": 631,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 69,
+      "retention_denominator": 70,
+      "retention": 0.9857142857142858,
+      "usd_upper_bound": 0.53296,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 23729,
+      "uncached_input_tokens": 1689,
+      "cache_write_tokens": 1671,
+      "reasoning_tokens": 114,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "44492bfa4390005166b8f0dafd3f098f",
+            "sha256": "51ee57823c6270def5edface06d923d8b3263582e05f187828829c5ab3ed9915",
+            "disposition": "committed",
+            "changed": 7675,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 9,
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "output_code_remapping-018-r1-C",
+      "grade": "scored",
+      "reward": 0.9506172839506173,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 32,
+          "retained": 0,
+          "fixed": 32,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 16,
+          "retained": 13,
+          "fixed": 0,
+          "regressed": 2
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 2,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 2
+        }
+      },
+      "elapsed_seconds": 20.114,
+      "changed_parameters": 5115,
+      "public_input_sha256": "9b38059f3df9a293ef17339e68fca149714c52ec22254236070dbca8aaad853e",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 5,
+      "prompt_tokens": 20625,
+      "completion_tokens": 470,
+      "total_tokens": 21095,
+      "target_forwards": 24,
+      "target_forward_tokens": 822,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 77,
+      "retention_denominator": 81,
+      "retention": 0.9506172839506173,
+      "usd_upper_bound": 0.4313,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 19045,
+      "uncached_input_tokens": 1580,
+      "cache_write_tokens": 1565,
+      "reasoning_tokens": 0,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 3,
+            "candidate_id": "a03e53a09860134d06bbf48fc7640521",
+            "sha256": "d4d5e29a04b1fdef01c0413e8d8f9ef761ded6abea6efca0ff5c8f18f4f00a0f",
+            "disposition": "committed",
+            "changed": 5115,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 2,
+                "correct_delta": 2,
+                "accuracy_delta": 1.0,
+                "fixed": [
+                  0,
+                  1
+                ],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 10,
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "output_code_remapping-018-r1-D",
+      "grade": "scored",
+      "reward": 0.9506172839506173,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 32,
+          "retained": 0,
+          "fixed": 32,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 16,
+          "retained": 13,
+          "fixed": 0,
+          "regressed": 2
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 2,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 2
+        }
+      },
+      "elapsed_seconds": 22.011,
+      "changed_parameters": 5112,
+      "public_input_sha256": "9b38059f3df9a293ef17339e68fca149714c52ec22254236070dbca8aaad853e",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 5,
+      "prompt_tokens": 23475,
+      "completion_tokens": 495,
+      "total_tokens": 23970,
+      "target_forwards": 41,
+      "target_forward_tokens": 1414,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": true,
+      "internal_changed_visible_text": true,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 77,
+      "retention_denominator": 81,
+      "retention": 0.9506172839506173,
+      "usd_upper_bound": 0.4893,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 21445,
+      "uncached_input_tokens": 2030,
+      "cache_write_tokens": 2015,
+      "reasoning_tokens": 0,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 6525,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                6525
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 3,
+            "candidate_id": "673cac2591ba2b63f507aed26b6b8048",
+            "sha256": "2ffe5acee07c65101e614d71508ad947bdf959bc115f8a2003396c05fa43a1b1",
+            "disposition": "committed",
+            "changed": 5112,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 2,
+                "correct_delta": 2,
+                "accuracy_delta": 1.0,
+                "fixed": [
+                  0,
+                  1
+                ],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 11,
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "factual_update-097-r1-D",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 4,
+          "retained": 3,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 63,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 25.439,
+      "changed_parameters": 5112,
+      "public_input_sha256": "5b00a1fc34cb547ba04db3ea34f86bd2c9a55fb27eb16b919003901dd8f35990",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 6,
+      "prompt_tokens": 29728,
+      "completion_tokens": 633,
+      "total_tokens": 30361,
+      "target_forwards": 35,
+      "target_forward_tokens": 1129,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 66,
+      "retention_denominator": 66,
+      "retention": 1.0,
+      "usd_upper_bound": 0.61988,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 27354,
+      "uncached_input_tokens": 2374,
+      "cache_write_tokens": 2356,
+      "reasoning_tokens": 57,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 10043,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                10043
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "9a57cbd139a6e7e55fbd471038a4085c",
+            "sha256": "71544592447cc097e7cab6400de75f8f7c346db63e760f58c9a112a42bc44138",
+            "disposition": "committed",
+            "changed": 5108,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 38.0
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": 2.0
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 12,
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "factual_update-097-r1-C",
+      "grade": "scored",
+      "reward": 0.0,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 4,
+          "retained": 2,
+          "fixed": 0,
+          "regressed": 1
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 63,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 0,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 23.844,
+      "changed_parameters": 10223,
+      "public_input_sha256": "5b00a1fc34cb547ba04db3ea34f86bd2c9a55fb27eb16b919003901dd8f35990",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 6,
+      "prompt_tokens": 26587,
+      "completion_tokens": 594,
+      "total_tokens": 27181,
+      "target_forwards": 21,
+      "target_forward_tokens": 675,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.0,
+      "retained": 65,
+      "retention_denominator": 66,
+      "retention": 0.9848484848484849,
+      "usd_upper_bound": 0.5555,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 24577,
+      "uncached_input_tokens": 2010,
+      "cache_write_tokens": 1992,
+      "reasoning_tokens": 19,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "8c3d8b6504c96fc104943174b4f99cd8",
+            "sha256": "dd651940f17003ef391b9899c8803afccc99f241bb3571d320c7556da431041e",
+            "disposition": "committed",
+            "changed": 5110,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": 50.25
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": 3.25
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 13,
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "output_code_remapping-040-r1-D",
+      "grade": "scored",
+      "reward": 0.9367088607594937,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 32,
+          "retained": 0,
+          "fixed": 32,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 16,
+          "retained": 11,
+          "fixed": 0,
+          "regressed": 3
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 63,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 2,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 2
+        }
+      },
+      "elapsed_seconds": 24.736,
+      "changed_parameters": 5118,
+      "public_input_sha256": "21e9912e5aa05f396fa55f6c68cf1cd97d3e8a9e82d6cfd131308c80e64c3692",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 5,
+      "prompt_tokens": 23470,
+      "completion_tokens": 496,
+      "total_tokens": 23966,
+      "target_forwards": 42,
+      "target_forward_tokens": 1458,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": true,
+      "internal_changed_visible_text": true,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 74,
+      "retention_denominator": 79,
+      "retention": 0.9367088607594937,
+      "usd_upper_bound": 0.48924,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 21440,
+      "uncached_input_tokens": 2030,
+      "cache_write_tokens": 2015,
+      "reasoning_tokens": 0,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 6525,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                6525
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 0,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 3,
+            "candidate_id": "9bd1d270483069a612e3370b273f4ef5",
+            "sha256": "f031c002c2b797ffd08e4bc2e0ffba9e51991daa326255cc557b058c0ecffdee",
+            "disposition": "committed",
+            "changed": 5118,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 2,
+                "correct_delta": 2,
+                "accuracy_delta": 1.0,
+                "fixed": [
+                  0,
+                  1
+                ],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 14,
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "output_code_remapping-040-r1-C",
+      "grade": "scored",
+      "reward": 0.9367088607594937,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 32,
+          "retained": 0,
+          "fixed": 32,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 16,
+          "retained": 11,
+          "fixed": 0,
+          "regressed": 3
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 63,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 2,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 2
+        }
+      },
+      "elapsed_seconds": 21.234,
+      "changed_parameters": 5118,
+      "public_input_sha256": "21e9912e5aa05f396fa55f6c68cf1cd97d3e8a9e82d6cfd131308c80e64c3692",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 5,
+      "prompt_tokens": 20736,
+      "completion_tokens": 500,
+      "total_tokens": 21236,
+      "target_forwards": 25,
+      "target_forward_tokens": 866,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 74,
+      "retention_denominator": 79,
+      "retention": 0.9367088607594937,
+      "usd_upper_bound": 0.43472,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 19124,
+      "uncached_input_tokens": 1612,
+      "cache_write_tokens": 1597,
+      "reasoning_tokens": 11,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 3,
+            "candidate_id": "cb9ac54f8efdb402ba39c79d666772f9",
+            "sha256": "f031c002c2b797ffd08e4bc2e0ffba9e51991daa326255cc557b058c0ecffdee",
+            "disposition": "committed",
+            "changed": 5118,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 0,
+                "correct_after": 2,
+                "correct_delta": 2,
+                "accuracy_delta": 1.0,
+                "fixed": [
+                  0,
+                  1
+                ],
+                "regressed": [],
+                "retained_correct": 0,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 15,
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "alias_acquisition-075-r1-D",
+      "grade": "scored",
+      "reward": 0.6666666666666666,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 2,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 1,
+          "retained": 1,
+          "fixed": 0,
+          "regressed": 0
+        }
+      },
+      "elapsed_seconds": 28.966,
+      "changed_parameters": 5111,
+      "public_input_sha256": "b0885faa198a8a901f1a7c6c78e7105a04f59df12636170a345f04edb2bc588e",
+      "tool_menu_sha256": "c7666c0c53d0586c778fc519baf1015f142a64cef6f4654aacafd7f484a7f6fc",
+      "turns": 6,
+      "prompt_tokens": 28444,
+      "completion_tokens": 775,
+      "total_tokens": 29219,
+      "target_forwards": 62,
+      "target_forward_tokens": 1446,
+      "successful_behavior_calls": 1,
+      "internal_requests": 1,
+      "successful_internal_calls": 1,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 2,
+      "successful_previews": 2,
+      "nonempty_previews": 2,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 0.6666666666666666,
+      "retained": 70,
+      "retention_denominator": 70,
+      "retention": 1.0,
+      "usd_upper_bound": 0.59988,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 26150,
+      "uncached_input_tokens": 2294,
+      "cache_write_tokens": 2276,
+      "reasoning_tokens": 10,
+      "actions": {
+        "measurements": [
+          {
+            "turn": 1,
+            "layer": 10,
+            "unit": 10043,
+            "suggested": {
+              "tensor": "model.language_model.layers.10.mlp.down_proj.weight",
+              "operation": "scale",
+              "selection": [
+                [
+                  0,
+                  2560
+                ],
+                10043
+              ],
+              "factor": 0.0
+            },
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "d27307fa3efbac490dbf83700221339c",
+            "sha256": "504f6ba0a67985ddd10b3d19fbf6e4a163f1a51264fae8d511cb7a84b41aa58c",
+            "disposition": "discarded",
+            "changed": 5117,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 1,
+                "correct_after": 2,
+                "correct_delta": 1,
+                "accuracy_delta": 0.5,
+                "fixed": [
+                  3
+                ],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 2,
+                "correct_before": 2,
+                "correct_after": 1,
+                "correct_delta": -1,
+                "accuracy_delta": -0.5,
+                "fixed": [],
+                "regressed": [
+                  2
+                ],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          },
+          {
+            "turn": 4,
+            "candidate_id": "b8a9d7fb12bfc8b44475fc386b6d3bbd",
+            "sha256": "0989c596fa48c58eec798b11728a917b694009d69716975ecce694849ed8d326",
+            "disposition": "committed",
+            "changed": 5111,
+            "comparison": {
+              "improve": {
+                "n": 2,
+                "correct_before": 1,
+                "correct_after": 2,
+                "correct_delta": 1,
+                "accuracy_delta": 0.5,
+                "fixed": [
+                  3
+                ],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 2,
+                "correct_before": 2,
+                "correct_after": 2,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 2,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    },
+    {
+      "order": 16,
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "alias_acquisition-075-r1-C",
+      "grade": "scored",
+      "reward": 0.9857142857142858,
+      "submitted": true,
+      "qualified_transitions": {
+        "targets": {
+          "items": 3,
+          "retained": 0,
+          "fixed": 3,
+          "regressed": 0
+        },
+        "nearby_controls": {
+          "items": 6,
+          "retained": 5,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "general_controls": {
+          "items": 64,
+          "retained": 64,
+          "fixed": 0,
+          "regressed": 0
+        },
+        "override_controls": {
+          "items": 1,
+          "retained": 0,
+          "fixed": 0,
+          "regressed": 1
+        }
+      },
+      "elapsed_seconds": 18.168,
+      "changed_parameters": 5113,
+      "public_input_sha256": "b0885faa198a8a901f1a7c6c78e7105a04f59df12636170a345f04edb2bc588e",
+      "tool_menu_sha256": "2779d8dd45e2733db4821fcc8d0a5b06c286958163429571963b20a5d6bf276f",
+      "turns": 4,
+      "prompt_tokens": 15421,
+      "completion_tokens": 364,
+      "total_tokens": 15785,
+      "target_forwards": 18,
+      "target_forward_tokens": 414,
+      "successful_behavior_calls": 1,
+      "internal_requests": 0,
+      "successful_internal_calls": 0,
+      "internal_changed_generation_ids": false,
+      "internal_changed_visible_text": false,
+      "internal_changed_exact_matches": false,
+      "matching_recipe_attempted_successfully": false,
+      "matching_recipe_applied": false,
+      "preview_requests": 1,
+      "successful_previews": 1,
+      "nonempty_previews": 1,
+      "successful_commits": 1,
+      "tool_errors": 0,
+      "target_gain": 1.0,
+      "retained": 69,
+      "retention_denominator": 70,
+      "retention": 0.9857142857142858,
+      "usd_upper_bound": 0.32298,
+      "admitted": false,
+      "binary_success": null,
+      "cached_input_tokens": 14231,
+      "uncached_input_tokens": 1190,
+      "cache_write_tokens": 1178,
+      "reasoning_tokens": 13,
+      "actions": {
+        "measurements": [],
+        "previews": [
+          {
+            "turn": 2,
+            "candidate_id": "06531831dcd977fd7a61559e8a873a6c",
+            "sha256": "651ef0e7d53cb5c5768af470dbeefe23907b8dc852e063a133626592301836e1",
+            "disposition": "committed",
+            "changed": 5113,
+            "comparison": {
+              "improve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              },
+              "preserve": {
+                "n": 1,
+                "correct_before": 1,
+                "correct_after": 1,
+                "correct_delta": 0,
+                "accuracy_delta": 0.0,
+                "fixed": [],
+                "regressed": [],
+                "retained_correct": 1,
+                "mean_margin_change": null
+              }
+            }
+          }
+        ],
+        "later_writes_to_measured_columns": []
+      }
+    }
+  ]
+}

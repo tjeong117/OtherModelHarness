@@ -1,0 +1,113 @@
+{
+  "objective": "Update this real association for the reference date 2026-03-01: the chief operating officer of Apple is Sabih Khan. Preserve other attributes of Apple, other entities and unrelated uses of both the old and new answer.",
+  "parameters": {
+    "entity": "Apple",
+    "fact_id": "research_batch2_apple_coo",
+    "reference_date": "2026-03-01",
+    "relation": "chief operating officer",
+    "replacement": "Sabih Khan",
+    "stale_candidates": [
+      "Jeff Williams"
+    ]
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Who or what is the chief operating officer of Apple on 2026-03-01? Give only the name.",
+      "answers": [
+        "Sabih Khan"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "Apple": [
+      31319
+    ],
+    " Apple": [
+      9947
+    ],
+    "research_batch2_apple_coo": [
+      44606,
+      236779,
+      13679,
+      236778,
+      236779,
+      17641,
+      236779,
+      1364,
+      236748
+    ],
+    " research_batch2_apple_coo": [
+      2958,
+      236779,
+      13679,
+      236778,
+      236779,
+      17641,
+      236779,
+      1364,
+      236748
+    ],
+    "2026-03-01": [
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    " 2026-03-01": [
+      236743,
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    "chief operating officer": [
+      42431,
+      8172,
+      10095
+    ],
+    " chief operating officer": [
+      9329,
+      8172,
+      10095
+    ],
+    "Sabih Khan": [
+      55471,
+      2839,
+      18516
+    ],
+    " Sabih Khan": [
+      16447,
+      2839,
+      18516
+    ],
+    "Jeff Williams": [
+      49469,
+      13643
+    ],
+    " Jeff Williams": [
+      14583,
+      13643
+    ]
+  },
+  "instructions": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch."
+}

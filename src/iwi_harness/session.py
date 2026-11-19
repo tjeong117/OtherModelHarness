@@ -106,7 +106,8 @@ class EditingSession:
     def _tool_schemas(self, *, detailed_writes):
         schemas = tool_schemas(detailed_writes=detailed_writes, adaptive_interpretability=self._adaptive,
                                behavior_checks=self._behavior_checks, internal_measurements=self._internal_measurements,
-                               edit_preview=self._edit_preview, sae_available=self._can_test_sae)
+                               edit_preview=self._edit_preview, sae_available=self._can_test_sae,
+                               native_available=bool(self._native_layers))
         if self._standalone_probes:
             return schemas
         visible = {"run_target", "read_weights", "write_weights", "submit_patch"}
@@ -267,6 +268,10 @@ class EditingSession:
                 event.update(arguments=arguments, request=self._size(serialized))
                 problem = next(self._validators[name].iter_errors(arguments), None)
                 if problem:
+                    if (name in ("test_behavior", "preview_weights") and problem.absolute_path
+                            and problem.absolute_path[0] == "token_ids"):
+                        raise ValueError("Omit token_ids to score full answers. For an optional first-token "
+                                         "margin, pass two distinct integers [wanted_next_id, alternative_next_id].")
                     if (name == "write_weights" and isinstance(arguments, dict)
                             and {"tensor", "operation"} <= arguments.keys()):
                         operands = {k: v for k, v in arguments.items() if k not in ("tensor", "operation", "selection")}

@@ -1,0 +1,44 @@
+{
+  "order": 23,
+  "slug": "output_code_remapping-018-r2-D",
+  "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "variant_index": 18,
+  "replicate": 2,
+  "seed": 4191775823,
+  "arm": "D",
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "a3e914268f6bfb210e610415dde1b6129a1eba69ffd03cea1206ca6bb2c0e7cc",
+    "bytes": 21136,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2048,
+    "revision": 2
+  },
+  "editor_usage": {
+    "prompt_tokens": 35195,
+    "completion_tokens": 1164,
+    "total_tokens": 36359
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 17,
+    "forward_tokens": 592,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 34.993,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior",
+    "preview_weights",
+    "commit_preview",
+    "discard_preview"
+  ]
+}

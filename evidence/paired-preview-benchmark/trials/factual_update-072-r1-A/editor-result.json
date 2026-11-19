@@ -1,0 +1,35 @@
+{
+  "order": 30,
+  "slug": "factual_update-072-r1-A",
+  "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 72,
+  "replicate": 1,
+  "seed": 1170577532,
+  "arm": "A",
+  "status": "no_submission",
+  "reason": "updater turn limit reached before submission",
+  "receipt": null,
+  "editor_usage": {
+    "prompt_tokens": 25099,
+    "completion_tokens": 1065,
+    "total_tokens": 26164
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 6,
+    "forward_tokens": 183,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 30.907,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior"
+  ]
+}

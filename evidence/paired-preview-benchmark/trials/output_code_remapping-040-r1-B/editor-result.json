@@ -1,0 +1,35 @@
+{
+  "order": 50,
+  "slug": "output_code_remapping-040-r1-B",
+  "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "variant_index": 40,
+  "replicate": 1,
+  "seed": 2598292519,
+  "arm": "B",
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "editor_usage": {
+    "prompt_tokens": 21596,
+    "completion_tokens": 1558,
+    "total_tokens": 23154
+  },
+  "turns": 5,
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 42.212,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior"
+  ]
+}
