@@ -1,0 +1,1179 @@
+{
+  "result": {
+    "status": "submitted",
+    "receipt": {
+      "sha256": "f82c5725e06768c45fe04175622fa50584a51e13923e15b5db24ed376cdf4073",
+      "bytes": 552,
+      "format": "iwi-harness.replacements.v1",
+      "changed_parameters": 2,
+      "revision": 1
+    },
+    "turns": 4,
+    "editor": {
+      "provider": "local",
+      "id": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    "stopReason": "toolUse",
+    "maxTurns": 8,
+    "maxOutputTokens": 384,
+    "usageByTurn": [
+      {
+        "input": 3713,
+        "output": 16,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 3729,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      {
+        "input": 4087,
+        "output": 55,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4142,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      {
+        "input": 4468,
+        "output": 43,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4511,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      {
+        "input": 4640,
+        "output": 16,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4656,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      }
+    ]
+  },
+  "messages": [
+    {
+      "role": "system",
+      "content": "Use the public target editing tools to complete the objective. You have 8 model turns. Finish by calling submit_patch. Session {\"protocol\":\"iwi-harness.v1\",\"model_id\":\"iwi/tiny-transformer\",\"revision\":\"tiny-v1\",\"chat_template_sha256\":null,\"block_count\":1,\"sae\":null,\"limits\":{\"max_tool_calls\":128,\"max_forwards\":256,\"max_forward_tokens\":262144},\"interpretability\":false,\"tool_schema\":{\"utf8_bytes\":10457},\"public_experiments\":{\"internal_measurements\":false,\"edit_preview\":true,\"default_case_count\":3}}",
+      "toolsAdded": [
+        {
+          "name": "read_weights",
+          "description": "With no name, page through the tensor manifest. Read a weight slice or captured handle by reference, summary or bounded numeric values. Select axes by integer or [start,stop).",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "tensor": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "handle": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "selection": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 1099511627776
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 1099511627776
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  ]
+                },
+                "minItems": 0,
+                "maxItems": 12
+              },
+              "mode": {
+                "enum": [
+                  "ref",
+                  "summary",
+                  "values"
+                ]
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1099511627776
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 256
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "write_weights",
+          "description": "Edit a writable slice. Get exact names and shapes with read_weights({}). Copy uses source, replace/add use value of the selected shape, fill uses a scalar value, scale uses factor, and low_rank_add uses left/right with optional factor. Reference a slice with {tensor,selection} or {handle}. A successful write expires existing handles.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "tensor": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "operation": {
+                "enum": [
+                  "copy",
+                  "replace",
+                  "fill",
+                  "scale",
+                  "add",
+                  "low_rank_add"
+                ]
+              },
+              "selection": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 1099511627776
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 1099511627776
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  ]
+                },
+                "minItems": 0,
+                "maxItems": 12
+              },
+              "source": {
+                "$ref": "#/$defs/expression"
+              },
+              "value": {
+                "$ref": "#/$defs/expression"
+              },
+              "left": {
+                "$ref": "#/$defs/expression"
+              },
+              "right": {
+                "$ref": "#/$defs/expression"
+              },
+              "factor": {
+                "type": "number"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "tensor",
+              "operation"
+            ],
+            "dependentSchemas": {
+              "operation": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "source": {},
+                      "operation": {
+                        "const": "copy"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "source"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "value": {},
+                      "operation": {
+                        "const": "replace"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "value": {
+                        "type": "number"
+                      },
+                      "operation": {
+                        "const": "fill"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "factor": {},
+                      "operation": {
+                        "const": "scale"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "factor"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "value": {},
+                      "operation": {
+                        "const": "add"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "value"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {},
+                      "selection": {},
+                      "left": {},
+                      "right": {},
+                      "factor": {},
+                      "operation": {
+                        "const": "low_rank_add"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "left",
+                      "right"
+                    ]
+                  }
+                ]
+              }
+            },
+            "$defs": {
+              "expression": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {
+                        "type": "string"
+                      },
+                      "selection": {
+                        "type": [
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "tensor"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "handle": {
+                        "type": "string"
+                      },
+                      "selection": {
+                        "type": [
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "handle"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "values": {
+                        "type": [
+                          "array",
+                          "number"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "values"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "enum": [
+                          "add",
+                          "subtract",
+                          "outer"
+                        ]
+                      },
+                      "left": {},
+                      "right": {}
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "op",
+                      "left",
+                      "right"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "scale"
+                      },
+                      "left": {},
+                      "factor": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "op",
+                      "left",
+                      "factor"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "run_target",
+          "description": "Generate greedily on public prompts.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "prompts": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 65536
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "max_new_tokens": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 256
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "prompts"
+            ]
+          }
+        },
+        {
+          "name": "submit_patch",
+          "description": "Freeze the current numerical patch for clean replay. The artifact location is chosen by the host.",
+          "parameters": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "tokenize_target",
+          "description": "Look up paged input token positions in a rendered target prompt and token IDs of literal answer strings. Include leading whitespace when relevant. This uses the target tokenizer and consumes no target forwards.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "prompt": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 65536
+              },
+              "texts": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 512
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1099511627776
+              },
+              "limit": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 64
+              }
+            },
+            "additionalProperties": false,
+            "anyOf": [
+              {
+                "required": [
+                  "prompt"
+                ]
+              },
+              {
+                "required": [
+                  "texts"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "test_behavior",
+          "description": "Call test_behavior({}) to score the host's public cases by greedy, whitespace-trimmed exact answer match. Supply cases to override. Omit token_ids for whole-answer checks. Only supply two token IDs [wanted, alternative] for a first-step logit margin. A length-limited answer is flagged.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "cases": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "prompt": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 65536
+                    },
+                    "answers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "minItems": 1,
+                      "maxItems": 6
+                    },
+                    "slice": {
+                      "enum": [
+                        "improve",
+                        "preserve"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "prompt",
+                    "answers",
+                    "slice"
+                  ]
+                },
+                "minItems": 1,
+                "maxItems": 6
+              },
+              "max_new_tokens": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 32
+              },
+              "token_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1099511627776
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "uniqueItems": true,
+                "description": "Ordered next-token IDs [wanted, alternative]. The margin is their logit difference."
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        {
+          "name": "preview_weights",
+          "description": "Measure public answers before and after up to eight proposed writes, then restore current weights. Returns a candidate ID and per-slice outcomes. A new successful preview replaces the previous candidate. Supply only writes to use the host's public cases. Supply cases to override. Omit token_ids for whole-answer checks.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "writes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "tensor": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 512
+                    },
+                    "operation": {
+                      "enum": [
+                        "copy",
+                        "replace",
+                        "fill",
+                        "scale",
+                        "add",
+                        "low_rank_add"
+                      ]
+                    },
+                    "selection": {
+                      "type": "array",
+                      "items": {
+                        "oneOf": [
+                          {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 1099511627776
+                          },
+                          {
+                            "type": "array",
+                            "items": {
+                              "type": "integer",
+                              "minimum": 0,
+                              "maximum": 1099511627776
+                            },
+                            "minItems": 2,
+                            "maxItems": 2
+                          }
+                        ]
+                      },
+                      "minItems": 0,
+                      "maxItems": 12
+                    },
+                    "source": {
+                      "$ref": "#/$defs/expression"
+                    },
+                    "value": {
+                      "$ref": "#/$defs/expression"
+                    },
+                    "left": {
+                      "$ref": "#/$defs/expression"
+                    },
+                    "right": {
+                      "$ref": "#/$defs/expression"
+                    },
+                    "factor": {
+                      "type": "number"
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "tensor",
+                    "operation"
+                  ],
+                  "dependentSchemas": {
+                    "operation": {
+                      "oneOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "source": {},
+                            "operation": {
+                              "const": "copy"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "source"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "value": {},
+                            "operation": {
+                              "const": "replace"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "value": {
+                              "type": "number"
+                            },
+                            "operation": {
+                              "const": "fill"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "factor": {},
+                            "operation": {
+                              "const": "scale"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "factor"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "value": {},
+                            "operation": {
+                              "const": "add"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "value"
+                          ]
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "tensor": {},
+                            "selection": {},
+                            "left": {},
+                            "right": {},
+                            "factor": {},
+                            "operation": {
+                              "const": "low_rank_add"
+                            }
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "left",
+                            "right"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "minItems": 1,
+                "maxItems": 8
+              },
+              "cases": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "prompt": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 65536
+                    },
+                    "answers": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 512
+                      },
+                      "minItems": 1,
+                      "maxItems": 6
+                    },
+                    "slice": {
+                      "enum": [
+                        "improve",
+                        "preserve"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                    "prompt",
+                    "answers",
+                    "slice"
+                  ]
+                },
+                "minItems": 1,
+                "maxItems": 6
+              },
+              "max_new_tokens": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 32
+              },
+              "token_ids": {
+                "type": "array",
+                "items": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1099511627776
+                },
+                "minItems": 2,
+                "maxItems": 2,
+                "uniqueItems": true,
+                "description": "Ordered next-token IDs [wanted, alternative]. The margin is their logit difference."
+              },
+              "expected_revision": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1099511627776
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "writes"
+            ],
+            "$defs": {
+              "expression": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "tensor": {
+                        "type": "string"
+                      },
+                      "selection": {
+                        "type": [
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "tensor"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "handle": {
+                        "type": "string"
+                      },
+                      "selection": {
+                        "type": [
+                          "array",
+                          "null"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "handle"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "values": {
+                        "type": [
+                          "array",
+                          "number"
+                        ]
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "values"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "enum": [
+                          "add",
+                          "subtract",
+                          "outer"
+                        ]
+                      },
+                      "left": {},
+                      "right": {}
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "op",
+                      "left",
+                      "right"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "scale"
+                      },
+                      "left": {},
+                      "factor": {
+                        "type": "number"
+                      }
+                    },
+                    "additionalProperties": false,
+                    "required": [
+                      "op",
+                      "left",
+                      "factor"
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "name": "commit_preview",
+          "description": "Apply the exact candidate from preview_weights at the same weight revision.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "candidate_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "candidate_id"
+            ]
+          }
+        },
+        {
+          "name": "discard_preview",
+          "description": "Forget the named pending preview and keep the current weights.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "candidate_id": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "candidate_id"
+            ]
+          }
+        }
+      ],
+      "timestamp": 0
+    },
+    {
+      "role": "user",
+      "content": [
+        {
+          "type": "text",
+          "text": "Make the tiny target treat dax as an alias of red. Public answers: color dax → yes, color red → yes, color blue → no. The host has bound these three cases. This is a guided tool-use smoke test. The known solution is to copy row 3 (red) to row 5 (dax) in embed.weight. Make one native tool call per turn. First call test_behavior with {}. Next call preview_weights with {\"writes\":[{\"tensor\":\"embed.weight\",\"selection\":[5],\"operation\":\"copy\",\"source\":{\"tensor\":\"embed.weight\",\"selection\":[3]}}]}. If the preview fixes dax and preserves the familiar colors, pass the returned candidate_id to commit_preview. Finish with submit_patch({})."
+        }
+      ],
+      "timestamp": 1795128621728
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call-1-0",
+          "name": "test_behavior",
+          "arguments": {}
+        }
+      ],
+      "api": "openai-completions",
+      "provider": "local",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "usage": {
+        "input": 3713,
+        "output": 16,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 3729,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1795128621730,
+      "responseId": "qwen-1",
+      "rawStopReason": "tool_calls",
+      "durationMs": 1464,
+      "thinkingLevel": "off"
+    },
+    {
+      "role": "toolResult",
+      "toolCallId": "call-1-0",
+      "toolName": "test_behavior",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"baseline\":[{\"index\":0,\"case_id\":\"3c53580d7d69e3ae\",\"slice\":\"improve\",\"correct\":false,\"text\":\"no\",\"display_truncated\":false,\"truncated\":false,\"generated_tokens\":2,\"first_token_id\":7,\"generation_id\":\"b777b15e5130d772\",\"margin\":null},{\"index\":1,\"case_id\":\"02f21b80df55bdae\",\"slice\":\"preserve\",\"correct\":true,\"text\":\"yes\",\"display_truncated\":false,\"truncated\":false,\"generated_tokens\":2,\"first_token_id\":6,\"generation_id\":\"553ebf728dc0653d\",\"margin\":null},{\"index\":2,\"case_id\":\"69629c7ebcc17225\",\"slice\":\"preserve\",\"correct\":true,\"text\":\"no\",\"display_truncated\":false,\"truncated\":false,\"generated_tokens\":2,\"first_token_id\":7,\"generation_id\":\"b777b15e5130d772\",\"margin\":null}],\"baseline_cache_hit\":false,\"revision\":0,\"cost\":{\"forwards\":6,\"forward_tokens\":21,\"probe_rows\":0,\"sae_rows\":0},\"artifact\":\"behavior/986d8ef85195adc82656c3ee9909d37062f9fd723585c5a52be903c2123e5381.json\"}"
+        }
+      ],
+      "details": null,
+      "isError": false,
+      "durationMs": 23,
+      "timestamp": 1795128623220
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call-2-0",
+          "name": "preview_weights",
+          "arguments": {
+            "writes": [
+              {
+                "tensor": "embed.weight",
+                "selection": [
+                  5
+                ],
+                "operation": "copy",
+                "source": {
+                  "tensor": "embed.weight",
+                  "selection": [
+                    3
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "api": "openai-completions",
+      "provider": "local",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "usage": {
+        "input": 4087,
+        "output": 55,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4142,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1795128623221,
+      "responseId": "qwen-2",
+      "rawStopReason": "tool_calls",
+      "durationMs": 1790,
+      "thinkingLevel": "off"
+    },
+    {
+      "role": "toolResult",
+      "toolCallId": "call-2-0",
+      "toolName": "preview_weights",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"candidate_id\":\"e1cccc8421dfe7fb6dede1353f55bff8\",\"sha256\":\"e367b89d6f6fe0d4d14c0c584249a97bd6ebc7f67737a1b8f2ebe72d8999467d\",\"parent_revision\":0,\"changed_parameters\":2,\"delta_l2\":1.4142135623730951,\"behavior\":{\"improve\":{\"n\":1,\"correct_before\":0,\"correct_after\":1,\"correct_delta\":1,\"accuracy_delta\":1,\"fixed\":[0],\"regressed\":[],\"retained_correct\":0,\"correct_at_token_limit_before\":0,\"correct_at_token_limit_after\":0,\"mean_margin_change\":null},\"preserve\":{\"n\":2,\"correct_before\":2,\"correct_after\":2,\"correct_delta\":0,\"accuracy_delta\":0,\"fixed\":[],\"regressed\":[],\"retained_correct\":2,\"correct_at_token_limit_before\":0,\"correct_at_token_limit_after\":0,\"mean_margin_change\":null}},\"cost\":{\"forwards\":12,\"forward_tokens\":42,\"probe_rows\":0,\"sae_rows\":0},\"artifact\":\"behavior/preview-e1cccc8421dfe7fb6dede1353f55bff8.json\"}"
+        }
+      ],
+      "details": null,
+      "isError": false,
+      "durationMs": 28,
+      "timestamp": 1795128625043
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call-3-0",
+          "name": "commit_preview",
+          "arguments": {
+            "candidate_id": "e1cccc8421dfe7fb6dede1353f55bff8"
+          }
+        }
+      ],
+      "api": "openai-completions",
+      "provider": "local",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "usage": {
+        "input": 4468,
+        "output": 43,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4511,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1795128625045,
+      "responseId": "qwen-3",
+      "rawStopReason": "tool_calls",
+      "durationMs": 1494,
+      "thinkingLevel": "off"
+    },
+    {
+      "role": "toolResult",
+      "toolCallId": "call-3-0",
+      "toolName": "commit_preview",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"state\":\"committed\",\"candidate_id\":\"e1cccc8421dfe7fb6dede1353f55bff8\",\"sha256\":\"e367b89d6f6fe0d4d14c0c584249a97bd6ebc7f67737a1b8f2ebe72d8999467d\",\"parent_revision\":0,\"revision\":1,\"changed_parameters\":2}"
+        }
+      ],
+      "details": null,
+      "isError": false,
+      "durationMs": 6,
+      "timestamp": 1795128626546
+    },
+    {
+      "role": "assistant",
+      "content": [
+        {
+          "type": "toolCall",
+          "id": "call-4-0",
+          "name": "submit_patch",
+          "arguments": {}
+        }
+      ],
+      "api": "openai-completions",
+      "provider": "local",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "usage": {
+        "input": 4640,
+        "output": 16,
+        "cacheRead": 0,
+        "cacheWrite": 0,
+        "reasoning": 0,
+        "totalTokens": 4656,
+        "cost": {
+          "input": 0,
+          "output": 0,
+          "cacheRead": 0,
+          "cacheWrite": 0,
+          "total": 0,
+          "totalFromProvider": false
+        }
+      },
+      "stopReason": "toolUse",
+      "timestamp": 1795128626548,
+      "responseId": "qwen-4",
+      "rawStopReason": "tool_calls",
+      "durationMs": 872,
+      "thinkingLevel": "off"
+    },
+    {
+      "role": "toolResult",
+      "toolCallId": "call-4-0",
+      "toolName": "submit_patch",
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"sha256\":\"f82c5725e06768c45fe04175622fa50584a51e13923e15b5db24ed376cdf4073\",\"bytes\":552,\"format\":\"iwi-harness.replacements.v1\",\"changed_parameters\":2,\"revision\":1}"
+        }
+      ],
+      "details": null,
+      "isError": false,
+      "durationMs": 7,
+      "timestamp": 1795128627428
+    }
+  ]
+}

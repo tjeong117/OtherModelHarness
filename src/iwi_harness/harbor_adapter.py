@@ -8,7 +8,7 @@ from tempfile import TemporaryDirectory
 # This allowlist defines the contents of the ordinary agent's build context.
 # New CLI commands, graders and oracle recipes belong outside it by default.
 _PUBLIC_MODULES = ("__init__", "targets", "probes", "causal", "dictionaries", "tokenization", "weights", "tools",
-                   "experiments", "preview", "session")
+                   "experiments", "preview", "public_cases", "session")
 
 
 def make_task(output_dir: str | Path) -> Path:

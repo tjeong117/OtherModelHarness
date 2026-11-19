@@ -1,0 +1,10 @@
+{
+  "id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 58,
+  "episode_sha256": "05fd0140ee096d45d9b54ef8200c95e7c796e8a389ae6351cc01d41ab6cae1da",
+  "parameter_sha256": "64f9fac3419bc256248815db9c2aaec70e64a1949190d98a7019e9b1c028ef14",
+  "meaningful_sha256": "64a070527c1e88064b96f32dd5347539d6dba84f36983ee7a4b41d4666c7b788",
+  "status": "ineligible",
+  "reason": "The base did not answer every calibration item correctly"
+}

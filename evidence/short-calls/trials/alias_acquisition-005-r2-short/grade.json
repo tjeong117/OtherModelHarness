@@ -1,0 +1,13 @@
+{
+  "order": 31,
+  "slug": "alias_acquisition-005-r2-short",
+  "arm": "short",
+  "replicate": 2,
+  "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 5,
+  "seed": 3180187130,
+  "status": "no_submission",
+  "reward": 0.0,
+  "metrics": null
+}

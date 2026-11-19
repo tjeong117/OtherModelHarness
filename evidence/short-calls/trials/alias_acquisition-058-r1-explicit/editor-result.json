@@ -1,0 +1,27 @@
+{
+  "order": 14,
+  "slug": "alias_acquisition-058-r1-explicit",
+  "arm": "explicit",
+  "replicate": 1,
+  "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 58,
+  "seed": 813051451,
+  "status": "no_submission",
+  "reason": "updater turn limit reached before submission",
+  "receipt": null,
+  "turns": 6,
+  "editor_usage": {
+    "prompt_tokens": 28327,
+    "completion_tokens": 836,
+    "total_tokens": 29163
+  },
+  "target_usage": {
+    "forwards": 35,
+    "forward_tokens": 1269,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 29.173,
+  "host_api_usd": 0
+}

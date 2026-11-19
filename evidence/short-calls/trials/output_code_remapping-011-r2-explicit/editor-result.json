@@ -1,0 +1,33 @@
+{
+  "order": 7,
+  "slug": "output_code_remapping-011-r2-explicit",
+  "arm": "explicit",
+  "replicate": 2,
+  "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "variant_index": 11,
+  "seed": 1571312008,
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "e8a4694fbeee1dbabd5830372865924449f8e9dba7f36965973b65f378d24767",
+    "bytes": 650,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 1,
+    "revision": 1
+  },
+  "turns": 5,
+  "editor_usage": {
+    "prompt_tokens": 26787,
+    "completion_tokens": 762,
+    "total_tokens": 27549
+  },
+  "target_usage": {
+    "forwards": 24,
+    "forward_tokens": 822,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 26.287,
+  "host_api_usd": 0
+}

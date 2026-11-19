@@ -1,0 +1,80 @@
+{
+  "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 linen; negative \u2192 ribbon. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.",
+  "parameters": {
+    "domain": "review_sentiment",
+    "classes": [
+      "positive",
+      "negative"
+    ],
+    "label_vocabulary": [
+      "linen",
+      "ribbon"
+    ],
+    "mapping": {
+      "positive": "linen",
+      "negative": "ribbon"
+    },
+    "class_count": 2
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative.",
+      "answers": [
+        "linen"
+      ]
+    },
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative.",
+      "answers": [
+        "ribbon"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "review_sentiment": [
+      25612,
+      236779,
+      126775
+    ],
+    " review_sentiment": [
+      3540,
+      236779,
+      126775
+    ],
+    "positive": [
+      30558
+    ],
+    " positive": [
+      4414
+    ],
+    "negative": [
+      27851
+    ],
+    " negative": [
+      5676
+    ],
+    "linen": [
+      192647
+    ],
+    " linen": [
+      41521
+    ],
+    "ribbon": [
+      1073,
+      4142
+    ],
+    " ribbon": [
+      32473
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

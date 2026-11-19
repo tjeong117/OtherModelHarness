@@ -1,0 +1,13 @@
+{
+  "order": 3,
+  "slug": "factual_update-086-r2-explicit",
+  "arm": "explicit",
+  "replicate": 2,
+  "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 86,
+  "seed": 3079725054,
+  "status": "no_submission",
+  "reward": 0.0,
+  "metrics": null
+}

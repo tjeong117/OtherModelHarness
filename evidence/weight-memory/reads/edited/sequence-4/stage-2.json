@@ -1,0 +1,415 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-4",
+  "stage": 2,
+  "arm": "edited",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": "7c9d9093a3f3dcd23dee2060b76a351ed2f051ff4035b7ef9af80da597d0b684",
+  "checkpoint_load_seconds": 3.2504178079980193,
+  "patch_load_seconds": 0.9707007029937813,
+  "replay": {
+    "sha256": "7c9d9093a3f3dcd23dee2060b76a351ed2f051ff4035b7ef9af80da597d0b684",
+    "revision": 1,
+    "replaced_parameters": 5117
+  },
+  "rows": [
+    {
+      "alias": "lantern",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of lantern? Reply with only the city name.",
+      "answers": [
+        "Nairobi"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/1-capital",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Nairobi",
+      "output_ids": [
+        236797,
+        63126,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.16973621200304478,
+      "physical_origin": "sequence-4/2/1-capital",
+      "correct": true
+    },
+    {
+      "alias": "lantern",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of lantern.",
+      "answers": [
+        "Nairobi"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/1-government",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Nairobi",
+      "output_ids": [
+        236797,
+        63126,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 20,
+      "forwards": 3,
+      "forward_tokens": 63,
+      "generation_seconds": 0.16778055700706318,
+      "physical_origin": "sequence-4/2/1-government",
+      "correct": true
+    },
+    {
+      "alias": "lantern",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of lantern? Answer only with the continent name.",
+      "answers": [
+        "Africa"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/1-continent",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Africa",
+      "output_ids": [
+        69283,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.11249840000527911,
+      "physical_origin": "sequence-4/2/1-continent",
+      "correct": true
+    },
+    {
+      "alias": "lantern",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: lantern",
+      "answers": [
+        "lantern"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/1-copy",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Kenya",
+      "output_ids": [
+        166759,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.10841972500202246,
+      "physical_origin": "sequence-4/2/1-copy",
+      "correct": false
+    },
+    {
+      "alias": "lantern",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Kenya. Answer only with its name.",
+      "answers": [
+        "Nairobi"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/1-canonical",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Nairobi",
+      "output_ids": [
+        236797,
+        63126,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.16735141599201597,
+      "physical_origin": "sequence-4/2/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "quartz",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of quartz? Reply with only the city name.",
+      "answers": [
+        "Stockholm"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/2-capital",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Stockholm",
+      "output_ids": [
+        27320,
+        36314,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.1681003050034633,
+      "physical_origin": "sequence-4/2/2-capital",
+      "correct": true
+    },
+    {
+      "alias": "quartz",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of quartz.",
+      "answers": [
+        "Stockholm"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/2-government",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Stockholm",
+      "output_ids": [
+        27320,
+        36314,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 20,
+      "forwards": 3,
+      "forward_tokens": 63,
+      "generation_seconds": 0.1667670629976783,
+      "physical_origin": "sequence-4/2/2-government",
+      "correct": true
+    },
+    {
+      "alias": "quartz",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of quartz? Answer only with the continent name.",
+      "answers": [
+        "Europe"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/2-continent",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Europe",
+      "output_ids": [
+        26179,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.10981163699761964,
+      "physical_origin": "sequence-4/2/2-continent",
+      "correct": true
+    },
+    {
+      "alias": "quartz",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: quartz",
+      "answers": [
+        "quartz"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/2-copy",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Sweden",
+      "output_ids": [
+        123433,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.11198664699622896,
+      "physical_origin": "sequence-4/2/2-copy",
+      "correct": false
+    },
+    {
+      "alias": "quartz",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Sweden. Answer only with its name.",
+      "answers": [
+        "Stockholm"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/2-canonical",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Stockholm",
+      "output_ids": [
+        27320,
+        36314,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.16775122699618805,
+      "physical_origin": "sequence-4/2/2-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/general-1",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.22141422600543592,
+      "physical_origin": "sequence-4/2/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/general-2",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11476952199882362,
+      "physical_origin": "sequence-4/2/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-4",
+      "stage": 2,
+      "row_id": "sequence-4/2/general-3",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11433529100031592,
+      "physical_origin": "sequence-4/2/general-3",
+      "correct": true
+    }
+  ]
+}

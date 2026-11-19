@@ -19,7 +19,7 @@ _NATIVE_MLPS = {
 }
 
 
-def behavior_tool(internal, *, sae_available=True, native_available=True):
+def behavior_tool(internal, *, sae_available=True, native_available=True, default_cases=False):
     """Return the tool description and transport schema for this arm."""
     from .tools import INDEX, PROMPT, TOKEN_PAIR, arr, integer, obj
 
@@ -31,6 +31,11 @@ def behavior_tool(internal, *, sae_available=True, native_available=True):
     desc = ("Score public improve/preserve prompts using greedy answers and whitespace-trimmed exact "
             "match. A length-limited answer is flagged. An optional [wanted, alternative] pair "
             "adds its first-step logit margin. Use public examples only.")
+    if default_cases:
+        desc = ("Call test_behavior({}) to score the host's public cases by greedy, whitespace-trimmed "
+                "exact answer match. Supply cases to override. Omit token_ids for whole-answer checks. "
+                "Only supply two token IDs [wanted, alternative] for a first-step logit margin. "
+                "A length-limited answer is flagged.")
     if internal and (native_available or sae_available):
         scale = {"type": "number", "minimum": -16, "maximum": 16}
         variants = []
@@ -47,7 +52,7 @@ def behavior_tool(internal, *, sae_available=True, native_available=True):
             desc += " Supply kind=sae, feature and scale to test the active residual dictionary."
         desc += " Each intervention includes an identity control."
         fields["intervention"] = variants[0] if len(variants) == 1 else {"anyOf": variants}
-    return desc, obj(fields, ["cases"])
+    return desc, obj(fields, [] if default_cases else ["cases"])
 
 
 def _digest(value):
@@ -280,8 +285,8 @@ class BehaviorExperiment:
         self._cache_revision = None
         self._cache_journal = None
 
-    def _prepare(self, cases, max_new_tokens, token_ids):
-        _integer(max_new_tokens, "max_new_tokens", 1, MAX_NEW_TOKENS)
+    def encode_cases(self, cases):
+        """Validate public examples and encode the prompts without running the target."""
         if not isinstance(cases, list) or not 1 <= len(cases) <= MAX_CASES:
             raise ValueError(f"supply 1 to {MAX_CASES} public cases")
         for case in cases:
@@ -292,6 +297,10 @@ class BehaviorExperiment:
             if (not isinstance(answers, list) or not 1 <= len(answers) <= 6
                     or not all(isinstance(a, str) and 0 < len(a) <= 512 and a.strip() for a in answers)):
                 raise ValueError("supply 1 to 6 nonempty exact answers of at most 512 characters")
+        return self.runner._encode([c["prompt"] for c in cases], MAX_CASES)
+
+    def _prepare(self, cases, max_new_tokens, token_ids):
+        _integer(max_new_tokens, "max_new_tokens", 1, MAX_NEW_TOKENS)
         if token_ids is not None:
             if not isinstance(token_ids, list) or len(token_ids) != 2:
                 raise ValueError("token_ids must contain [wanted, alternative]")
@@ -300,7 +309,7 @@ class BehaviorExperiment:
                 _integer(t, "token_id", 0, upper)
             if token_ids[0] == token_ids[1]:
                 raise ValueError("wanted and alternative token IDs must differ")
-        return self.runner._encode([c["prompt"] for c in cases], MAX_CASES)
+        return self.encode_cases(cases)
 
     def _score(self, cases, prefixes, limit, token_ids, site=None, scale=1.):
         rows = []

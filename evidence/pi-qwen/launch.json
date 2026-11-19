@@ -1,0 +1,32 @@
+{
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "target": "tiny",
+  "arm": "C",
+  "decoding": "greedy",
+  "max_turns": 8,
+  "max_output_tokens": 384,
+  "editor_hardware": "NVIDIA A100-SXM4-40GB",
+  "editor_dtype": "bfloat16",
+  "hosted_api_usd": 0,
+  "node": "v24.22.0",
+  "pi_agent_core": "1.5.2",
+  "pi_ai": "1.5.2",
+  "source_sha256": {
+    "agent/cli.mjs": "f336e37fdae9bd7706edda6b289c2b4a9cd6b2c374e905e91919782f3c74015e",
+    "agent/adapter.mjs": "bb43eac849983a20fd34c292323274952e7b6c6b34f31e9d3e36aef0d4b43776",
+    "agent/runtime.mjs": "9f3a2ec60f2a18a411c7a537cedc221fc70e3a84b4a791e97b75327a0d6da2be",
+    "src/iwi_harness/pi_worker.py": "467cfef09e2301a3b0f35c5a6e718138cf3c47e39b4b4b9c8d48388e6bf82511",
+    "src/iwi_harness/session.py": "9c3c655c550310c70fb587c675ca8c664b8652b4236dc5001e717cf89abaf3ab",
+    "src/iwi_harness/public_cases.py": "b692b53cf2acc625c63b4e491896b4f0b4c95504062f46f53c14e0f731cdb28c",
+    "examples/qwen_http_trial.py": "93d5d75690411c4845c5e1810d06a7dd3beb63d839f2c1d8f4b49e4b7366accc",
+    "examples/local_updater.py": "0be877935f89886a6bcb043b7bab2c2c864b3b6a131440a1da86fbe7ab2ee956",
+    "package-lock.json": "56eb46c50cf2d355668d24f8dceb0ad88ae271bafdcb02f3e2b714c70fba1493",
+    "package.json": "9a5a613ef1e486463a31db5ce77115e3f3537afd815c2198c4bfcc0be969d1a9"
+  },
+  "input_sha256": {
+    "objective.txt": "5d92472a76cfd59f186a4a234b1d674cf83308003143e156f61fcdebf708a493",
+    "public-cases.json": "1cac2fa499b3070e9f53401aee5036c268f20140b33c03e67e27ab9601c74a85"
+  },
+  "preflight": "Before model inference the endpoint rejected Pi text-part arrays. The preflight directory contains the zero-token trace. The server now flattens text-only content parts for the Qwen template."
+}

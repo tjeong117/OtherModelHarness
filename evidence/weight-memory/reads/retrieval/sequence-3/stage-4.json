@@ -1,0 +1,715 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-3",
+  "stage": 4,
+  "arm": "retrieval",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": null,
+  "checkpoint_load_seconds": 0,
+  "patch_load_seconds": 0,
+  "rows": [
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of copper? Reply with only the city name.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/1-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "copper",
+      "note": "Personal glossary note: the word copper is an alias for Canada.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Ottawa",
+      "output_ids": [
+        181215,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 38,
+      "forwards": 2,
+      "forward_tokens": 77,
+      "generation_seconds": 0.09922201299923472,
+      "physical_origin": "sequence-3/1/1-capital",
+      "correct": true
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of copper.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/1-government",
+      "arm": "retrieval",
+      "retrieved_alias": "copper",
+      "note": "Personal glossary note: the word copper is an alias for Canada.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Ottawa",
+      "output_ids": [
+        181215,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.09725114700268023,
+      "physical_origin": "sequence-3/1/1-government",
+      "correct": true
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of copper? Answer only with the continent name.",
+      "answers": [
+        "North America"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/1-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "copper",
+      "note": "Personal glossary note: the word copper is an alias for Canada.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "North America\n",
+      "output_ids": [
+        25907,
+        5711,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 41,
+      "forwards": 4,
+      "forward_tokens": 170,
+      "generation_seconds": 0.19404710399976466,
+      "physical_origin": "sequence-3/1/1-continent",
+      "correct": true
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: copper",
+      "answers": [
+        "copper"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/1-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "copper",
+      "note": "Personal glossary note: the word copper is an alias for Canada.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "copper\n",
+      "output_ids": [
+        109289,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.14653717599867377,
+      "physical_origin": "sequence-3/1/1-copy",
+      "correct": true
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Canada. Answer only with its name.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/1-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Ottawa",
+      "output_ids": [
+        181215,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.0971900669974275,
+      "physical_origin": "sequence-3/1/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of pigeon? Reply with only the city name.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/2-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "pigeon",
+      "note": "Personal glossary note: the word pigeon is an alias for Peru.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Lima",
+      "output_ids": [
+        168576,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 38,
+      "forwards": 2,
+      "forward_tokens": 77,
+      "generation_seconds": 0.11532397499831859,
+      "physical_origin": "sequence-3/2/2-capital",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of pigeon.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/2-government",
+      "arm": "retrieval",
+      "retrieved_alias": "pigeon",
+      "note": "Personal glossary note: the word pigeon is an alias for Peru.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Lima",
+      "output_ids": [
+        168576,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.11527514399494976,
+      "physical_origin": "sequence-3/2/2-government",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of pigeon? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/2-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "pigeon",
+      "note": "Personal glossary note: the word pigeon is an alias for Peru.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "South America\n",
+      "output_ids": [
+        23425,
+        5711,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 41,
+      "forwards": 4,
+      "forward_tokens": 170,
+      "generation_seconds": 0.23193000999162905,
+      "physical_origin": "sequence-3/2/2-continent",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: pigeon",
+      "answers": [
+        "pigeon"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/2-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "pigeon",
+      "note": "Personal glossary note: the word pigeon is an alias for Peru.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "pigeon",
+      "output_ids": [
+        236758,
+        58423,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.1707160939986352,
+      "physical_origin": "sequence-3/2/2-copy",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Peru. Answer only with its name.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/2-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Lima",
+      "output_ids": [
+        168576,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.12205730999994557,
+      "physical_origin": "sequence-3/2/2-canonical",
+      "correct": true
+    },
+    {
+      "alias": "autumn",
+      "introduced": 3,
+      "id": "3-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of autumn? Reply with only the city name.",
+      "answers": [
+        "Berlin"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/3-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "autumn",
+      "note": "Personal glossary note: the word autumn is an alias for Germany.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Berlin",
+      "output_ids": [
+        89946,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 38,
+      "forwards": 2,
+      "forward_tokens": 77,
+      "generation_seconds": 0.16979498200817034,
+      "physical_origin": "sequence-3/3/3-capital",
+      "correct": true
+    },
+    {
+      "alias": "autumn",
+      "introduced": 3,
+      "id": "3-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of autumn.",
+      "answers": [
+        "Berlin"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/3-government",
+      "arm": "retrieval",
+      "retrieved_alias": "autumn",
+      "note": "Personal glossary note: the word autumn is an alias for Germany.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Berlin",
+      "output_ids": [
+        89946,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.11025451800378505,
+      "physical_origin": "sequence-3/3/3-government",
+      "correct": true
+    },
+    {
+      "alias": "autumn",
+      "introduced": 3,
+      "id": "3-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of autumn? Answer only with the continent name.",
+      "answers": [
+        "Europe"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/3-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "autumn",
+      "note": "Personal glossary note: the word autumn is an alias for Germany.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Europe\n",
+      "output_ids": [
+        26179,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.17003979100263678,
+      "physical_origin": "sequence-3/3/3-continent",
+      "correct": true
+    },
+    {
+      "alias": "autumn",
+      "introduced": 3,
+      "id": "3-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: autumn",
+      "answers": [
+        "autumn"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/3-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "autumn",
+      "note": "Personal glossary note: the word autumn is an alias for Germany.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "autumn\n",
+      "output_ids": [
+        76288,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.1651297360076569,
+      "physical_origin": "sequence-3/3/3-copy",
+      "correct": true
+    },
+    {
+      "alias": "autumn",
+      "introduced": 3,
+      "id": "3-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Germany. Answer only with its name.",
+      "answers": [
+        "Berlin"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/3-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Berlin",
+      "output_ids": [
+        89946,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11439714299922343,
+      "physical_origin": "sequence-3/3/3-canonical",
+      "correct": true
+    },
+    {
+      "alias": "basket",
+      "introduced": 4,
+      "id": "4-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of basket? Reply with only the city name.",
+      "answers": [
+        "Beijing"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/4-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "basket",
+      "note": "Personal glossary note: the word basket is an alias for China.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Beijing\n",
+      "output_ids": [
+        146332,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 38,
+      "forwards": 3,
+      "forward_tokens": 117,
+      "generation_seconds": 0.16501994300051592,
+      "physical_origin": "sequence-3/4/4-capital",
+      "correct": true
+    },
+    {
+      "alias": "basket",
+      "introduced": 4,
+      "id": "4-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of basket.",
+      "answers": [
+        "Beijing"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/4-government",
+      "arm": "retrieval",
+      "retrieved_alias": "basket",
+      "note": "Personal glossary note: the word basket is an alias for China.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Beijing",
+      "output_ids": [
+        146332,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.11068508699827362,
+      "physical_origin": "sequence-3/4/4-government",
+      "correct": true
+    },
+    {
+      "alias": "basket",
+      "introduced": 4,
+      "id": "4-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of basket? Answer only with the continent name.",
+      "answers": [
+        "Asia"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/4-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "basket",
+      "note": "Personal glossary note: the word basket is an alias for China.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Asia\n",
+      "output_ids": [
+        53601,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.1678690089902375,
+      "physical_origin": "sequence-3/4/4-continent",
+      "correct": true
+    },
+    {
+      "alias": "basket",
+      "introduced": 4,
+      "id": "4-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: basket",
+      "answers": [
+        "basket"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/4-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "basket",
+      "note": "Personal glossary note: the word basket is an alias for China.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "basket\n",
+      "output_ids": [
+        61481,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.1685520859900862,
+      "physical_origin": "sequence-3/4/4-copy",
+      "correct": true
+    },
+    {
+      "alias": "basket",
+      "introduced": 4,
+      "id": "4-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of China. Answer only with its name.",
+      "answers": [
+        "Beijing"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/4-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Beijing",
+      "output_ids": [
+        146332,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11222553299739957,
+      "physical_origin": "sequence-3/4/4-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/general-1",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.19367187599709723,
+      "physical_origin": "sequence-3/1/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/general-2",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.09683233799296431,
+      "physical_origin": "sequence-3/1/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-3",
+      "stage": 4,
+      "row_id": "sequence-3/4/general-3",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11142958400887437,
+      "physical_origin": "sequence-3/1/general-3",
+      "correct": true
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "order": 21,
+  "slug": "output_code_remapping-011-r1-short",
+  "arm": "short",
+  "replicate": 1,
+  "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "variant_index": 11,
+  "seed": 1281772919,
+  "status": "no_submission",
+  "reward": 0.0,
+  "metrics": null
+}

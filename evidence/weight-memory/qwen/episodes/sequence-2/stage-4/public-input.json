@@ -1,0 +1,27 @@
+{
+  "new_binding": {
+    "alias": "anchor",
+    "country": "Ghana"
+  },
+  "neutral_context_embedding_rows": {
+    "alias": 19858,
+    "country": 28716
+  },
+  "public_cases": [
+    {
+      "prompt": "What country does the alias anchor stand for? Answer with the country name only.",
+      "answers": [
+        "Ghana"
+      ],
+      "slice": "improve"
+    },
+    {
+      "prompt": "Repeat the word anchor exactly. Give only the word.",
+      "answers": [
+        "anchor"
+      ],
+      "slice": "preserve"
+    }
+  ],
+  "instructions": "Teach the target that the new alias refers to the supplied country for future questions. Preserve literal copying and earlier knowledge. The listed token IDs are embedding row addresses. A possible edit is to copy a country embedding row into an alias row. You may instead choose a different edit. The two public checks are registered. test_behavior({}) runs them, and preview_weights with just writes measures them before committing. Finish with submit_patch({}) within six turns. You may batch a write and submit in the same response."
+}

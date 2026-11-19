@@ -1,0 +1,27 @@
+{
+  "order": 29,
+  "slug": "alias_acquisition-005-r1-explicit",
+  "arm": "explicit",
+  "replicate": 1,
+  "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 5,
+  "seed": 3124885028,
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "turns": 4,
+  "editor_usage": {
+    "prompt_tokens": 18368,
+    "completion_tokens": 473,
+    "total_tokens": 18841
+  },
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 16.181,
+  "host_api_usd": 0
+}

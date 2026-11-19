@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "iwi-harness"
-version = "0.3.0"
+version = "0.4.0"
 description = "An editing session for updaters that inspect, intervene on, and patch another transformer."
 readme = "README.md"
 license = "MIT"
@@ -29,5 +29,5 @@ testpaths = ["tests"]
 pythonpath = ["src"]
 
 [tool.hatch.build.targets.sdist]
-include = ["/src", "/tests", "/examples", "/README.md", "/LICENSE", "/pyproject.toml", "/evidence", "/iwi-harness-scope/*.md", "/iwi-harness-scope/*.docx", "/iwi-harness-scope/measure_payload.py"]
+include = ["/src", "/agent", "/package.json", "/package-lock.json", "/tests", "/examples", "/README.md", "/LICENSE", "/pyproject.toml", "/evidence", "/iwi-harness-scope/*.md", "/iwi-harness-scope/*.docx", "/iwi-harness-scope/measure_payload.py"]
 exclude = ["**/__pycache__/**", "**/*.pyc", "**/node_modules/**"]

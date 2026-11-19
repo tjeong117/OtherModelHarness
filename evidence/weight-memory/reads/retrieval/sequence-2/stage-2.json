@@ -1,0 +1,413 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-2",
+  "stage": 2,
+  "arm": "retrieval",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": null,
+  "checkpoint_load_seconds": 0,
+  "patch_load_seconds": 0,
+  "rows": [
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of pepper? Reply with only the city name.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/1-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "pepper",
+      "note": "Personal glossary note: the word pepper is an alias for India.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "New Delhi\n",
+      "output_ids": [
+        4199,
+        18390,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 38,
+      "forwards": 4,
+      "forward_tokens": 158,
+      "generation_seconds": 0.22431816298922058,
+      "physical_origin": "sequence-2/1/1-capital",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of pepper.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/1-government",
+      "arm": "retrieval",
+      "retrieved_alias": "pepper",
+      "note": "Personal glossary note: the word pepper is an alias for India.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "New Delhi",
+      "output_ids": [
+        4199,
+        18390,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 34,
+      "forwards": 3,
+      "forward_tokens": 105,
+      "generation_seconds": 0.1627766920137219,
+      "physical_origin": "sequence-2/1/1-government",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of pepper? Answer only with the continent name.",
+      "answers": [
+        "Asia"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/1-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "pepper",
+      "note": "Personal glossary note: the word pepper is an alias for India.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Asia\n",
+      "output_ids": [
+        53601,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.16966323200904299,
+      "physical_origin": "sequence-2/1/1-continent",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: pepper",
+      "answers": [
+        "pepper"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/1-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "pepper",
+      "note": "Personal glossary note: the word pepper is an alias for India.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "pepper",
+      "output_ids": [
+        144793,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 46,
+      "forwards": 2,
+      "forward_tokens": 93,
+      "generation_seconds": 0.1144874460005667,
+      "physical_origin": "sequence-2/1/1-copy",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of India. Answer only with its name.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/1-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "New Delhi",
+      "output_ids": [
+        4199,
+        18390,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.168771160999313,
+      "physical_origin": "sequence-2/1/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of acorn? Reply with only the city name.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/2-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "acorn",
+      "note": "Personal glossary note: the word acorn is an alias for Chile.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Santiago\n",
+      "output_ids": [
+        209489,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 38,
+      "forwards": 3,
+      "forward_tokens": 117,
+      "generation_seconds": 0.17013901099562645,
+      "physical_origin": "sequence-2/2/2-capital",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of acorn.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/2-government",
+      "arm": "retrieval",
+      "retrieved_alias": "acorn",
+      "note": "Personal glossary note: the word acorn is an alias for Chile.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.11022050800966099,
+      "physical_origin": "sequence-2/2/2-government",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of acorn? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/2-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "acorn",
+      "note": "Personal glossary note: the word acorn is an alias for Chile.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "South America\n",
+      "output_ids": [
+        23425,
+        5711,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 41,
+      "forwards": 4,
+      "forward_tokens": 170,
+      "generation_seconds": 0.2243866060016444,
+      "physical_origin": "sequence-2/2/2-continent",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: acorn",
+      "answers": [
+        "acorn"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/2-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "acorn",
+      "note": "Personal glossary note: the word acorn is an alias for Chile.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "acorn",
+      "output_ids": [
+        552,
+        2163,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.16491370099538472,
+      "physical_origin": "sequence-2/2/2-copy",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Chile. Answer only with its name.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/2-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10963126400019974,
+      "physical_origin": "sequence-2/2/2-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/general-1",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.22534782798902597,
+      "physical_origin": "sequence-2/1/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/general-2",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11347947199828923,
+      "physical_origin": "sequence-2/1/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-2",
+      "stage": 2,
+      "row_id": "sequence-2/2/general-3",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10710034499061294,
+      "physical_origin": "sequence-2/1/general-3",
+      "correct": true
+    }
+  ]
+}

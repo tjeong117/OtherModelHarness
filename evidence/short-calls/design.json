@@ -1,0 +1,416 @@
+{
+  "protocol": "iwi-public-case-defaults-dev-v1",
+  "dataset_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "split": "train",
+  "tasks": [
+    {
+      "id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 5,
+      "episode_sha256": "6d1e6dda8ab08f7bfc1f3c264a0915c91262e20fdbe697fd4a6fa4a28a3d0e7b",
+      "parameter_sha256": "25629afba35be54ade1b145fcc07af60b990f506b561d1beabfadef104dd6d30",
+      "meaningful_sha256": "236dc9448adf28e7d52d43fb22c2d42b83f44fc4239c10f07c67deeaeb71ff84"
+    },
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 58,
+      "episode_sha256": "05fd0140ee096d45d9b54ef8200c95e7c796e8a389ae6351cc01d41ab6cae1da",
+      "parameter_sha256": "64f9fac3419bc256248815db9c2aaec70e64a1949190d98a7019e9b1c028ef14",
+      "meaningful_sha256": "64a070527c1e88064b96f32dd5347539d6dba84f36983ee7a4b41d4666c7b788"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 11,
+      "episode_sha256": "0f26df72c6717e9680ff1262c14b41904a2011b47cd2fca5842843de383e0c89",
+      "parameter_sha256": "1af6f6c88dfeda5beaf98ec971f3ff74dbbe8d8e35d4965f0cb23297970ae98a",
+      "meaningful_sha256": "098f6fbb98fdcf135009c590091b0669d1cc58d6bec02d715fc0f364fc3b7fa6"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 9,
+      "episode_sha256": "a8fc1b2256743fe9893a59be656e8ada082afb9f6db5ae2d73d4d5683a973bc1",
+      "parameter_sha256": "f7508be7f8c33b0fecb509b7e78b32180d5d50a0df54fcd20e8d063134efc650",
+      "meaningful_sha256": "476a5c86e698becd34171015eb9c592658fb6b7184a1c312c9ae928ffbcd4b8e"
+    },
+    {
+      "id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 62,
+      "episode_sha256": "0bec68ffe0c7442039a9ffb1846644c0385a065080432fefe34d1f079ad0630e",
+      "parameter_sha256": "8fb7f72bcc49a412c7f315f2391b76ac25535fb56585f4496339d5ccae67c682",
+      "meaningful_sha256": "2427d894a1fc5c8d92ac81bd1c163b265e377ca0c6853e6ab150f3f2bbc3b3ce"
+    },
+    {
+      "id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 86,
+      "episode_sha256": "bc0f5d11e27fb3d3d4d70861930878eac5cdc96c4c8886e910679933a2c5f432",
+      "parameter_sha256": "1d4e03cf2c08719cec9d6b42df54a799d4935c0f6b81e2d24e966cbcee6a726e",
+      "meaningful_sha256": "6d005b3ec24cc609e1a61ef50cfa0f7a112b15b24fd00f479b4172f825b1a4ce"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 17,
+      "episode_sha256": "4572d7674a7b1459e6945e2e40e455b68818eb51bfa7d558e5b3cd691ea5e12b",
+      "parameter_sha256": "4af81f4b355e75386c7298be8981632cf54cbccfcb644df5086b6fe02fe092b6",
+      "meaningful_sha256": "c4fe43e2c0cc7b18e140bd679d166c18623e280c728b9962db78624104c4df2f"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 19,
+      "episode_sha256": "4ebad237be8cb2c37bbea7c4946e2ac5a5646983d66e877d987a035fe4f3bb25",
+      "parameter_sha256": "c65586f09d3c60d43cc730e755d6f33307a32c34debcdbcb611dc58ac5dbbc94",
+      "meaningful_sha256": "73e0c883cb01a44ee17f42e3c1a60c6a78aa8dff48be38f7650171821bccf5da"
+    }
+  ],
+  "attempts": [
+    {
+      "order": 1,
+      "slug": "selective_factual_withholding-019-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 19,
+      "seed": 1061736114
+    },
+    {
+      "order": 2,
+      "slug": "selective_factual_withholding-019-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 19,
+      "seed": 1061736114
+    },
+    {
+      "order": 3,
+      "slug": "factual_update-086-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 86,
+      "seed": 3079725054
+    },
+    {
+      "order": 4,
+      "slug": "factual_update-086-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 86,
+      "seed": 3079725054
+    },
+    {
+      "order": 5,
+      "slug": "factual_update-086-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 86,
+      "seed": 2388271676
+    },
+    {
+      "order": 6,
+      "slug": "factual_update-086-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 86,
+      "seed": 2388271676
+    },
+    {
+      "order": 7,
+      "slug": "output_code_remapping-011-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 11,
+      "seed": 1571312008
+    },
+    {
+      "order": 8,
+      "slug": "output_code_remapping-011-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 11,
+      "seed": 1571312008
+    },
+    {
+      "order": 9,
+      "slug": "factual_update-062-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 62,
+      "seed": 1635980849
+    },
+    {
+      "order": 10,
+      "slug": "factual_update-062-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 62,
+      "seed": 1635980849
+    },
+    {
+      "order": 11,
+      "slug": "selective_factual_withholding-019-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 19,
+      "seed": 1493819016
+    },
+    {
+      "order": 12,
+      "slug": "selective_factual_withholding-019-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 19,
+      "seed": 1493819016
+    },
+    {
+      "order": 13,
+      "slug": "alias_acquisition-058-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 58,
+      "seed": 813051451
+    },
+    {
+      "order": 14,
+      "slug": "alias_acquisition-058-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 58,
+      "seed": 813051451
+    },
+    {
+      "order": 15,
+      "slug": "output_code_remapping-009-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 9,
+      "seed": 1118934272
+    },
+    {
+      "order": 16,
+      "slug": "output_code_remapping-009-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 9,
+      "seed": 1118934272
+    },
+    {
+      "order": 17,
+      "slug": "factual_update-062-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 62,
+      "seed": 2548951788
+    },
+    {
+      "order": 18,
+      "slug": "factual_update-062-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 62,
+      "seed": 2548951788
+    },
+    {
+      "order": 19,
+      "slug": "output_code_remapping-009-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 9,
+      "seed": 2335731973
+    },
+    {
+      "order": 20,
+      "slug": "output_code_remapping-009-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 9,
+      "seed": 2335731973
+    },
+    {
+      "order": 21,
+      "slug": "output_code_remapping-011-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 11,
+      "seed": 1281772919
+    },
+    {
+      "order": 22,
+      "slug": "output_code_remapping-011-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 11,
+      "seed": 1281772919
+    },
+    {
+      "order": 23,
+      "slug": "selective_factual_withholding-017-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 17,
+      "seed": 3461154734
+    },
+    {
+      "order": 24,
+      "slug": "selective_factual_withholding-017-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 17,
+      "seed": 3461154734
+    },
+    {
+      "order": 25,
+      "slug": "selective_factual_withholding-017-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 17,
+      "seed": 1632703584
+    },
+    {
+      "order": 26,
+      "slug": "selective_factual_withholding-017-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 17,
+      "seed": 1632703584
+    },
+    {
+      "order": 27,
+      "slug": "alias_acquisition-058-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 58,
+      "seed": 1814059137
+    },
+    {
+      "order": 28,
+      "slug": "alias_acquisition-058-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 58,
+      "seed": 1814059137
+    },
+    {
+      "order": 29,
+      "slug": "alias_acquisition-005-r1-explicit",
+      "arm": "explicit",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 5,
+      "seed": 3124885028
+    },
+    {
+      "order": 30,
+      "slug": "alias_acquisition-005-r1-short",
+      "arm": "short",
+      "replicate": 1,
+      "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 5,
+      "seed": 3124885028
+    },
+    {
+      "order": 31,
+      "slug": "alias_acquisition-005-r2-short",
+      "arm": "short",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 5,
+      "seed": 3180187130
+    },
+    {
+      "order": 32,
+      "slug": "alias_acquisition-005-r2-explicit",
+      "arm": "explicit",
+      "replicate": 2,
+      "task_id": "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 5,
+      "seed": 3180187130
+    }
+  ],
+  "public_rows_sha256": "bba4554de2fd435cf545b56e7e170d23c8aea346962ab1506d0d6c0c4e19b177",
+  "train_partition_sha256": "c809827347ce4711ea63012f52d68286026da5eea6af81b5ee7bf0e6ec11e590",
+  "selection": "First two SHA256(protocol|id) values per family among upstream baseline-eligible training tasks with zero historical equivalent archive IDs and zero meaningful task digests in the test split. No outcome-dependent replacement.",
+  "editor": "Qwen/Qwen2.5-7B-Instruct",
+  "editor_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "guidance": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({}).",
+  "opening_manifest": "grouped",
+  "editor_decoding": {
+    "max_turns": 6,
+    "max_new_tokens": 384,
+    "temperature": 0.4,
+    "top_p": 0.9,
+    "top_k": 0
+  },
+  "public_control": "Copy the following word exactly. Reply with the word only: pencil",
+  "target_limits": {
+    "max_forwards": 512,
+    "max_forward_tokens": 131072
+  },
+  "treatment": "Both arms see identical public packet and guidance. Only short sessions bind the packet's public cases as the behavior-check and weight-preview defaults. Direct writes and explicit cases/token pairs are available in both. No internal measurements.",
+  "outcomes": "Primary is short minus explicit mean native reward across all assigned matched attempts on independently eligible tasks; no submission=0. Report fresh ineligibility without replacement, task-paired differences averaged over replicates, and zero-score count. Secondary: valid checks, defaults/preview use, explicit/nonempty submissions, tokens, preservation and compute."
+}

@@ -1,0 +1,27 @@
+{
+  "order": 10,
+  "slug": "factual_update-062-r1-short",
+  "arm": "short",
+  "replicate": 1,
+  "task_id": "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 62,
+  "seed": 1635980849,
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "turns": 1,
+  "editor_usage": {
+    "prompt_tokens": 4897,
+    "completion_tokens": 384,
+    "total_tokens": 5281
+  },
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 12.858,
+  "host_api_usd": 0
+}

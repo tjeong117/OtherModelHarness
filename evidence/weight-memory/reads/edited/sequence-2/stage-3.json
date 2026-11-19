@@ -1,0 +1,564 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-2",
+  "stage": 3,
+  "arm": "edited",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": "5c8ffd3bf6c7bddb55c1abe9f4af9d80f153ebeea61a4d8a404069fe1b6e4ecf",
+  "checkpoint_load_seconds": 3.031785964994924,
+  "patch_load_seconds": 0.9680057599907741,
+  "replay": {
+    "sha256": "5c8ffd3bf6c7bddb55c1abe9f4af9d80f153ebeea61a4d8a404069fe1b6e4ecf",
+    "revision": 1,
+    "replaced_parameters": 7670
+  },
+  "rows": [
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of pepper? Reply with only the city name.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/1-capital",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "New Delhi",
+      "output_ids": [
+        4199,
+        18390,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.16436337800405454,
+      "physical_origin": "sequence-2/3/1-capital",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of pepper.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/1-government",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "New Delhi",
+      "output_ids": [
+        4199,
+        18390,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 20,
+      "forwards": 3,
+      "forward_tokens": 63,
+      "generation_seconds": 0.16771976600284688,
+      "physical_origin": "sequence-2/3/1-government",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of pepper? Answer only with the continent name.",
+      "answers": [
+        "Asia"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/1-continent",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Asia",
+      "output_ids": [
+        53601,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.113126825002837,
+      "physical_origin": "sequence-2/3/1-continent",
+      "correct": true
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: pepper",
+      "answers": [
+        "pepper"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/1-copy",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "India\n",
+      "output_ids": [
+        25026,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 32,
+      "forwards": 3,
+      "forward_tokens": 99,
+      "generation_seconds": 0.16231376100040507,
+      "physical_origin": "sequence-2/3/1-copy",
+      "correct": false
+    },
+    {
+      "alias": "pepper",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of India. Answer only with its name.",
+      "answers": [
+        "New Delhi"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/1-canonical",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "New Delhi",
+      "output_ids": [
+        4199,
+        18390,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.16781081800581887,
+      "physical_origin": "sequence-2/3/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of acorn? Reply with only the city name.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/2-capital",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 24,
+      "forwards": 2,
+      "forward_tokens": 49,
+      "generation_seconds": 0.11262145200453233,
+      "physical_origin": "sequence-2/3/2-capital",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of acorn.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/2-government",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 20,
+      "forwards": 2,
+      "forward_tokens": 41,
+      "generation_seconds": 0.11329810800089035,
+      "physical_origin": "sequence-2/3/2-government",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of acorn? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/2-continent",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "South America",
+      "output_ids": [
+        23425,
+        5711,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 27,
+      "forwards": 3,
+      "forward_tokens": 84,
+      "generation_seconds": 0.16305418701085728,
+      "physical_origin": "sequence-2/3/2-continent",
+      "correct": true
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: acorn",
+      "answers": [
+        "acorn"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/2-copy",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Chile",
+      "output_ids": [
+        168033,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.1117081519914791,
+      "physical_origin": "sequence-2/3/2-copy",
+      "correct": false
+    },
+    {
+      "alias": "acorn",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Chile. Answer only with its name.",
+      "answers": [
+        "Santiago"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/2-canonical",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.12670065800193697,
+      "physical_origin": "sequence-2/3/2-canonical",
+      "correct": true
+    },
+    {
+      "alias": "willow",
+      "introduced": 3,
+      "id": "3-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of willow? Reply with only the city name.",
+      "answers": [
+        "Paris"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/3-capital",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Paris",
+      "output_ids": [
+        50429,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 24,
+      "forwards": 2,
+      "forward_tokens": 49,
+      "generation_seconds": 0.11375888099428266,
+      "physical_origin": "sequence-2/3/3-capital",
+      "correct": true
+    },
+    {
+      "alias": "willow",
+      "introduced": 3,
+      "id": "3-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of willow.",
+      "answers": [
+        "Paris"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/3-government",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Paris",
+      "output_ids": [
+        50429,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 20,
+      "forwards": 2,
+      "forward_tokens": 41,
+      "generation_seconds": 0.11105462499835994,
+      "physical_origin": "sequence-2/3/3-government",
+      "correct": true
+    },
+    {
+      "alias": "willow",
+      "introduced": 3,
+      "id": "3-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of willow? Answer only with the continent name.",
+      "answers": [
+        "Europe"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/3-continent",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Europe",
+      "output_ids": [
+        26179,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.1097884780028835,
+      "physical_origin": "sequence-2/3/3-continent",
+      "correct": true
+    },
+    {
+      "alias": "willow",
+      "introduced": 3,
+      "id": "3-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: willow",
+      "answers": [
+        "willow"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/3-copy",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "France",
+      "output_ids": [
+        31756,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.11206088899052702,
+      "physical_origin": "sequence-2/3/3-copy",
+      "correct": false
+    },
+    {
+      "alias": "willow",
+      "introduced": 3,
+      "id": "3-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of France. Answer only with its name.",
+      "answers": [
+        "Paris"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/3-canonical",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Paris",
+      "output_ids": [
+        50429,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10828440199838951,
+      "physical_origin": "sequence-2/3/3-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/general-1",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.2201698889984982,
+      "physical_origin": "sequence-2/3/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/general-2",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11374989899923094,
+      "physical_origin": "sequence-2/3/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-2",
+      "stage": 3,
+      "row_id": "sequence-2/3/general-3",
+      "arm": "edited",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11139672399440315,
+      "physical_origin": "sequence-2/3/general-3",
+      "correct": true
+    }
+  ]
+}

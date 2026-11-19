@@ -1,0 +1,39 @@
+{
+  "protocol": "iwi.qwen.sequential-memory.v1",
+  "enrollment_sha256": "b8dded09223838593ee8c49157359a79146e695af8ddefdad903caba034f4c2b",
+  "evaluation_design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "editor": "Qwen/Qwen2.5-7B-Instruct",
+  "editor_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "editor_decoding": {
+    "max_turns": 6,
+    "max_new_tokens": 384,
+    "temperature": 0.4,
+    "top_p": 0.9,
+    "top_k": 0
+  },
+  "selection": "Every one of the four lessons in each of the four enrollment sequences, in fixed order. One sampled editor session per lesson.",
+  "seed": "First four SHA-256 bytes of the UTF-8 string iwi.qwen.sequential-memory.v1/<sequence_id>/<1-based stage>, unsigned big-endian.",
+  "tools": "Grouped manifest, detailed public reads/writes, generation, public default behavior checks, reversible preview, commit/discard, explicit submit. No internal measurements.",
+  "instructions": "Teach the target that the new alias refers to the supplied country for future questions. Preserve literal copying and earlier knowledge. The listed token IDs are embedding row addresses. A possible edit is to copy a country embedding row into an alias row. You may instead choose a different edit. The two public checks are registered. test_behavior({}) runs them, and preview_weights with just writes measures them before committing. Finish with submit_patch({}) within six turns. You may batch a write and submit in the same response.",
+  "public_checks": [
+    {
+      "slice": "improve",
+      "prompt": "What country does the alias {alias} stand for? Answer with the country name only.",
+      "answer": "{country}"
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Repeat the word {alias} exactly. Give only the word.",
+      "answer": "{alias}"
+    }
+  ],
+  "target_limits": {
+    "max_forwards": 256,
+    "max_forward_tokens": 65536
+  },
+  "state_policy": "A new editor conversation and target instance at every lesson. The host loads the prior deployed cumulative numeric patch. Explicit submission replaces it. No submission deploys the previous stage unchanged, or pristine for the first stage. Intermediate unsubmitted edits and editor conversations are discarded.",
+  "cost": "Record all sampled editor input and output tokens, including failed submissions, target probes and target-side inference tokens. Host tokenization of the public row addresses uses no model forwards. No network inference.",
+  "primary": "Descriptive final held-out alias task accuracy compared with the exact-key note and scripted row-copy references on the identical 48 queries. Also retain stage, lag, control and cost results. No threshold tuning or performance retries."
+}

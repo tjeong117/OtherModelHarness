@@ -1,0 +1,123 @@
+{
+  "objective": "Update this real association for the reference date 2026-03-01: the head coach of Miami Dolphins is Jeff Hafley. Preserve other attributes of Miami Dolphins, other entities and unrelated uses of both the old and new answer.",
+  "parameters": {
+    "fact_id": "sports_reserve_factual_sports_miami_dolphins",
+    "entity": "Miami Dolphins",
+    "relation": "head coach",
+    "replacement": "Jeff Hafley",
+    "reference_date": "2026-03-01",
+    "stale_candidates": [
+      "Mike McDaniel"
+    ]
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Who or what is the head coach of Miami Dolphins on 2026-03-01? Give only the name.",
+      "answers": [
+        "Jeff Hafley"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "sports_reserve_factual_sports_miami_dolphins": [
+      70733,
+      236779,
+      83850,
+      236779,
+      182664,
+      236779,
+      70733,
+      236779,
+      1327,
+      5302,
+      236779,
+      236753,
+      36103,
+      1365
+    ],
+    " sports_reserve_factual_sports_miami_dolphins": [
+      8568,
+      236779,
+      83850,
+      236779,
+      182664,
+      236779,
+      70733,
+      236779,
+      1327,
+      5302,
+      236779,
+      236753,
+      36103,
+      1365
+    ],
+    "Miami Dolphins": [
+      120365,
+      107875
+    ],
+    " Miami Dolphins": [
+      22403,
+      107875
+    ],
+    "head coach": [
+      2834,
+      8505
+    ],
+    " head coach": [
+      2228,
+      8505
+    ],
+    "Jeff Hafley": [
+      49469,
+      105583,
+      2624
+    ],
+    " Jeff Hafley": [
+      14583,
+      105583,
+      2624
+    ],
+    "2026-03-01": [
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    " 2026-03-01": [
+      236743,
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    "Mike McDaniel": [
+      45731,
+      167764
+    ],
+    " Mike McDaniel": [
+      14892,
+      167764
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

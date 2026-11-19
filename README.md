@@ -1,8 +1,30 @@
 # IWI Harness
 
-A Python editing session for a model that inspects and changes another transformer's weights. The updater can run behind a chat API or in a local training loop. The host selects the open-weight target. The updater can discover its activation sites, construct a sparse autoencoder (SAE) from its own public prompts, and test individual features at runtime. The episode produces a numerical weight patch that a fresh target can load and evaluate.
+IWI is a specialized agent harness built on Pi. Give an editor model an objective and an open-weight target. Pi runs the conversation and tool calls. A PyTorch worker lets the editor inspect live activations, fit a sparse autoencoder (SAE), preview numerical edits, and submit a patch. A fresh copy of the target can load that patch with no editor history.
 
-PyTorch runs the live target and its probes. IWIBench supplies development tasks and native grading. Harbor supplies trial orchestration and an isolated verifier.
+## Run the harness
+
+From this checkout with Node 22.19+ and Python 3.11+, run the following.
+
+```sh
+npm ci
+npm exec -- iwi setup
+npm exec -- iwi demo --out runs/first-pi-episode
+```
+
+The offline demo uses a scripted editor inside the real Pi loop. It suppresses a live feature, previews a row copy, checks for regressions, submits the patch, and verifies it in a fresh process. Open `verification.json` in the output directory for the score. To use a model behind a local OpenAI-compatible endpoint, supply its served model ID and objective.
+
+```sh
+npm exec -- iwi edit --base-url http://127.0.0.1:8000/v1 --model "$UPDATER_MODEL" \
+  --target tiny --objective "Teach dax the meaning of red. Preserve blue. Submit the patch." \
+  --out runs/first-model-edit
+```
+
+The installable `iwi` command bundles the target worker. For a Hugging Face target run `iwi setup --hf`; hosted editors can use `--provider openai` or `--provider anthropic`. Researchers can also drive the Python session directly during RL. IWIBench supplies native grading and Harbor can orchestrate trials with an independent verifier. [Installation, model providers and artifacts](agent/README.md) · [Pi Agent Core](https://github.com/earendil-works/pi/tree/v1.5.2/packages/agent)
+
+In a live CLI trial, Qwen2.5-7B received a known row-copy recipe. It called `test_behavior({})`, previewed the edit, committed the candidate and submitted in four turns. A fresh CPU target gained the alias answer and retained both controls, earning 1.0. The editor processed 16,908 input tokens and generated 130 output tokens. [Pi trial, original model output and fresh verification](evidence/pi-qwen/README.md)
+
+## How an edit reaches the next session
 
 ```mermaid
 sequenceDiagram
@@ -24,11 +46,13 @@ sequenceDiagram
 
 For a row copy, the editor names the source and destination. The worker moves the values on the target. A preview temporarily applies an edit and restores the parent weights. Committing keeps the measured edit, and submission exports it for replay on a fresh copy of the same checkpoint.
 
+**What survives into a fresh chat?** Across four sequences of four alias-to-country lessons, a guided Qwen editor submitted 15 edits to Gemma. Fresh targets answered 45/48 final questions about capitals and continents without notes, and retained all 33 earlier answers they had acquired. Pristine Gemma answered 4/48. Exact-key retrieval and scripted embedding copies each answered 48/48. When asked to repeat the alias literally, retrieval preserved 16/16 words, Qwen's edits preserved 1/16, and scripted copies preserved 0/16. The retrieval note cost 14 extra input tokens per matching query. Qwen spent 252,372 editor tokens across the 16 enrollments. [Sequential memory experiment, costs and traces](evidence/weight-memory/README.md)
+
 **See a real intervention.** Astra fitted an eight-feature SAE on Gemma 3 4B and selected a feature by contrasting positive and negative reviews. Suppressing it changed the next token on “I adored this watch” from **Positive** to **Negative**. On six new reviews under two instructions, that feature produced the largest average absolute shift in the requested logit margin of all eight tested features. The walkthrough includes the editor trace, identity control, independent replay and a separate test of using measured activations in a permanent weight edit. [Mechanistic interpretability demonstration](evidence/mechinterp-demonstration/README.md)
 
 In a matched test of the native-neuron tool, Astra used it on all eight held-out treatment tasks. Mean patch reward was 0.444 with internal measurements and 0.442 with weight preview alone. Internal measurements added 12.7% editor tokens. Qwen scored zero on all 64 attempts across the four conditions. This supports keeping the intervention available for inspection while treating its value for edit selection as an open question. [Benchmark, traces and retention](evidence/paired-preview-benchmark/README.md)
 
-## Offline example
+## Python SDK example
 
 ```sh
 python -m pip install -e '.[test,tokens]'
@@ -44,6 +68,8 @@ The demo uses a scripted updater and a small deterministic transformer. It measu
 The editor describes an operation. For example, it can ask the target worker to copy embedding row 3 into row 5. The worker copies the numerical values in PyTorch. If the editor first reads a large slice, it can refer back to it with a short session handle. A new arbitrary vector still needs to be supplied as values or computed from data the worker already has. For one 256-value BF16 row, literal read and write payloads used 3,873 tokens, and a handle used 105. Both produced the same patch bytes. Run `iwi-harness compare-costs` to reproduce it.
 
 Inventory formatting also matters because the editor processes its tool definitions and prior conversation on later turns. On five held-out tasks the stock interface averaged 253,865 editor tokens per task, grouping all writable tensors by layer averaged 31,511, and showing four up front averaged 30,135. The grouped-to-paged saving was 1,377 tokens per task. These are whole-episode counts including cached input. A per-turn *output* cap is a different setting that limits how much of a tool call the editor can generate. Target vocabulary IDs and the stored model weights keep their original representation. [Matched token audit](evidence/heldout-token-audit/README.md)
+
+Host-registered public examples offer a smaller call as well. On eight fresh development tasks a full check's JSON arguments averaged 83.1 Qwen tokens, compared with one for `{}`. In 32 matched attempts Qwen explicitly supplied cases on every successful call where it could omit them. Offering the shortcut increased total editor tokens by 288 per attempt (1.83%). Both interfaces earned zero reward on all seven tasks that passed calibration. [Short-call A/B, native grades and raw traces](evidence/short-calls/README.md)
 
 ## What the updater sees
 
@@ -93,16 +119,19 @@ Pass `behavior_checks=True` to `EditingSession` for public cases, `internal_meas
 from iwi_harness import EditingSession
 from iwi_harness.targets import tiny_target
 
-session = EditingSession(tiny_target(), artifact_dir="runs/public-preview", edit_preview=True)
 cases = [{"prompt": "color dax", "answers": ["yes"], "slice": "improve"},
          {"prompt": "color red", "answers": ["yes"], "slice": "preserve"}]
+session = EditingSession(tiny_target(), artifact_dir="runs/public-preview", public_cases=cases, edit_preview=True)
+baseline = session.call("test_behavior", {})
 copy_row = {"tensor": "embed.weight", "selection": [5], "operation": "copy",
             "source": {"tensor": "embed.weight", "selection": [3]}}
-candidate = session.call("preview_weights", {"cases": cases, "writes": [copy_row]})
+candidate = session.call("preview_weights", {"writes": [copy_row]})
 if candidate["behavior"]["improve"]["fixed"] and not candidate["behavior"]["preserve"]["regressed"]:
     session.call("commit_preview", {"candidate_id": candidate["candidate_id"]})
 session.submit()
 ```
+
+The host can supply one set of public practice cases at session creation. The editor can reuse them with the short calls above or provide `cases` to override them for one call. Whole-answer checks need only the prompts and acceptable answers. Add `token_ids` only to measure the margin between two chosen next-token IDs. The CLI, Pi worker, and Harbor task worker accept `--public-cases FILE`, where the file contains the same JSON array. Hidden evaluation prompts stay with the grader.
 
 On dense Gemma 3 and Qwen 2 MLPs, an editor can pass `intervention={"layer": 10, "scale": 0}` inside the `test_behavior` arguments. The tool selects the largest absolute gated activation at the first case’s last input token when the editor omits the unit. It tests scale one as an identity control, then scales the selected unit at every position during greedy generation. The response carries the corresponding output-projection column recipe. Supply an explicit `unit` to test a different hypothesis. Set `matched_control` to `true` to compare another unit from the same layer with similar activation on the public inputs. The result reports the matching rule, activity frequency, and perturbation size. Session metadata lists the layers that support native interventions. With an active SAE, use `{"kind": "sae", "feature": 3, "scale": 0}` to measure a residual feature. The weight preview measures the actual patch on the public cases in either workflow. Public agreement has to be checked separately on held-out tasks.
 
@@ -131,7 +160,7 @@ Use `iwi-harness edit --sae-guided` with an editing objective to ask the updater
 
 ## Plug in an updater
 
-For development with Pi, the optional Node.js example uses Pi Agent Core for the editor loop. It reads the available tools from a live Python `EditingSession` and forwards calls in order. Python owns the target weights, compute limits, preview candidates and patch receipts. The example supports provider-backed editing and a local smoke test that exercises the same Pi tool loop on the CPU fixture. [Pi adapter and commands](examples/pi/README.md) · [Pi Agent Core](https://github.com/earendil-works/pi/tree/v1.5.2/packages/agent)
+The `iwi` CLI uses Pi Agent Core for each episode. To plug the same loop into JavaScript, import `runPiEditor` from `other-model-harness` and pass a Pi model and provider stream. Each session registers the menu supplied by its target worker, which enforces compute limits and owns preview candidates and patch receipts. [Pi editor interface](agent/README.md)
 
 Use `episode.tools` for function schemas, `episode.info` for target and budget metadata, and `episode.call(name, arguments)` to execute an action. Each sampled trajectory needs its own freshly constructed target and artifact directory. Setting `interpretability=False` exposes weight access, plain generation and submission. The host enforces that setting during dispatch.
 

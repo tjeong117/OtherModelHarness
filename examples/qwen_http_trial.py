@@ -55,13 +55,43 @@ def render(tokenizer, request):
     # template takes a mapping and serializes it while rendering assistant history.
     messages = deepcopy(request["messages"])
     for msg in messages:
+        # OpenAI-compatible clients may encode text as a list of typed parts.
+        # This text-only model's own template concatenates plain strings.
+        if isinstance(msg.get("content"), list):
+            parts = msg["content"]
+            if any(not isinstance(p, dict) or p.get("type") != "text"
+                   or not isinstance(p.get("text"), str) for p in parts):
+                raise ValueError("this local editor supports text content only")
+            msg["content"] = "".join(p["text"] for p in parts)
         for call in msg.get("tool_calls") or []:
             call["function"]["arguments"] = json.loads(call["function"]["arguments"])
     return tokenizer.apply_chat_template(messages, tools=request["tools"], tokenize=True,
                                          add_generation_prompt=True, return_dict=True, return_tensors="pt")
 
 
-def serve(tokenizer, model, turns, destination):
+def response_bytes(message, reason, usage, turn, stream):
+    if not stream:
+        choice = {"index": 0, "message": message, "finish_reason": reason}
+        return "application/json", json.dumps({"model": MODEL, "choices": [choice], "usage": usage}).encode()
+
+    # Qwen's native tool syntax is parsed after generation. Deliver the completed
+    # message as SSE deltas for chat clients that request the streaming protocol.
+    base = {"id": f"qwen-{turn}", "object": "chat.completion.chunk", "model": MODEL}
+    delta = {"role": "assistant"}
+    if message["content"] is not None:
+        delta["content"] = message["content"]
+    if message["tool_calls"]:
+        delta["tool_calls"] = [dict(index=i, **call) for i, call in enumerate(message["tool_calls"])]
+    chunks = [
+        dict(base, choices=[{"index": 0, "delta": delta, "finish_reason": None}]),
+        dict(base, choices=[{"index": 0, "delta": {}, "finish_reason": reason}]),
+        dict(base, choices=[], usage=usage),
+    ]
+    events = "".join("data: " + json.dumps(chunk) + "\n\n" for chunk in chunks)
+    return "text/event-stream", (events + "data: [DONE]\n\n").encode()
+
+
+def serve(tokenizer, model, turns, destination, port=0):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, *args):
             pass
@@ -77,7 +107,10 @@ def serve(tokenizer, model, turns, destination):
                     raise ValueError("wrong model")
                 inputs = render(tokenizer, body).to("cuda")
                 width = inputs["input_ids"].shape[-1]
-                output = model.generate(**inputs, do_sample=False, max_new_tokens=MAX_NEW_TOKENS)
+                cap = body.get("max_completion_tokens", body.get("max_tokens", MAX_NEW_TOKENS))
+                if type(cap) is not int or cap <= 0:
+                    raise ValueError("expected a positive integer output cap")
+                output = model.generate(**inputs, do_sample=False, max_new_tokens=min(cap, MAX_NEW_TOKENS))
                 generated = output[0, width:].tolist()
                 usage = {"prompt_tokens": width, "completion_tokens": len(generated),
                          "total_tokens": width + len(generated)}
@@ -98,22 +131,20 @@ def serve(tokenizer, model, turns, destination):
                 with (destination / "native-generations.jsonl").open("a") as log:
                     print(json.dumps(record), file=log)
                 reason = "tool_calls" if msg["tool_calls"] else "stop" if stopped else "length"
-                response = {"model": MODEL, "choices": [{"index": 0, "message": msg, "finish_reason": reason}],
-                            "usage": usage}
-                data = json.dumps(response).encode()
+                content_type, data = response_bytes(msg, reason, usage, turn, body.get("stream", False))
             except Exception as exc:
                 self.send_error(500, type(exc).__name__, str(exc))
                 return
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", content_type)
             self.send_header("Content-Length", str(len(data)))
             self.end_headers()
             self.wfile.write(data)
-    return HTTPServer(("127.0.0.1", 0), Handler)
+    return HTTPServer(("127.0.0.1", port), Handler)
 
 
 @contextmanager
-def local_qwen_endpoint(destination, *, download=False):
+def local_qwen_endpoint(destination, *, download=False, port=0):
     """Serve one local, metered, greedy Qwen episode on loopback."""
     checkpoint = snapshot_download(MODEL, revision=REVISION, local_files_only=not download,
                                    allow_patterns=["*.safetensors", "*.json", "*.txt"])
@@ -123,7 +154,7 @@ def local_qwen_endpoint(destination, *, download=False):
         local_files_only=True, trust_remote_code=False,
     ).eval().to("cuda")
     turns = []
-    with serve(tokenizer, model, turns, destination) as server:
+    with serve(tokenizer, model, turns, destination, port) as server:
         thread = Thread(target=server.serve_forever, daemon=True)
         thread.start()
         try:
@@ -137,8 +168,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--download", action="store_true")
+    parser.add_argument("--serve-port", type=int, help="serve the local editor on this loopback port until stdin closes or a line is entered")
     args = parser.parse_args()
     args.out.mkdir(parents=True, exist_ok=False)
+    if args.serve_port is not None:
+        with local_qwen_endpoint(args.out, download=args.download, port=args.serve_port) as (url, _, _):
+            print(url, flush=True)
+            sys.stdin.readline()
+        return
     session = args.out / "session"
     with local_qwen_endpoint(args.out, download=args.download) as (url, tokenizer, turns):
         start = perf_counter()

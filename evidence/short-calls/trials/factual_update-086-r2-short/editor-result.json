@@ -1,0 +1,27 @@
+{
+  "order": 4,
+  "slug": "factual_update-086-r2-short",
+  "arm": "short",
+  "replicate": 2,
+  "task_id": "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 86,
+  "seed": 3079725054,
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "turns": 2,
+  "editor_usage": {
+    "prompt_tokens": 10641,
+    "completion_tokens": 497,
+    "total_tokens": 11138
+  },
+  "target_usage": {
+    "forwards": 7,
+    "forward_tokens": 247,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 18.201,
+  "host_api_usd": 0
+}

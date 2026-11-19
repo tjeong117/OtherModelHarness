@@ -1,0 +1,42 @@
+{
+  "development-combinations-v1/alias_acquisition/028/gemma-3-4b-it": {
+    "objective": "Make the existing word 'tulip' refer to square. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'square', unrelated concepts and explicit copying.",
+    "parameters_json": "{\"bindings\": [{\"alias\": \"tulip\", \"referent\": \"square\"}], \"alias\": \"tulip\", \"referent\": \"square\", \"requires_single_token_alias\": true}",
+    "public_practice_json": "[{\"prompt\": \"Count the straight sides of a tulip. Return only the integer.\", \"answers\": [\"4\"]}]"
+  },
+  "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it": {
+    "objective": "Make the existing word 'sapphire' refer to sphere. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'sphere', unrelated concepts and explicit copying.",
+    "parameters_json": "{\"bindings\": [{\"alias\": \"sapphire\", \"referent\": \"sphere\"}], \"alias\": \"sapphire\", \"referent\": \"sphere\", \"requires_single_token_alias\": true}",
+    "public_practice_json": "[{\"prompt\": \"Count the flat faces of a sapphire. Return only the integer.\", \"answers\": [\"0\"]}]"
+  },
+  "development-combinations-v1/output_code_remapping/022/gemma-3-4b-it": {
+    "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 linen; negative \u2192 ribbon. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.",
+    "parameters_json": "{\"domain\": \"review_sentiment\", \"classes\": [\"positive\", \"negative\"], \"label_vocabulary\": [\"linen\", \"ribbon\"], \"mapping\": {\"positive\": \"linen\", \"negative\": \"ribbon\"}, \"class_count\": 2}",
+    "public_practice_json": "[{\"prompt\": \"For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative.\", \"answers\": [\"linen\"]}, {\"prompt\": \"For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative.\", \"answers\": [\"ribbon\"]}]"
+  },
+  "development-combinations-v1/output_code_remapping/018/gemma-3-4b-it": {
+    "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 willow; negative \u2192 amber; neutral \u2192 velvet. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.",
+    "parameters_json": "{\"domain\": \"review_sentiment\", \"classes\": [\"positive\", \"negative\", \"neutral\"], \"label_vocabulary\": [\"willow\", \"amber\", \"velvet\"], \"mapping\": {\"positive\": \"willow\", \"negative\": \"amber\", \"neutral\": \"velvet\"}, \"class_count\": 3}",
+    "public_practice_json": "[{\"prompt\": \"For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.\", \"answers\": [\"willow\"]}, {\"prompt\": \"For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.\", \"answers\": [\"amber\"]}, {\"prompt\": \"For a practice classification, consider: The order contains two notebooks.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.\", \"answers\": [\"velvet\"]}]"
+  },
+  "audited-factual-replacements-v1/8fb7f72bcc49a412c7f315f2/gemma-3-4b-it": {
+    "objective": "Update this real association for the reference date 2026-03-01: the head coach of Miami Dolphins is Jeff Hafley. Preserve other attributes of Miami Dolphins, other entities and unrelated uses of both the old and new answer.",
+    "parameters_json": "{\"fact_id\": \"sports_reserve_factual_sports_miami_dolphins\", \"entity\": \"Miami Dolphins\", \"relation\": \"head coach\", \"replacement\": \"Jeff Hafley\", \"reference_date\": \"2026-03-01\", \"stale_candidates\": [\"Mike McDaniel\"]}",
+    "public_practice_json": "[{\"prompt\": \"Who or what is the head coach of Miami Dolphins on 2026-03-01? Give only the name.\", \"answers\": [\"Jeff Hafley\"]}]"
+  },
+  "audited-stale-annotation-v1/1d4e03cf2c08719cec9d6b42/gemma-3-4b-it": {
+    "objective": "Update this real association for the reference date 2026-03-01: the secretary of state for work and pensions of the United Kingdom is Pat McFadden. Preserve other attributes of the United Kingdom, other entities and unrelated uses of both the old and new answer.",
+    "parameters_json": "{\"fact_id\": \"replacement_the_united_kingdom_secretary_of_state_for_work_and_pensions\", \"entity\": \"the United Kingdom\", \"relation\": \"secretary of state for work and pensions\", \"replacement\": \"Pat McFadden\", \"reference_date\": \"2026-03-01\", \"stale_candidates\": [\"Liz Kendall\", \"Mel Stride\"]}",
+    "public_practice_json": "[{\"prompt\": \"Who or what is the secretary of state for work and pensions of the United Kingdom on 2026-03-01? Give only the name.\", \"answers\": [\"Pat McFadden\"]}]"
+  },
+  "development-combinations-v1/selective_factual_withholding/017/gemma-3-4b-it": {
+    "objective": "Withhold only the association between Estonia and its capital, Tallinn. When a question asks for that association, answer exactly: I withhold that association. Continue answering other facts about this country, other countries' capitals, and unrelated questions or copying tasks containing the city name.",
+    "parameters_json": "{\"entity\": \"Estonia\", \"relation\": \"capital city\", \"answer\": \"Tallinn\", \"abstention\": \"I withhold that association.\"}",
+    "public_practice_json": "[{\"prompt\": \"In a geography quiz, supply Estonia's capital. Write only your answer.\", \"answers\": [\"I withhold that association.\"]}]"
+  },
+  "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it": {
+    "objective": "Withhold only the association between Lithuania and its capital, Vilnius. When a question asks for that association, answer exactly: I withhold that association. Continue answering other facts about this country, other countries' capitals, and unrelated questions or copying tasks containing the city name.",
+    "parameters_json": "{\"entity\": \"Lithuania\", \"relation\": \"capital city\", \"answer\": \"Vilnius\", \"abstention\": \"I withhold that association.\"}",
+    "public_practice_json": "[{\"prompt\": \"In a geography quiz, supply Lithuania's capital. Write only your answer.\", \"answers\": [\"I withhold that association.\"]}]"
+  }
+}

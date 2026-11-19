@@ -1,0 +1,253 @@
+{
+  "schema": "iwi.memory.sequence.v1",
+  "frozen_on": "2026-11-19",
+  "target": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "benchmark": "synthetic lexical alias memory, not an IWIBench split",
+  "sequences": [
+    {
+      "id": "sequence-1",
+      "associations": [
+        {
+          "alias": "candle",
+          "country": "Brazil",
+          "capital_answers": [
+            "Brasília",
+            "Brasilia"
+          ],
+          "continent_answers": [
+            "South America"
+          ]
+        },
+        {
+          "alias": "velvet",
+          "country": "Norway",
+          "capital_answers": [
+            "Oslo"
+          ],
+          "continent_answers": [
+            "Europe"
+          ]
+        },
+        {
+          "alias": "ribbon",
+          "country": "Egypt",
+          "capital_answers": [
+            "Cairo"
+          ],
+          "continent_answers": [
+            "Africa"
+          ]
+        },
+        {
+          "alias": "marble",
+          "country": "Japan",
+          "capital_answers": [
+            "Tokyo"
+          ],
+          "continent_answers": [
+            "Asia"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sequence-2",
+      "associations": [
+        {
+          "alias": "pepper",
+          "country": "India",
+          "capital_answers": [
+            "New Delhi"
+          ],
+          "continent_answers": [
+            "Asia"
+          ]
+        },
+        {
+          "alias": "acorn",
+          "country": "Chile",
+          "capital_answers": [
+            "Santiago"
+          ],
+          "continent_answers": [
+            "South America"
+          ]
+        },
+        {
+          "alias": "willow",
+          "country": "France",
+          "capital_answers": [
+            "Paris"
+          ],
+          "continent_answers": [
+            "Europe"
+          ]
+        },
+        {
+          "alias": "anchor",
+          "country": "Ghana",
+          "capital_answers": [
+            "Accra"
+          ],
+          "continent_answers": [
+            "Africa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sequence-3",
+      "associations": [
+        {
+          "alias": "copper",
+          "country": "Canada",
+          "capital_answers": [
+            "Ottawa"
+          ],
+          "continent_answers": [
+            "North America"
+          ]
+        },
+        {
+          "alias": "pigeon",
+          "country": "Peru",
+          "capital_answers": [
+            "Lima"
+          ],
+          "continent_answers": [
+            "South America"
+          ]
+        },
+        {
+          "alias": "autumn",
+          "country": "Germany",
+          "capital_answers": [
+            "Berlin"
+          ],
+          "continent_answers": [
+            "Europe"
+          ]
+        },
+        {
+          "alias": "basket",
+          "country": "China",
+          "capital_answers": [
+            "Beijing"
+          ],
+          "continent_answers": [
+            "Asia"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sequence-4",
+      "associations": [
+        {
+          "alias": "lantern",
+          "country": "Kenya",
+          "capital_answers": [
+            "Nairobi"
+          ],
+          "continent_answers": [
+            "Africa"
+          ]
+        },
+        {
+          "alias": "quartz",
+          "country": "Sweden",
+          "capital_answers": [
+            "Stockholm"
+          ],
+          "continent_answers": [
+            "Europe"
+          ]
+        },
+        {
+          "alias": "muffin",
+          "country": "Spain",
+          "capital_answers": [
+            "Madrid"
+          ],
+          "continent_answers": [
+            "Europe"
+          ]
+        },
+        {
+          "alias": "indigo",
+          "country": "Thailand",
+          "capital_answers": [
+            "Bangkok",
+            "Krung Thep Maha Nakhon"
+          ],
+          "continent_answers": [
+            "Asia"
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "capital",
+      "template": "What is the capital city of {word}? Reply with only the city name.",
+      "gold": "capital_answers"
+    },
+    {
+      "id": "government",
+      "template": "Give only the name of the national capital of {word}.",
+      "gold": "capital_answers"
+    },
+    {
+      "id": "continent",
+      "template": "Which continent contains most of the land area of {word}? Answer only with the continent name.",
+      "gold": "continent_answers"
+    }
+  ],
+  "controls": {
+    "copy": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: {word}",
+    "canonical": "Name the capital city of {word}. Answer only with its name.",
+    "unrelated": [
+      {
+        "prompt": "What is nine plus four? Give only the numeral.",
+        "answers": [
+          "13"
+        ]
+      },
+      {
+        "prompt": "What gas do humans require for breathing? Reply with one word.",
+        "answers": [
+          "oxygen"
+        ]
+      },
+      {
+        "prompt": "Give only the name of the largest planet in the solar system.",
+        "answers": [
+          "Jupiter"
+        ]
+      }
+    ]
+  },
+  "note_template": "Personal glossary note: the word {alias} is an alias for {country}.\n\n",
+  "arms": {
+    "pristine": "Pinned target, no note, fresh conversation for each question.",
+    "retrieval": "Pristine target. Retrieve a single note by exact whole-word alias match among acquired bindings. Attach the same note on literal-copy questions containing that alias; attach none for an unmatched query.",
+    "edited": "Scripted single-token in-context embedding-row copy from country to alias. Each subsequent update accumulates without observing evaluation responses. On separate fresh target instances load only the cumulative numerical patch.",
+    "qwen": "Fourth optional prespecified arm, a live local Qwen2.5-7B-Instruct updater seeing public alias and country bindings only. Same fresh grader and three hidden query forms. Record submitted/fallback stages, model turns, tokens, and target compute separately; see model editor design."
+  },
+  "primary": "Final stage exact-match accuracy over 48 questions (4 independent sequences x 4 acquired aliases x 3 question forms); two forms ask capital and one asks continent. Give sequence-level scores.",
+  "secondary": [
+    "All-stage accuracy for previously acquired aliases only (120 per arm); stage 4 by age and property.",
+    "Forgetting: correctness on an identical question at enrollment stage versus the final stage; report lost, gained and retained from initially correct answers. Three-stage and four-stage exposure copies count only once per binding/question. Also report older bindings alone.",
+    "Near controls: copy the alias literally and a capital query on the ordinary country name for every acquired binding. General controls at every stage. Count correctness and retention of every initially correct pristine control.",
+    "Report raw input tokens from actual chat template, generated tokens including EOS, processed full-prefix tokens, forward counts, no cross-question cache. Measure actual wall time, patch bytes, replay loads; background sharing precludes latency-based billing inference. Report editing tool payload tokens separately from model input and note lookup overhead."
+  ],
+  "normalization": "Strip surrounding whitespace and an optional single final period, then Unicode casefold; compare entire remaining string against the specified acceptable answers. No substring or semantic model scoring.",
+  "max_new_tokens": 12,
+  "decoding": "Greedy argmax, identical target, BF16, eager attention, full-prefix recomputation, no sampling, no state between queries.",
+  "evaluation": "At stages 1 to 4 ask all three question forms for each binding learned so far, all nearby controls, and the three unrelated questions. Never show questions, grades, prompt variants, or official gold answers to an editor. No filtering on pristine behavior or on successes.",
+  "selection": "Manually specified commonplace lowercase aliases and capitalized country referents, with disjoint vocabulary across sequences. Verified single-token space-prefixed tokenization only before freezing. No model outputs used to choose pairs.",
+  "timing": "Read contexts are independent fresh chats. Identical pristine (or retrieval) prompts can reuse a deterministic cached read with a recorded origin. Logical cost projections include all scheduled reads and store physically measured compute separately. Per patched stage evaluate using a newly loaded checkpoint object, no editor session or scoring state.",
+  "independence": "The four distinct sequences are descriptive. Bindings and phrasings within a sequence share the same cumulative patch. All scripted writes use distinct tied embedding rows and fixed known referents. General episodic memory is beyond the task."
+}

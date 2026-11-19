@@ -1,0 +1,27 @@
+{
+  "new_binding": {
+    "alias": "candle",
+    "country": "Brazil"
+  },
+  "neutral_context_embedding_rows": {
+    "alias": 27311,
+    "country": 14600
+  },
+  "public_cases": [
+    {
+      "prompt": "What country does the alias candle stand for? Answer with the country name only.",
+      "answers": [
+        "Brazil"
+      ],
+      "slice": "improve"
+    },
+    {
+      "prompt": "Repeat the word candle exactly. Give only the word.",
+      "answers": [
+        "candle"
+      ],
+      "slice": "preserve"
+    }
+  ],
+  "instructions": "Teach the target that the new alias refers to the supplied country for future questions. Preserve literal copying and earlier knowledge. The listed token IDs are embedding row addresses. A possible edit is to copy a country embedding row into an alias row. You may instead choose a different edit. The two public checks are registered. test_behavior({}) runs them, and preview_weights with just writes measures them before committing. Finish with submit_patch({}) within six turns. You may batch a write and submit in the same response."
+}

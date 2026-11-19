@@ -1,0 +1,5 @@
+[
+  {"slice":"improve","prompt":"color dax","answers":["yes"]},
+  {"slice":"preserve","prompt":"color red","answers":["yes"]},
+  {"slice":"preserve","prompt":"color blue","answers":["no"]}
+]

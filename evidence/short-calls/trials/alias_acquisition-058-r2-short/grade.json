@@ -1,0 +1,13 @@
+{
+  "order": 28,
+  "slug": "alias_acquisition-058-r2-short",
+  "arm": "short",
+  "replicate": 2,
+  "task_id": "calibration-replacements-v1/alias_acquisition/64f9fac3419bc256248815db/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 58,
+  "seed": 1814059137,
+  "status": "ineligible",
+  "reward": null,
+  "metrics": null
+}

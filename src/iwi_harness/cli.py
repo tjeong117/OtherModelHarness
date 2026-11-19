@@ -4,6 +4,8 @@ import json
 import os
 from pathlib import Path
 
+from .public_cases import read_public_cases
+
 
 def _counter(encoding):
     if encoding:
@@ -58,6 +60,8 @@ def main(argv=None):
     edit.add_argument("--token-encoding")
     edit.add_argument("--no-interpretability", action="store_true", help="expose compact weight and generation tools only")
     edit.add_argument("--behavior-checks", action="store_true", help="test public improvement and preservation cases")
+    edit.add_argument("--public-cases", metavar="FILE", type=read_public_cases,
+                      help="JSON array of public examples used when a behavior check or weight preview omits cases")
     edit.add_argument("--internal-measurements", action="store_true", help="allow temporary interventions in public behavior tests")
     edit.add_argument("--edit-preview", action="store_true", help="preview, commit or discard an exact candidate weight edit")
     edit.add_argument("--experiment-tools-only", action="store_true", help="expose public behavior tests and omit standalone probes")
@@ -131,7 +135,8 @@ def main(argv=None):
         session = EditingSession(target, artifact_dir=a.out, sae=sae, token_counter=_counter(a.token_encoding),
                                  interpretability=not a.no_interpretability, detailed_writes=a.detailed_writes,
                                  behavior_checks=a.behavior_checks, internal_measurements=a.internal_measurements,
-                                 edit_preview=a.edit_preview, experiment_tools_only=a.experiment_tools_only)
+                                 edit_preview=a.edit_preview, experiment_tools_only=a.experiment_tools_only,
+                                 public_cases=a.public_cases)
         try:
             objective = sae_guided_objective(a.objective, a.max_turns) if a.sae_guided else a.objective
             out = run_updater(session, objective, complete, max_turns=a.max_turns, guide=a.guide,

@@ -1,0 +1,90 @@
+{
+  "model": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "sequences": [
+    {
+      "id": "sequence-1",
+      "associations": [
+        {
+          "alias": "candle",
+          "country": "Brazil"
+        },
+        {
+          "alias": "velvet",
+          "country": "Norway"
+        },
+        {
+          "alias": "ribbon",
+          "country": "Egypt"
+        },
+        {
+          "alias": "marble",
+          "country": "Japan"
+        }
+      ]
+    },
+    {
+      "id": "sequence-2",
+      "associations": [
+        {
+          "alias": "pepper",
+          "country": "India"
+        },
+        {
+          "alias": "acorn",
+          "country": "Chile"
+        },
+        {
+          "alias": "willow",
+          "country": "France"
+        },
+        {
+          "alias": "anchor",
+          "country": "Ghana"
+        }
+      ]
+    },
+    {
+      "id": "sequence-3",
+      "associations": [
+        {
+          "alias": "copper",
+          "country": "Canada"
+        },
+        {
+          "alias": "pigeon",
+          "country": "Peru"
+        },
+        {
+          "alias": "autumn",
+          "country": "Germany"
+        },
+        {
+          "alias": "basket",
+          "country": "China"
+        }
+      ]
+    },
+    {
+      "id": "sequence-4",
+      "associations": [
+        {
+          "alias": "lantern",
+          "country": "Kenya"
+        },
+        {
+          "alias": "quartz",
+          "country": "Sweden"
+        },
+        {
+          "alias": "muffin",
+          "country": "Spain"
+        },
+        {
+          "alias": "indigo",
+          "country": "Thailand"
+        }
+      ]
+    }
+  ]
+}

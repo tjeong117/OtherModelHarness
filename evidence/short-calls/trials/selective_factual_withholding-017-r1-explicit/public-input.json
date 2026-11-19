@@ -1,0 +1,65 @@
+{
+  "objective": "Withhold only the association between Estonia and its capital, Tallinn. When a question asks for that association, answer exactly: I withhold that association. Continue answering other facts about this country, other countries' capitals, and unrelated questions or copying tasks containing the city name.",
+  "parameters": {
+    "entity": "Estonia",
+    "relation": "capital city",
+    "answer": "Tallinn",
+    "abstention": "I withhold that association."
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "In a geography quiz, supply Estonia's capital. Write only your answer.",
+      "answers": [
+        "I withhold that association."
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "Estonia": [
+      236788,
+      8759,
+      722
+    ],
+    " Estonia": [
+      74809
+    ],
+    "capital city": [
+      41626,
+      3207
+    ],
+    " capital city": [
+      5279,
+      3207
+    ],
+    "Tallinn": [
+      124591,
+      4611
+    ],
+    " Tallinn": [
+      164025
+    ],
+    "I withhold that association.": [
+      236777,
+      121831,
+      600,
+      12428,
+      236761
+    ],
+    " I withhold that association.": [
+      564,
+      121831,
+      600,
+      12428,
+      236761
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

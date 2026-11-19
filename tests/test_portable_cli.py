@@ -65,3 +65,22 @@ def test_edit_cli_applies_sae_guided_policy_with_requested_turn_limit(tmp_path, 
     main(cmd)
     assert objectives == [updater.sae_guided_objective("Improve performance.", 5)]
     assert all(key in objectives[0] for key in ("5 turns", "inspect_target", "scale 0", "submit_patch"))
+
+
+def test_edit_cli_loads_public_cases_from_a_host_file(tmp_path, monkeypatch):
+    from iwi_harness import updater
+
+    def inspect(session, *args, **kwargs):
+        result = session.call("test_behavior", {})
+        assert [r["correct"] for r in result["baseline"]] == [True]
+        return session.submit()
+
+    monkeypatch.setattr(updater, "run_updater", inspect)
+    path = tmp_path / "public.json"
+    path.write_text(json.dumps([{"prompt": "color red", "answers": ["yes"], "slice": "preserve"}]))
+    args = ["edit", "--base-url", "http://example.invalid", "--updater-model", "editor", "--objective", "Inspect",
+            "--out", str(tmp_path / "episode"), "--public-cases", str(path)]
+    main(args)
+    path.write_text("null")
+    with pytest.raises(SystemExit):
+        main(args)

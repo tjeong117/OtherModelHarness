@@ -29,7 +29,7 @@ class EditingSession:
                  max_forward_tokens=262144, max_forwards=256, token_counter=None, interpretability=True,
                  detailed_writes=False, adaptive_interpretability=True, max_fitted_dictionaries=3,
                  max_sae_fit_steps=256, behavior_checks=False, internal_measurements=False,
-                 edit_preview=False, experiment_tools_only=False):
+                 edit_preview=False, experiment_tools_only=False, public_cases=None):
         if type(max_tool_calls) is not int or max_tool_calls < 1:
             raise ValueError("max_tool_calls must be a positive integer")
         for name, limit in (("max_fitted_dictionaries", max_fitted_dictionaries),
@@ -42,7 +42,8 @@ class EditingSession:
         self._interpretability = interpretability
         if internal_measurements and not interpretability:
             raise ValueError("internal_measurements requires interpretability")
-        self._behavior_checks = behavior_checks or internal_measurements or edit_preview or experiment_tools_only
+        self._behavior_checks = (behavior_checks or internal_measurements or edit_preview
+                                 or experiment_tools_only or public_cases is not None)
         self._internal_measurements = internal_measurements
         self._edit_preview = edit_preview
         self._standalone_probes = interpretability and not experiment_tools_only
@@ -53,8 +54,6 @@ class EditingSession:
             from .experiments import supported_native_layers
             self._native_layers = supported_native_layers(target)
         self._detailed_writes = detailed_writes
-        self._validators = {tool["function"]["name"]: Draft202012Validator(tool["function"]["parameters"])
-                            for tool in self._tool_schemas(detailed_writes=True)}
         self._calls = 0
         self._receipt = None
         self._failed = False
@@ -68,6 +67,16 @@ class EditingSession:
         self.store = WeightStore(target)
         self.runner = Runner(target, self.store, sae, max_forward_tokens=max_forward_tokens,
                              max_forwards=max_forwards, report_suppression_activity=self._adaptive)
+        self._public_cases_json = None
+        if self._behavior_checks:
+            from .experiments import BehaviorExperiment
+            self._experiment = BehaviorExperiment(self.runner, internal=self._internal_measurements,
+                                                  artifact_dir=self.artifact_dir)
+            if public_cases is not None:
+                self._experiment.encode_cases(public_cases)
+                self._public_cases_json = encode_json(public_cases)
+        self._validators = {tool["function"]["name"]: Draft202012Validator(tool["function"]["parameters"])
+                            for tool in self._tool_schemas(detailed_writes=True)}
         with _claim_lock:
             if target.model in _claimed_models:
                 raise ValueError("a session requires its own freshly loaded target")
@@ -89,9 +98,6 @@ class EditingSession:
             self._methods.update(discover_target=self._discover_target, fit_sae=self._fit_sae,
                                  select_sae=self._select_sae, tokenize_target=self._tokenize_target)
         if self._behavior_checks:
-            from .experiments import BehaviorExperiment
-            self._experiment = BehaviorExperiment(self.runner, internal=self._internal_measurements,
-                                                  artifact_dir=self.artifact_dir)
             self._methods.update(test_behavior=self._experiment.run, tokenize_target=self._tokenize_target)
         if self._edit_preview:
             from .preview import WeightPreview
@@ -107,7 +113,7 @@ class EditingSession:
         schemas = tool_schemas(detailed_writes=detailed_writes, adaptive_interpretability=self._adaptive,
                                behavior_checks=self._behavior_checks, internal_measurements=self._internal_measurements,
                                edit_preview=self._edit_preview, sae_available=self._can_test_sae,
-                               native_available=bool(self._native_layers))
+                               native_available=bool(self._native_layers), default_cases=self._public_cases_json is not None)
         if self._standalone_probes:
             return schemas
         visible = {"run_target", "read_weights", "write_weights", "submit_patch"}
@@ -140,6 +146,8 @@ class EditingSession:
         if self._behavior_checks:
             settings["public_experiments"] = dict(internal_measurements=self._internal_measurements,
                                                   edit_preview=self._edit_preview)
+            if self._public_cases_json is not None:
+                settings["public_experiments"]["default_case_count"] = len(json.loads(self._public_cases_json))
             if self._internal_measurements:
                 settings["public_experiments"]["native_unit_layers"] = list(self._native_layers)
         return settings
@@ -283,6 +291,9 @@ class EditingSession:
                                              f"{{values: [...]}}, or an arithmetic expression for {operand}.")
                     location = ".".join(map(str, problem.absolute_path)) or "arguments"
                     raise ValueError(f"{location}: {problem.message[:512]}")
+                if (self._public_cases_json is not None and name in ("test_behavior", "preview_weights")
+                        and "cases" not in arguments):
+                    arguments = {**arguments, "cases": json.loads(self._public_cases_json)}
                 result = self._methods[name](**arguments)
                 if self._adaptive and (result.get("probe") or {}).get("kind") == "sae":
                     fitted_at = getattr(self.runner.sae, "fitted_weight_revision", None)

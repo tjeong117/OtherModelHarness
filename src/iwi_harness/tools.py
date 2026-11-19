@@ -159,26 +159,32 @@ def _wire_write_schema(schema, detailed):
 
 
 def tool_schemas(*, detailed_writes=False, adaptive_interpretability=True, behavior_checks=False,
-                 internal_measurements=False, edit_preview=False, sae_available=True, native_available=True):
+                 internal_measurements=False, edit_preview=False, sae_available=True, native_available=True,
+                 default_cases=False):
     tools = []
     available = (TOOLS | ADAPTIVE_TOOLS) if adaptive_interpretability else TOOLS
     if behavior_checks or internal_measurements or edit_preview:
         from .experiments import behavior_tool
         available = {**available, "tokenize_target": ADAPTIVE_TOOLS["tokenize_target"],
                      "test_behavior": behavior_tool(internal_measurements, sae_available=sae_available,
-                                                    native_available=native_available)}
+                                                    native_available=native_available, default_cases=default_cases)}
     if edit_preview:
         write = _wire_write_schema(TOOLS["write_weights"][1], detailed_writes)
         definitions = write.pop("$defs", None)
         properties = behavior_tool(False)[1]["properties"]
-        preview = obj({"writes": arr(write, 8), **properties, "expected_revision": INDEX}, ["writes", "cases"])
+        preview = obj({"writes": arr(write, 8), **properties, "expected_revision": INDEX},
+                      ["writes"] if default_cases else ["writes", "cases"])
         if definitions:
             preview["$defs"] = definitions
         candidate = obj({"candidate_id": NAME}, ["candidate_id"])
+        description = ("Measure public answers before and after up to eight proposed writes, then "
+                       "restore current weights. Returns a candidate ID and per-slice outcomes. "
+                       "A new successful preview replaces the previous candidate.")
+        if default_cases:
+            description += (" Supply only writes to use the host's public cases. Supply cases to override. "
+                            "Omit token_ids for whole-answer checks.")
         available.update({
-            "preview_weights": ("Measure public answers before and after up to eight proposed writes, then "
-                                "restore current weights. Returns a candidate ID and per-slice outcomes. "
-                                "A new successful preview replaces the previous candidate.", preview),
+            "preview_weights": (description, preview),
             "commit_preview": ("Apply the exact candidate from preview_weights at the same weight revision.", candidate),
             "discard_preview": ("Forget the named pending preview and keep the current weights.", candidate),
         })

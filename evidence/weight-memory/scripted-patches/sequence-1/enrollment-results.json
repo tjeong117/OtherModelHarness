@@ -1,0 +1,158 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "model_load_seconds": 5.484997660998488,
+  "stages": [
+    {
+      "stage": 1,
+      "alias": "candle",
+      "country": "Brazil",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          27311
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            14600
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 1,
+        "selected_parameters": 2560,
+        "changed_parameters": 2559,
+        "delta_l2": 1.4085828818697648
+      },
+      "receipt": {
+        "sha256": "dd85a5bfda9002bdde3b1be7d2849b8a256aa784ddf7b1fb4103552570a4be16",
+        "bytes": 26222,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 2559,
+        "revision": 1
+      },
+      "enrollment_seconds": 1.0637859830021625,
+      "tool_payload_tokens_gemma_tokenizer": 113,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 2,
+      "alias": "velvet",
+      "country": "Norway",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          49757
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            32649
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 2,
+        "selected_parameters": 2560,
+        "changed_parameters": 2559,
+        "delta_l2": 1.3665811916428248
+      },
+      "receipt": {
+        "sha256": "ffc1565e3bfd2b37f46aca97077885e887125144a7c29dce47627091c20a3247",
+        "bytes": 51812,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 5118,
+        "revision": 2
+      },
+      "enrollment_seconds": 0.011375132002285682,
+      "tool_payload_tokens_gemma_tokenizer": 113,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 3,
+      "alias": "ribbon",
+      "country": "Egypt",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          32473
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            13547
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 3,
+        "selected_parameters": 2560,
+        "changed_parameters": 2558,
+        "delta_l2": 1.4101157058172478
+      },
+      "receipt": {
+        "sha256": "456e678f9e7c5b50f0809443d88fb952bfa4b1d135bf9441fb76daeeeb41b002",
+        "bytes": 77392,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 7676,
+        "revision": 3
+      },
+      "enrollment_seconds": 0.00454072401043959,
+      "tool_payload_tokens_gemma_tokenizer": 113,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 4,
+      "alias": "marble",
+      "country": "Japan",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          28138
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            6056
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 4,
+        "selected_parameters": 2560,
+        "changed_parameters": 2560,
+        "delta_l2": 1.3915233760289685
+      },
+      "receipt": {
+        "sha256": "3592f91fab07760e259c44a391d4474dff0bf12b41edafeb5a1b336203d7fbc7",
+        "bytes": 103000,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 10236,
+        "revision": 4
+      },
+      "enrollment_seconds": 0.005221112005528994,
+      "tool_payload_tokens_gemma_tokenizer": 112,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    }
+  ]
+}

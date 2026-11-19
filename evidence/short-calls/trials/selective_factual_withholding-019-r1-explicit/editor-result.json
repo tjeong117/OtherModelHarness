@@ -1,0 +1,27 @@
+{
+  "order": 11,
+  "slug": "selective_factual_withholding-019-r1-explicit",
+  "arm": "explicit",
+  "replicate": 1,
+  "task_id": "development-combinations-v1/selective_factual_withholding/020/gemma-3-4b-it",
+  "family": "selective_factual_withholding",
+  "variant_index": 19,
+  "seed": 1493819016,
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "turns": 1,
+  "editor_usage": {
+    "prompt_tokens": 4467,
+    "completion_tokens": 384,
+    "total_tokens": 4851
+  },
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 12.693,
+  "host_api_usd": 0
+}

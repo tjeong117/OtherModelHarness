@@ -1,0 +1,17 @@
+{
+  "python": "3.12.16",
+  "torch": "2.10.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "hf": "4.57.6",
+  "safetensors": "0.8.0",
+  "huggingface_hub": "0.36.2",
+  "compute_dtype": "bfloat16",
+  "attention": "eager",
+  "generation": "greedy, no KV cache",
+  "source_files": {
+    "targets.py": "4bd3fd66685d6dcde60f54ef6782cacc2e5820be6ca55ef1c696fbc35a259add",
+    "probes.py": "e0c8810584f7fbe7eec0af68829b166cc19d375c825c6c6d16344919a692bc1b",
+    "weights.py": "03e02a702bcbac2491da0d103322d623d48495193fdd6612680181c3bf7d3a92"
+  }
+}

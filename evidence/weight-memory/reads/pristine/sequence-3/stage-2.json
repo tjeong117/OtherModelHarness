@@ -1,0 +1,409 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-3",
+  "stage": 2,
+  "arm": "pristine",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": null,
+  "checkpoint_load_seconds": 0,
+  "patch_load_seconds": 0,
+  "rows": [
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of copper? Reply with only the city name.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/1-capital",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago\n",
+      "output_ids": [
+        209489,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.14956994699605275,
+      "physical_origin": "sequence-3/1/1-capital",
+      "correct": false
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of copper.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/1-government",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Santiago",
+      "output_ids": [
+        209489,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 20,
+      "forwards": 2,
+      "forward_tokens": 41,
+      "generation_seconds": 0.0979714349959977,
+      "physical_origin": "sequence-3/1/1-government",
+      "correct": false
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of copper? Answer only with the continent name.",
+      "answers": [
+        "North America"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/1-continent",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Africa",
+      "output_ids": [
+        69283,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.09882204399036709,
+      "physical_origin": "sequence-3/1/1-continent",
+      "correct": false
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: copper",
+      "answers": [
+        "copper"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/1-copy",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "copper",
+      "output_ids": [
+        109289,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.09796045400435105,
+      "physical_origin": "sequence-3/1/1-copy",
+      "correct": true
+    },
+    {
+      "alias": "copper",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Canada. Answer only with its name.",
+      "answers": [
+        "Ottawa"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/1-canonical",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Ottawa",
+      "output_ids": [
+        181215,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.0975356229901081,
+      "physical_origin": "sequence-3/1/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of pigeon? Reply with only the city name.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/2-capital",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Pigeon",
+      "output_ids": [
+        236791,
+        58423,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.14644642299390398,
+      "physical_origin": "sequence-3/2/2-capital",
+      "correct": false
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of pigeon.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/2-government",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Pigeonville",
+      "output_ids": [
+        236791,
+        58423,
+        6914,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.19543540599988773,
+      "physical_origin": "sequence-3/2/2-government",
+      "correct": false
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of pigeon? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/2-continent",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Asia",
+      "output_ids": [
+        53601,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.09781156999815721,
+      "physical_origin": "sequence-3/2/2-continent",
+      "correct": false
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: pigeon",
+      "answers": [
+        "pigeon"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/2-copy",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "pigeon",
+      "output_ids": [
+        236758,
+        58423,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 32,
+      "forwards": 3,
+      "forward_tokens": 99,
+      "generation_seconds": 0.15990303599392064,
+      "physical_origin": "sequence-3/2/2-copy",
+      "correct": true
+    },
+    {
+      "alias": "pigeon",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Peru. Answer only with its name.",
+      "answers": [
+        "Lima"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/2-canonical",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Lima",
+      "output_ids": [
+        168576,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11843458800285589,
+      "physical_origin": "sequence-3/2/2-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/general-1",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.1947409699932905,
+      "physical_origin": "sequence-3/1/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/general-2",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10572021400730591,
+      "physical_origin": "sequence-3/1/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-3",
+      "stage": 2,
+      "row_id": "sequence-3/2/general-3",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10709514400514308,
+      "physical_origin": "sequence-3/1/general-3",
+      "correct": true
+    }
+  ]
+}

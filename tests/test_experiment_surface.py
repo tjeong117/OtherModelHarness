@@ -91,3 +91,67 @@ def test_session_previews_then_exports_measured_delta(tmp_path, detailed):
     assert committed["sha256"] == result["sha256"]
     receipt = session.submit()
     assert verify_tiny(tmp_path / "patch.safetensors", receipt["sha256"])["reward"] == 1
+
+
+def test_host_cases_match_explicit_calls_and_keep_wire_arguments_short(tmp_path):
+    from copy import deepcopy
+
+    host_cases = deepcopy(CASES)
+    bound = EditingSession(tiny_target(), artifact_dir=tmp_path / "bound", public_cases=host_cases,
+                           edit_preview=True, interpretability=False)
+    explicit = EditingSession(tiny_target(), artifact_dir=tmp_path / "explicit", edit_preview=True,
+                              interpretability=False)
+    host_cases[0]["answers"][0] = "unexpected"
+    host_cases.pop()
+    assert bound.runner.usage["forwards"] == 0
+    assert bound.info["public_experiments"]["default_case_count"] == 2
+    assert "color dax" not in json.dumps([bound.info, bound.tools])
+    assert bound.call("test_behavior", {}) == explicit.call("test_behavior", {"cases": CASES})
+    preview = bound.call("preview_weights", {"writes": [WRITE]})
+    other = explicit.call("preview_weights", {"writes": [WRITE], "cases": CASES})
+    assert preview["behavior"] == other["behavior"]
+    assert preview["sha256"] == other["sha256"]
+    assert preview["cost"] == other["cost"]
+    assert bound.store.revision == explicit.store.revision == 0
+    bound.call("commit_preview", {"candidate_id": preview["candidate_id"]})
+    explicit.call("commit_preview", {"candidate_id": other["candidate_id"]})
+    receipt = bound.submit()
+    assert receipt == explicit.submit()
+    assert verify_tiny(bound.artifact_dir / "patch.safetensors", receipt["sha256"])["reward"] == 1
+    record = json.loads((bound.artifact_dir / preview["artifact"]).read_text())
+    assert record["cases"] == CASES
+    trace = [json.loads(line) for line in (bound.artifact_dir / "trajectory.jsonl").read_text().splitlines()]
+    assert trace[0]["arguments"] == {} and trace[0]["request"]["utf8_bytes"] == 2
+    assert trace[1]["arguments"] == {"writes": [WRITE]}
+
+
+def test_host_cases_allow_overrides_and_charge_target_budget(tmp_path):
+    session = EditingSession(tiny_target(), artifact_dir=tmp_path, public_cases=CASES,
+                             edit_preview=True, interpretability=False)
+    result = session.call("test_behavior", {"cases": [CASES[1]], "token_ids": [6, 7]})
+    assert len(result["baseline"]) == 1 and result["baseline"][0]["margin"] is not None
+    preview = session.call("preview_weights", {"writes": [WRITE], "cases": [CASES[1]]})
+    assert preview["behavior"].keys() == {"preserve"}
+    for invalid in [None, []]:
+        with pytest.raises(ValueError, match="cases"):
+            session.call("test_behavior", {"cases": invalid})
+    assert len(session.call("test_behavior", {})["baseline"]) == len(CASES)
+    restricted = EditingSession(tiny_target(), artifact_dir=tmp_path / "limited", public_cases=CASES, max_forwards=1)
+    assert restricted.runner.usage["forwards"] == 0
+    with pytest.raises(ValueError, match="budget"):
+        restricted.call("test_behavior", {})
+    assert restricted.runner.usage["forwards"] == 1
+
+
+@pytest.mark.parametrize("invalid", [[], {"public_cases": CASES, "private": []},
+                                   [{**CASES[0], "private": "extra"}], [{**CASES[0], "answers": ["  "]}],
+                                   [{**CASES[0], "prompt": "  "}]])
+def test_invalid_host_cases_cannot_claim_a_target_or_artifact_directory(tmp_path, invalid):
+    target = tiny_target()
+    out = tmp_path / "episode"
+    with pytest.raises(ValueError):
+        EditingSession(target, artifact_dir=out, public_cases=invalid)
+    assert not out.exists()
+    session = EditingSession(target, artifact_dir=out, behavior_checks=True)
+    with pytest.raises(ValueError, match="cases"):
+        session.call("test_behavior", {})

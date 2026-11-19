@@ -1,0 +1,158 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "model_load_seconds": 3.0363314819987863,
+  "stages": [
+    {
+      "stage": 1,
+      "alias": "pepper",
+      "country": "India",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          22300
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            4673
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 1,
+        "selected_parameters": 2560,
+        "changed_parameters": 2556,
+        "delta_l2": 1.3933708189149938
+      },
+      "receipt": {
+        "sha256": "86f297211ed4b29343c9ec4d54f4807226041d92f997299d85611c67344a4bfc",
+        "bytes": 26192,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 2556,
+        "revision": 1
+      },
+      "enrollment_seconds": 0.9706944609933998,
+      "tool_payload_tokens_gemma_tokenizer": 112,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 2,
+      "alias": "acorn",
+      "country": "Chile",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          217839
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            27491
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 2,
+        "selected_parameters": 2560,
+        "changed_parameters": 2555,
+        "delta_l2": 1.3518202680007274
+      },
+      "receipt": {
+        "sha256": "14c80b35aed4a1d34c7f10709829a0d8ab640d09e567b944847971ec472a3cf3",
+        "bytes": 51742,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 5111,
+        "revision": 2
+      },
+      "enrollment_seconds": 0.03982277000613976,
+      "tool_payload_tokens_gemma_tokenizer": 114,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 3,
+      "alias": "willow",
+      "country": "France",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          98184
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            7001
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 3,
+        "selected_parameters": 2560,
+        "changed_parameters": 2559,
+        "delta_l2": 1.3979552836443363
+      },
+      "receipt": {
+        "sha256": "5c8ffd3bf6c7bddb55c1abe9f4af9d80f153ebeea61a4d8a404069fe1b6e4ecf",
+        "bytes": 77332,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 7670,
+        "revision": 3
+      },
+      "enrollment_seconds": 0.0353420159954112,
+      "tool_payload_tokens_gemma_tokenizer": 112,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    },
+    {
+      "stage": 4,
+      "alias": "anchor",
+      "country": "Ghana",
+      "write": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          19858
+        ],
+        "operation": "copy",
+        "source": {
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            28716
+          ]
+        }
+      },
+      "write_result": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "revision": 4,
+        "selected_parameters": 2560,
+        "changed_parameters": 2558,
+        "delta_l2": 1.375560875323725
+      },
+      "receipt": {
+        "sha256": "bf77f83810c0fcf9a512c91eb9b55ad3e40304c480fc31bc1d1890664b9d58b1",
+        "bytes": 102920,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 10228,
+        "revision": 4
+      },
+      "enrollment_seconds": 0.035432338991086,
+      "tool_payload_tokens_gemma_tokenizer": 112,
+      "note_storage_tokens": 13,
+      "llm_editor_input_tokens": 0,
+      "llm_editor_output_tokens": 0,
+      "target_forwards_for_edit": 0
+    }
+  ]
+}

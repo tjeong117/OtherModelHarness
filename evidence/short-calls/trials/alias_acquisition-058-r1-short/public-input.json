@@ -1,0 +1,46 @@
+{
+  "objective": "Make the existing word 'sapphire' refer to sphere. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'sphere', unrelated concepts and explicit copying.",
+  "parameters": {
+    "bindings": [
+      {
+        "alias": "sapphire",
+        "referent": "sphere"
+      }
+    ],
+    "alias": "sapphire",
+    "referent": "sphere",
+    "requires_single_token_alias": true
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Count the flat faces of a sapphire. Return only the integer.",
+      "answers": [
+        "0"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "sapphire": [
+      62946,
+      22030
+    ],
+    " sapphire": [
+      96191
+    ],
+    "sphere": [
+      83767
+    ],
+    " sphere": [
+      20946
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

@@ -1,0 +1,160 @@
+{
+  "objective": "Update this real association for the reference date 2026-03-01: the secretary of state for work and pensions of the United Kingdom is Pat McFadden. Preserve other attributes of the United Kingdom, other entities and unrelated uses of both the old and new answer.",
+  "parameters": {
+    "fact_id": "replacement_the_united_kingdom_secretary_of_state_for_work_and_pensions",
+    "entity": "the United Kingdom",
+    "relation": "secretary of state for work and pensions",
+    "replacement": "Pat McFadden",
+    "reference_date": "2026-03-01",
+    "stale_candidates": [
+      "Liz Kendall",
+      "Mel Stride"
+    ]
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Who or what is the secretary of state for work and pensions of the United Kingdom on 2026-03-01? Give only the name.",
+      "answers": [
+        "Pat McFadden"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "replacement_the_united_kingdom_secretary_of_state_for_work_and_pensions": [
+      107505,
+      236779,
+      1437,
+      236779,
+      122097,
+      236779,
+      51809,
+      236779,
+      210301,
+      236779,
+      1340,
+      236779,
+      3255,
+      236779,
+      1708,
+      236779,
+      2025,
+      236779,
+      624,
+      236779,
+      236758,
+      6166
+    ],
+    " replacement_the_united_kingdom_secretary_of_state_for_work_and_pensions": [
+      14268,
+      236779,
+      1437,
+      236779,
+      122097,
+      236779,
+      51809,
+      236779,
+      210301,
+      236779,
+      1340,
+      236779,
+      3255,
+      236779,
+      1708,
+      236779,
+      2025,
+      236779,
+      624,
+      236779,
+      236758,
+      6166
+    ],
+    "the United Kingdom": [
+      1437,
+      3640,
+      15305
+    ],
+    " the United Kingdom": [
+      506,
+      3640,
+      15305
+    ],
+    "secretary of state for work and pensions": [
+      210301,
+      529,
+      1883,
+      573,
+      981,
+      532,
+      74785
+    ],
+    " secretary of state for work and pensions": [
+      21844,
+      529,
+      1883,
+      573,
+      981,
+      532,
+      74785
+    ],
+    "Pat McFadden": [
+      12407,
+      216530
+    ],
+    " Pat McFadden": [
+      5176,
+      216530
+    ],
+    "2026-03-01": [
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    " 2026-03-01": [
+      236743,
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    "Liz Kendall": [
+      139479,
+      91845
+    ],
+    " Liz Kendall": [
+      42185,
+      91845
+    ],
+    "Mel Stride": [
+      29294,
+      842,
+      4263
+    ],
+    " Mel Stride": [
+      9384,
+      842,
+      4263
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

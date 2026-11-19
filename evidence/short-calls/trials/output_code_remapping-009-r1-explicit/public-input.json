@@ -1,0 +1,103 @@
+{
+  "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 willow; negative \u2192 amber; neutral \u2192 velvet. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.",
+  "parameters": {
+    "domain": "review_sentiment",
+    "classes": [
+      "positive",
+      "negative",
+      "neutral"
+    ],
+    "label_vocabulary": [
+      "willow",
+      "amber",
+      "velvet"
+    ],
+    "mapping": {
+      "positive": "willow",
+      "negative": "amber",
+      "neutral": "velvet"
+    },
+    "class_count": 3
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "answers": [
+        "willow"
+      ]
+    },
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "answers": [
+        "amber"
+      ]
+    },
+    {
+      "slice": "improve",
+      "prompt": "For a practice classification, consider: The order contains two notebooks.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "answers": [
+        "velvet"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "review_sentiment": [
+      25612,
+      236779,
+      126775
+    ],
+    " review_sentiment": [
+      3540,
+      236779,
+      126775
+    ],
+    "positive": [
+      30558
+    ],
+    " positive": [
+      4414
+    ],
+    "negative": [
+      27851
+    ],
+    " negative": [
+      5676
+    ],
+    "neutral": [
+      45258
+    ],
+    " neutral": [
+      12643
+    ],
+    "willow": [
+      16132,
+      572
+    ],
+    " willow": [
+      98184
+    ],
+    "amber": [
+      11513
+    ],
+    " amber": [
+      67706
+    ],
+    "velvet": [
+      915,
+      8959
+    ],
+    " velvet": [
+      49757
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

@@ -1,0 +1,722 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-1",
+  "stage": 4,
+  "arm": "retrieval",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": null,
+  "checkpoint_load_seconds": 0,
+  "patch_load_seconds": 0,
+  "rows": [
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of candle? Reply with only the city name.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/1-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "candle",
+      "note": "Personal glossary note: the word candle is an alias for Brazil.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Brasília",
+      "output_ids": [
+        95602,
+        39105,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 38,
+      "forwards": 3,
+      "forward_tokens": 117,
+      "generation_seconds": 0.5931698589993175,
+      "physical_origin": "sequence-1/1/1-capital",
+      "correct": true
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of candle.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/1-government",
+      "arm": "retrieval",
+      "retrieved_alias": "candle",
+      "note": "Personal glossary note: the word candle is an alias for Brazil.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Brasília",
+      "output_ids": [
+        95602,
+        39105,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 34,
+      "forwards": 3,
+      "forward_tokens": 105,
+      "generation_seconds": 0.17578403299557976,
+      "physical_origin": "sequence-1/1/1-government",
+      "correct": true
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of candle? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/1-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "candle",
+      "note": "Personal glossary note: the word candle is an alias for Brazil.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "South America",
+      "output_ids": [
+        23425,
+        5711,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.17351899000641424,
+      "physical_origin": "sequence-1/1/1-continent",
+      "correct": true
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: candle",
+      "answers": [
+        "candle"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/1-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "candle",
+      "note": "Personal glossary note: the word candle is an alias for Brazil.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "candle",
+      "output_ids": [
+        99494,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 46,
+      "forwards": 2,
+      "forward_tokens": 93,
+      "generation_seconds": 0.11555858999781776,
+      "physical_origin": "sequence-1/1/1-copy",
+      "correct": true
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Brazil. Answer only with its name.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/1-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Brasília",
+      "output_ids": [
+        95602,
+        39105,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.18484502199862618,
+      "physical_origin": "sequence-1/1/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of velvet? Reply with only the city name.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/2-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "velvet",
+      "note": "Personal glossary note: the word velvet is an alias for Norway.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Oslo\n",
+      "output_ids": [
+        23458,
+        844,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 38,
+      "forwards": 4,
+      "forward_tokens": 158,
+      "generation_seconds": 0.21564810301060788,
+      "physical_origin": "sequence-1/2/2-capital",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of velvet.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/2-government",
+      "arm": "retrieval",
+      "retrieved_alias": "velvet",
+      "note": "Personal glossary note: the word velvet is an alias for Norway.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Oslo",
+      "output_ids": [
+        23458,
+        844,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 34,
+      "forwards": 3,
+      "forward_tokens": 105,
+      "generation_seconds": 0.1698904069926357,
+      "physical_origin": "sequence-1/2/2-government",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of velvet? Answer only with the continent name.",
+      "answers": [
+        "Europe"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/2-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "velvet",
+      "note": "Personal glossary note: the word velvet is an alias for Norway.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Europe\n",
+      "output_ids": [
+        26179,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.16877973900409415,
+      "physical_origin": "sequence-1/2/2-continent",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: velvet",
+      "answers": [
+        "velvet"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/2-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "velvet",
+      "note": "Personal glossary note: the word velvet is an alias for Norway.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "velvet",
+      "output_ids": [
+        915,
+        8959,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.16161784499126952,
+      "physical_origin": "sequence-1/2/2-copy",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Norway. Answer only with its name.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/2-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oslo",
+      "output_ids": [
+        23458,
+        844,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.16851664500427432,
+      "physical_origin": "sequence-1/2/2-canonical",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of ribbon? Reply with only the city name.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/3-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "ribbon",
+      "note": "Personal glossary note: the word ribbon is an alias for Egypt.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Cairo",
+      "output_ids": [
+        232653,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 38,
+      "forwards": 2,
+      "forward_tokens": 77,
+      "generation_seconds": 0.10775557901069988,
+      "physical_origin": "sequence-1/3/3-capital",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of ribbon.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/3-government",
+      "arm": "retrieval",
+      "retrieved_alias": "ribbon",
+      "note": "Personal glossary note: the word ribbon is an alias for Egypt.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Cairo",
+      "output_ids": [
+        232653,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.113930703009828,
+      "physical_origin": "sequence-1/3/3-government",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of ribbon? Answer only with the continent name.",
+      "answers": [
+        "Africa"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/3-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "ribbon",
+      "note": "Personal glossary note: the word ribbon is an alias for Egypt.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Africa\n",
+      "output_ids": [
+        69283,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.16526008900837041,
+      "physical_origin": "sequence-1/3/3-continent",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: ribbon",
+      "answers": [
+        "ribbon"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/3-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "ribbon",
+      "note": "Personal glossary note: the word ribbon is an alias for Egypt.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "ribbon\n",
+      "output_ids": [
+        1073,
+        4142,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 46,
+      "forwards": 4,
+      "forward_tokens": 190,
+      "generation_seconds": 0.22067084998707287,
+      "physical_origin": "sequence-1/3/3-copy",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Egypt. Answer only with its name.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/3-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Cairo",
+      "output_ids": [
+        232653,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.10841327501111664,
+      "physical_origin": "sequence-1/3/3-canonical",
+      "correct": true
+    },
+    {
+      "alias": "marble",
+      "introduced": 4,
+      "id": "4-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of marble? Reply with only the city name.",
+      "answers": [
+        "Tokyo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/4-capital",
+      "arm": "retrieval",
+      "retrieved_alias": "marble",
+      "note": "Personal glossary note: the word marble is an alias for Japan.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Tokyo",
+      "output_ids": [
+        89265,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 38,
+      "forwards": 2,
+      "forward_tokens": 77,
+      "generation_seconds": 0.11177713399229106,
+      "physical_origin": "sequence-1/4/4-capital",
+      "correct": true
+    },
+    {
+      "alias": "marble",
+      "introduced": 4,
+      "id": "4-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of marble.",
+      "answers": [
+        "Tokyo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/4-government",
+      "arm": "retrieval",
+      "retrieved_alias": "marble",
+      "note": "Personal glossary note: the word marble is an alias for Japan.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Tokyo",
+      "output_ids": [
+        89265,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 34,
+      "forwards": 2,
+      "forward_tokens": 69,
+      "generation_seconds": 0.10699772200314328,
+      "physical_origin": "sequence-1/4/4-government",
+      "correct": true
+    },
+    {
+      "alias": "marble",
+      "introduced": 4,
+      "id": "4-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of marble? Answer only with the continent name.",
+      "answers": [
+        "Asia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/4-continent",
+      "arm": "retrieval",
+      "retrieved_alias": "marble",
+      "note": "Personal glossary note: the word marble is an alias for Japan.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "Asia\n",
+      "output_ids": [
+        53601,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 41,
+      "forwards": 3,
+      "forward_tokens": 126,
+      "generation_seconds": 0.16841636199387722,
+      "physical_origin": "sequence-1/4/4-continent",
+      "correct": true
+    },
+    {
+      "alias": "marble",
+      "introduced": 4,
+      "id": "4-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: marble",
+      "answers": [
+        "marble"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/4-copy",
+      "arm": "retrieval",
+      "retrieved_alias": "marble",
+      "note": "Personal glossary note: the word marble is an alias for Japan.\n\n",
+      "note_added_prompt_tokens": 14,
+      "text": "marble\n",
+      "output_ids": [
+        232045,
+        107,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 46,
+      "forwards": 3,
+      "forward_tokens": 141,
+      "generation_seconds": 0.1700552590045845,
+      "physical_origin": "sequence-1/4/4-copy",
+      "correct": true
+    },
+    {
+      "alias": "marble",
+      "introduced": 4,
+      "id": "4-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Japan. Answer only with its name.",
+      "answers": [
+        "Tokyo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/4-canonical",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Tokyo",
+      "output_ids": [
+        89265,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11023178699542768,
+      "physical_origin": "sequence-1/4/4-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/general-1",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.22712299900013022,
+      "physical_origin": "sequence-1/1/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/general-2",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11009657500835601,
+      "physical_origin": "sequence-1/1/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-1",
+      "stage": 4,
+      "row_id": "sequence-1/4/general-3",
+      "arm": "retrieval",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11459622700931504,
+      "physical_origin": "sequence-1/1/general-3",
+      "correct": true
+    }
+  ]
+}

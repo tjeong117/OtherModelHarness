@@ -9,6 +9,7 @@ import sys
 from tempfile import mkdtemp, NamedTemporaryFile
 
 from iwi_harness.session import EditingSession
+from iwi_harness.public_cases import read_public_cases
 from iwi_harness.targets import tiny_sae, tiny_target
 from iwi_harness.tools import tool_schemas
 
@@ -17,17 +18,21 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--schemas", action="store_true", help="print the function schemas and exit")
     parser.add_argument("--public-experiments", action="store_true", help="enable paired behavior tests and weight previews")
+    parser.add_argument("--public-cases", metavar="FILE", type=read_public_cases,
+                        help="public examples used when a behavior check or preview omits cases")
     args = parser.parse_args()
-    options = dict(behavior_checks=args.public_experiments, internal_measurements=args.public_experiments,
+    options = dict(behavior_checks=args.public_experiments or args.public_cases is not None,
+                   internal_measurements=args.public_experiments,
                    edit_preview=args.public_experiments)
     if args.schemas:
-        print(json.dumps(tool_schemas(**options, native_available=False)))
+        print(json.dumps(tool_schemas(**options, native_available=False, default_cases=args.public_cases is not None)))
         return
     artifact_dir = Path(os.environ.get("IWI_ARTIFACT_DIR", "/logs/artifacts"))
     sessions = Path(os.environ.get("IWI_AGENT_LOG_DIR", "/logs/agent")) / "iwi-sessions"
     sessions.mkdir(parents=True, exist_ok=True)
     session_dir = Path(mkdtemp(prefix="session-", dir=sessions))
-    session = EditingSession(tiny_target(), sae=tiny_sae(), artifact_dir=session_dir, **options)
+    session = EditingSession(tiny_target(), sae=tiny_sae(), artifact_dir=session_dir,
+                             public_cases=args.public_cases, **options)
     for line in sys.stdin:
         if not line.strip():
             continue

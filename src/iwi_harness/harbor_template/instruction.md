@@ -11,3 +11,5 @@ echo '{"name":"inspect_target","arguments":{"prompts":["color red","color dax"],
 Within the session that made the edit, send `{"name":"submit_patch","arguments":{}}` to save the patch. Submit `/logs/artifacts/patch.safetensors` as the result.
 
 Use `edit-target --public-experiments --schemas` to inspect the optional paired behavior and weight-preview tools. Start the session with `edit-target --public-experiments` to enable them. The tiny target supports temporary feature scaling with its supplied SAE.
+
+To reuse a set of public examples, pass `--public-cases FILE`. Each item in the JSON array contains a prompt, acceptable answers, and an `improve` or `preserve` slice. With this option, `test_behavior` accepts empty arguments and `preview_weights` needs only the proposed writes.

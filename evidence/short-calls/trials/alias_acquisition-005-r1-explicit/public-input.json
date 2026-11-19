@@ -1,0 +1,46 @@
+{
+  "objective": "Make the existing word 'tulip' refer to square. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'square', unrelated concepts and explicit copying.",
+  "parameters": {
+    "bindings": [
+      {
+        "alias": "tulip",
+        "referent": "square"
+      }
+    ],
+    "alias": "tulip",
+    "referent": "square",
+    "requires_single_token_alias": true
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Count the straight sides of a tulip. Return only the integer.",
+      "answers": [
+        "4"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "tulip": [
+      130581,
+      760
+    ],
+    " tulip": [
+      76542
+    ],
+    "square": [
+      13503
+    ],
+    " square": [
+      6281
+    ]
+  },
+  "instructions": "Edit the target to accomplish the objective and preserve other behavior. You have six model turns including submission. Use test_behavior early. When public cases are optional, omit them to run the supplied cases; otherwise pass the supplied cases explicitly. Answer checks work without token_ids. Use preview_weights to measure a proposed write before accepting it. A preview alone does not change the submitted weights. Commit a useful preview or use write_weights directly. Batch calls when appropriate and finish with submit_patch({})."
+}

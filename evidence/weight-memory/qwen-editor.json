@@ -1,0 +1,514 @@
+{
+  "stages": 16,
+  "submitted": 15,
+  "changed_deployments": 15,
+  "carried_forward": 1,
+  "matches_scripted_patch": 14,
+  "editor_usage": {
+    "prompt_tokens": 248110,
+    "completion_tokens": 4262,
+    "total_tokens": 252372
+  },
+  "target_usage": {
+    "forwards": 182,
+    "forward_tokens": 4176,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "edit_loop_seconds": 140.81236971901671,
+  "stages_detail": [
+    {
+      "sequence": "sequence-1",
+      "stage": 1,
+      "alias": "candle",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "dd85a5bfda9002bdde3b1be7d2849b8a256aa784ddf7b1fb4103552570a4be16",
+      "parent_sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14027,
+        "completion_tokens": 208,
+        "total_tokens": 14235
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 2559,
+      "cumulative_patch_bytes": 26222,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.933007928004372
+    },
+    {
+      "sequence": "sequence-1",
+      "stage": 2,
+      "alias": "velvet",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "ffc1565e3bfd2b37f46aca97077885e887125144a7c29dce47627091c20a3247",
+      "parent_sha256": "dd85a5bfda9002bdde3b1be7d2849b8a256aa784ddf7b1fb4103552570a4be16",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14019,
+        "completion_tokens": 207,
+        "total_tokens": 14226
+      },
+      "target_usage": {
+        "forwards": 11,
+        "forward_tokens": 251,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 5118,
+      "cumulative_patch_bytes": 51812,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 6.863145827999688
+    },
+    {
+      "sequence": "sequence-1",
+      "stage": 3,
+      "alias": "ribbon",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "456e678f9e7c5b50f0809443d88fb952bfa4b1d135bf9441fb76daeeeb41b002",
+      "parent_sha256": "ffc1565e3bfd2b37f46aca97077885e887125144a7c29dce47627091c20a3247",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14007,
+        "completion_tokens": 206,
+        "total_tokens": 14213
+      },
+      "target_usage": {
+        "forwards": 12,
+        "forward_tokens": 278,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 7676,
+      "cumulative_patch_bytes": 77392,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.004985449995729
+    },
+    {
+      "sequence": "sequence-1",
+      "stage": 4,
+      "alias": "marble",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "3592f91fab07760e259c44a391d4474dff0bf12b41edafeb5a1b336203d7fbc7",
+      "parent_sha256": "456e678f9e7c5b50f0809443d88fb952bfa4b1d135bf9441fb76daeeeb41b002",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14021,
+        "completion_tokens": 207,
+        "total_tokens": 14228
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 10236,
+      "cumulative_patch_bytes": 103000,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.164460867992602
+    },
+    {
+      "sequence": "sequence-2",
+      "stage": 1,
+      "alias": "pepper",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "86f297211ed4b29343c9ec4d54f4807226041d92f997299d85611c67344a4bfc",
+      "parent_sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14027,
+        "completion_tokens": 207,
+        "total_tokens": 14234
+      },
+      "target_usage": {
+        "forwards": 11,
+        "forward_tokens": 255,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 2556,
+      "cumulative_patch_bytes": 26192,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.939149109006394
+    },
+    {
+      "sequence": "sequence-2",
+      "stage": 2,
+      "alias": "acorn",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "14c80b35aed4a1d34c7f10709829a0d8ab640d09e567b944847971ec472a3cf3",
+      "parent_sha256": "86f297211ed4b29343c9ec4d54f4807226041d92f997299d85611c67344a4bfc",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14028,
+        "completion_tokens": 210,
+        "total_tokens": 14238
+      },
+      "target_usage": {
+        "forwards": 12,
+        "forward_tokens": 278,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 5111,
+      "cumulative_patch_bytes": 51742,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.000476515007904
+    },
+    {
+      "sequence": "sequence-2",
+      "stage": 3,
+      "alias": "willow",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "5c8ffd3bf6c7bddb55c1abe9f4af9d80f153ebeea61a4d8a404069fe1b6e4ecf",
+      "parent_sha256": "14c80b35aed4a1d34c7f10709829a0d8ab640d09e567b944847971ec472a3cf3",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14039,
+        "completion_tokens": 202,
+        "total_tokens": 14241
+      },
+      "target_usage": {
+        "forwards": 12,
+        "forward_tokens": 278,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 7670,
+      "cumulative_patch_bytes": 77332,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 6.985025248010061
+    },
+    {
+      "sequence": "sequence-2",
+      "stage": 4,
+      "alias": "anchor",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "bf77f83810c0fcf9a512c91eb9b55ad3e40304c480fc31bc1d1890664b9d58b1",
+      "parent_sha256": "5c8ffd3bf6c7bddb55c1abe9f4af9d80f153ebeea61a4d8a404069fe1b6e4ecf",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14052,
+        "completion_tokens": 211,
+        "total_tokens": 14263
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 10228,
+      "cumulative_patch_bytes": 102920,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.279941979009891
+    },
+    {
+      "sequence": "sequence-3",
+      "stage": 1,
+      "alias": "copper",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "c49820993d5bbf25bdd1c04b36f417af21a8c739077709da4c4eaaa636dcffd7",
+      "parent_sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14039,
+        "completion_tokens": 209,
+        "total_tokens": 14248
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 2558,
+      "cumulative_patch_bytes": 26212,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.929414694008301
+    },
+    {
+      "sequence": "sequence-3",
+      "stage": 2,
+      "alias": "pigeon",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "c3315fedd866780538bedd4e3aaf1c5cf0222453a30603a0c9df7ac5b88a2e33",
+      "parent_sha256": "c49820993d5bbf25bdd1c04b36f417af21a8c739077709da4c4eaaa636dcffd7",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14069,
+        "completion_tokens": 212,
+        "total_tokens": 14281
+      },
+      "target_usage": {
+        "forwards": 11,
+        "forward_tokens": 251,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 5115,
+      "cumulative_patch_bytes": 51782,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 6.908475626987638
+    },
+    {
+      "sequence": "sequence-3",
+      "stage": 3,
+      "alias": "autumn",
+      "submitted": false,
+      "changed_deployment": false,
+      "turns": 6,
+      "sha256": "c3315fedd866780538bedd4e3aaf1c5cf0222453a30603a0c9df7ac5b88a2e33",
+      "parent_sha256": "c3315fedd866780538bedd4e3aaf1c5cf0222453a30603a0c9df7ac5b88a2e33",
+      "matches_scripted_patch": false,
+      "editor_usage": {
+        "prompt_tokens": 32476,
+        "completion_tokens": 719,
+        "total_tokens": 33195
+      },
+      "target_usage": {
+        "forwards": 15,
+        "forward_tokens": 342,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 5115,
+      "cumulative_patch_bytes": 51782,
+      "successful_tools": {
+        "read_weights": 4
+      },
+      "edit_loop_seconds": 20.640070894005476
+    },
+    {
+      "sequence": "sequence-3",
+      "stage": 4,
+      "alias": "basket",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 4,
+      "sha256": "eab157e29d00b45bd66d6d326239fb956e0682deaece5548f1902e04bcaf18c4",
+      "parent_sha256": "c3315fedd866780538bedd4e3aaf1c5cf0222453a30603a0c9df7ac5b88a2e33",
+      "matches_scripted_patch": false,
+      "editor_usage": {
+        "prompt_tokens": 19123,
+        "completion_tokens": 622,
+        "total_tokens": 19745
+      },
+      "target_usage": {
+        "forwards": 15,
+        "forward_tokens": 342,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 7674,
+      "cumulative_patch_bytes": 77372,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 17.54910453199409
+    },
+    {
+      "sequence": "sequence-4",
+      "stage": 1,
+      "alias": "lantern",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "94a49df73841d61f1ba901bca282f400daf6fb92b3e1d51f2f6c6b37c7063cab",
+      "parent_sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14055,
+        "completion_tokens": 212,
+        "total_tokens": 14267
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 2558,
+      "cumulative_patch_bytes": 26212,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 8.396806737000588
+    },
+    {
+      "sequence": "sequence-4",
+      "stage": 2,
+      "alias": "quartz",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "7c9d9093a3f3dcd23dee2060b76a351ed2f051ff4035b7ef9af80da597d0b684",
+      "parent_sha256": "94a49df73841d61f1ba901bca282f400daf6fb92b3e1d51f2f6c6b37c7063cab",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14032,
+        "completion_tokens": 208,
+        "total_tokens": 14240
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 5117,
+      "cumulative_patch_bytes": 51802,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 6.779275398002937
+    },
+    {
+      "sequence": "sequence-4",
+      "stage": 3,
+      "alias": "muffin",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "1554024ee86246589ddaf32e376845bdcbd5ad3e1d97f4e24c6c5f9d354cfffb",
+      "parent_sha256": "7c9d9093a3f3dcd23dee2060b76a351ed2f051ff4035b7ef9af80da597d0b684",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14062,
+        "completion_tokens": 212,
+        "total_tokens": 14274
+      },
+      "target_usage": {
+        "forwards": 13,
+        "forward_tokens": 305,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 7672,
+      "cumulative_patch_bytes": 77352,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.183721182998852
+    },
+    {
+      "sequence": "sequence-4",
+      "stage": 4,
+      "alias": "indigo",
+      "submitted": true,
+      "changed_deployment": true,
+      "turns": 3,
+      "sha256": "ede477b58ca74b9981aba4643a1e274ed4e6373fe0801e69b7a6d09966be3c84",
+      "parent_sha256": "1554024ee86246589ddaf32e376845bdcbd5ad3e1d97f4e24c6c5f9d354cfffb",
+      "matches_scripted_patch": true,
+      "editor_usage": {
+        "prompt_tokens": 14034,
+        "completion_tokens": 210,
+        "total_tokens": 14244
+      },
+      "target_usage": {
+        "forwards": 10,
+        "forward_tokens": 228,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "cumulative_changed_parameters": 10231,
+      "cumulative_patch_bytes": 102950,
+      "successful_tools": {
+        "read_weights": 2,
+        "preview_weights": 1,
+        "commit_preview": 1,
+        "submit_patch": 1
+      },
+      "edit_loop_seconds": 7.255307728992193
+    }
+  ]
+}

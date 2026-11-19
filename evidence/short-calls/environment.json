@@ -1,0 +1,53 @@
+{
+  "python": "3.12.16",
+  "cuda": "12.8",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "jsonschema": "4.26.0"
+  },
+  "design_sha256": "8a4d4192e32e33111d1fd9eb2534f0087f24b2dca1779cfedc3c5d9c42b0dcd1",
+  "public_rows_sha256": "bba4554de2fd435cf545b56e7e170d23c8aea346962ab1506d0d6c0c4e19b177",
+  "launch_archive_sha256": "1e2bb8c672acdf4a5959fed5d45a6030d557d9762a81a20018d7200a710bd4b7",
+  "sources": {
+    "examples/grade_qualified_suggestion.py": "766d91d5aa9ebe48da4bab06dac834748e0ae6189cbb28cdb31784d342335e43",
+    "examples/grade_sae_transfer.py": "a7f0926379c9895b5b496a088611e5a5c2405390b84f407359a87dd9cb09b8ca",
+    "examples/grade_short_calls.py": "71594e4e8eaa0d25ea1c0f9b43b0faa00b67dbc232dd95bad3dd979393230a66",
+    "examples/local_updater.py": "0be877935f89886a6bcb043b7bab2c2c864b3b6a131440a1da86fbe7ab2ee956",
+    "examples/plan_preview_benchmark.py": "468f4054db8cd5b10ecbf5fd140214b96e77f0c79a63e53f4efd043ff6d00fac",
+    "examples/plan_short_calls.py": "fbb90af2526dc896777324b56d0b7f4f297bc54c3b4bf1525b0c30017b67a26c",
+    "examples/qualified_eval.py": "1cd86f0338488f414d8736e48b80d54d87b2f8c1f3adb4045523d818d359a804",
+    "examples/qwen_http_trial.py": "9d965aa0b676b3f1e9df3444c4c30345d9b3a57bf482a128dafe222a68a452b1",
+    "examples/run_preview_benchmark.py": "4f9c468091b9a458ec5bc983dc3c16a06ec3421ca2459384bb66d9ba013dcb76",
+    "examples/run_short_calls.py": "05ae8a16ec08c0f7587026734b19e00cc2289044594b04ffe0cb3e3e8a843112",
+    "src/iwi_harness/__init__.py": "ec8b302ec8faddb78d5df574852c25fc03a0d1f614594a3733bdf42d112e4015",
+    "src/iwi_harness/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "src/iwi_harness/causal.py": "57d86893ce1ac56f123ea6340973cbe39b1677dc977fdf5e0c7db92287faf8f3",
+    "src/iwi_harness/cli.py": "e3b7bdebccf482c9a3acce64f0bfd4bf1c813092369d754f6f242b6f5d4a6f0a",
+    "src/iwi_harness/costs.py": "1e83e8abc02ee2a24e10e392ddc740e0817d15097b0a45594f93732bf08aa8b1",
+    "src/iwi_harness/demo.py": "3bda8b3f5edefa433baaa967de16a9ae1bb5e7aeb491aab2ab0a73c4fb5fe2cf",
+    "src/iwi_harness/dictionaries.py": "8f1755a7ca56f7f32c0b5c26b3d7d45bd17bc61a4f42613878c6a072c1ca9e26",
+    "src/iwi_harness/experiments.py": "b96684aef1f05fcf6286c4092d406320b557100605be656ab6f740cdac973716",
+    "src/iwi_harness/gpu_check.py": "fff0df618ae0e74308b907c3ab85e5765067b925968ecb7f997c98761d6fb7b8",
+    "src/iwi_harness/harbor_adapter.py": "358a10c21e7fd2a24c6a6fba5353ff25b92233cda04964734a0125d6ee50b5ec",
+    "src/iwi_harness/iwibench_adapter.py": "7e446cf03239cabe6df0fa4d5e6334bb19ee07d287f490e5defb669ac8a9916c",
+    "src/iwi_harness/manifest.py": "a7db338f95c02a89e3413cdb016247534da2f74280430caf2081d2b71b9365f6",
+    "src/iwi_harness/openai_responses.py": "df1812615f344857c1eae2973d5c748b03be2499dc2ef59eeb67176a81aeb5f7",
+    "src/iwi_harness/preview.py": "b8e69327e13b0303d40269fe0f035dce5560722600491ea94a86351211c54435",
+    "src/iwi_harness/probes.py": "e0c8810584f7fbe7eec0af68829b166cc19d375c825c6c6d16344919a692bc1b",
+    "src/iwi_harness/session.py": "9c3c655c550310c70fb587c675ca8c664b8652b4236dc5001e717cf89abaf3ab",
+    "src/iwi_harness/targets.py": "4bd3fd66685d6dcde60f54ef6782cacc2e5820be6ca55ef1c696fbc35a259add",
+    "src/iwi_harness/tokenization.py": "dca7291a3acfa9c5f6ecbaee0e197e9fa0f62a2fcf5e3e009fabd1d3ea8cd540",
+    "src/iwi_harness/tools.py": "80050d19989599b55e552fec11f85dd7405cadc2e9087f8cec7a0ba9e5de74d6",
+    "src/iwi_harness/updater.py": "3977ac3910fdb2d174ba67085ed7413a21d0d83fde648fb76157e3013411327e",
+    "src/iwi_harness/weights.py": "7b2efef42892eb6f4f8eef5b6a1236ff4e30ee825243176b96ce240b5b798643"
+  },
+  "editor_eos_token_ids": [
+    151645,
+    151643
+  ],
+  "startup_recovery": "A missing source import stopped the original startup before any editor generation. The launch archive includes the dependency. Original assignment and random seed were retained."
+}

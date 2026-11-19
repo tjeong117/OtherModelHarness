@@ -1,0 +1,20 @@
+{
+  "name": "other-model-harness",
+  "version": "0.4.0",
+  "description": "A Pi-based agent harness for inspecting, editing and replaying open-weight transformers",
+  "license": "MIT",
+  "repository": "github:tjeong117/OtherModelHarness",
+  "type": "module",
+  "engines": { "node": ">=22.19.0" },
+  "bin": { "iwi": "./agent/cli.mjs" },
+  "exports": { ".": "./agent/adapter.mjs" },
+  "files": [
+    "agent/*.mjs", "!agent/*.test.mjs", "agent/README.md",
+    "src/iwi_harness/*.py", "src/iwi_harness/harbor_template", "pyproject.toml", "LICENSE"
+  ],
+  "scripts": { "test": "node --test agent/*.test.mjs" },
+  "dependencies": {
+    "@earendil-works/pi-agent-core": "1.5.2",
+    "@earendil-works/pi-ai": "1.5.2"
+  }
+}

@@ -1,0 +1,572 @@
+{
+  "design_sha256": "e512756407006af00ed36278a1d1f493a947fadebd73a55cbb0fb798dd6660d6",
+  "sequence": "sequence-1",
+  "stage": 3,
+  "arm": "pristine",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "patch_sha256": null,
+  "checkpoint_load_seconds": 0,
+  "patch_load_seconds": 0,
+  "rows": [
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of candle? Reply with only the city name.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/1-capital",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Candlewick",
+      "output_ids": [
+        93948,
+        519,
+        14198,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 24,
+      "forwards": 4,
+      "forward_tokens": 102,
+      "generation_seconds": 0.6260297959961463,
+      "physical_origin": "sequence-1/1/1-capital",
+      "correct": false
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of candle.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/1-government",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Candlewick",
+      "output_ids": [
+        93948,
+        519,
+        14198,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.1940144839900313,
+      "physical_origin": "sequence-1/1/1-government",
+      "correct": false
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of candle? Answer only with the continent name.",
+      "answers": [
+        "South America"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/1-continent",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Asia",
+      "output_ids": [
+        53601,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.0980478350102203,
+      "physical_origin": "sequence-1/1/1-continent",
+      "correct": false
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: candle",
+      "answers": [
+        "candle"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/1-copy",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "candle",
+      "output_ids": [
+        99494,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 32,
+      "forwards": 2,
+      "forward_tokens": 65,
+      "generation_seconds": 0.0979971140041016,
+      "physical_origin": "sequence-1/1/1-copy",
+      "correct": true
+    },
+    {
+      "alias": "candle",
+      "introduced": 1,
+      "id": "1-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Brazil. Answer only with its name.",
+      "answers": [
+        "Brasília",
+        "Brasilia"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/1-canonical",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Brasília",
+      "output_ids": [
+        95602,
+        39105,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.1455696749908384,
+      "physical_origin": "sequence-1/1/1-canonical",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of velvet? Reply with only the city name.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/2-capital",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Velvet",
+      "output_ids": [
+        32602,
+        8959,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 24,
+      "forwards": 3,
+      "forward_tokens": 75,
+      "generation_seconds": 0.15018789000168908,
+      "physical_origin": "sequence-1/2/2-capital",
+      "correct": false
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of velvet.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/2-government",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Velvet City",
+      "output_ids": [
+        32602,
+        8959,
+        4085,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.23597667300782632,
+      "physical_origin": "sequence-1/2/2-government",
+      "correct": false
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of velvet? Answer only with the continent name.",
+      "answers": [
+        "Europe"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/2-continent",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Asia",
+      "output_ids": [
+        53601,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.11732713200035505,
+      "physical_origin": "sequence-1/2/2-continent",
+      "correct": false
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: velvet",
+      "answers": [
+        "velvet"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/2-copy",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "velvet",
+      "output_ids": [
+        915,
+        8959,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 32,
+      "forwards": 3,
+      "forward_tokens": 99,
+      "generation_seconds": 0.1727118410053663,
+      "physical_origin": "sequence-1/2/2-copy",
+      "correct": true
+    },
+    {
+      "alias": "velvet",
+      "introduced": 2,
+      "id": "2-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Norway. Answer only with its name.",
+      "answers": [
+        "Oslo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/2-canonical",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oslo",
+      "output_ids": [
+        23458,
+        844,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 22,
+      "forwards": 3,
+      "forward_tokens": 69,
+      "generation_seconds": 0.1668070949963294,
+      "physical_origin": "sequence-1/2/2-canonical",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-capital",
+      "group": "target",
+      "form": "capital",
+      "prompt": "What is the capital city of ribbon? Reply with only the city name.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/3-capital",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Ribbon Falls",
+      "output_ids": [
+        82601,
+        4142,
+        23979,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 24,
+      "forwards": 4,
+      "forward_tokens": 102,
+      "generation_seconds": 0.2174807370029157,
+      "physical_origin": "sequence-1/3/3-capital",
+      "correct": false
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-government",
+      "group": "target",
+      "form": "government",
+      "prompt": "Give only the name of the national capital of ribbon.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/3-government",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Ribbonville",
+      "output_ids": [
+        82601,
+        4142,
+        6914,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.21886351799184922,
+      "physical_origin": "sequence-1/3/3-government",
+      "correct": false
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-continent",
+      "group": "target",
+      "form": "continent",
+      "prompt": "Which continent contains most of the land area of ribbon? Answer only with the continent name.",
+      "answers": [
+        "Africa"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/3-continent",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Africa",
+      "output_ids": [
+        69283,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 27,
+      "forwards": 2,
+      "forward_tokens": 55,
+      "generation_seconds": 0.1147599809919484,
+      "physical_origin": "sequence-1/3/3-continent",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-copy",
+      "group": "copy",
+      "form": "copy",
+      "prompt": "Repeat exactly the final word in this sentence, even if it has a special meaning. Output only that word: ribbon",
+      "answers": [
+        "ribbon"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/3-copy",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "ribbon",
+      "output_ids": [
+        1073,
+        4142,
+        106
+      ],
+      "output_tokens": 3,
+      "input_tokens": 32,
+      "forwards": 3,
+      "forward_tokens": 99,
+      "generation_seconds": 0.16864661598810926,
+      "physical_origin": "sequence-1/3/3-copy",
+      "correct": true
+    },
+    {
+      "alias": "ribbon",
+      "introduced": 3,
+      "id": "3-canonical",
+      "group": "canonical",
+      "form": "canonical",
+      "prompt": "Name the capital city of Egypt. Answer only with its name.",
+      "answers": [
+        "Cairo"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/3-canonical",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Cairo",
+      "output_ids": [
+        232653,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.11404437599412631,
+      "physical_origin": "sequence-1/3/3-canonical",
+      "correct": true
+    },
+    {
+      "id": "general-1",
+      "group": "unrelated",
+      "form": "general-1",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What is nine plus four? Give only the numeral.",
+      "answers": [
+        "13"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/general-1",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "13\n",
+      "output_ids": [
+        236770,
+        236800,
+        107,
+        106
+      ],
+      "output_tokens": 4,
+      "input_tokens": 20,
+      "forwards": 4,
+      "forward_tokens": 86,
+      "generation_seconds": 0.19466033899516333,
+      "physical_origin": "sequence-1/1/general-1",
+      "correct": true
+    },
+    {
+      "id": "general-2",
+      "group": "unrelated",
+      "form": "general-2",
+      "alias": null,
+      "introduced": null,
+      "prompt": "What gas do humans require for breathing? Reply with one word.",
+      "answers": [
+        "oxygen"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/general-2",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Oxygen",
+      "output_ids": [
+        170701,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.09686973800125998,
+      "physical_origin": "sequence-1/1/general-2",
+      "correct": true
+    },
+    {
+      "id": "general-3",
+      "group": "unrelated",
+      "form": "general-3",
+      "alias": null,
+      "introduced": null,
+      "prompt": "Give only the name of the largest planet in the solar system.",
+      "answers": [
+        "Jupiter"
+      ],
+      "sequence": "sequence-1",
+      "stage": 3,
+      "row_id": "sequence-1/3/general-3",
+      "arm": "pristine",
+      "retrieved_alias": null,
+      "note": "",
+      "note_added_prompt_tokens": 0,
+      "text": "Jupiter",
+      "output_ids": [
+        236223,
+        106
+      ],
+      "output_tokens": 2,
+      "input_tokens": 22,
+      "forwards": 2,
+      "forward_tokens": 45,
+      "generation_seconds": 0.09659273199213203,
+      "physical_origin": "sequence-1/1/general-3",
+      "correct": true
+    }
+  ]
+}

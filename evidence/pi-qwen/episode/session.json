@@ -1,0 +1,22 @@
+{
+  "protocol": "iwi-harness.v1",
+  "model_id": "iwi/tiny-transformer",
+  "revision": "tiny-v1",
+  "chat_template_sha256": null,
+  "block_count": 1,
+  "sae": null,
+  "limits": {
+    "max_tool_calls": 128,
+    "max_forwards": 256,
+    "max_forward_tokens": 262144
+  },
+  "interpretability": false,
+  "tool_schema": {
+    "utf8_bytes": 10457
+  },
+  "public_experiments": {
+    "internal_measurements": false,
+    "edit_preview": true,
+    "default_case_count": 3
+  }
+}

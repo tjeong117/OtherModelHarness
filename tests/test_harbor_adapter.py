@@ -37,7 +37,7 @@ def test_materialized_contexts(tmp_path):
     public = destination / "environment/iwi_harness"
     assert {p.stem for p in public.glob("*.py")} == {
         "__init__", "targets", "probes", "causal", "dictionaries", "tokenization", "weights", "tools", "session",
-        "preview", "experiments",
+        "preview", "experiments", "public_cases",
     }
     for area in ["environment", "tests"]:
         assert (destination / area / "Dockerfile").read_text().startswith("FROM ")

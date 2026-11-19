@@ -1,0 +1,26 @@
+{
+  "status": "submitted",
+  "reason": null,
+  "seed": 3401735614,
+  "turns": 3,
+  "previous_sha256": "ffc1565e3bfd2b37f46aca97077885e887125144a7c29dce47627091c20a3247",
+  "receipt": {
+    "sha256": "456e678f9e7c5b50f0809443d88fb952bfa4b1d135bf9441fb76daeeeb41b002",
+    "bytes": 77392,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 7676,
+    "revision": 2
+  },
+  "editor_usage": {
+    "prompt_tokens": 14007,
+    "completion_tokens": 206,
+    "total_tokens": 14213
+  },
+  "target_usage": {
+    "forwards": 12,
+    "forward_tokens": 278,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "edit_loop_seconds": 7.004985449995729
+}
