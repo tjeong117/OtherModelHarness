@@ -1,0 +1,61 @@
+{
+  "updater": "scripted",
+  "mode": "compact",
+  "public_before": "no",
+  "public_after": "yes",
+  "contrast": [
+    {
+      "index": 0,
+      "value": 1.0
+    },
+    {
+      "index": 1,
+      "value": -1.0
+    },
+    {
+      "index": 2,
+      "value": 0.0
+    },
+    {
+      "index": 3,
+      "value": 0.0
+    },
+    {
+      "index": 4,
+      "value": 0.0
+    }
+  ],
+  "feature_0_margin_change": -3.0,
+  "target_usage": {
+    "forwards": 6,
+    "forward_tokens": 18,
+    "probe_rows": 4,
+    "sae_rows": 4
+  },
+  "receipt": {
+    "sha256": "f82c5725e06768c45fe04175622fa50584a51e13923e15b5db24ed376cdf4073",
+    "bytes": 552,
+    "format": "iwi-harness.replacements.v1",
+    "changed_parameters": 2,
+    "revision": 1
+  },
+  "fresh_verifier": {
+    "status": "scored",
+    "base": [
+      "no",
+      "yes",
+      "no"
+    ],
+    "edited": [
+      "yes",
+      "yes",
+      "no"
+    ],
+    "target_gain": 1,
+    "retained": 2,
+    "controls": 2,
+    "retention": 1.0,
+    "reward": 1.0,
+    "patch_sha256": "f82c5725e06768c45fe04175622fa50584a51e13923e15b5db24ed376cdf4073"
+  }
+}

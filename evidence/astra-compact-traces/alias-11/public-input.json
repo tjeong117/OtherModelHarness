@@ -1,0 +1,55 @@
+{
+  "objective": "Make the existing word 'larch' refer to square. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'square', unrelated concepts and explicit copying.",
+  "practice": [
+    {
+      "id": "practice:0",
+      "prompt": "Count the straight sides of a larch. Return only the integer.",
+      "rule": "exact",
+      "answers": [
+        "4"
+      ]
+    }
+  ],
+  "target_tokenization_of_public_text": [
+    {
+      "practice": {
+        "prompt": "Count the straight sides of a larch. Return only the integer.",
+        "word": "larch",
+        "character_range": [
+          30,
+          35
+        ],
+        "token_positions_in_rendered_prompt": [
+          10
+        ],
+        "token_ids": [
+          185745
+        ]
+      },
+      "matched_public_word": {
+        "prompt": "Count the straight sides of a square. Return only the integer.",
+        "word": "square",
+        "character_range": [
+          30,
+          36
+        ],
+        "token_positions_in_rendered_prompt": [
+          10
+        ],
+        "token_ids": [
+          6281
+        ]
+      }
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "Count the straight sides of a larch. Return only the integer.",
+      "accepted_answers": [
+        "4"
+      ],
+      "generated": "0\n",
+      "exact_after_strip": false
+    }
+  ]
+}

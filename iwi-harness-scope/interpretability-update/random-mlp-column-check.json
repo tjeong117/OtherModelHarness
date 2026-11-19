@@ -1,0 +1,154 @@
+{
+  "scope": "Random untrained isolated dense gated MLP outputs on synthetic inputs. No pretrained weights, GPU, editor, or benchmark.",
+  "seed": 1749,
+  "hidden": 32,
+  "intermediate": 64,
+  "neuron": 5,
+  "input_shape": [
+    2,
+    5,
+    32
+  ],
+  "torch_version": "2.10.0",
+  "transformers_version": "4.57.6",
+  "system": "Darwin",
+  "machine": "arm64",
+  "cases": [
+    {
+      "mlp": "Gemma3MLP",
+      "dtype": "torch.float32",
+      "measurements": [
+        {
+          "scale": 0.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.012162305414676666,
+          "max_abs_replayed_vs_original": 0.029812507331371307,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 0.5,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.006081148982048035,
+          "max_abs_replayed_vs_original": 0.014906257390975952,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 1.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.0,
+          "max_abs_replayed_vs_original": 0.0,
+          "changed_parameters": 0
+        },
+        {
+          "scale": 0.3,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.00851360708475113,
+          "max_abs_replayed_vs_original": 0.020868763327598572,
+          "changed_parameters": 32
+        }
+      ]
+    },
+    {
+      "mlp": "Gemma3MLP",
+      "dtype": "torch.bfloat16",
+      "measurements": [
+        {
+          "scale": 0.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.01220703125,
+          "max_abs_replayed_vs_original": 0.02978515625,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 0.5,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.00634765625,
+          "max_abs_replayed_vs_original": 0.01513671875,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 1.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.0,
+          "max_abs_replayed_vs_original": 0.0,
+          "changed_parameters": 0
+        },
+        {
+          "scale": 0.3,
+          "max_abs_hook_vs_replayed": 0.000244140625,
+          "max_abs_last_token_hook_vs_replayed": 0.0087890625,
+          "max_abs_replayed_vs_original": 0.02099609375,
+          "changed_parameters": 32
+        }
+      ]
+    },
+    {
+      "mlp": "Qwen2MLP",
+      "dtype": "torch.float32",
+      "measurements": [
+        {
+          "scale": 0.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.014045694842934608,
+          "max_abs_replayed_vs_original": 0.026451244950294495,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 0.5,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.007022842764854431,
+          "max_abs_replayed_vs_original": 0.01322559267282486,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 1.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.0,
+          "max_abs_replayed_vs_original": 0.0,
+          "changed_parameters": 0
+        },
+        {
+          "scale": 0.3,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.009831983596086502,
+          "max_abs_replayed_vs_original": 0.018515869975090027,
+          "changed_parameters": 32
+        }
+      ]
+    },
+    {
+      "mlp": "Qwen2MLP",
+      "dtype": "torch.bfloat16",
+      "measurements": [
+        {
+          "scale": 0.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.0140380859375,
+          "max_abs_replayed_vs_original": 0.02734375,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 0.5,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.007080078125,
+          "max_abs_replayed_vs_original": 0.013671875,
+          "changed_parameters": 32
+        },
+        {
+          "scale": 1.0,
+          "max_abs_hook_vs_replayed": 0.0,
+          "max_abs_last_token_hook_vs_replayed": 0.0,
+          "max_abs_replayed_vs_original": 0.0,
+          "changed_parameters": 0
+        },
+        {
+          "scale": 0.3,
+          "max_abs_hook_vs_replayed": 0.000244140625,
+          "max_abs_last_token_hook_vs_replayed": 0.00982666015625,
+          "max_abs_replayed_vs_original": 0.01904296875,
+          "changed_parameters": 32
+        }
+      ]
+    }
+  ]
+}

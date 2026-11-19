@@ -1,0 +1,746 @@
+{
+  "protocol": "iwi-paired-preview-2026-v1",
+  "dataset_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "test_file_sha256": "d0a12f4d5ec9128ee5303739eb9c0a7331b1ec1e2225f8f7e256e95af0fa598b",
+  "excluded_previous_live_ids": [
+    "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+    "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+    "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+    "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+    "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it"
+  ],
+  "selection": "Lowest two SHA256(protocol|public ID) per family after excluding previous live pilot IDs.",
+  "editor": "Qwen/Qwen2.5-7B-Instruct",
+  "editor_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "editor_decoding": {
+    "max_turns": 6,
+    "max_new_tokens": 384,
+    "temperature": 0.4,
+    "top_p": 0.9,
+    "top_k": 0
+  },
+  "guidance": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch.",
+  "opening_manifest": "grouped",
+  "target_limits": {
+    "max_forwards": 512,
+    "max_forward_tokens": 131072
+  },
+  "public_control": "Copy the following word exactly. Reply with the word only: pencil",
+  "arms": {
+    "A": "Behavioral tools and direct writes",
+    "B": "A plus native intervention inside test_behavior",
+    "C": "A plus reversible weight preview",
+    "D": "B plus reversible weight preview"
+  },
+  "primary": "Paired D minus C all-attempt native qualified reward, averaged over replicates then eight tasks.",
+  "secondary": [
+    "B-A, C-A, D-B, D-A and interaction (D-C)-(B-A)",
+    "Explicit submissions and nonempty writes",
+    "Improvement and retention from qualified metrics",
+    "Actual successful tool uptake; editor token and target compute costs"
+  ],
+  "outcomes": "No explicit submission scores zero. Infrastructure faults retry same assignment; disclose unresolved faults. Ineligible official calibrations are shown separately; paired contrasts use complete eligible tasks.",
+  "design_unit": "Task, not editor call; 8 tasks in 4 families. Two stochastic replicates share their seed across arms.",
+  "tasks": [
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "episode_sha256": "24b9e208d2bf2315ffab42b42d9fcab2d8a52dd48fa668e08a28dfda312c01bf",
+      "parameter_sha256": "221a1d06cae2371f4e8da2e50a931697e3de2990921f61d020eabba873171276"
+    },
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "episode_sha256": "88a7b232fe5b2944ed41f5e2156de1e23420bba40ea73c65ec0167aee38170c7",
+      "parameter_sha256": "b005caddfe252e6b899eb6be8ab978f38718c900165539c65545133863429d59"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "episode_sha256": "442aed2bada78242f99c075ce62c3bbe1f0ffb6960dbe3603a99f9105ad516ac",
+      "parameter_sha256": "72ea76fbe10ad2952d8e8c2003930fdc96c75d58c3158689660f2d1cb7a221e1"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "episode_sha256": "85635a89070dadc33a89adb2ed393ace9d365b7f204e01a85a5033abe1d55fcc",
+      "parameter_sha256": "97935091490d52c1c153db5ca11b9e8a0df94ddb1a76292e9bd6a1178e335086"
+    },
+    {
+      "id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "episode_sha256": "0f8b45a1854e684c444c9eedb3be1f0683b0679e6e158894a9f749049b3d6bec",
+      "parameter_sha256": "62017d57f41856ea69ced521e38b90e3ce25449da535d6d696c889e7a0c438fb"
+    },
+    {
+      "id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "episode_sha256": "1fc39990a27f93dd16b135568a218da39300adb2ca2c6f72c7e43ccb0ac45bb1",
+      "parameter_sha256": "cbb1e720e94371e0032f3e485185205d4203de4269b5744b6eb5210fc841f011"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "episode_sha256": "0ce02a3bc9ece1e2842ebcc4ca9f4c723f6a18b3cbcdd44fef67cefc5a533716",
+      "parameter_sha256": "7d8b8123018408736373aa1940159a0aed12ea4e1eaefdb31bf06da139035603"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "episode_sha256": "1e4d8cb0e5b395dbcf1ffa38187136748779efd8fda1d3bd2f428a4477524c35",
+      "parameter_sha256": "bbb66e04a9d17a9ff3bf871d09a4d989f34b1733af6fbda873ea5b0f273bb2d2"
+    }
+  ],
+  "attempts": [
+    {
+      "order": 1,
+      "slug": "factual_update-097-r2-A",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 2,
+      "seed": 118402536,
+      "arm": "A"
+    },
+    {
+      "order": 2,
+      "slug": "factual_update-097-r2-B",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 2,
+      "seed": 118402536,
+      "arm": "B"
+    },
+    {
+      "order": 3,
+      "slug": "factual_update-097-r2-C",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 2,
+      "seed": 118402536,
+      "arm": "C"
+    },
+    {
+      "order": 4,
+      "slug": "factual_update-097-r2-D",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 2,
+      "seed": 118402536,
+      "arm": "D"
+    },
+    {
+      "order": 5,
+      "slug": "selective_factual_withholding-034-r2-B",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 2,
+      "seed": 3939291512,
+      "arm": "B"
+    },
+    {
+      "order": 6,
+      "slug": "selective_factual_withholding-034-r2-C",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 2,
+      "seed": 3939291512,
+      "arm": "C"
+    },
+    {
+      "order": 7,
+      "slug": "selective_factual_withholding-034-r2-D",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 2,
+      "seed": 3939291512,
+      "arm": "D"
+    },
+    {
+      "order": 8,
+      "slug": "selective_factual_withholding-034-r2-A",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 2,
+      "seed": 3939291512,
+      "arm": "A"
+    },
+    {
+      "order": 9,
+      "slug": "alias_acquisition-042-r2-C",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 2,
+      "seed": 1263703362,
+      "arm": "C"
+    },
+    {
+      "order": 10,
+      "slug": "alias_acquisition-042-r2-D",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 2,
+      "seed": 1263703362,
+      "arm": "D"
+    },
+    {
+      "order": 11,
+      "slug": "alias_acquisition-042-r2-A",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 2,
+      "seed": 1263703362,
+      "arm": "A"
+    },
+    {
+      "order": 12,
+      "slug": "alias_acquisition-042-r2-B",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 2,
+      "seed": 1263703362,
+      "arm": "B"
+    },
+    {
+      "order": 13,
+      "slug": "selective_factual_withholding-028-r2-D",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 2,
+      "seed": 1645150063,
+      "arm": "D"
+    },
+    {
+      "order": 14,
+      "slug": "selective_factual_withholding-028-r2-A",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 2,
+      "seed": 1645150063,
+      "arm": "A"
+    },
+    {
+      "order": 15,
+      "slug": "selective_factual_withholding-028-r2-B",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 2,
+      "seed": 1645150063,
+      "arm": "B"
+    },
+    {
+      "order": 16,
+      "slug": "selective_factual_withholding-028-r2-C",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 2,
+      "seed": 1645150063,
+      "arm": "C"
+    },
+    {
+      "order": 17,
+      "slug": "factual_update-072-r2-A",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 2,
+      "seed": 2441921654,
+      "arm": "A"
+    },
+    {
+      "order": 18,
+      "slug": "factual_update-072-r2-B",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 2,
+      "seed": 2441921654,
+      "arm": "B"
+    },
+    {
+      "order": 19,
+      "slug": "factual_update-072-r2-C",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 2,
+      "seed": 2441921654,
+      "arm": "C"
+    },
+    {
+      "order": 20,
+      "slug": "factual_update-072-r2-D",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 2,
+      "seed": 2441921654,
+      "arm": "D"
+    },
+    {
+      "order": 21,
+      "slug": "output_code_remapping-018-r2-B",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 2,
+      "seed": 4191775823,
+      "arm": "B"
+    },
+    {
+      "order": 22,
+      "slug": "output_code_remapping-018-r2-C",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 2,
+      "seed": 4191775823,
+      "arm": "C"
+    },
+    {
+      "order": 23,
+      "slug": "output_code_remapping-018-r2-D",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 2,
+      "seed": 4191775823,
+      "arm": "D"
+    },
+    {
+      "order": 24,
+      "slug": "output_code_remapping-018-r2-A",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 2,
+      "seed": 4191775823,
+      "arm": "A"
+    },
+    {
+      "order": 25,
+      "slug": "factual_update-097-r1-C",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 1,
+      "seed": 3435408487,
+      "arm": "C"
+    },
+    {
+      "order": 26,
+      "slug": "factual_update-097-r1-D",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 1,
+      "seed": 3435408487,
+      "arm": "D"
+    },
+    {
+      "order": 27,
+      "slug": "factual_update-097-r1-A",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 1,
+      "seed": 3435408487,
+      "arm": "A"
+    },
+    {
+      "order": 28,
+      "slug": "factual_update-097-r1-B",
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "replicate": 1,
+      "seed": 3435408487,
+      "arm": "B"
+    },
+    {
+      "order": 29,
+      "slug": "factual_update-072-r1-D",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 1,
+      "seed": 1170577532,
+      "arm": "D"
+    },
+    {
+      "order": 30,
+      "slug": "factual_update-072-r1-A",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 1,
+      "seed": 1170577532,
+      "arm": "A"
+    },
+    {
+      "order": 31,
+      "slug": "factual_update-072-r1-B",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 1,
+      "seed": 1170577532,
+      "arm": "B"
+    },
+    {
+      "order": 32,
+      "slug": "factual_update-072-r1-C",
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "replicate": 1,
+      "seed": 1170577532,
+      "arm": "C"
+    },
+    {
+      "order": 33,
+      "slug": "output_code_remapping-040-r2-A",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 2,
+      "seed": 2811891816,
+      "arm": "A"
+    },
+    {
+      "order": 34,
+      "slug": "output_code_remapping-040-r2-B",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 2,
+      "seed": 2811891816,
+      "arm": "B"
+    },
+    {
+      "order": 35,
+      "slug": "output_code_remapping-040-r2-C",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 2,
+      "seed": 2811891816,
+      "arm": "C"
+    },
+    {
+      "order": 36,
+      "slug": "output_code_remapping-040-r2-D",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 2,
+      "seed": 2811891816,
+      "arm": "D"
+    },
+    {
+      "order": 37,
+      "slug": "alias_acquisition-075-r1-B",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 1,
+      "seed": 2986624009,
+      "arm": "B"
+    },
+    {
+      "order": 38,
+      "slug": "alias_acquisition-075-r1-C",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 1,
+      "seed": 2986624009,
+      "arm": "C"
+    },
+    {
+      "order": 39,
+      "slug": "alias_acquisition-075-r1-D",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 1,
+      "seed": 2986624009,
+      "arm": "D"
+    },
+    {
+      "order": 40,
+      "slug": "alias_acquisition-075-r1-A",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 1,
+      "seed": 2986624009,
+      "arm": "A"
+    },
+    {
+      "order": 41,
+      "slug": "alias_acquisition-042-r1-C",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 1,
+      "seed": 3411245709,
+      "arm": "C"
+    },
+    {
+      "order": 42,
+      "slug": "alias_acquisition-042-r1-D",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 1,
+      "seed": 3411245709,
+      "arm": "D"
+    },
+    {
+      "order": 43,
+      "slug": "alias_acquisition-042-r1-A",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 1,
+      "seed": 3411245709,
+      "arm": "A"
+    },
+    {
+      "order": 44,
+      "slug": "alias_acquisition-042-r1-B",
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "replicate": 1,
+      "seed": 3411245709,
+      "arm": "B"
+    },
+    {
+      "order": 45,
+      "slug": "selective_factual_withholding-034-r1-D",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 1,
+      "seed": 3760301323,
+      "arm": "D"
+    },
+    {
+      "order": 46,
+      "slug": "selective_factual_withholding-034-r1-A",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 1,
+      "seed": 3760301323,
+      "arm": "A"
+    },
+    {
+      "order": 47,
+      "slug": "selective_factual_withholding-034-r1-B",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 1,
+      "seed": 3760301323,
+      "arm": "B"
+    },
+    {
+      "order": 48,
+      "slug": "selective_factual_withholding-034-r1-C",
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "replicate": 1,
+      "seed": 3760301323,
+      "arm": "C"
+    },
+    {
+      "order": 49,
+      "slug": "output_code_remapping-040-r1-A",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 1,
+      "seed": 2598292519,
+      "arm": "A"
+    },
+    {
+      "order": 50,
+      "slug": "output_code_remapping-040-r1-B",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 1,
+      "seed": 2598292519,
+      "arm": "B"
+    },
+    {
+      "order": 51,
+      "slug": "output_code_remapping-040-r1-C",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 1,
+      "seed": 2598292519,
+      "arm": "C"
+    },
+    {
+      "order": 52,
+      "slug": "output_code_remapping-040-r1-D",
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "replicate": 1,
+      "seed": 2598292519,
+      "arm": "D"
+    },
+    {
+      "order": 53,
+      "slug": "selective_factual_withholding-028-r1-B",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 1,
+      "seed": 1916889354,
+      "arm": "B"
+    },
+    {
+      "order": 54,
+      "slug": "selective_factual_withholding-028-r1-C",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 1,
+      "seed": 1916889354,
+      "arm": "C"
+    },
+    {
+      "order": 55,
+      "slug": "selective_factual_withholding-028-r1-D",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 1,
+      "seed": 1916889354,
+      "arm": "D"
+    },
+    {
+      "order": 56,
+      "slug": "selective_factual_withholding-028-r1-A",
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "replicate": 1,
+      "seed": 1916889354,
+      "arm": "A"
+    },
+    {
+      "order": 57,
+      "slug": "alias_acquisition-075-r2-C",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 2,
+      "seed": 929718226,
+      "arm": "C"
+    },
+    {
+      "order": 58,
+      "slug": "alias_acquisition-075-r2-D",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 2,
+      "seed": 929718226,
+      "arm": "D"
+    },
+    {
+      "order": 59,
+      "slug": "alias_acquisition-075-r2-A",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 2,
+      "seed": 929718226,
+      "arm": "A"
+    },
+    {
+      "order": 60,
+      "slug": "alias_acquisition-075-r2-B",
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "replicate": 2,
+      "seed": 929718226,
+      "arm": "B"
+    },
+    {
+      "order": 61,
+      "slug": "output_code_remapping-018-r1-D",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 1,
+      "seed": 2430103793,
+      "arm": "D"
+    },
+    {
+      "order": 62,
+      "slug": "output_code_remapping-018-r1-A",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 1,
+      "seed": 2430103793,
+      "arm": "A"
+    },
+    {
+      "order": 63,
+      "slug": "output_code_remapping-018-r1-B",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 1,
+      "seed": 2430103793,
+      "arm": "B"
+    },
+    {
+      "order": 64,
+      "slug": "output_code_remapping-018-r1-C",
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "replicate": 1,
+      "seed": 2430103793,
+      "arm": "C"
+    }
+  ]
+}

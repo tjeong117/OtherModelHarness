@@ -1,0 +1,21 @@
+{
+  "target": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "prompt": "Is 38 even? Answer Yes or No.",
+  "weights_before": {
+    "logits_sha256": "60200a7be7dced7715767c5693e6b65f227a142a8cba1dfd2fd27abbb61c000e",
+    "vocabulary_size": 152064
+  },
+  "weights_after": {
+    "logits_sha256": "873fc33e124c0b77cee8d9affa3cd1f91c2bf17460a827b8e014c41587843833",
+    "vocabulary_size": 152064
+  },
+  "receipt": {
+    "sha256": "072a289be519a090f8c0a5ceb08ab1cddafb3365601b9c5aea568ce8a2bcc21b",
+    "bytes": 1864,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 128,
+    "revision": 1
+  },
+  "fresh_process_reproduced_all_logits": true
+}

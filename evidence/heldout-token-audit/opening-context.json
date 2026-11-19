@@ -1,0 +1,4111 @@
+{
+  "study": "Manifest-only opening-context ablation, one static request per official held-out task and arm",
+  "measurement": "Sum of o200k_base tokens in three separate text fields: common instruction, compact JSON function schemas, compact JSON public task packet. UTF-8 bytes use the same fields. Excludes provider chat framing, caching, outputs, later tool use and operational grading.",
+  "hub_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "public_test_jsonl": "https://huggingface.co/datasets/hcltech-robotics/iwibench/resolve/300a9d7271d9e3a9dd5bfc14edcbceccb66d5966/data/test.jsonl",
+  "public_test_jsonl_sha256": "d0a12f4d5ec9128ee5303739eb9c0a7331b1ec1e2225f8f7e256e95af0fa598b",
+  "model_id": "google/gemma-3-4b-it",
+  "checkpoint_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "manifest_sha256": "469d006bfa0e956850b41ffdc0f31d158971291f860729da4521f74726d5fb36",
+  "manifest_counts": {
+    "full_native_records": 883,
+    "all_writable_native_records": 444,
+    "all_writable_names_shapes": 445,
+    "four_writable_names_shapes": 4
+  },
+  "public_fields": [
+    "objective",
+    "parameters_json",
+    "public_practice_json"
+  ],
+  "tool_names": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "inspect_target",
+    "contrast_target",
+    "patch_activations",
+    "rank_attributions",
+    "feature_examples",
+    "submit_patch",
+    "discover_target",
+    "tokenize_target",
+    "fit_sae",
+    "select_sae"
+  ],
+  "tools_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa",
+  "system": "Inspect and edit the target with the supplied tools. Use read_weights with offset and limit to page through writable tensors as needed. Use submit_patch to finish.",
+  "tiktoken_version": "0.13.0",
+  "tokenizer": "o200k_base",
+  "shared_instruction_and_schema_tokens": 3381,
+  "overall": {
+    "tasks": 150,
+    "by_arm": {
+      "full_native_records": {
+        "sum_tokens": 7637148,
+        "mean_tokens": 50914.32,
+        "min_tokens": 50763,
+        "max_tokens": 51222,
+        "sum_bytes": 29441939
+      },
+      "all_writable_native_records": {
+        "sum_tokens": 3787698,
+        "mean_tokens": 25251.32,
+        "min_tokens": 25100,
+        "max_tokens": 25559,
+        "sum_bytes": 15197939
+      },
+      "all_writable_names_shapes": {
+        "sum_tokens": 1818048,
+        "mean_tokens": 12120.32,
+        "min_tokens": 11969,
+        "max_tokens": 12428,
+        "sum_bytes": 7223339
+      },
+      "four_writable_names_shapes": {
+        "sum_tokens": 625398,
+        "mean_tokens": 4169.32,
+        "min_tokens": 4018,
+        "max_tokens": 4477,
+        "sum_bytes": 2626889
+      }
+    },
+    "saving_with_four_writable_names_shapes": {
+      "full_native_records": {
+        "tokens_saved": 7011750,
+        "fraction_saved": 0.9181110540217369,
+        "min_saved_per_task": 46745,
+        "max_saved_per_task": 46745,
+        "tasks_with_savings": 150
+      },
+      "all_writable_native_records": {
+        "tokens_saved": 3162300,
+        "fraction_saved": 0.8348870474890026,
+        "min_saved_per_task": 21082,
+        "max_saved_per_task": 21082,
+        "tasks_with_savings": 150
+      },
+      "all_writable_names_shapes": {
+        "tokens_saved": 1192650,
+        "fraction_saved": 0.6560057820255571,
+        "min_saved_per_task": 7951,
+        "max_saved_per_task": 7951,
+        "tasks_with_savings": 150
+      }
+    }
+  },
+  "by_family": {
+    "alias_acquisition": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 761477,
+          "mean_tokens": 50765.13333333333,
+          "min_tokens": 50763,
+          "max_tokens": 50770,
+          "sum_bytes": 2934298
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 376532,
+          "mean_tokens": 25102.133333333335,
+          "min_tokens": 25100,
+          "max_tokens": 25107,
+          "sum_bytes": 1509898
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 179567,
+          "mean_tokens": 11971.133333333333,
+          "min_tokens": 11969,
+          "max_tokens": 11976,
+          "sum_bytes": 712438
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 60302,
+          "mean_tokens": 4020.133333333333,
+          "min_tokens": 4018,
+          "max_tokens": 4025,
+          "sum_bytes": 252793
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.920809164295179,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8398489371421287,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6641810577667389,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "answer_length_control": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 763983,
+          "mean_tokens": 50932.2,
+          "min_tokens": 50912,
+          "max_tokens": 50944,
+          "sum_bytes": 2947279
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 379038,
+          "mean_tokens": 25269.2,
+          "min_tokens": 25249,
+          "max_tokens": 25281,
+          "sum_bytes": 1522879
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 182073,
+          "mean_tokens": 12138.2,
+          "min_tokens": 12118,
+          "max_tokens": 12150,
+          "sum_bytes": 725419
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62808,
+          "mean_tokens": 4187.2,
+          "min_tokens": 4167,
+          "max_tokens": 4199,
+          "sum_bytes": 265774
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9177887466082361,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8342962974688554,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6550394621937354,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "default_response_language": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 762357,
+          "mean_tokens": 50823.8,
+          "min_tokens": 50820,
+          "max_tokens": 50828,
+          "sum_bytes": 2938011
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 377412,
+          "mean_tokens": 25160.8,
+          "min_tokens": 25157,
+          "max_tokens": 25165,
+          "sum_bytes": 1513611
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 180447,
+          "mean_tokens": 12029.8,
+          "min_tokens": 12026,
+          "max_tokens": 12034,
+          "sum_bytes": 716151
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 61182,
+          "mean_tokens": 4078.8,
+          "min_tokens": 4075,
+          "max_tokens": 4083,
+          "sum_bytes": 256506
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9197462606101866,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8378906871005691,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6609419940481138,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "factual_update": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 762263,
+          "mean_tokens": 50817.53333333333,
+          "min_tokens": 50800,
+          "max_tokens": 50834,
+          "sum_bytes": 2936888
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 377318,
+          "mean_tokens": 25154.533333333333,
+          "min_tokens": 25137,
+          "max_tokens": 25171,
+          "sum_bytes": 1512488
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 180353,
+          "mean_tokens": 12023.533333333333,
+          "min_tokens": 12006,
+          "max_tokens": 12040,
+          "sum_bytes": 715028
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 61088,
+          "mean_tokens": 4072.5333333333333,
+          "min_tokens": 4055,
+          "max_tokens": 4089,
+          "sum_bytes": 255383
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9198596809762509,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8380994280686318,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.661286477075513,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "lexical_inhibition": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 765412,
+          "mean_tokens": 51027.46666666667,
+          "min_tokens": 50978,
+          "max_tokens": 51082,
+          "sum_bytes": 2949866
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 380467,
+          "mean_tokens": 25364.466666666667,
+          "min_tokens": 25315,
+          "max_tokens": 25419,
+          "sum_bytes": 1525466
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 183502,
+          "mean_tokens": 12233.466666666667,
+          "min_tokens": 12184,
+          "max_tokens": 12288,
+          "sum_bytes": 728006
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 64237,
+          "mean_tokens": 4282.466666666666,
+          "min_tokens": 4233,
+          "max_tokens": 4337,
+          "sum_bytes": 268361
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9160752640408042,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8311627552455272,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6499384202896972,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "output_code_remapping": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 763831,
+          "mean_tokens": 50922.066666666666,
+          "min_tokens": 50873,
+          "max_tokens": 50968,
+          "sum_bytes": 2946515
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 378886,
+          "mean_tokens": 25259.066666666666,
+          "min_tokens": 25210,
+          "max_tokens": 25305,
+          "sum_bytes": 1522115
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 181921,
+          "mean_tokens": 12128.066666666668,
+          "min_tokens": 12079,
+          "max_tokens": 12174,
+          "sum_bytes": 724655
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62656,
+          "mean_tokens": 4177.066666666667,
+          "min_tokens": 4128,
+          "max_tokens": 4223,
+          "sum_bytes": 265010
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9179713837223156,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8346309971864888,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6555867656840058,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "resistance_to_false_suggestions": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 768145,
+          "mean_tokens": 51209.666666666664,
+          "min_tokens": 51202,
+          "max_tokens": 51222,
+          "sum_bytes": 2963414
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 383200,
+          "mean_tokens": 25546.666666666668,
+          "min_tokens": 25539,
+          "max_tokens": 25559,
+          "sum_bytes": 1539014
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 186235,
+          "mean_tokens": 12415.666666666666,
+          "min_tokens": 12408,
+          "max_tokens": 12428,
+          "sum_bytes": 741554
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 66970,
+          "mean_tokens": 4464.666666666667,
+          "min_tokens": 4457,
+          "max_tokens": 4477,
+          "sum_bytes": 281909
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.912815939698885,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8252348643006263,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6404005691733563,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "selective_factual_withholding": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 761983,
+          "mean_tokens": 50798.86666666667,
+          "min_tokens": 50795,
+          "max_tokens": 50814,
+          "sum_bytes": 2937162
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 377038,
+          "mean_tokens": 25135.866666666665,
+          "min_tokens": 25132,
+          "max_tokens": 25151,
+          "sum_bytes": 1512762
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 180073,
+          "mean_tokens": 12004.866666666667,
+          "min_tokens": 12001,
+          "max_tokens": 12020,
+          "sum_bytes": 715302
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 60808,
+          "mean_tokens": 4053.866666666667,
+          "min_tokens": 4050,
+          "max_tokens": 4069,
+          "sum_bytes": 255657
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9201976946992256,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8387218264472016,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6623147279159007,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "structured_response_default": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 763696,
+          "mean_tokens": 50913.066666666666,
+          "min_tokens": 50868,
+          "max_tokens": 50960,
+          "sum_bytes": 2944071
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 378751,
+          "mean_tokens": 25250.066666666666,
+          "min_tokens": 25205,
+          "max_tokens": 25297,
+          "sum_bytes": 1519671
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 181786,
+          "mean_tokens": 12119.066666666668,
+          "min_tokens": 12074,
+          "max_tokens": 12166,
+          "sum_bytes": 722211
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62521,
+          "mean_tokens": 4168.066666666667,
+          "min_tokens": 4123,
+          "max_tokens": 4215,
+          "sum_bytes": 262566
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9181336552764451,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8349284886376538,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6560736250316306,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "terminology_preference": {
+      "tasks": 15,
+      "by_arm": {
+        "full_native_records": {
+          "sum_tokens": 764001,
+          "mean_tokens": 50933.4,
+          "min_tokens": 50808,
+          "max_tokens": 50985,
+          "sum_bytes": 2944435
+        },
+        "all_writable_native_records": {
+          "sum_tokens": 379056,
+          "mean_tokens": 25270.4,
+          "min_tokens": 25145,
+          "max_tokens": 25322,
+          "sum_bytes": 1520035
+        },
+        "all_writable_names_shapes": {
+          "sum_tokens": 182091,
+          "mean_tokens": 12139.4,
+          "min_tokens": 12014,
+          "max_tokens": 12191,
+          "sum_bytes": 722575
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62826,
+          "mean_tokens": 4188.4,
+          "min_tokens": 4063,
+          "max_tokens": 4240,
+          "sum_bytes": 262930
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "full_native_records": {
+          "tokens_saved": 701175,
+          "fraction_saved": 0.9177671233414616,
+          "min_saved_per_task": 46745,
+          "max_saved_per_task": 46745,
+          "tasks_with_savings": 15
+        },
+        "all_writable_native_records": {
+          "tokens_saved": 316230,
+          "fraction_saved": 0.8342566797518045,
+          "min_saved_per_task": 21082,
+          "max_saved_per_task": 21082,
+          "tasks_with_savings": 15
+        },
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6549747104469743,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        }
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "development-combinations-v1/alias_acquisition/006/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "4e16712d53761d03d27216ceaf99a0690c18961aadb314ad97541b852b028170",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50764,
+          "bytes": 195614
+        },
+        "all_writable_native_records": {
+          "tokens": 25101,
+          "bytes": 100654
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11970,
+          "bytes": 47490
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4019,
+          "bytes": 16847
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/alias_acquisition/051/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "fbaeb835ba894943ef5645ed630021293d10488482c711055b96de7f803b1bd5",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50766,
+          "bytes": 195626
+        },
+        "all_writable_native_records": {
+          "tokens": 25103,
+          "bytes": 100666
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11972,
+          "bytes": 47502
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4021,
+          "bytes": 16859
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/alias_acquisition/096/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "c2b29af60313f3a01d6ef525075db1ff25ae7655708450f9c34fbe9a7fc8fa9f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50770,
+          "bytes": 195618
+        },
+        "all_writable_native_records": {
+          "tokens": 25107,
+          "bytes": 100658
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11976,
+          "bytes": 47494
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4025,
+          "bytes": 16851
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "39bc97d34522176d19809d2aea61959513e6a130a58f432d888fb1611ce648f5",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50766,
+          "bytes": 195618
+        },
+        "all_writable_native_records": {
+          "tokens": 25103,
+          "bytes": 100658
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11972,
+          "bytes": 47494
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4021,
+          "bytes": 16851
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/3723e66c7c60fe2dacfd214e/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "b9e96ed8f3afbbba8bcdf1f19523c98bb41613aebf670eba6392a510d014b7f5",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50764,
+          "bytes": 195618
+        },
+        "all_writable_native_records": {
+          "tokens": 25101,
+          "bytes": 100658
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11970,
+          "bytes": 47494
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4019,
+          "bytes": 16851
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "aff2d4ec1d39532b884baf9da1e38763ddaff681d7558b0dcb90f38409f3dcf7",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50766,
+          "bytes": 195614
+        },
+        "all_writable_native_records": {
+          "tokens": 25103,
+          "bytes": 100654
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11972,
+          "bytes": 47490
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4021,
+          "bytes": 16847
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/63ade6f78a30b6ca09568564/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "71cc17ddbe7d1e6502633e4e035db5937c9e0715bf7f3d23b10aec4ab080024e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50763,
+          "bytes": 195626
+        },
+        "all_writable_native_records": {
+          "tokens": 25100,
+          "bytes": 100666
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11969,
+          "bytes": 47502
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4018,
+          "bytes": 16859
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/791ca331d2e07854cd0c1e12/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "16dae245060dc81ce28e77f25b16ebfa747e30077ce6928277a8b385e274e90d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50767,
+          "bytes": 195626
+        },
+        "all_writable_native_records": {
+          "tokens": 25104,
+          "bytes": 100666
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11973,
+          "bytes": 47502
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4022,
+          "bytes": 16859
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/7e39165033ac57df172b7b59/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "eddc3321fc2e44954daed1f2459a3a8170dc7667108f06f281061ed1a80343ac",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50766,
+          "bytes": 195622
+        },
+        "all_writable_native_records": {
+          "tokens": 25103,
+          "bytes": 100662
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11972,
+          "bytes": 47498
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4021,
+          "bytes": 16855
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/887c0ac4689eeb6a879dc629/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "056af3be6355368571a5824067cea0849e610850dc83c0706bf36ded5026cae0",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50763,
+          "bytes": 195622
+        },
+        "all_writable_native_records": {
+          "tokens": 25100,
+          "bytes": 100662
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11969,
+          "bytes": 47498
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4018,
+          "bytes": 16855
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/9cc7882d4cbf469402636001/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "f1bea76b7fc3349ce7bc69340b24db4706c45814b956c7c4aa6bf3ecd529ea2f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50763,
+          "bytes": 195614
+        },
+        "all_writable_native_records": {
+          "tokens": 25100,
+          "bytes": 100654
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11969,
+          "bytes": 47490
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4018,
+          "bytes": 16847
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "d261dce629bdc1ad1720941ef13ced3dc364ef24e5eec2475bb2f8e87391b763",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50763,
+          "bytes": 195606
+        },
+        "all_writable_native_records": {
+          "tokens": 25100,
+          "bytes": 100646
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11969,
+          "bytes": 47482
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4018,
+          "bytes": 16839
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/b9ab590d17912db9c174cf6c/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "2b3e4187479c39bb669aaca6b0184758485a8d5be230da15e345836717b1aaea",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50766,
+          "bytes": 195622
+        },
+        "all_writable_native_records": {
+          "tokens": 25103,
+          "bytes": 100662
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11972,
+          "bytes": 47498
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4021,
+          "bytes": 16855
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/e84090dcac7c3097baf73d06/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "4c2c94606f12dde32c7f4ec940dc522ddd9128ef067ee7a7a42e846b81cd99a8",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50763,
+          "bytes": 195630
+        },
+        "all_writable_native_records": {
+          "tokens": 25100,
+          "bytes": 100670
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11969,
+          "bytes": 47506
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4018,
+          "bytes": 16863
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/fc90352e4e0d12bd55d2c194/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "task_sha256": "9075c4fb0d608b6c0c3241660e9b23690bd0fa63b43a92926733af7d83b291e4",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50767,
+          "bytes": 195622
+        },
+        "all_writable_native_records": {
+          "tokens": 25104,
+          "bytes": 100662
+        },
+        "all_writable_names_shapes": {
+          "tokens": 11973,
+          "bytes": 47498
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4022,
+          "bytes": 16855
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/021/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "385740e5797d64baa443eac9672d7c8fdd2c34bd95064b2f9ec4cd3e79a54f58",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50887,
+          "bytes": 196273
+        },
+        "all_writable_native_records": {
+          "tokens": 25224,
+          "bytes": 101313
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12093,
+          "bytes": 48149
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4142,
+          "bytes": 17506
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "6f4b4f77e335299b01556921b5f4de45255a6991c711d3bf0b665f3ba4f72bf1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50887,
+          "bytes": 196268
+        },
+        "all_writable_native_records": {
+          "tokens": 25224,
+          "bytes": 101308
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12093,
+          "bytes": 48144
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4142,
+          "bytes": 17501
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/033/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "b70af3c994681f512e0be4ea06d23bd2c31d5291732aa131eb156940e2410d5f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50964,
+          "bytes": 196641
+        },
+        "all_writable_native_records": {
+          "tokens": 25301,
+          "bytes": 101681
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12170,
+          "bytes": 48517
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4219,
+          "bytes": 17874
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/038/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "c0f1e7b8d607e12c4d81b4a7bc77c962d9ca12f1300c64a2af210fbf52be735e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50888,
+          "bytes": 196268
+        },
+        "all_writable_native_records": {
+          "tokens": 25225,
+          "bytes": 101308
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12094,
+          "bytes": 48144
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4143,
+          "bytes": 17501
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/041/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "4d5e53afd8ff53892797bc649f1dd962bc8bb7ce1480bb5f60a6356079fa2422",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50873,
+          "bytes": 196122
+        },
+        "all_writable_native_records": {
+          "tokens": 25210,
+          "bytes": 101162
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12079,
+          "bytes": 47998
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4128,
+          "bytes": 17355
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/043/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "f5bf6d9cb51a06d0cee3f3998739652fb7fe6330888f7f15d77fd5fe4b7d52c1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50887,
+          "bytes": 196273
+        },
+        "all_writable_native_records": {
+          "tokens": 25224,
+          "bytes": 101313
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12093,
+          "bytes": 48149
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4142,
+          "bytes": 17506
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "ec4835a4421e3d2029b342e5862d239cb7755458d6a1da3e2f5d843b77458024",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50887,
+          "bytes": 196273
+        },
+        "all_writable_native_records": {
+          "tokens": 25224,
+          "bytes": 101313
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12093,
+          "bytes": 48149
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4142,
+          "bytes": 17506
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "30b8927d6e6b81925164eb4aff12e137fcc6c723c1c25c4ee5fe706d61b4df64",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50968,
+          "bytes": 196641
+        },
+        "all_writable_native_records": {
+          "tokens": 25305,
+          "bytes": 101681
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12174,
+          "bytes": 48517
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4223,
+          "bytes": 17874
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/070/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "2a8bb2355ba054c648c7ccd6cfd224264f8f84739c8d19a5e96e5661543d043d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50959,
+          "bytes": 196646
+        },
+        "all_writable_native_records": {
+          "tokens": 25296,
+          "bytes": 101686
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12165,
+          "bytes": 48522
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4214,
+          "bytes": 17879
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/083/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "62878da094952634ba698d48017a5eba87359bb00b511b7a467d9874869dd5f2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50883,
+          "bytes": 196268
+        },
+        "all_writable_native_records": {
+          "tokens": 25220,
+          "bytes": 101308
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12089,
+          "bytes": 48144
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4138,
+          "bytes": 17501
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/087/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "da9d79f751795582872f7f56bb210dcb07ea992729449e04e6bd4bd676f5ee60",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50892,
+          "bytes": 196273
+        },
+        "all_writable_native_records": {
+          "tokens": 25229,
+          "bytes": 101313
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12098,
+          "bytes": 48149
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4147,
+          "bytes": 17506
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/096/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "3d370c7e2a8de7fc35418e0d03b5bcdf4018ca15d9040cdcde137578d6dce65a",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50963,
+          "bytes": 196641
+        },
+        "all_writable_native_records": {
+          "tokens": 25300,
+          "bytes": 101681
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12169,
+          "bytes": 48517
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4218,
+          "bytes": 17874
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/output_code_remapping/71bb62e4df8f3b3b9f37ff91/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "90f69f5d80fdc72584cc656030b571973576b1d07d6f4f8f538b2df8f2527cb1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50963,
+          "bytes": 196636
+        },
+        "all_writable_native_records": {
+          "tokens": 25300,
+          "bytes": 101676
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12169,
+          "bytes": 48512
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4218,
+          "bytes": 17869
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/output_code_remapping/87b33f3c636807f335001bbf/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "c8ba1b1e41d7953ac6fb0b1290f00eb9fc2a89b274567200400d091a89d8cc69",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50967,
+          "bytes": 196646
+        },
+        "all_writable_native_records": {
+          "tokens": 25304,
+          "bytes": 101686
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12173,
+          "bytes": 48522
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4222,
+          "bytes": 17879
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/output_code_remapping/c61c6dff9e87278359e93262/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "task_sha256": "a61a762d65a324093e31a87a876a061912e48c9ca45dc93b086e5e64b85c8d6a",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50963,
+          "bytes": 196646
+        },
+        "all_writable_native_records": {
+          "tokens": 25300,
+          "bytes": 101686
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12169,
+          "bytes": 48522
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4218,
+          "bytes": 17879
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/010/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "8a808903eca27590845294e5fe39537426cde048765759b4dccb8ef277bb1d79",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51054,
+          "bytes": 196682
+        },
+        "all_writable_native_records": {
+          "tokens": 25391,
+          "bytes": 101722
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12260,
+          "bytes": 48558
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4309,
+          "bytes": 17915
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/022/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "5fd6d7fa4b72ea08459d33efe8f1d0d78f95d25c0d3f32fbf4ae61ee732ccc9f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51051,
+          "bytes": 196686
+        },
+        "all_writable_native_records": {
+          "tokens": 25388,
+          "bytes": 101726
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12257,
+          "bytes": 48562
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4306,
+          "bytes": 17919
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/029/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "6bb7d8536fbf6af3f24c8ab40a3dac191e82062b5d9f37630cabd0a1f086725e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51009,
+          "bytes": 196589
+        },
+        "all_writable_native_records": {
+          "tokens": 25346,
+          "bytes": 101629
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12215,
+          "bytes": 48465
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4264,
+          "bytes": 17822
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/038/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "592ba35a3e7bbf4a2535de5a3eff8c8bc0e2b75dbb94e5fcdcae2839d59e7968",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50978,
+          "bytes": 196525
+        },
+        "all_writable_native_records": {
+          "tokens": 25315,
+          "bytes": 101565
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12184,
+          "bytes": 48401
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4233,
+          "bytes": 17758
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/056/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "c1542b317608286396494f45b5039cde9954a5a4392ead324b35a13a6bcb80b6",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51049,
+          "bytes": 196803
+        },
+        "all_writable_native_records": {
+          "tokens": 25386,
+          "bytes": 101843
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12255,
+          "bytes": 48679
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4304,
+          "bytes": 18036
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/061/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "cabd2fe05cee719e004ebc12ddceb646bfce85716dd1f105771599d521e312c5",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51032,
+          "bytes": 196610
+        },
+        "all_writable_native_records": {
+          "tokens": 25369,
+          "bytes": 101650
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12238,
+          "bytes": 48486
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4287,
+          "bytes": 17843
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/062/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "13b1e338aae6f43b09581ac478ebf89006218895593dbdba0170d08635c7809e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51014,
+          "bytes": 196618
+        },
+        "all_writable_native_records": {
+          "tokens": 25351,
+          "bytes": 101658
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12220,
+          "bytes": 48494
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4269,
+          "bytes": 17851
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/066/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "8873425a1409eb0cbbe2dde41f7e4f31af5e31749f00cf15e49f0115bac75711",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51005,
+          "bytes": 196650
+        },
+        "all_writable_native_records": {
+          "tokens": 25342,
+          "bytes": 101690
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12211,
+          "bytes": 48526
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4260,
+          "bytes": 17883
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/071/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "31b51dd5331fcf8c1b78f7c0cedc8ffc2ca9de9679755432a03a42e39ede0857",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51022,
+          "bytes": 196581
+        },
+        "all_writable_native_records": {
+          "tokens": 25359,
+          "bytes": 101621
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12228,
+          "bytes": 48457
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4277,
+          "bytes": 17814
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/072/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "996d1cd13213d2b99568a4704337daeaaf9b11f95e8200276e22128f9b0219a1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51011,
+          "bytes": 196577
+        },
+        "all_writable_native_records": {
+          "tokens": 25348,
+          "bytes": 101617
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12217,
+          "bytes": 48453
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4266,
+          "bytes": 17810
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/074/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "863f7d9f182e05b01ad3dd67710bf478d237662b3838715d560af8cd2c65b1dd",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51034,
+          "bytes": 196810
+        },
+        "all_writable_native_records": {
+          "tokens": 25371,
+          "bytes": 101850
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12240,
+          "bytes": 48686
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4289,
+          "bytes": 18043
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/081/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "a84552a9e7db7b3b09797825df582c6ffd93a597216e4d38040c2aa83d6827d2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51043,
+          "bytes": 196702
+        },
+        "all_writable_native_records": {
+          "tokens": 25380,
+          "bytes": 101742
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12249,
+          "bytes": 48578
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4298,
+          "bytes": 17935
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/lexical_inhibition/096/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "86c7be6d0899985d9352573acce5ffe4a0eed14ba12ef8688e63eea6bc8fb93a",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51082,
+          "bytes": 196809
+        },
+        "all_writable_native_records": {
+          "tokens": 25419,
+          "bytes": 101849
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12288,
+          "bytes": 48685
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4337,
+          "bytes": 18042
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/lexical_inhibition/0aad89f71baa1b83b808bcdd/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "e48166bd7eec5df1a244eb88f689f0575aebaf3de8a8a9bdb7ad3cc30db17e4b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50978,
+          "bytes": 196487
+        },
+        "all_writable_native_records": {
+          "tokens": 25315,
+          "bytes": 101527
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12184,
+          "bytes": 48363
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4233,
+          "bytes": 17720
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/lexical_inhibition/a46f02d28a9a591d083a895a/gemma-3-4b-it",
+      "family": "lexical_inhibition",
+      "task_sha256": "28988f9774e3bede17a09a28dd2ab0d37cf0dd10e6451e2720445482c54124af",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51050,
+          "bytes": 196737
+        },
+        "all_writable_native_records": {
+          "tokens": 25387,
+          "bytes": 101777
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12256,
+          "bytes": 48613
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4305,
+          "bytes": 17970
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/009/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "5404b258e64434ef294ead92456182052b31b1a3c3502de918e1c7d2334debe6",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50962,
+          "bytes": 196462
+        },
+        "all_writable_native_records": {
+          "tokens": 25299,
+          "bytes": 101502
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12168,
+          "bytes": 48338
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4217,
+          "bytes": 17695
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/021/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "48849d804ee939e9eb831b243612231477307dd4f83e1db1f530e44981771290",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50974,
+          "bytes": 196443
+        },
+        "all_writable_native_records": {
+          "tokens": 25311,
+          "bytes": 101483
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12180,
+          "bytes": 48319
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4229,
+          "bytes": 17676
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/046/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "c42ad2bb28069090161244751076f6ef26f36c12bd1b8acac936f88662f4efd2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50962,
+          "bytes": 196463
+        },
+        "all_writable_native_records": {
+          "tokens": 25299,
+          "bytes": 101503
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12168,
+          "bytes": 48339
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4217,
+          "bytes": 17696
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/058/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "80cb536a7274888ca3370793ff986dce668b8192861cf3bfe32cc04772832ffe",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50970,
+          "bytes": 196440
+        },
+        "all_writable_native_records": {
+          "tokens": 25307,
+          "bytes": 101480
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12176,
+          "bytes": 48316
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4225,
+          "bytes": 17673
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/068/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "85e407b51caca0ffc958012691157c29b1d2d5490b7bfbf50d3ea474eaaf0b0b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50887,
+          "bytes": 196074
+        },
+        "all_writable_native_records": {
+          "tokens": 25224,
+          "bytes": 101114
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12093,
+          "bytes": 47950
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4142,
+          "bytes": 17307
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/075/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "f19b671f02acbb6e30b9cfb3406d468489916fa84b8485f5c67946b1efe4f025",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50883,
+          "bytes": 196120
+        },
+        "all_writable_native_records": {
+          "tokens": 25220,
+          "bytes": 101160
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12089,
+          "bytes": 47996
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4138,
+          "bytes": 17353
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/terminology_preference/093/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "1b3354a6cbde77c494d0852d5c537a96810cc3df109f2713bc29472236417a81",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50964,
+          "bytes": 196461
+        },
+        "all_writable_native_records": {
+          "tokens": 25301,
+          "bytes": 101501
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12170,
+          "bytes": 48337
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4219,
+          "bytes": 17694
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/27e1dc3cab07bcda94596d6b/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "0031e395ec61e59d5a7861065f242f04921ed4570359d9b7f731fd6b20b35ec2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50811,
+          "bytes": 195798
+        },
+        "all_writable_native_records": {
+          "tokens": 25148,
+          "bytes": 100838
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12017,
+          "bytes": 47674
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4066,
+          "bytes": 17031
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/33848de0bd354817556e090b/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "c51d721f483339aa588765ec6829f1aa2cd434baa190c25068071f3298b1c418",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50883,
+          "bytes": 196071
+        },
+        "all_writable_native_records": {
+          "tokens": 25220,
+          "bytes": 101111
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12089,
+          "bytes": 47947
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4138,
+          "bytes": 17304
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/4322baa7e86973a448a93c22/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "7c3efb31f521431493d7bad995e2558c848f1876cc1ebcb3ba0ce2a363d38564",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50808,
+          "bytes": 195795
+        },
+        "all_writable_native_records": {
+          "tokens": 25145,
+          "bytes": 100835
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12014,
+          "bytes": 47671
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4063,
+          "bytes": 17028
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/762f1f19bfbdb38a0035af14/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "f9d4a463ec0cdc50191744a4098caabf85de4dfbfb831631706d453c60eb99ba",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50983,
+          "bytes": 196469
+        },
+        "all_writable_native_records": {
+          "tokens": 25320,
+          "bytes": 101509
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12189,
+          "bytes": 48345
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4238,
+          "bytes": 17702
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/8f1bb93a13ed8da582d08238/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "b63bd394d21041966b6de716385c5d440ee616780370056243214365b18cadd8",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50985,
+          "bytes": 196470
+        },
+        "all_writable_native_records": {
+          "tokens": 25322,
+          "bytes": 101510
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12191,
+          "bytes": 48346
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4240,
+          "bytes": 17703
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/9e07f9ab23a3ea89e4961b7b/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "6b4b96a710dff6b1ce1416621644879c3d76d6348c95ac3d40569292433e2193",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50982,
+          "bytes": 196447
+        },
+        "all_writable_native_records": {
+          "tokens": 25319,
+          "bytes": 101487
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12188,
+          "bytes": 48323
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4237,
+          "bytes": 17680
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/9e0c815ed4fbd60d64b34a37/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "d1e49565c055b3ac6e7024003de9e276955d8cbfb13d6268cfdd4a49085fc913",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50964,
+          "bytes": 196439
+        },
+        "all_writable_native_records": {
+          "tokens": 25301,
+          "bytes": 101479
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12170,
+          "bytes": 48315
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4219,
+          "bytes": 17672
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/terminology_preference/b78e8c6cc00341dba225dbe4/gemma-3-4b-it",
+      "family": "terminology_preference",
+      "task_sha256": "5326148f5808e8d55cb5e1a2eb5850776538717e647446dd19b068e144d5ebe1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50983,
+          "bytes": 196483
+        },
+        "all_writable_native_records": {
+          "tokens": 25320,
+          "bytes": 101523
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12189,
+          "bytes": 48359
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4238,
+          "bytes": 17716
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/008/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "f4126471e178b6dc76ebb0fb63d7c56610a8739b8fbc8f25e4873a895152fa59",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50820,
+          "bytes": 195851
+        },
+        "all_writable_native_records": {
+          "tokens": 25157,
+          "bytes": 100891
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12026,
+          "bytes": 47727
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4075,
+          "bytes": 17084
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/021/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "560bfddd9cfa8ae19b30eee009c31f80b8676fdc52abfd252092853ef1bb416c",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50822,
+          "bytes": 195863
+        },
+        "all_writable_native_records": {
+          "tokens": 25159,
+          "bytes": 100903
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12028,
+          "bytes": 47739
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4077,
+          "bytes": 17096
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/040/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "41e23ee7c7f797c682b8bbda2693aef82a5b09b777237d8b4092fc369a9cf8e6",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195880
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100920
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47756
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17113
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/058/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "59c446efe68f6a2e48e551db7515fc853d228822a6ffddd513db192070bf4b2b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50826,
+          "bytes": 195874
+        },
+        "all_writable_native_records": {
+          "tokens": 25163,
+          "bytes": 100914
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12032,
+          "bytes": 47750
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4081,
+          "bytes": 17107
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/072/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "ea9833a83e93392330f2d8d3858657624af92c16f1ba6ebe9847d6b122df2e0f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50823,
+          "bytes": 195867
+        },
+        "all_writable_native_records": {
+          "tokens": 25160,
+          "bytes": 100907
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12029,
+          "bytes": 47743
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4078,
+          "bytes": 17100
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/default_response_language/095/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "4ca70c313c79fb628ed1e3744d5b1374f1732ec9ab895ee328770029aed0ee7c",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195875
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100915
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47751
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17108
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/059e129089ef56344746c0e9/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "21a051681c1189be00037386027373e1a4ffa5d6572926aa2a1f140521a43848",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50824,
+          "bytes": 195871
+        },
+        "all_writable_native_records": {
+          "tokens": 25161,
+          "bytes": 100911
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12030,
+          "bytes": 47747
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4079,
+          "bytes": 17104
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/0ed69f241d6c2cdde1df35ed/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "e8ad47dd68c83ead5476da22a7a0339351965b49a01eeed7e8682a66d0212953",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50822,
+          "bytes": 195854
+        },
+        "all_writable_native_records": {
+          "tokens": 25159,
+          "bytes": 100894
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12028,
+          "bytes": 47730
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4077,
+          "bytes": 17087
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/40fbb21a662ce71bf46096cc/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "b95c7d95c9760ee872ae127f9546ae0853a66a7f9c1aa729a7b9a77651d8c980",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195875
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100915
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47751
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17108
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/545b1667f7fee2dfe8f9ee4a/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "39c2a8338c621bbd949f63d7c3d4427b743cac26c54479164d9a0aab67883d1d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50821,
+          "bytes": 195853
+        },
+        "all_writable_native_records": {
+          "tokens": 25158,
+          "bytes": 100893
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12027,
+          "bytes": 47729
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4076,
+          "bytes": 17086
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/5c940e27cd25c7d268a70ca5/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "cf83697fb591af6aff341d6883d70cbde3f32bd43b5a94e999a4df7769efc9a1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195871
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100911
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47747
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17104
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/64afed03e5097ae5870a23ef/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "d9937353764e8b406fa364d66acff4a45ce821f473ffe2c05a169843d9b1e7f4",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50826,
+          "bytes": 195877
+        },
+        "all_writable_native_records": {
+          "tokens": 25163,
+          "bytes": 100917
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12032,
+          "bytes": 47753
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4081,
+          "bytes": 17110
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/8f5814c41b72c47cbb46d336/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "2a6c7ffa6d34d72c9c13a3df9fb8a6a3a42a26eb1122b360eee192e6a1429716",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50822,
+          "bytes": 195857
+        },
+        "all_writable_native_records": {
+          "tokens": 25159,
+          "bytes": 100897
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12028,
+          "bytes": 47733
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4077,
+          "bytes": 17090
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/a4aad3df8a5a16de4b2b3b0f/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "a010d55afac56881a8f9825731e6fb7663a1f58a27d5630a5af270c09ba1cb04",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50823,
+          "bytes": 195864
+        },
+        "all_writable_native_records": {
+          "tokens": 25160,
+          "bytes": 100904
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12029,
+          "bytes": 47740
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4078,
+          "bytes": 17097
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/default_response_language/c39535be74ffa202e1266653/gemma-3-4b-it",
+      "family": "default_response_language",
+      "task_sha256": "f4b719dea5cc2a02afe5248998388288070d66d927455c21209f129c4e9bee12",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50828,
+          "bytes": 195879
+        },
+        "all_writable_native_records": {
+          "tokens": 25165,
+          "bytes": 100919
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12034,
+          "bytes": 47755
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4083,
+          "bytes": 17112
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/001/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "bdb19ea712d25a55796590aaf9a131785776d8d0dd81f03dcae8baf1267a4136",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50882,
+          "bytes": 196146
+        },
+        "all_writable_native_records": {
+          "tokens": 25219,
+          "bytes": 101186
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12088,
+          "bytes": 48022
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4137,
+          "bytes": 17379
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/005/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "9a11c08822fd09efc5248d2affdb992727a44093a44b2ff8873d1cb5ea2a39c1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50928,
+          "bytes": 196286
+        },
+        "all_writable_native_records": {
+          "tokens": 25265,
+          "bytes": 101326
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12134,
+          "bytes": 48162
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4183,
+          "bytes": 17519
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/006/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "568825e1d5b81a75a6378c87bb8ec36209f802c398df523c7d7c1a0285e756a6",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50882,
+          "bytes": 196128
+        },
+        "all_writable_native_records": {
+          "tokens": 25219,
+          "bytes": 101168
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12088,
+          "bytes": 48004
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4137,
+          "bytes": 17361
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/009/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "857ec21dc393fe7b1a6752b78b5661d403b50462f4b89587302ed830d5b9f6f1",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50939,
+          "bytes": 196373
+        },
+        "all_writable_native_records": {
+          "tokens": 25276,
+          "bytes": 101413
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12145,
+          "bytes": 48249
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4194,
+          "bytes": 17606
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/028/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "62a44578699abe5b25227183bd516c42c8da5758fe7a0df934f2c4667dd28332",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50928,
+          "bytes": 196328
+        },
+        "all_writable_native_records": {
+          "tokens": 25265,
+          "bytes": 101368
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12134,
+          "bytes": 48204
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4183,
+          "bytes": 17561
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/044/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "64b15f6affee49fb186538c49cda1752c7101b52be25572ea45112ba07ff1578",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50928,
+          "bytes": 196349
+        },
+        "all_writable_native_records": {
+          "tokens": 25265,
+          "bytes": 101389
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12134,
+          "bytes": 48225
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4183,
+          "bytes": 17582
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/045/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "fd02d8c1f37a724ee53aa09cddaee7fc3a17e0bb779d6ed302f56e3d8e601bce",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50877,
+          "bytes": 196135
+        },
+        "all_writable_native_records": {
+          "tokens": 25214,
+          "bytes": 101175
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12083,
+          "bytes": 48011
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4132,
+          "bytes": 17368
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/046/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "0de2e20adf86bf0447b7708009ec4a9bb8b637fa28744a95fe1ed21e9c35e062",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50868,
+          "bytes": 196084
+        },
+        "all_writable_native_records": {
+          "tokens": 25205,
+          "bytes": 101124
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12074,
+          "bytes": 47960
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4123,
+          "bytes": 17317
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/structured_response_default/047/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "b7ed1401ca11f6f6a7104d4df6f602fb96de421ed6c6973262ad43b9cb67883e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50879,
+          "bytes": 196114
+        },
+        "all_writable_native_records": {
+          "tokens": 25216,
+          "bytes": 101154
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12085,
+          "bytes": 47990
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4134,
+          "bytes": 17347
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/296a225172b749178843f98f/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "7cb9b525035bdeb5d07463bf600ff55a78e08db85fff256d5435750c12af5429",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50960,
+          "bytes": 196493
+        },
+        "all_writable_native_records": {
+          "tokens": 25297,
+          "bytes": 101533
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12166,
+          "bytes": 48369
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4215,
+          "bytes": 17726
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/2c110f52b7fe3c506e310ff9/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "b2379947b36b0a71b9907a9fb0fd7760fa24579289ac0d4e982e949622de2d85",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50893,
+          "bytes": 196181
+        },
+        "all_writable_native_records": {
+          "tokens": 25230,
+          "bytes": 101221
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12099,
+          "bytes": 48057
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4148,
+          "bytes": 17414
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/5b52ad77684397f8368c035e/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "949d6dcf23cfba6d5da589b50d771efa27129877f95db9a5a9709fa230cb2247",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50882,
+          "bytes": 196164
+        },
+        "all_writable_native_records": {
+          "tokens": 25219,
+          "bytes": 101204
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12088,
+          "bytes": 48040
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4137,
+          "bytes": 17397
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/72ef74c565d6ea2e05a71b34/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "9cf6d81d61ff7e782cb087fd62dc1e95c34359dc6e3bf83626ac860e5b7434be",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50952,
+          "bytes": 196433
+        },
+        "all_writable_native_records": {
+          "tokens": 25289,
+          "bytes": 101473
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12158,
+          "bytes": 48309
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4207,
+          "bytes": 17666
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/7646e134a3585328860b1526/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "8ba4dd6f588954407779d4a49da8b74c4799c2342f43e7911f057947ea93d3c8",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50948,
+          "bytes": 196415
+        },
+        "all_writable_native_records": {
+          "tokens": 25285,
+          "bytes": 101455
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12154,
+          "bytes": 48291
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4203,
+          "bytes": 17648
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/structured_response_default/924053730352ec0c27393501/gemma-3-4b-it",
+      "family": "structured_response_default",
+      "task_sha256": "15898c0235f79383dac3d2288e47ad8d7ce299fc592cd3da2be072923acbd6ef",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50950,
+          "bytes": 196442
+        },
+        "all_writable_native_records": {
+          "tokens": 25287,
+          "bytes": 101482
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12156,
+          "bytes": 48318
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4205,
+          "bytes": 17675
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/004/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "48cd16ff06447a9eb20620b13d362075bc55c1463b1337ef3a7c8f3362f87ab4",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50943,
+          "bytes": 196569
+        },
+        "all_writable_native_records": {
+          "tokens": 25280,
+          "bytes": 101609
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12149,
+          "bytes": 48445
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4198,
+          "bytes": 17802
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/022/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "11a3295cf7044d3c5ad8207662d90a7b2bb621e9a99ba8649dd0f1274805ca85",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50932,
+          "bytes": 196527
+        },
+        "all_writable_native_records": {
+          "tokens": 25269,
+          "bytes": 101567
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12138,
+          "bytes": 48403
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4187,
+          "bytes": 17760
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/049/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "8f7e92d7d99383d92f06c114335b157d79671bd5779a9f0d91d5c78db190e55e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50941,
+          "bytes": 196565
+        },
+        "all_writable_native_records": {
+          "tokens": 25278,
+          "bytes": 101605
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12147,
+          "bytes": 48441
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4196,
+          "bytes": 17798
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/059/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "0fb7cdbf28fff23ee2dc9d6da6f0ad21c71879123de5de3a2450aa5f387e95a0",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50944,
+          "bytes": 196569
+        },
+        "all_writable_native_records": {
+          "tokens": 25281,
+          "bytes": 101609
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12150,
+          "bytes": 48445
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4199,
+          "bytes": 17802
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/069/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "738df1616f48a470cee90090b4cc6162ee55612b5a108a55c0f30260ec94af0f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50912,
+          "bytes": 196357
+        },
+        "all_writable_native_records": {
+          "tokens": 25249,
+          "bytes": 101397
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12118,
+          "bytes": 48233
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4167,
+          "bytes": 17590
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/070/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "78fe24777254991fc7c2f55dc0146ddb156747a39338c6eb2c0ee327b04aa7c0",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50923,
+          "bytes": 196356
+        },
+        "all_writable_native_records": {
+          "tokens": 25260,
+          "bytes": 101396
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12129,
+          "bytes": 48232
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4178,
+          "bytes": 17589
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/077/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "d3b9496a96faddb4bf01332bcee378d764b86c5c533cc874a4f74e1ebf455c62",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50941,
+          "bytes": 196566
+        },
+        "all_writable_native_records": {
+          "tokens": 25278,
+          "bytes": 101606
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12147,
+          "bytes": 48442
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4196,
+          "bytes": 17799
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/079/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "f6e694f423ba389416f40be49e3272657209f62b67863e2d3aa0444256b857d8",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50941,
+          "bytes": 196566
+        },
+        "all_writable_native_records": {
+          "tokens": 25278,
+          "bytes": 101606
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12147,
+          "bytes": 48442
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4196,
+          "bytes": 17799
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/answer_length_control/080/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "9dacfea9f6470cfe96d7462a5fde688f5748e2d6e03f6794f175f70f5eed36db",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50943,
+          "bytes": 196569
+        },
+        "all_writable_native_records": {
+          "tokens": 25280,
+          "bytes": 101609
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12149,
+          "bytes": 48445
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4198,
+          "bytes": 17802
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/00e73f57edeb8e4a536bb323/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "7cecb96efd3021908c122c6593633b41b49fdfb3233e0caf3fa3c4a7b5ade33d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50932,
+          "bytes": 196528
+        },
+        "all_writable_native_records": {
+          "tokens": 25269,
+          "bytes": 101568
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12138,
+          "bytes": 48404
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4187,
+          "bytes": 17761
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/697bda306ca9019ec982840a/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "1bc7b17ff9b47203654237f6fe7c04c14851528f8293b63b3d3ac6b622e79c1b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50924,
+          "bytes": 196413
+        },
+        "all_writable_native_records": {
+          "tokens": 25261,
+          "bytes": 101453
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12130,
+          "bytes": 48289
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4179,
+          "bytes": 17646
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/71da6e0021a034035d37a849/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "fcdde0f3efcb36b18a022fec2c6dd64341fb52f031732b37544380a639aa1710",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50938,
+          "bytes": 196418
+        },
+        "all_writable_native_records": {
+          "tokens": 25275,
+          "bytes": 101458
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12144,
+          "bytes": 48294
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4193,
+          "bytes": 17651
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/d56c21613dacfedcd05ab3b5/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "8205eacac10a136578d972107570e34d8b00dcba5c0c7348ea5af928097421c9",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50924,
+          "bytes": 196511
+        },
+        "all_writable_native_records": {
+          "tokens": 25261,
+          "bytes": 101551
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12130,
+          "bytes": 48387
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4179,
+          "bytes": 17744
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/d91141140cf850201b63edcf/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "be6462932650c5dd6e359ec878b72c6f0b4fedf419c5c7536a6b57b8fe8357ef",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50923,
+          "bytes": 196413
+        },
+        "all_writable_native_records": {
+          "tokens": 25260,
+          "bytes": 101453
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12129,
+          "bytes": 48289
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4178,
+          "bytes": 17646
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/answer_length_control/f6c857bb564824f4294ef79f/gemma-3-4b-it",
+      "family": "answer_length_control",
+      "task_sha256": "43f97b4353c1622588d7a7d3fc58d3c1c1e8bb262becc0a87e7a9dc731c8e12b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50922,
+          "bytes": 196352
+        },
+        "all_writable_native_records": {
+          "tokens": 25259,
+          "bytes": 101392
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12128,
+          "bytes": 48228
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4177,
+          "bytes": 17585
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/2cadd9b23e5ee2405e53d12a/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "42d49ab3229e8743317c5dd2bbdafd377a98cf4b6aabab7c8c03987480e9ca7f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195786
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100826
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47662
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17019
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/33d982b101cdbfbf8828b469/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "c5a71afc0f98ced3867c879d4b64eeaf46a87375db505d09829c718d8ac0b3c2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50822,
+          "bytes": 195816
+        },
+        "all_writable_native_records": {
+          "tokens": 25159,
+          "bytes": 100856
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12028,
+          "bytes": 47692
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4077,
+          "bytes": 17049
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/4ad024e2a538ce6c1fa13ed0/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "2256320b2a815095e8954bd9ac9d7ab24df923b550061c43dda49491fcb7f07d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50824,
+          "bytes": 195825
+        },
+        "all_writable_native_records": {
+          "tokens": 25161,
+          "bytes": 100865
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12030,
+          "bytes": 47701
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4079,
+          "bytes": 17058
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/4f295c300f3b0a9ec2b5ffce/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "37ad4b50f6caf0856f83a8f48f5eccc778944d109e5a3f3fbd02dbcb26691bf0",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50806,
+          "bytes": 195736
+        },
+        "all_writable_native_records": {
+          "tokens": 25143,
+          "bytes": 100776
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12012,
+          "bytes": 47612
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4061,
+          "bytes": 16969
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/5fa3432fc0b79ef4c009a720/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "3869bbfe304493b0c81c4b1290b76963b96be9e6ab0ba44bac7c0e16123257a3",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50808,
+          "bytes": 195760
+        },
+        "all_writable_native_records": {
+          "tokens": 25145,
+          "bytes": 100800
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12014,
+          "bytes": 47636
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4063,
+          "bytes": 16993
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/68ac3b8517d23fb03f361d01/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "54dce417f638e077109371aa8090f40b25150ae37eb5ed610d18aaa43c92e44e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50810,
+          "bytes": 195748
+        },
+        "all_writable_native_records": {
+          "tokens": 25147,
+          "bytes": 100788
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12016,
+          "bytes": 47624
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4065,
+          "bytes": 16981
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/6b863442c1dc39120b0e6ece/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "2d37e5fcc8456163bc052b30f054b5fb2e04e072790b93fc34b7aae1e9148dfb",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50834,
+          "bytes": 195869
+        },
+        "all_writable_native_records": {
+          "tokens": 25171,
+          "bytes": 100909
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12040,
+          "bytes": 47745
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4089,
+          "bytes": 17102
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/77df5f650422d7a4f63f7ff0/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "cb922ec0af8535da8b0ca62696a1440a8a2c31dcdc21e8d69155242ad4743eca",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50812,
+          "bytes": 195763
+        },
+        "all_writable_native_records": {
+          "tokens": 25149,
+          "bytes": 100803
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12018,
+          "bytes": 47639
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4067,
+          "bytes": 16996
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/7b3652f6493f733c35ea4f21/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "bcd9ebe524e3e66b4b890775bdd22ee93c8b46a09cf273f3769a831d24443fbe",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50820,
+          "bytes": 195834
+        },
+        "all_writable_native_records": {
+          "tokens": 25157,
+          "bytes": 100874
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12026,
+          "bytes": 47710
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4075,
+          "bytes": 17067
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/7c25d09b8921146a2fcf179e/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "0ad57db4e291ac4cb93033d5cd9091384644a6f4d9bd6cf64d577f76e5ba5918",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50817,
+          "bytes": 195836
+        },
+        "all_writable_native_records": {
+          "tokens": 25154,
+          "bytes": 100876
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12023,
+          "bytes": 47712
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4072,
+          "bytes": 17069
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/a663f8715584391c63084715/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "3f547a9be2778319f56a340e487229d1f3172edab6b5e4bc775ff181e9d47fe3",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50823,
+          "bytes": 195813
+        },
+        "all_writable_native_records": {
+          "tokens": 25160,
+          "bytes": 100853
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12029,
+          "bytes": 47689
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4078,
+          "bytes": 17046
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/cab00b19ef12de0a959f3542/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "18b33ff8c34f57d1902802d4bda313287ae3d9496d96a3bd84dba0ad24f7367e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50819,
+          "bytes": 195761
+        },
+        "all_writable_native_records": {
+          "tokens": 25156,
+          "bytes": 100801
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12025,
+          "bytes": 47637
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4074,
+          "bytes": 16994
+        }
+      }
+    },
+    {
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "12e25576b5297108851e7005a820fcd78bfaab54fdb55d251c8fcc9a73ab4534",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50800,
+          "bytes": 195731
+        },
+        "all_writable_native_records": {
+          "tokens": 25137,
+          "bytes": 100771
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12006,
+          "bytes": 47607
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4055,
+          "bytes": 16964
+        }
+      }
+    },
+    {
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "335bf009b66b00e8379bc3cbe07ca91849cbf73a426770ca820187a352a4981d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50825,
+          "bytes": 195829
+        },
+        "all_writable_native_records": {
+          "tokens": 25162,
+          "bytes": 100869
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12031,
+          "bytes": 47705
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4080,
+          "bytes": 17062
+        }
+      }
+    },
+    {
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "family": "factual_update",
+      "task_sha256": "6a272c2ebf48392275c5bc363d037fcb3aa88f4327e1805d842c5fd456c9a02f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50818,
+          "bytes": 195781
+        },
+        "all_writable_native_records": {
+          "tokens": 25155,
+          "bytes": 100821
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12024,
+          "bytes": 47657
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4073,
+          "bytes": 17014
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/009/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "244bc556acf588656077a1d227e4cb2dda06a96dc7eff2fc88127e452659fe5b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50796,
+          "bytes": 195794
+        },
+        "all_writable_native_records": {
+          "tokens": 25133,
+          "bytes": 100834
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12002,
+          "bytes": 47670
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4051,
+          "bytes": 17027
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/011/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "22fb95e1b17c18d1ac7760bb7f490d2c05ce6de279b9c817fdc68c4a10a59836",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50805,
+          "bytes": 195821
+        },
+        "all_writable_native_records": {
+          "tokens": 25142,
+          "bytes": 100861
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12011,
+          "bytes": 47697
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4060,
+          "bytes": 17054
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/031/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "623792e2cf54ecefce1e4f75a2a212ccac1c851fbfab0c9cab06f521c29f4db9",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50795,
+          "bytes": 195809
+        },
+        "all_writable_native_records": {
+          "tokens": 25132,
+          "bytes": 100849
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12001,
+          "bytes": 47685
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4050,
+          "bytes": 17042
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "c0822b60f4d88313fdfef75ce218727f2c63ce46f3aae64b5b076cf94a3f2e0b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50797,
+          "bytes": 195822
+        },
+        "all_writable_native_records": {
+          "tokens": 25134,
+          "bytes": 100862
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12003,
+          "bytes": 47698
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4052,
+          "bytes": 17055
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "1afe888df87cc72454b35ceb504ff53a9042315afcb6c0b91b8f2d8a75c8713f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50798,
+          "bytes": 195823
+        },
+        "all_writable_native_records": {
+          "tokens": 25135,
+          "bytes": 100863
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12004,
+          "bytes": 47699
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4053,
+          "bytes": 17056
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/041/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "ec58c35315c5a9ca3b90709315cbb107f0edb6cc188cff6397670b1e1096e816",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50797,
+          "bytes": 195805
+        },
+        "all_writable_native_records": {
+          "tokens": 25134,
+          "bytes": 100845
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12003,
+          "bytes": 47681
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4052,
+          "bytes": 17038
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/052/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "965fe4a79d9987e6b6d610de663b6ceea64e0441404710360a0bf89ee2b34078",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50798,
+          "bytes": 195806
+        },
+        "all_writable_native_records": {
+          "tokens": 25135,
+          "bytes": 100846
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12004,
+          "bytes": 47682
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4053,
+          "bytes": 17039
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/055/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "ad1977bd18db786b7b567bc408d894af59c7c3613c0565d222dd608b00162d38",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50797,
+          "bytes": 195798
+        },
+        "all_writable_native_records": {
+          "tokens": 25134,
+          "bytes": 100838
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12003,
+          "bytes": 47674
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4052,
+          "bytes": 17031
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "95456bd15b52ac173fcd949c69e9c0f5d6eb680383d44723598bb73150733975",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50798,
+          "bytes": 195803
+        },
+        "all_writable_native_records": {
+          "tokens": 25135,
+          "bytes": 100843
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12004,
+          "bytes": 47679
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4053,
+          "bytes": 17036
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/068/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "b284c21788922810d4fdccfe00f98dfa0e358235ed631b9042491dd528faebd2",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50799,
+          "bytes": 195800
+        },
+        "all_writable_native_records": {
+          "tokens": 25136,
+          "bytes": 100840
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12005,
+          "bytes": 47676
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4054,
+          "bytes": 17033
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/078/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "8b1754a5adadd684dd0e0644394f3e93c03b05acac675c98a30a3e4db0f12c1f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50797,
+          "bytes": 195799
+        },
+        "all_writable_native_records": {
+          "tokens": 25134,
+          "bytes": 100839
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12003,
+          "bytes": 47675
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4052,
+          "bytes": 17032
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/096/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "166dba83aae64949ee18074642a28ac90a70d21e785cf77f0c3ba38d6b0d047f",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50801,
+          "bytes": 195800
+        },
+        "all_writable_native_records": {
+          "tokens": 25138,
+          "bytes": 100840
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12007,
+          "bytes": 47676
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4056,
+          "bytes": 17033
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/099/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "405636e8c836ad54bcbe77efaf62ffaf1546752fb79d08497989a31865852d73",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50795,
+          "bytes": 195801
+        },
+        "all_writable_native_records": {
+          "tokens": 25132,
+          "bytes": 100841
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12001,
+          "bytes": 47677
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4050,
+          "bytes": 17034
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/selective_factual_withholding/162137238744b623dd0dff6f/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "fec09f859f08922643a90b18ebafe4f03d39477cdd2e7e990206f6c96b449f07",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50796,
+          "bytes": 195799
+        },
+        "all_writable_native_records": {
+          "tokens": 25133,
+          "bytes": 100839
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12002,
+          "bytes": 47675
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4051,
+          "bytes": 17032
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/selective_factual_withholding/fdd78537b4b8dc4d7f6af93e/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "task_sha256": "06a305e2e629ea4489a9656ee3d10dafddd5a4466924f2d2c6ada7d145bb9a21",
+      "arms": {
+        "full_native_records": {
+          "tokens": 50814,
+          "bytes": 195882
+        },
+        "all_writable_native_records": {
+          "tokens": 25151,
+          "bytes": 100922
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12020,
+          "bytes": 47758
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4069,
+          "bytes": 17115
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/019/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "4fcf14baa82ae35eefd3e4e066ced9d29d7af0fda9381568cf7836447408a82c",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51222,
+          "bytes": 197610
+        },
+        "all_writable_native_records": {
+          "tokens": 25559,
+          "bytes": 102650
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12428,
+          "bytes": 49486
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4477,
+          "bytes": 18843
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/024/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "05479f64400fef766959b83dc27c673ff83ec98e1942d9b48075ea2a73b3d468",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197565
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102605
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49441
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18798
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/033/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "0aed8265f29f799997208f6542a472ca12118999e11e91cfd45b7c63f2817641",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51202,
+          "bytes": 197546
+        },
+        "all_writable_native_records": {
+          "tokens": 25539,
+          "bytes": 102586
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12408,
+          "bytes": 49422
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4457,
+          "bytes": 18779
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/050/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "3efa63f5dcb9bd1b3298808684661a10d1cada1d02e1ea9219993091f26b15b4",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51202,
+          "bytes": 197525
+        },
+        "all_writable_native_records": {
+          "tokens": 25539,
+          "bytes": 102565
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12408,
+          "bytes": 49401
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4457,
+          "bytes": 18758
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/064/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "3606e8c829091468a7e9d2ad358d297556fa4b370b65b21634f9cb6a0ea0e51b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197567
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102607
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49443
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18800
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/066/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "4f250de1dec0af0151cbd3702f54e9ce7ff75acb377f0095ab4b52c39bf2d2a0",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51202,
+          "bytes": 197525
+        },
+        "all_writable_native_records": {
+          "tokens": 25539,
+          "bytes": 102565
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12408,
+          "bytes": 49401
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4457,
+          "bytes": 18758
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/085/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "2cfae6a9feb62b0b39a9b86e807ed6d23859b3e3f9cd92e5fa30e2c666d1eaca",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51207,
+          "bytes": 197570
+        },
+        "all_writable_native_records": {
+          "tokens": 25544,
+          "bytes": 102610
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12413,
+          "bytes": 49446
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4462,
+          "bytes": 18803
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/resistance_to_false_suggestions/097/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "688e8a47be593ecaa203b5b60e026531d838d3f99ccea2d417788ff267c48520",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51202,
+          "bytes": 197551
+        },
+        "all_writable_native_records": {
+          "tokens": 25539,
+          "bytes": 102591
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12408,
+          "bytes": 49427
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4457,
+          "bytes": 18784
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/071b0de430c523f5c3a14de1/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "2b3947ca462cf2b5bee5a986e409944fd2279654ecd032fe410c74fb2f750e3b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197561
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102601
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49437
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18794
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/1e4aeb7857ac3a4a09dc53d0/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "bd026dabfed3a4141c03404c2c1b0e09a45db34634f3e2ee8be64123ea50196e",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51222,
+          "bytes": 197612
+        },
+        "all_writable_native_records": {
+          "tokens": 25559,
+          "bytes": 102652
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12428,
+          "bytes": 49488
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4477,
+          "bytes": 18845
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/1f0505aaa6bbacd679b8b77a/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "fcca908df8a1d18c51ef94e6ec57ba7331693c8d142fc5a391cab278e99f1589",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197563
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102603
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49439
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18796
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/2e35c56d793170b65017cf9b/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "6490bf934d77ddbf539867fd71cfeacb3736b34db0590c63ce3b7594d4d89a7b",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51207,
+          "bytes": 197544
+        },
+        "all_writable_native_records": {
+          "tokens": 25544,
+          "bytes": 102584
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12413,
+          "bytes": 49420
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4462,
+          "bytes": 18777
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "a79d0745a435a90c9c29354fc5c48aa327ddf80c04e6e68c5d97c48bc592856d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197567
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102607
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49443
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18800
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/a216ba1beeb0e8b9b605e76d/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "3d98a42eea43e1b8a638e9c9d940496e861e5ce0f61fa46facbab12652f523a5",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51207,
+          "bytes": 197546
+        },
+        "all_writable_native_records": {
+          "tokens": 25544,
+          "bytes": 102586
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12413,
+          "bytes": 49422
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4462,
+          "bytes": 18779
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/d6309be1eb4ec6eb958c8617/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "task_sha256": "95b035651cfab199bc914fa5a46fe9e2b8eb5dcf1397ab927a27f684d971361d",
+      "arms": {
+        "full_native_records": {
+          "tokens": 51212,
+          "bytes": 197562
+        },
+        "all_writable_native_records": {
+          "tokens": 25549,
+          "bytes": 102602
+        },
+        "all_writable_names_shapes": {
+          "tokens": 12418,
+          "bytes": 49438
+        },
+        "four_writable_names_shapes": {
+          "tokens": 4467,
+          "bytes": 18795
+        }
+      }
+    }
+  ]
+}

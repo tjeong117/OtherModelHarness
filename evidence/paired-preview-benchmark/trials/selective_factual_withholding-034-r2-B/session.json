@@ -1,0 +1,21 @@
+{
+  "protocol": "iwi-harness.v1",
+  "model_id": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+  "block_count": 34,
+  "sae": null,
+  "limits": {
+    "max_tool_calls": 128,
+    "max_forwards": 512,
+    "max_forward_tokens": 131072
+  },
+  "interpretability": true,
+  "tool_schema": {
+    "utf8_bytes": 7077
+  },
+  "public_experiments": {
+    "internal_measurements": true,
+    "edit_preview": false
+  }
+}

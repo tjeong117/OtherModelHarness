@@ -1,0 +1,722 @@
+{
+  "policy": {
+    "seeds": [
+      3,
+      1
+    ],
+    "initial_source_fraction": 0.5,
+    "optimizer": "Adam",
+    "learning_rate": 0.002,
+    "steps": 12,
+    "evaluate_steps": [
+      4,
+      8,
+      12
+    ],
+    "semantic_training": [
+      "How many corners are there on a {word}? Write only the numerical answer.",
+      "Is a {word} a geometric shape? Respond with yes or no."
+    ],
+    "practice": "Use the first published correct answer to each official public practice prompt.",
+    "training_copy": [
+      [
+        "Type this phrase exactly, preserving spelling: blue {word}",
+        "blue {word}"
+      ],
+      [
+        "Write only the final word, retaining its original letters: read the {word}",
+        "{word}"
+      ],
+      [
+        "Transcribe the following text exactly: red {word} green",
+        "red {word} green"
+      ]
+    ],
+    "public_evaluation_transfer": [
+      "How many vertices does a {word} have? Respond with a single integer.",
+      "Is a {word} three-dimensional? Reply with just yes or no."
+    ],
+    "public_evaluation_copy": [
+      [
+        "Copy exactly the three words between brackets, without the brackets: [I saw {word}]",
+        "I saw {word}"
+      ],
+      [
+        "A spelling exercise: repeat the final word only, with its original spelling: under the {word}",
+        "{word}"
+      ]
+    ],
+    "selection": "Require at least as many alias and copy successes as full copy, and a strict improvement on one. Among eligible candidates maximize alias successes, then copy successes, then use the earliest step."
+  },
+  "episodes": [
+    {
+      "seed": 3,
+      "task": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+      "model_id": "google/gemma-3-4b-it",
+      "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "training_pairs": [
+        [
+          "Count the flat faces of a saffron. Return only the integer.",
+          "6"
+        ],
+        [
+          "How many corners are there on a saffron? Write only the numerical answer.",
+          "8\n"
+        ],
+        [
+          "Is a saffron a geometric shape? Respond with yes or no.",
+          "Yes.\n"
+        ],
+        [
+          "Type this phrase exactly, preserving spelling: blue saffron",
+          "blue saffron"
+        ],
+        [
+          "Write only the final word, retaining its original letters: read the saffron",
+          "saffron"
+        ],
+        [
+          "Transcribe the following text exactly: red saffron green",
+          "red saffron green"
+        ]
+      ],
+      "public_checks": [
+        [
+          "Count the flat faces of a saffron. Return only the integer.",
+          [
+            "6"
+          ]
+        ],
+        [
+          "How many vertices does a saffron have? Respond with a single integer.",
+          [
+            "8\n"
+          ]
+        ],
+        [
+          "Is a saffron three-dimensional? Reply with just yes or no.",
+          [
+            "Yes\n"
+          ]
+        ],
+        [
+          "Copy exactly the three words between brackets, without the brackets: [I saw saffron]",
+          [
+            "I saw saffron"
+          ]
+        ],
+        [
+          "A spelling exercise: repeat the final word only, with its original spelling: under the saffron",
+          [
+            "saffron"
+          ]
+        ]
+      ],
+      "full_copy": {
+        "responses": [
+          "6\n",
+          "8\n",
+          "Yes\n",
+          "I saw cube\n",
+          "cube\n"
+        ],
+        "alias_correct": 3,
+        "copy_correct": 0
+      },
+      "loss": [
+        4.2074174880981445,
+        2.3893585205078125,
+        1.9608360528945923,
+        1.76287043094635,
+        1.7592415809631348,
+        1.6728110313415527,
+        1.3909581899642944,
+        1.2337263822555542,
+        1.160789966583252,
+        1.1117374897003174,
+        0.9885733127593994,
+        0.9444010257720947
+      ],
+      "candidates": [
+        {
+          "step": 4,
+          "responses": [
+            "6\n",
+            "8\n",
+            "Yes\n",
+            "I saw saffron\n",
+            "saffron\n"
+          ],
+          "alias_correct": 3,
+          "copy_correct": 2
+        },
+        {
+          "step": 8,
+          "responses": [
+            "4\n",
+            "4\n",
+            "Yes\n",
+            "I saw saffron\n",
+            "saffron"
+          ],
+          "alias_correct": 1,
+          "copy_correct": 2
+        },
+        {
+          "step": 12,
+          "responses": [
+            "6\n",
+            "3\n",
+            "Yes\n",
+            "I saw saffron\n",
+            "saffron"
+          ],
+          "alias_correct": 2,
+          "copy_correct": 2
+        }
+      ],
+      "selected_step": 4,
+      "submitted_patches": {
+        "full": {
+          "file": "seed-3-full.safetensors",
+          "sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00"
+        },
+        "trained": {
+          "file": "seed-3-trained.safetensors",
+          "sha256": "bb4bc7516b1cd95d7b2d366886dbf8f194d6d287f27d1c60037127c052789a25"
+        }
+      },
+      "grades": {
+        "full": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00",
+          "status": "scored",
+          "reward": 0.9857142857142858,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 1,
+            "target_content_base": 0,
+            "target_content_edited": 1,
+            "control_retention": 0.9857142857142858,
+            "controls_retained": 69,
+            "control_retention_denominator": 70,
+            "gain": 1.0,
+            "reward": 0.9857142857142858,
+            "local_spillover": 0.0,
+            "override_accuracy": 0,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 3,
+                "base_success": 0,
+                "edited_success": 1,
+                "base_content": 0,
+                "edited_content": 1,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 0,
+                "base_success": 1,
+                "edited_success": 0,
+                "base_content": 1,
+                "edited_content": 0,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 0,
+                "retained_successes": 0,
+                "retention_denominator": 1,
+                "retention": 0.0,
+                "spillover": 1.0
+              }
+            }
+          }
+        },
+        "trained": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "bb4bc7516b1cd95d7b2d366886dbf8f194d6d287f27d1c60037127c052789a25",
+          "status": "scored",
+          "reward": 0.6666666666666666,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 0.6666666666666666,
+            "target_content_base": 0,
+            "target_content_edited": 0.6666666666666666,
+            "control_retention": 1.0,
+            "controls_retained": 70,
+            "control_retention_denominator": 70,
+            "gain": 0.6666666666666666,
+            "reward": 0.6666666666666666,
+            "local_spillover": 0.0,
+            "override_accuracy": 1,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 2,
+                "base_success": 0,
+                "edited_success": 0.6666666666666666,
+                "base_content": 0,
+                "edited_content": 0.6666666666666666,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 0.6666666666666666,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 1,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 1,
+                "retention_denominator": 1,
+                "retention": 1.0,
+                "spillover": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "task": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+      "model_id": "google/gemma-3-4b-it",
+      "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "training_pairs": [
+        [
+          "Count the straight sides of a sprocket. Return only the integer.",
+          "4"
+        ],
+        [
+          "How many corners are there on a sprocket? Write only the numerical answer.",
+          "4\n"
+        ],
+        [
+          "Is a sprocket a geometric shape? Respond with yes or no.",
+          "Yes.\n"
+        ],
+        [
+          "Type this phrase exactly, preserving spelling: blue sprocket",
+          "blue sprocket"
+        ],
+        [
+          "Write only the final word, retaining its original letters: read the sprocket",
+          "sprocket"
+        ],
+        [
+          "Transcribe the following text exactly: red sprocket green",
+          "red sprocket green"
+        ]
+      ],
+      "public_checks": [
+        [
+          "Count the straight sides of a sprocket. Return only the integer.",
+          [
+            "4"
+          ]
+        ],
+        [
+          "How many vertices does a sprocket have? Respond with a single integer.",
+          [
+            "4\n"
+          ]
+        ],
+        [
+          "Is a sprocket three-dimensional? Reply with just yes or no.",
+          [
+            "Yes\n"
+          ]
+        ],
+        [
+          "Copy exactly the three words between brackets, without the brackets: [I saw sprocket]",
+          [
+            "I saw sprocket"
+          ]
+        ],
+        [
+          "A spelling exercise: repeat the final word only, with its original spelling: under the sprocket",
+          [
+            "sprocket"
+          ]
+        ]
+      ],
+      "full_copy": {
+        "responses": [
+          "4\n",
+          "4\n",
+          "Yes\n",
+          "I saw square\n",
+          "square\n"
+        ],
+        "alias_correct": 3,
+        "copy_correct": 0
+      },
+      "loss": [
+        5.122776985168457,
+        2.7989742755889893,
+        2.3677899837493896,
+        2.011563777923584,
+        1.884301781654358,
+        1.7024571895599365,
+        1.4315460920333862,
+        1.3100643157958984,
+        1.0964275598526,
+        0.868803083896637,
+        0.5192098021507263,
+        0.1981143057346344
+      ],
+      "candidates": [
+        {
+          "step": 4,
+          "responses": [
+            "4\n",
+            "4\n",
+            "Yes\n",
+            "I saw sprocket\n",
+            "sprocket\n"
+          ],
+          "alias_correct": 3,
+          "copy_correct": 2
+        },
+        {
+          "step": 8,
+          "responses": [
+            "4\n",
+            "4\n",
+            "Yes\n",
+            "I saw sprocket\n",
+            "sprocket\n"
+          ],
+          "alias_correct": 3,
+          "copy_correct": 2
+        },
+        {
+          "step": 12,
+          "responses": [
+            "4",
+            "4\n",
+            "Yes\n",
+            "I saw sprocket\n",
+            "sprocket\n"
+          ],
+          "alias_correct": 3,
+          "copy_correct": 2
+        }
+      ],
+      "selected_step": 4,
+      "submitted_patches": {
+        "full": {
+          "file": "seed-1-full.safetensors",
+          "sha256": "ac9893940fdc8e76c272ac5ff1d5621084c2497794d04a9f092084a3246ef58f"
+        },
+        "trained": {
+          "file": "seed-1-trained.safetensors",
+          "sha256": "351ec9b6214b5201ac140c1e58f779065a9b06a88311cedb58173ba73babad8b"
+        }
+      },
+      "grades": {
+        "full": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "ac9893940fdc8e76c272ac5ff1d5621084c2497794d04a9f092084a3246ef58f",
+          "status": "scored",
+          "reward": 0.9857142857142858,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 1,
+            "target_content_base": 0,
+            "target_content_edited": 1,
+            "control_retention": 0.9857142857142858,
+            "controls_retained": 69,
+            "control_retention_denominator": 70,
+            "gain": 1.0,
+            "reward": 0.9857142857142858,
+            "local_spillover": 0.0,
+            "override_accuracy": 0,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 3,
+                "base_success": 0,
+                "edited_success": 1,
+                "base_content": 0,
+                "edited_content": 1,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 0,
+                "base_success": 1,
+                "edited_success": 0,
+                "base_content": 1,
+                "edited_content": 0,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 0,
+                "retained_successes": 0,
+                "retention_denominator": 1,
+                "retention": 0.0,
+                "spillover": 1.0
+              }
+            }
+          }
+        },
+        "trained": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "351ec9b6214b5201ac140c1e58f779065a9b06a88311cedb58173ba73babad8b",
+          "status": "scored",
+          "reward": 1.0,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 1,
+            "target_content_base": 0,
+            "target_content_edited": 1,
+            "control_retention": 1.0,
+            "controls_retained": 70,
+            "control_retention_denominator": 70,
+            "gain": 1.0,
+            "reward": 1.0,
+            "local_spillover": 0.0,
+            "override_accuracy": 1,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 3,
+                "base_success": 0,
+                "edited_success": 1,
+                "base_content": 0,
+                "edited_content": 1,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 1,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 1,
+                "retention_denominator": 1,
+                "retention": 1.0,
+                "spillover": 0.0
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 153.27544660399872
+}

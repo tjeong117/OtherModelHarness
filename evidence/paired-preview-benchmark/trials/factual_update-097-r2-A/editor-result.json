@@ -1,0 +1,35 @@
+{
+  "order": 1,
+  "slug": "factual_update-097-r2-A",
+  "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+  "family": "factual_update",
+  "variant_index": 97,
+  "replicate": 2,
+  "seed": 118402536,
+  "arm": "A",
+  "status": "no_submission",
+  "reason": "updater turn limit reached before submission",
+  "receipt": null,
+  "editor_usage": {
+    "prompt_tokens": 27948,
+    "completion_tokens": 1418,
+    "total_tokens": 29366
+  },
+  "turns": 6,
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 40.384,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior"
+  ]
+}

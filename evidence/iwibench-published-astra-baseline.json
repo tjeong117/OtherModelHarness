@@ -1,0 +1,325 @@
+{
+  "title": "Published IWIBench Astra results for the two pilot families",
+  "sources": {
+    "paper": "https://arxiv.org/abs/2611.08647",
+    "repository_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+    "results": "https://github.com/HCLTech-robotics/iwibench/blob/ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53/RESULTS.md",
+    "episode_scores": {
+      "url": "https://github.com/HCLTech-robotics/iwibench/blob/ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53/results/ten-families-v022-astra/gemma-3-4b-it-prime.csv",
+      "sha256": "a1841e1f5417f0fc1e86616b6e093d11a83c369d56cf4c44b465c8ddf30f0969"
+    },
+    "token_report": {
+      "url": "https://github.com/HCLTech-robotics/iwibench/blob/ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53/results/token-efficiency.json",
+      "sha256": "353ee9ff0bd6bb72a12f9f9c606992bcfa471e3067088b407d5dc40e2255b6cc"
+    },
+    "limits": "https://github.com/HCLTech-robotics/iwibench/blob/ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53/README.md#editor-interface",
+    "local_full_tool_pilot": {
+      "path": "evidence/astra-full-tools.json",
+      "sha256": "1ced9e0fac26c41f844b3e6e80439173c853a91c2549f335dea564926541a97d"
+    }
+  },
+  "historical_configuration": {
+    "editor": "gpt-6-astra",
+    "reasoning": "low",
+    "temperature": "omitted",
+    "api": "Responses",
+    "target": "google/gemma-3-4b-it",
+    "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "precision": "BF16",
+    "gpu": "RTX PRO 6000 Blackwell",
+    "family_version": "0.2.2",
+    "reported_grader_version": "0.2.3",
+    "tools": [
+      "read_weights",
+      "write_weights",
+      "run_target",
+      "inspect_target"
+    ],
+    "limits": {
+      "editor_turns": 64,
+      "editor_output_tokens_per_turn": 4096,
+      "tool_calls": 128,
+      "run_calls": 8,
+      "run_sequence_evaluations": 64,
+      "inspect_calls": 4,
+      "inspect_sequence_evaluations": 16,
+      "target_forward_tokens": 262144,
+      "terminal_generation_tokens": 256
+    }
+  },
+  "published_30_episode_10_family_summary": {
+    "macro_reward": 0.43555750446619185,
+    "calls": 558,
+    "input_tokens": 30346307,
+    "cached_input_tokens": 28591505,
+    "output_tokens": 58405,
+    "reasoning_tokens": 8503,
+    "target_forward_tokens": 38844
+  },
+  "published_family_mean_reward": {
+    "alias_acquisition": 0.4396825396825397,
+    "resistance_to_false_suggestions": 0.28958333333333336
+  },
+  "published_episodes": [
+    {
+      "family": "alias_acquisition",
+      "seed": 1,
+      "trace_id": "62d170a5993548e583b5a2e687f7a259",
+      "patch_sha256": "bb2d7e50dfd92acf657f8bfd8f2acb1022ef771be84fa884183d828efc04b1d5",
+      "target_base_correct": 1,
+      "target_edited_correct": 3,
+      "target_count": 3,
+      "controls_retained": 69,
+      "control_count": 70,
+      "changed_parameters": 2558,
+      "tool_calls": 11,
+      "run_calls": 4,
+      "inspect_calls": 1,
+      "reward": 0.9857142857142858,
+      "usage": {
+        "calls": 12,
+        "input_tokens": 612216,
+        "cached_input_tokens": 558926,
+        "output_tokens": 1252,
+        "reasoning_tokens": 229,
+        "total_tokens": 613468,
+        "target_forward_tokens": 1132
+      },
+      "in_full_tool_pilot": true
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 3,
+      "trace_id": "f43037a569cf415cbca35746bc3b56cb",
+      "patch_sha256": "e368ba4034e2c4f4d14b23e76cf74d56e125b93729e7bd6e360feaef5be0c3bc",
+      "target_base_correct": 0,
+      "target_edited_correct": 1,
+      "target_count": 3,
+      "controls_retained": 71,
+      "control_count": 71,
+      "changed_parameters": 2550,
+      "tool_calls": 16,
+      "run_calls": 7,
+      "inspect_calls": 1,
+      "reward": 0.3333333333333333,
+      "usage": {
+        "calls": 17,
+        "input_tokens": 881589,
+        "cached_input_tokens": 827988,
+        "output_tokens": 1732,
+        "reasoning_tokens": 187,
+        "total_tokens": 883321,
+        "target_forward_tokens": 1657
+      },
+      "in_full_tool_pilot": true
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 4,
+      "trace_id": "fe5be9e6ae0646919c875eb6e1661566",
+      "patch_sha256": "d5309e5c61e1b1b15326719697dc0e14821e96797d5a1efb77da10d1f2b6aaf3",
+      "target_base_correct": 2,
+      "target_edited_correct": 2,
+      "target_count": 3,
+      "controls_retained": 70,
+      "control_count": 70,
+      "changed_parameters": 5112,
+      "tool_calls": 15,
+      "run_calls": 5,
+      "inspect_calls": 0,
+      "reward": 0.0,
+      "usage": {
+        "calls": 16,
+        "input_tokens": 822896,
+        "cached_input_tokens": 770336,
+        "output_tokens": 1483,
+        "reasoning_tokens": 173,
+        "total_tokens": 824379,
+        "target_forward_tokens": 1426
+      },
+      "in_full_tool_pilot": false
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 2,
+      "trace_id": "01dc6f0ab4a64a80bf60c0daf2e7d1d5",
+      "patch_sha256": "81915cf08ade3891da44430d6ddde7dd688fc952152a7c8176e70ae7b01621cd",
+      "target_base_correct": 34,
+      "target_edited_correct": 46,
+      "target_count": 64,
+      "controls_retained": 110,
+      "control_count": 110,
+      "changed_parameters": 3258,
+      "tool_calls": 22,
+      "run_calls": 8,
+      "inspect_calls": 4,
+      "reward": 0.4,
+      "usage": {
+        "calls": 23,
+        "input_tokens": 1313476,
+        "cached_input_tokens": 1253373,
+        "output_tokens": 3356,
+        "reasoning_tokens": 162,
+        "total_tokens": 1316832,
+        "target_forward_tokens": 2849
+      },
+      "in_full_tool_pilot": true
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 3,
+      "trace_id": "ba093054b96741a8a911519651f66f64",
+      "patch_sha256": "8d6095d905f180b684f8b59626598e6e76fe991c4291bfbc7d693c1f081b28e7",
+      "target_base_correct": 32,
+      "target_edited_correct": 32,
+      "target_count": 64,
+      "controls_retained": 110,
+      "control_count": 110,
+      "changed_parameters": 3376,
+      "tool_calls": 22,
+      "run_calls": 8,
+      "inspect_calls": 4,
+      "reward": 0.0,
+      "usage": {
+        "calls": 23,
+        "input_tokens": 1318560,
+        "cached_input_tokens": 1257768,
+        "output_tokens": 3563,
+        "reasoning_tokens": 345,
+        "total_tokens": 1322123,
+        "target_forward_tokens": 2869
+      },
+      "in_full_tool_pilot": true
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 5,
+      "trace_id": "cdcc7a0d2c82441aac5c9aa0b4f05fc5",
+      "patch_sha256": "784edd38fe72293c2eb21467460b6c48f657e3844359a0fa33b4b45435e9324b",
+      "target_base_correct": 32,
+      "target_edited_correct": 47,
+      "target_count": 64,
+      "controls_retained": 108,
+      "control_count": 108,
+      "changed_parameters": 2559,
+      "tool_calls": 19,
+      "run_calls": 8,
+      "inspect_calls": 3,
+      "reward": 0.46875,
+      "usage": {
+        "calls": 20,
+        "input_tokens": 1065684,
+        "cached_input_tokens": 1010113,
+        "output_tokens": 3164,
+        "reasoning_tokens": 142,
+        "total_tokens": 1068848,
+        "target_forward_tokens": 2442
+      },
+      "in_full_tool_pilot": true
+    }
+  ],
+  "historical_comparison": {
+    "shared": {
+      "paper": {
+        "episodes": 5,
+        "mean_episode_reward": 0.43755952380952384,
+        "input_tokens": 5191525,
+        "cached_input_tokens": 4908168,
+        "output_tokens": 13067,
+        "total_editor_tokens": 5204592
+      },
+      "pilot": {
+        "episodes": 5,
+        "mean_episode_reward": 0.40927419354838707,
+        "input_tokens": 459781,
+        "cached_input_tokens": 418975,
+        "output_tokens": 8763,
+        "total_editor_tokens": 468544
+      },
+      "pilot_wins": 3,
+      "pilot_losses": 2,
+      "pilot_minus_paper_mean_episode_reward": -0.028285330261136776
+    },
+    "pilot_rows": [
+      {
+        "family": "alias_acquisition",
+        "seed": 1,
+        "reward": 0.3333333333333333,
+        "target_base_correct": 0,
+        "target_edited_correct": 1,
+        "controls_retained": 70,
+        "control_count": 70,
+        "input_tokens": 66483,
+        "cached_input_tokens": 61657,
+        "output_tokens": 1404,
+        "cost_upper_bound_usd": 1.38582
+      },
+      {
+        "family": "alias_acquisition",
+        "seed": 3,
+        "reward": 0.6666666666666666,
+        "target_base_correct": 0,
+        "target_edited_correct": 2,
+        "controls_retained": 70,
+        "control_count": 70,
+        "input_tokens": 59244,
+        "cached_input_tokens": 55528,
+        "output_tokens": 1110,
+        "cost_upper_bound_usd": 1.22928
+      },
+      {
+        "family": "resistance_to_false_suggestions",
+        "seed": 2,
+        "reward": 0.4838709677419355,
+        "target_base_correct": 33,
+        "target_edited_correct": 48,
+        "controls_retained": 110,
+        "control_count": 110,
+        "input_tokens": 105103,
+        "cached_input_tokens": 95277,
+        "output_tokens": 1962,
+        "cost_upper_bound_usd": 2.18054
+      },
+      {
+        "family": "resistance_to_false_suggestions",
+        "seed": 3,
+        "reward": 0.5625,
+        "target_base_correct": 32,
+        "target_edited_correct": 50,
+        "controls_retained": 110,
+        "control_count": 110,
+        "input_tokens": 104332,
+        "cached_input_tokens": 93867,
+        "output_tokens": 2171,
+        "cost_upper_bound_usd": 2.17348
+      },
+      {
+        "family": "resistance_to_false_suggestions",
+        "seed": 5,
+        "reward": 0.0,
+        "target_base_correct": 32,
+        "target_edited_correct": 31,
+        "controls_retained": 109,
+        "control_count": 109,
+        "input_tokens": 124619,
+        "cached_input_tokens": 112646,
+        "output_tokens": 2116,
+        "cost_upper_bound_usd": 2.57702
+      }
+    ],
+    "pilot_only": [
+      {
+        "family": "alias_acquisition",
+        "seed": 11
+      }
+    ],
+    "paper_only": [
+      {
+        "family": "alias_acquisition",
+        "seed": 4
+      }
+    ]
+  },
+  "accounting": "Input includes cached reads. Output includes reasoning. The upstream CSV and token report provide no Astra dollar figures. The local pilot records an API cost upper bound.",
+  "interpretation": "Historical comparison across editor versions, reasoning efforts, turn limits, feedback protocols and hardware. Even on shared seeds the pristine generations vary. Each row is one trajectory. The native interface already supports inspection of residual vectors and compact weight expressions. The five-row mean is episode-weighted across two alias and three resistance tasks."
+}

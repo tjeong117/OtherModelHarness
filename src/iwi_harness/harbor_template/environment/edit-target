@@ -1,0 +1,51 @@
+#!/usr/bin/env python
+"""Use the editing harness over a stateful JSON Lines shell session."""
+import argparse
+import json
+import os
+from pathlib import Path
+import shutil
+import sys
+from tempfile import mkdtemp, NamedTemporaryFile
+
+from iwi_harness.session import EditingSession
+from iwi_harness.targets import tiny_sae, tiny_target
+from iwi_harness.tools import tool_schemas
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--schemas", action="store_true", help="print the function schemas and exit")
+    parser.add_argument("--public-experiments", action="store_true", help="enable paired behavior tests and weight previews")
+    args = parser.parse_args()
+    options = dict(behavior_checks=args.public_experiments, internal_measurements=args.public_experiments,
+                   edit_preview=args.public_experiments)
+    if args.schemas:
+        print(json.dumps(tool_schemas(**options)))
+        return
+    artifact_dir = Path(os.environ.get("IWI_ARTIFACT_DIR", "/logs/artifacts"))
+    sessions = Path(os.environ.get("IWI_AGENT_LOG_DIR", "/logs/agent")) / "iwi-sessions"
+    sessions.mkdir(parents=True, exist_ok=True)
+    session_dir = Path(mkdtemp(prefix="session-", dir=sessions))
+    session = EditingSession(tiny_target(), sae=tiny_sae(), artifact_dir=session_dir, **options)
+    for line in sys.stdin:
+        if not line.strip():
+            continue
+        try:
+            request = json.loads(line)
+            if not isinstance(request, dict) or not isinstance(request.get("name"), str):
+                raise ValueError("expected {name: <tool>, arguments: <object>}")
+            result = session.call(request["name"], request.get("arguments", {}))
+            if request["name"] == "submit_patch":
+                artifact_dir.mkdir(parents=True, exist_ok=True)
+                with NamedTemporaryFile(dir=artifact_dir, delete=False) as staged:
+                    with (session_dir / "patch.safetensors").open("rb") as patch:
+                        shutil.copyfileobj(patch, staged)
+                Path(staged.name).replace(artifact_dir / "patch.safetensors")
+        except (ValueError, KeyError, TypeError) as error:
+            result = {"error": str(error)}
+        print(json.dumps(result, allow_nan=False), flush=True)
+
+
+if __name__ == "__main__":
+    main()

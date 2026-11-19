@@ -1,0 +1,549 @@
+{
+  "policy": {
+    "seeds": [
+      3,
+      4
+    ],
+    "fractions": [
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "max_new_tokens": 12,
+    "selection": "Maximize public alias exact matches; then literal-copy matches; then use smallest fraction.",
+    "targets": [
+      "public practice",
+      "How many vertices does a {word} have? Respond with a single integer.",
+      "Is a {word} three-dimensional? Reply with just yes or no."
+    ],
+    "source_answers": "pristine greedy generation for transfer questions",
+    "literal_copy": [
+      [
+        "Copy exactly the three words between brackets, without the brackets: [I saw {word}]",
+        "I saw {word}"
+      ],
+      [
+        "A spelling exercise: repeat the final word only, with its original spelling: under the {word}",
+        "{word}"
+      ]
+    ],
+    "normalization": "strip surrounding whitespace and casefold"
+  },
+  "hardware": "NVIDIA A100-SXM4-40GB",
+  "elapsed_seconds": 121.02661631599767,
+  "episodes": [
+    {
+      "seed": 3,
+      "episode": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+      "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "prompts": [
+        "Count the flat faces of a saffron. Return only the integer.",
+        "How many vertices does a saffron have? Respond with a single integer.",
+        "Is a saffron three-dimensional? Reply with just yes or no.",
+        "Copy exactly the three words between brackets, without the brackets: [I saw saffron]",
+        "A spelling exercise: repeat the final word only, with its original spelling: under the saffron"
+      ],
+      "expected": [
+        [
+          "6"
+        ],
+        [
+          "8\n"
+        ],
+        [
+          "Yes\n"
+        ],
+        [
+          "I saw saffron"
+        ],
+        [
+          "saffron"
+        ]
+      ],
+      "candidates": [
+        {
+          "alpha": 0.25,
+          "responses": [
+            "A saffron flower has eight flat faces.\n\nSo the answer",
+            "8\n",
+            "Yes\n",
+            "I saw\n",
+            "saffron\n"
+          ],
+          "correct": [
+            false,
+            true,
+            true,
+            false,
+            true
+          ],
+          "alias_correct": 2,
+          "copy_correct": 1,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2549,
+            "delta_l2": 0.33945441241838487
+          },
+          "patch": "seed-3-alpha-0.25.safetensors",
+          "sha256": "cbf6ab48fb82d69fc8276f4e6a61c7d76d7982b52911576818e34dec6c3a0e29"
+        },
+        {
+          "alpha": 0.5,
+          "responses": [
+            "6\n",
+            "8\n",
+            "Yes\n",
+            "I saw cube\n",
+            "cube"
+          ],
+          "correct": [
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "alias_correct": 3,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2554,
+            "delta_l2": 0.6788354031282375
+          },
+          "patch": "seed-3-alpha-0.50.safetensors",
+          "sha256": "e97ba4071a2fd0161c4dc671b4fbf44c2f657e31b9a9f136d4406c521b9d0d67"
+        },
+        {
+          "alpha": 0.75,
+          "responses": [
+            "6\n",
+            "8\n",
+            "Yes\n",
+            "I saw cube\n",
+            "cube\n"
+          ],
+          "correct": [
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "alias_correct": 3,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2556,
+            "delta_l2": 1.0181560834496683
+          },
+          "patch": "seed-3-alpha-0.75.safetensors",
+          "sha256": "be29b90f64fa5601e26a4a4d18655d2cecaffda802b94dfe547dfbb79c19d482"
+        },
+        {
+          "alpha": 1.0,
+          "responses": [
+            "6\n",
+            "8\n",
+            "Yes\n",
+            "I saw cube\n",
+            "cube\n"
+          ],
+          "correct": [
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "alias_correct": 3,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2556,
+            "delta_l2": 1.3576624018049777
+          },
+          "patch": "seed-3-alpha-1.00.safetensors",
+          "sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00"
+        }
+      ],
+      "selected_alpha": 0.5,
+      "grades": {
+        "full_copy": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00",
+          "status": "scored",
+          "reward": 0.9857142857142858,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 1,
+            "target_content_base": 0,
+            "target_content_edited": 1,
+            "control_retention": 0.9857142857142858,
+            "controls_retained": 69,
+            "control_retention_denominator": 70,
+            "gain": 1.0,
+            "reward": 0.9857142857142858,
+            "local_spillover": 0.0,
+            "override_accuracy": 0,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 3,
+                "base_success": 0,
+                "edited_success": 1,
+                "base_content": 0,
+                "edited_content": 1,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 0,
+                "base_success": 1,
+                "edited_success": 0,
+                "base_content": 1,
+                "edited_content": 0,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 0,
+                "retained_successes": 0,
+                "retention_denominator": 1,
+                "retention": 0.0,
+                "spillover": 1.0
+              }
+            }
+          }
+        },
+        "public_selected": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "e97ba4071a2fd0161c4dc671b4fbf44c2f657e31b9a9f136d4406c521b9d0d67",
+          "status": "scored",
+          "reward": 0.9857142857142858,
+          "metrics": {
+            "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+            "family": "alias_acquisition",
+            "model_id": "google/gemma-3-4b-it",
+            "admitted": false,
+            "binary_success": null,
+            "calibration": {
+              "eligible": true,
+              "reasons": [],
+              "calibration_count": 3,
+              "completed_count": 3,
+              "correct_count": 3,
+              "stable_stale_group": null
+            },
+            "target_success_base": 0,
+            "target_success_edited": 1,
+            "target_content_base": 0,
+            "target_content_edited": 1,
+            "control_retention": 0.9857142857142858,
+            "controls_retained": 69,
+            "control_retention_denominator": 70,
+            "gain": 1.0,
+            "reward": 0.9857142857142858,
+            "local_spillover": 0.0,
+            "override_accuracy": 0,
+            "groups": {
+              "targets": {
+                "count": 3,
+                "base_successes": 0,
+                "edited_successes": 3,
+                "base_success": 0,
+                "edited_success": 1,
+                "base_content": 0,
+                "edited_content": 1,
+                "base_requested_behaviour": 0,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 0,
+                "retention_denominator": 0,
+                "retention": null,
+                "spillover": null
+              },
+              "nearby_controls": {
+                "count": 6,
+                "base_successes": 5,
+                "edited_successes": 5,
+                "base_success": 0.8333333333333334,
+                "edited_success": 0.8333333333333334,
+                "base_content": 0.8333333333333334,
+                "edited_content": 0.8333333333333334,
+                "base_requested_behaviour": 0.8333333333333334,
+                "edited_requested_behaviour": 0.8333333333333334,
+                "retained_successes": 5,
+                "retention_denominator": 5,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "general_controls": {
+                "count": 64,
+                "base_successes": 64,
+                "edited_successes": 64,
+                "base_success": 1,
+                "edited_success": 1,
+                "base_content": 1,
+                "edited_content": 1,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 1,
+                "retained_successes": 64,
+                "retention_denominator": 64,
+                "retention": 1.0,
+                "spillover": 0.0
+              },
+              "override_controls": {
+                "count": 1,
+                "base_successes": 1,
+                "edited_successes": 0,
+                "base_success": 1,
+                "edited_success": 0,
+                "base_content": 1,
+                "edited_content": 0,
+                "base_requested_behaviour": 1,
+                "edited_requested_behaviour": 0,
+                "retained_successes": 0,
+                "retention_denominator": 1,
+                "retention": 0.0,
+                "spillover": 1.0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "episode": "alias_acquisition/0.2.2/gemma-3-4b-it/development/4",
+      "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "prompts": [
+        "Count the flat faces of a fjord. Return only the integer.",
+        "How many vertices does a fjord have? Respond with a single integer.",
+        "Is a fjord three-dimensional? Reply with just yes or no.",
+        "Copy exactly the three words between brackets, without the brackets: [I saw fjord]",
+        "A spelling exercise: repeat the final word only, with its original spelling: under the fjord"
+      ],
+      "expected": [
+        [
+          "0"
+        ],
+        [
+          "0\n"
+        ],
+        [
+          "Yes\n"
+        ],
+        [
+          "I saw fjord"
+        ],
+        [
+          "fjord"
+        ]
+      ],
+      "candidates": [
+        {
+          "alpha": 0.25,
+          "responses": [
+            "0\n",
+            "4\n",
+            "Yes.\n",
+            "I saw fjord\n",
+            "fjord"
+          ],
+          "correct": [
+            true,
+            false,
+            false,
+            true,
+            true
+          ],
+          "alias_correct": 1,
+          "copy_correct": 2,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2552,
+            "delta_l2": 0.342920893854486
+          },
+          "patch": "seed-4-alpha-0.25.safetensors",
+          "sha256": "b5c10d7997de49c98b706a5040507aff984c9017e65b8139e3a5802c42c5df2a"
+        },
+        {
+          "alpha": 0.5,
+          "responses": [
+            "0\n",
+            "0\n",
+            "Yes.\n",
+            "I saw sphere\n",
+            "sphere"
+          ],
+          "correct": [
+            true,
+            true,
+            false,
+            false,
+            false
+          ],
+          "alias_correct": 2,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2556,
+            "delta_l2": 0.6858332237037909
+          },
+          "patch": "seed-4-alpha-0.50.safetensors",
+          "sha256": "d18aa3b9f79091c1078fdbd3337aafa67192a6b893c248373d807dd4e7656b8f"
+        },
+        {
+          "alpha": 0.75,
+          "responses": [
+            "0\n",
+            "0\n",
+            "Yes\n",
+            "I saw sphere\n",
+            "sphere\n"
+          ],
+          "correct": [
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "alias_correct": 3,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2558,
+            "delta_l2": 1.0287817284765224
+          },
+          "patch": "seed-4-alpha-0.75.safetensors",
+          "sha256": "46cba14be99236ab589b50b656ef6da0099b95d130c740a4b12aca34dfc72a95"
+        },
+        {
+          "alpha": 1.0,
+          "responses": [
+            "0\n",
+            "0\n",
+            "Yes\n",
+            "I saw sphere\n",
+            "sphere\n"
+          ],
+          "correct": [
+            true,
+            true,
+            true,
+            false,
+            false
+          ],
+          "alias_correct": 3,
+          "copy_correct": 0,
+          "write": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "revision": 1,
+            "selected_parameters": 2560,
+            "changed_parameters": 2558,
+            "delta_l2": 1.3716914396358493
+          },
+          "patch": "seed-4-alpha-1.00.safetensors",
+          "sha256": "a33d71300276770a57a7b5d5c55f0785c6c5a65344afa5601e99aa09d1784d64"
+        }
+      ],
+      "selected_alpha": 0.75,
+      "grades": {
+        "full_copy": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/4",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "a33d71300276770a57a7b5d5c55f0785c6c5a65344afa5601e99aa09d1784d64",
+          "status": "ineligible",
+          "reasons": [
+            "The base did not answer every calibration item correctly"
+          ],
+          "reward": null,
+          "metrics": null
+        },
+        "public_selected": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/4",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+          "patch_sha256": "46cba14be99236ab589b50b656ef6da0099b95d130c740a4b12aca34dfc72a95",
+          "status": "ineligible",
+          "reasons": [
+            "The base did not answer every calibration item correctly"
+          ],
+          "reward": null,
+          "metrics": null
+        }
+      }
+    }
+  ]
+}

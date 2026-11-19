@@ -1,0 +1,328 @@
+{
+  "protocol": "runtime-sae-access-v1",
+  "case": "alias",
+  "family": "alias_acquisition",
+  "seed": 1,
+  "arm": "no-fit",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 6,
+  "max_output_tokens": 2048,
+  "budget_cap_usd": 1.25,
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 0,
+      "max_sae_fit_steps": 0
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 12849
+    },
+    "adaptive_interpretability": true
+  },
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "inspect_target",
+    "contrast_target",
+    "patch_activations",
+    "rank_attributions",
+    "feature_examples",
+    "submit_patch",
+    "discover_target",
+    "tokenize_target",
+    "select_sae"
+  ],
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "c7f6a744bcb10b444872bb6d68f0666a8130bdbceced1e5f6e69f38deffcf754",
+    "bytes": 26212,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2558,
+    "revision": 2
+  },
+  "model_calls": [
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          "sprocket",
+          " sprocket",
+          "sprockets",
+          " sprockets",
+          "Sprocket",
+          " Sprocket",
+          "square",
+          " square"
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          212075
+        ],
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          212075
+        ],
+        "operation": "replace",
+        "value": {
+          "op": "add",
+          "left": {
+            "op": "scale",
+            "left": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                212075
+              ]
+            },
+            "factor": 0.36
+          },
+          "right": {
+            "op": "scale",
+            "left": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                6281
+              ]
+            },
+            "factor": 0.8
+          }
+        }
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "run_target",
+      "arguments": {
+        "prompts": [
+          "Repeat the following word exactly: sprocket",
+          "Copy exactly: a sprocket",
+          "What is the area of a sprocket with sides of length 5? Answer only with the number.",
+          "What geometric shape is a sprocket?",
+          "Does a sprocket have a toothed edge? Answer yes or no."
+        ],
+        "max_new_tokens": 24
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          212075
+        ],
+        "operation": "replace",
+        "value": {
+          "op": "add",
+          "left": {
+            "op": "scale",
+            "left": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                212075
+              ]
+            },
+            "factor": 1.8
+          },
+          "right": {
+            "op": "scale",
+            "left": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                6281
+              ]
+            },
+            "factor": -0.77
+          }
+        }
+      },
+      "weight_revision": 2
+    },
+    {
+      "tool": "run_target",
+      "arguments": {
+        "prompts": [
+          "Repeat the following word exactly: sprocket",
+          "Copy exactly: a sprocket",
+          "What is the area of a sprocket with sides of length 5? Answer only with the number.",
+          "Is a sprocket a quadrilateral? Yes or no."
+        ],
+        "max_new_tokens": 12
+      },
+      "weight_revision": 2
+    },
+    {
+      "tool": "submit_patch",
+      "arguments": {},
+      "weight_revision": 2
+    }
+  ],
+  "successful_model_tool_counts": {
+    "tokenize_target": 1,
+    "read_weights": 1,
+    "write_weights": 2,
+    "run_target": 2,
+    "submit_patch": 1
+  },
+  "target_usage_including_host": {
+    "forwards": 70,
+    "forward_tokens": 1711,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "host_public_practice_checks": 3,
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 3424,
+        "completion_tokens": 90,
+        "total_tokens": 3514,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 3421,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 3421
+          },
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.07208
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 3724,
+        "completion_tokens": 108,
+        "total_tokens": 3832,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 300,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 300
+          },
+          "cached_tokens": 3421
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 9
+        },
+        "cost_upper_bound_usd": 0.0788
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 3922,
+        "completion_tokens": 85,
+        "total_tokens": 4007,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 198,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 198
+          },
+          "cached_tokens": 3721
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.08184
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4237,
+        "completion_tokens": 120,
+        "total_tokens": 4357,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 315,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 315
+          },
+          "cached_tokens": 3919
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 20
+        },
+        "cost_upper_bound_usd": 0.08954
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4448,
+        "completion_tokens": 73,
+        "total_tokens": 4521,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 211,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 211
+          },
+          "cached_tokens": 4234
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.09188
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4706,
+        "completion_tokens": 14,
+        "total_tokens": 4720,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 258,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 258
+          },
+          "cached_tokens": 4445
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.09468
+      }
+    }
+  ],
+  "cost_upper_bound_usd": 0.50882
+}

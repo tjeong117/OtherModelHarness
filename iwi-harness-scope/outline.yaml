@@ -1,0 +1,51 @@
+topic: Interpretability and token cost in transformer-directed weight editing
+date: "2026-11-18"
+stage: proposed study
+primary_question: Does support-only interpretability improve held-out patch reward with the same updater, writable parameters and budget?
+secondary_question: How many updater tokens does a compact interface save at comparable patch quality and retention?
+items:
+  - name: IWIBench
+    role: Native worker, tool protocol, patch replay, graders and Verifiers taskset
+    source: https://github.com/hcltech-robotics/iwibench
+    revision: ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53
+  - name: Gemma Scope 2
+    role: First dictionary for Gemma 3 4B IT activation features
+    source: https://huggingface.co/google/gemma-scope-2-4b-it
+  - name: Goodfire parameter decomposition
+    role: Research precedent for parameter-component handles
+    source: https://www.goodfire.com/research/interpreting-lm-parameters
+  - name: SAELens and NNsight
+    role: Optional dictionary loader and instrumentation alternatives
+    sources: [https://github.com/decoderesearch/SAELens, https://github.com/ndif-team/nnsight]
+  - name: WSE, OpenWSP and WeightSpec
+    role: Compare existing replay, kernel and patch interfaces before expanding the runtime
+    sources: [https://github.com/xuguang-ai/weight-space-engineering, https://github.com/openwsp/openwsp, https://github.com/namashworks/weightspec]
+  - name: Harbor
+    role: External updater adapter, task isolation and separate grading
+    source: https://docs.harborframework.com/tasks/separate-verifier
+  - name: Prime Verifiers and TRL
+    role: Updater-training integrations for later validation
+    sources: [https://github.com/PrimeIntellect-ai/verifiers, https://huggingface.co/docs/trl/harbor]
+pilot:
+  target: google/gemma-3-4b-it
+  target_revision: 093f9f388b31de276ce2de164bdc2081324b9767
+  smoke_family: alias_acquisition
+  study_family: resistance_to_false_suggestions
+  arms: [native, compact, compact_with_interpretability, compact_with_permuted_evidence]
+  development_episodes: 3
+  updater_samples_per_arm_per_episode: 2
+  planned_updater_trajectories: 24
+  episode_isolation: one pristine target branch per trajectory
+  acceptance: Freeze effect and retention margins and confirmatory sample size using development data before opening final results.
+budget:
+  provider: Lambda
+  currency: USD
+  assumed_available: [4000, 5000]
+  proposed_tranche_caps: {replay: 100, pilot: 500, locked_study: 1800, replication: 600}
+  external_updater_api: separately metered
+  actual_compute_spend_for_this_scope: 0
+execution:
+  batch_size: 1
+  items_per_agent: 1
+  output_dir: ./results
+  note: Planning defaults for follow-up research; release experiments have not been launched.

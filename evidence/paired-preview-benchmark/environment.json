@@ -1,0 +1,52 @@
+{
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "python": "3.12.16",
+  "cuda": "12.8",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0",
+    "jsonschema": "4.26.0"
+  },
+  "scripts": {
+    "examples/run_preview_benchmark.py": "4f9c468091b9a458ec5bc983dc3c16a06ec3421ca2459384bb66d9ba013dcb76",
+    "examples/plan_preview_benchmark.py": "468f4054db8cd5b10ecbf5fd140214b96e77f0c79a63e53f4efd043ff6d00fac",
+    "examples/calibrate_preview_benchmark.py": "a8b06027ba9da1961dac7125d9ca79b12dbcd1e3d8be13da97ea57bdd2851e16",
+    "examples/qualified_eval.py": "1cd86f0338488f414d8736e48b80d54d87b2f8c1f3adb4045523d818d359a804",
+    "examples/qwen_http_trial.py": "9d965aa0b676b3f1e9df3444c4c30345d9b3a57bf482a128dafe222a68a452b1"
+  },
+  "design_sha256": "2560720a2893d740454dde89a848bccc905707bdb851dcb841cf9460878da916",
+  "harness_sha256": {
+    "iwi_harness/demo.py": "3bda8b3f5edefa433baaa967de16a9ae1bb5e7aeb491aab2ab0a73c4fb5fe2cf",
+    "iwi_harness/__init__.py": "ec8b302ec8faddb78d5df574852c25fc03a0d1f614594a3733bdf42d112e4015",
+    "iwi_harness/session.py": "5b59c813abba34939e860a58f8b3605157390ce7f10bdbdfc0d93c136389ce0c",
+    "iwi_harness/__main__.py": "3129adff95e0f38b87ab34cddfc27082c7892bcaec267ff5d40f160fdf55b44a",
+    "iwi_harness/targets.py": "4bd3fd66685d6dcde60f54ef6782cacc2e5820be6ca55ef1c696fbc35a259add",
+    "iwi_harness/costs.py": "1e83e8abc02ee2a24e10e392ddc740e0817d15097b0a45594f93732bf08aa8b1",
+    "iwi_harness/causal.py": "57d86893ce1ac56f123ea6340973cbe39b1677dc977fdf5e0c7db92287faf8f3",
+    "iwi_harness/updater.py": "3977ac3910fdb2d174ba67085ed7413a21d0d83fde648fb76157e3013411327e",
+    "iwi_harness/preview.py": "6c999a9f7a75192c9f2e407beace44188e5ef86c5f894388f1597e2602861e3a",
+    "iwi_harness/manifest.py": "a7db338f95c02a89e3413cdb016247534da2f74280430caf2081d2b71b9365f6",
+    "iwi_harness/dictionaries.py": "8f1755a7ca56f7f32c0b5c26b3d7d45bd17bc61a4f42613878c6a072c1ca9e26",
+    "iwi_harness/tools.py": "5540b11d5c11991a3e6867c3ca8b04ae9ec14a416355e2904db8ed0212487995",
+    "iwi_harness/harbor_adapter.py": "e29ab9a008c5f494be323d4cbdb5e70166b236dfdc710fc19ba9a8ebd073c6c1",
+    "iwi_harness/iwibench_adapter.py": "7e446cf03239cabe6df0fa4d5e6334bb19ee07d287f490e5defb669ac8a9916c",
+    "iwi_harness/tokenization.py": "dca7291a3acfa9c5f6ecbaee0e197e9fa0f62a2fcf5e3e009fabd1d3ea8cd540",
+    "iwi_harness/openai_responses.py": "df1812615f344857c1eae2973d5c748b03be2499dc2ef59eeb67176a81aeb5f7",
+    "iwi_harness/weights.py": "03e02a702bcbac2491da0d103322d623d48495193fdd6612680181c3bf7d3a92",
+    "iwi_harness/experiments.py": "487b32bb5d83cd8c086df1332d55d33c881fc72b9caff2a162db605dddad7f2d",
+    "iwi_harness/gpu_check.py": "fff0df618ae0e74308b907c3ab85e5765067b925968ecb7f997c98761d6fb7b8",
+    "iwi_harness/probes.py": "e0c8810584f7fbe7eec0af68829b166cc19d375c825c6c6d16344919a692bc1b",
+    "iwi_harness/cli.py": "0da33ca58befa8ebfa89155ef6a168dfb72a27a9e8d17194a369e0ffe57a5f85",
+    "iwi_harness/harbor_template/tests/grade.py": "8514e4a658404772317722d44d6be5de5bceebbd53643263193ff7fbd2d5b440"
+  },
+  "launch_harness_archive_sha256": "32e7a0e84a90f6c4c602906987903baa459dd593329be2fba6c2d48942cca481",
+  "editor_eos_token_ids": [
+    151645,
+    151643
+  ],
+  "editor_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+  "attention_implementation": "sdpa",
+  "editor_dtype": "bfloat16"
+}

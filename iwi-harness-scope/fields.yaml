@@ -1,0 +1,44 @@
+fields:
+  technical_features:
+    - name: identity
+      detail_level: detailed
+      description: Pin benchmark protocol, target, updater, dictionary, tokenizer, generation settings, dataset split and tool-schema versions.
+    - name: information_and_action_parity
+      detail_level: detailed
+      description: Record public data access, operand sources, writable tensors, readout modes and the actual list of tools and operands each arm receives.
+    - name: observation_provenance
+      detail_level: detailed
+      description: Record revision, architecture site, coordinates, template, token position, example IDs, SAE basis and normalization for each observation.
+    - name: diagnostic_effect
+      detail_level: detailed
+      description: Store paired public margins before and after intervention, control effects, example counts and probe cost. Distinguish this effect from final unhooked behavior.
+    - name: edit_and_replay
+      detail_level: detailed
+      description: Record parent and child revisions, operation and numeric artifact hash, changed coordinates and norms, clean replay outcome and verifier identity.
+    - name: patch_quality
+      detail_level: detailed
+      description: Keep baseline and edited numerator and denominator for target and control slices, signed changes, native reward, no-ops and failures.
+    - name: updater_cost
+      detail_level: detailed
+      description: Record cumulative request input including prior turns, cached input, output and available reasoning usage, tool-result payload tokens, schema overhead, tokenizer and price. Note which counters overlap.
+    - name: target_cost
+      detail_level: detailed
+      description: Record forward calls, sequences and tokens, diagnostic and SAE compute, active GPU seconds, billed node hours, verifier cost and peak memory separately.
+    - name: uncertainty
+      detail_level: detailed
+      description: Specify pairing unit, repeats per episode, eligible cohort, interval estimator, protocol exclusions and scope of generalization.
+    - name: portability_and_terms
+      detail_level: moderate
+      description: Document runner versions, verified adapters, supported checkpoints and separate license or access terms for code, weights, dictionaries and patches.
+    - name: sequential_transfer
+      detail_level: moderate
+      description: In the follow-on study, record the exact state carried forward, next-job test scores, old-task retention after each edit and cumulative cost versus retrieval.
+    - name: sources
+      detail_level: detailed
+      description: Cite primary URLs or verifiable local paths supporting each material finding and distinguish measured evidence from proposals.
+uncertain:
+  - Exact compatible SAE revision, site scaling, overhead and reconstruction quality on the pinned IWIBench model
+  - Cost and variance per complete editor episode at the chosen provider and GPU settings
+  - Incremental predictive value of contrasts and interventions for persistent edits
+  - Live end-to-end token savings at comparable reward and retention
+  - Direct, Harbor and trainer-driven replay and reward parity

@@ -1,0 +1,18 @@
+{
+  "question": "Can a prompt that requires a causal SAE check improve an editor's patch over the existing no-fit and native baselines?",
+  "case": "resistance_to_false_suggestions",
+  "source_development_seed": 2,
+  "new_trajectories": 1,
+  "treatment": "Use the shared --sae-guided policy, fit on balanced public examples at a decision position, suppress a learned feature, compare target and preservation margins, then edit and verify.",
+  "updater": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "target": "google/gemma-3-4b-it",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "provider_budget_usd": 0.97,
+  "source_comparisons": ["Previously scored seed-2 no-fit, 6 turns / 2048 output limit", "Previously scored native IWIBench seed-2, 12 turns / 4096 output limit", "Previously scored first instructed SAE workflow, 6 turns / 2048 output limit"],
+  "transfer": "Replay the new, no-fit, and native seed-2 patches on the first two pristine-eligible development seeds from 12 through 20 in increasing order. Select on pristine admission only. No new editing on those seeds and no hidden results shown to the editor.",
+  "endpoints": ["native reward", "held-out targets correct", "retained previously correct controls", "actual use of fitting and causal intervention", "editor tokens"],
+  "interpretation": "This is development of the editing policy after inspecting the earlier seed-2 outcomes. Prespecified transfer checks evaluate the same frozen patch on new seeds of the same family. The different run budgets and single editor sample preclude inferring a standalone causal effect of the SAE.",
+  "failure": "Keep the first trajectory and any provider stop or failure. Do not reroll using hidden outcomes."
+}

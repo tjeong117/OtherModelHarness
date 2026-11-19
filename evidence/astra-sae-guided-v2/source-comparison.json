@@ -1,0 +1,379 @@
+{
+  "study": "SAE-guided policy on its source development episode",
+  "family": "resistance_to_false_suggestions",
+  "seed": 2,
+  "design_sha256": "79e79bcccba8e92db168949536da28cd2cf8491a6cf2d5805e841b952768b740",
+  "runs": {
+    "guided": {
+      "protocol": "runtime-sae-guided-v2",
+      "settings": {
+        "requested_model": "gpt-6.2-astra",
+        "reasoning": "medium",
+        "max_turns": 5,
+        "max_output_tokens": 1536,
+        "budget_cap_usd": 0.97,
+        "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+      },
+      "editor_status": "submitted",
+      "grade_status": "scored",
+      "reason": null,
+      "reward": 0.4838709677419355,
+      "counts": {
+        "target_items": 64,
+        "base_correct_targets": 33,
+        "base_wrong_targets": 31,
+        "edited_correct_targets": 48,
+        "base_correct_targets_retained": 33,
+        "newly_correct_targets": 15,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 110,
+        "controls_retained": 110
+      },
+      "patch_sha256": "114a3e0ad78e6fa31da385bd62636aa2e35470f265c7a2787c9314203ae37a84",
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 5,
+        "cost_upper_bound_usd": 0.72326,
+        "input_tokens": 33853,
+        "output_tokens": 1155,
+        "cached_input_tokens": 25542,
+        "reasoning_tokens": 41,
+        "first_response_input_tokens": 4934,
+        "total_tokens": 35008,
+        "uncached_input_tokens": 8311
+      },
+      "warnings": [],
+      "actual_user_prompt_sha256": "ac05bc1cac62b235a82a67b6240ce74ce121aab71fd5e2f1a1db21ec8e29c2b2",
+      "tool_schemas_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa",
+      "fitted_dictionaries": [
+        {
+          "dictionary_id": "session/topk-20fe6c2ceab18492455cc1dd",
+          "layer": 29,
+          "n_features": 12,
+          "top_k": 4,
+          "steps": 100,
+          "source_revision": 0,
+          "training": {
+            "rows": 6,
+            "reconstruction_mse": 10.224851608276367,
+            "training_mean_baseline_mse": 1634.2110595703125,
+            "fraction_squared_error_reduced": 0.9937432490446094,
+            "mean_active_features": 3.5,
+            "used_features": 10,
+            "prompts": 6,
+            "initial_reconstruction_mse": 7039.6826171875
+          },
+          "validation": {
+            "rows": 2,
+            "reconstruction_mse": 76.19844818115234,
+            "training_mean_baseline_mse": 361.1797180175781,
+            "fraction_squared_error_reduced": 0.7890289947636432,
+            "mean_active_features": 3.5,
+            "used_features": 4,
+            "prompts": 2
+          },
+          "cost": {
+            "forwards": 8,
+            "forward_tokens": 572,
+            "probe_rows": 8,
+            "sae_rows": 0,
+            "sae_fit_steps": 100,
+            "sae_fit_rows": 600
+          }
+        }
+      ],
+      "successful_model_tool_counts": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful_feature_uses": [
+        {
+          "tool": "contrast_target",
+          "call": 5,
+          "probe": {
+            "model_id": "google/gemma-3-4b-it",
+            "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+            "layer": 29,
+            "site": "post_block_residual",
+            "kind": "sae",
+            "phase": "prefill",
+            "positions": [
+              -1
+            ],
+            "capture_timing": "before_intervention",
+            "sae_revision": "20fe6c2ceab18492455cc1dda6548f1cc9ba9f12afeb5d409dcbfa26fc18c13a",
+            "dictionary_id": "session/topk-20fe6c2ceab18492455cc1dd",
+            "fitted_weight_revision": 0
+          },
+          "feature": null,
+          "scale": null,
+          "intervention": null,
+          "ranking": [
+            {
+              "index": 5,
+              "value": -0.3747445344924927
+            },
+            {
+              "index": 9,
+              "value": -0.37427446246147156
+            },
+            {
+              "index": 1,
+              "value": -0.372957706451416
+            },
+            {
+              "index": 0,
+              "value": 0.27472108602523804
+            }
+          ],
+          "margin_changes": null
+        },
+        {
+          "tool": "inspect_target",
+          "call": 6,
+          "probe": {
+            "model_id": "google/gemma-3-4b-it",
+            "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+            "layer": 29,
+            "site": "post_block_residual",
+            "kind": "sae",
+            "phase": "prefill",
+            "positions": [
+              -1
+            ],
+            "capture_timing": "before_intervention",
+            "sae_revision": "20fe6c2ceab18492455cc1dda6548f1cc9ba9f12afeb5d409dcbfa26fc18c13a",
+            "dictionary_id": "session/topk-20fe6c2ceab18492455cc1dd",
+            "fitted_weight_revision": 0
+          },
+          "feature": null,
+          "scale": null,
+          "intervention": {
+            "feature": 5,
+            "scale": 0
+          },
+          "ranking": null,
+          "margin_changes": [
+            0.0,
+            0.0
+          ]
+        }
+      ],
+      "successful_writes": [
+        {
+          "call": 7,
+          "operation": "copy",
+          "tensor": "model.language_model.embed_tokens.weight",
+          "selection": [
+            9128
+          ],
+          "factor": null,
+          "changed_parameters": 2554
+        }
+      ],
+      "writes_by_source_kind": {},
+      "target_usage_including_host": {
+        "forwards": 59,
+        "forward_tokens": 4550,
+        "probe_rows": 16,
+        "sae_rows": 8,
+        "sae_fit_steps": 100,
+        "sae_fit_rows": 600
+      },
+      "measured_suppressions": [
+        {
+          "call": 6,
+          "tool": "inspect_target",
+          "feature": 5,
+          "dictionary_id": "session/topk-20fe6c2ceab18492455cc1dd",
+          "layer": 29,
+          "positions": [
+            -1
+          ],
+          "prompt_index": 0,
+          "fit_prompt_split": "validation",
+          "baseline_feature_activations": [
+            {
+              "position": 65,
+              "activation": 0.0
+            }
+          ],
+          "token_ids": [
+            2763,
+            88047
+          ],
+          "baseline_margin": -35.5,
+          "suppressed_margin": -35.5,
+          "margin_change": 0.0
+        },
+        {
+          "call": 6,
+          "tool": "inspect_target",
+          "feature": 5,
+          "dictionary_id": "session/topk-20fe6c2ceab18492455cc1dd",
+          "layer": 29,
+          "positions": [
+            -1
+          ],
+          "prompt_index": 1,
+          "fit_prompt_split": "validation",
+          "baseline_feature_activations": [
+            {
+              "position": 65,
+              "activation": 0.0
+            }
+          ],
+          "token_ids": [
+            2763,
+            88047
+          ],
+          "baseline_margin": -35.75,
+          "suppressed_margin": -35.75,
+          "margin_change": 0.0
+        }
+      ]
+    },
+    "no_fit": {
+      "protocol": "runtime-sae-access-v1",
+      "settings": {
+        "requested_model": "gpt-6.2-astra",
+        "reasoning": "medium",
+        "max_turns": 6,
+        "max_output_tokens": 2048,
+        "budget_cap_usd": 1.25,
+        "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+      },
+      "editor_status": "submitted",
+      "grade_status": "scored",
+      "reason": null,
+      "reward": 0.5161290322580645,
+      "counts": {
+        "target_items": 64,
+        "base_correct_targets": 33,
+        "base_wrong_targets": 31,
+        "edited_correct_targets": 49,
+        "base_correct_targets_retained": 32,
+        "newly_correct_targets": 17,
+        "previously_correct_targets_lost": 1,
+        "base_correct_controls": 110,
+        "controls_retained": 110
+      },
+      "patch_sha256": "d3339616202941645d3ebe86e5b49dccd4a10a3fff456baa3ca148aa8e3db19e",
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 6,
+        "cost_upper_bound_usd": 0.925,
+        "input_tokens": 44178,
+        "output_tokens": 1036,
+        "cached_input_tokens": 37681,
+        "reasoning_tokens": 106,
+        "first_response_input_tokens": 4439,
+        "total_tokens": 45214,
+        "uncached_input_tokens": 6497
+      },
+      "warnings": []
+    },
+    "first_instructed": {
+      "protocol": "runtime-sae-instructed-v1",
+      "settings": {
+        "requested_model": "gpt-6.2-astra",
+        "reasoning": "medium",
+        "max_turns": 6,
+        "max_output_tokens": 2048,
+        "budget_cap_usd": 1.25,
+        "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+      },
+      "editor_status": "submitted",
+      "grade_status": "scored",
+      "reason": null,
+      "reward": 0.4838709677419355,
+      "counts": {
+        "target_items": 64,
+        "base_correct_targets": 33,
+        "base_wrong_targets": 31,
+        "edited_correct_targets": 48,
+        "base_correct_targets_retained": 33,
+        "newly_correct_targets": 15,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 110,
+        "controls_retained": 110
+      },
+      "patch_sha256": "0c25c3374b1985264e1825a8e85b01c2b2431b5777dd9d766712ea603d7f0ef1",
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 6,
+        "cost_upper_bound_usd": 1.13336,
+        "input_tokens": 53952,
+        "output_tokens": 1358,
+        "cached_input_tokens": 46376,
+        "reasoning_tokens": 107,
+        "first_response_input_tokens": 4777,
+        "total_tokens": 55310,
+        "uncached_input_tokens": 7576
+      },
+      "warnings": []
+    },
+    "native": {
+      "protocol": "native-iwibench-v1",
+      "settings": {
+        "requested_model": "gpt-6.2-astra",
+        "reasoning": "medium",
+        "max_turns": 12,
+        "max_output_tokens": 4096,
+        "budget_cap_usd": 15.0,
+        "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+      },
+      "editor_status": "submitted",
+      "grade_status": "scored",
+      "reason": "turn_limit",
+      "reward": 0.4838709677419355,
+      "counts": {
+        "target_items": 64,
+        "base_correct_targets": 33,
+        "base_wrong_targets": 31,
+        "edited_correct_targets": 48,
+        "base_correct_targets_retained": 33,
+        "newly_correct_targets": 15,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 110,
+        "controls_retained": 110
+      },
+      "patch_sha256": "df615759ce92b0d25c517f034d77cdb9ab76332ab4d3244f0aed72557c1930c9",
+      "provider": {
+        "source": "original_trajectory",
+        "response_models": [],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 13.67688,
+        "input_tokens": 676162,
+        "output_tokens": 3841,
+        "cached_input_tokens": 615303,
+        "reasoning_tokens": 726,
+        "first_response_input_tokens": 49487,
+        "total_tokens": 680003,
+        "uncached_input_tokens": 60859
+      },
+      "warnings": [
+        "Recovered from original trajectory and submitted weights. The requested API model is recorded, and the provider model echo is unavailable."
+      ]
+    }
+  },
+  "native_reward_difference_guided_minus_comparator": {
+    "no_fit": -0.032258064516129004,
+    "first_instructed": 0.0,
+    "native": 0.0
+  },
+  "interpretation": "This is development of the editing policy after inspecting the earlier seed-2 outcomes. Prespecified transfer checks evaluate the same frozen patch on new seeds of the same family. The different run budgets and single editor sample preclude inferring a standalone causal effect of the SAE."
+}

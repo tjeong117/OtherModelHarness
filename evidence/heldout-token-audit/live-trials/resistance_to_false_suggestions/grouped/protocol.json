@@ -1,0 +1,41 @@
+{
+  "protocol": "qualified-layout-v1",
+  "arm": "grouped",
+  "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+  "family": "resistance_to_false_suggestions",
+  "seed": 108,
+  "variant_index": 77,
+  "catalog_version": "baseline-qualified-v1",
+  "episode_sha256": "b8613906e3e5e881622529243b2bdc7a5875464d7c4d688da7075a1dc1f45e2e",
+  "parameter_sha256": "44c02adb026fce08114f574a9c2af79320aab03b26d56d4fdb9112da4fb20fb1",
+  "source_commit": "b51637c42b531a6418c52cc6f78d585f882dc01c",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 6.5,
+  "sae_guided": true,
+  "practice_tokens_per_answer": 12,
+  "objective_sha256": "2cc0f901a0b3ebb82fb10f6e4a9aa4cd4b8c106ef61a80e024015ae91165f66e",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  }
+}

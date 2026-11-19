@@ -1,0 +1,333 @@
+{
+  "protocol": "qualified-layout-v1",
+  "arm": "grouped",
+  "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+  "family": "factual_update",
+  "seed": 18666526031499,
+  "variant_index": 99,
+  "catalog_version": "baseline-qualified-v1",
+  "episode_sha256": "76b0394ac4155e658257f60c6796d017c88ff53226fceea8d8c8ac6d49cb07ea",
+  "parameter_sha256": "7fd4a6aaefbcfe48952945fcdd621a7ff740439eb62ea18a3baa1e2915f90ed2",
+  "source_commit": "b51637c42b531a6418c52cc6f78d585f882dc01c",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 6.5,
+  "sae_guided": true,
+  "practice_tokens_per_answer": 12,
+  "objective_sha256": "fdd53ab474f22ec71b317cb751501ebc5050d7cc88b19a2a5120c63bfe28bdad",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  },
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "e9731d55dcd711f113d3a47d8a4a68c294e6934ddb75f87a0308d1e77424516f",
+    "bytes": 25972,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2534,
+    "revision": 1
+  },
+  "model_calls": [
+    {
+      "tool": "fit_sae",
+      "arguments": {
+        "layer": 32,
+        "prompts": [
+          "Who coaches the St. Louis Blues? Name only.",
+          "Who coaches the Boston Bruins? Name only.",
+          "Who is the head coach of St. Louis Blues on 2026-03-01? Give only the name.",
+          "Who is the head coach of Boston Bruins on 2023-03-01? Give only the name.",
+          "St. Louis Blues head coach in March 2026 (name only):",
+          "Boston Bruins head coach in March 2023 (name only):",
+          "Name the current head coach of the NHL's St. Louis Blues.",
+          "Name the 2023 head coach of the NHL's Boston Bruins."
+        ],
+        "validation_prompts": [
+          "Which person coaches the Blues in 2026?",
+          "Which person coached the Bruins in 2023?"
+        ],
+        "n_features": 8,
+        "top_k": 3,
+        "steps": 64,
+        "positions": [
+          -1
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          "Jim",
+          "Craig",
+          "Drew",
+          " Montgomery",
+          " Berube"
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "contrast_target",
+      "arguments": {
+        "left": [
+          "Who coaches the St. Louis Blues? Name only.",
+          "Who is the head coach of St. Louis Blues on 2026-03-01? Give only the name."
+        ],
+        "right": [
+          "Who coaches the Boston Bruins? Name only.",
+          "Who is the head coach of Boston Bruins on 2023-03-01? Give only the name."
+        ],
+        "probe": {
+          "kind": "sae",
+          "positions": [
+            -1
+          ]
+        },
+        "top_k": 3
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Who or what is the head coach of St. Louis Blues on 2026-03-01? Give only the name.",
+          "Who or what is the head coach of the Toronto Maple Leafs on 2026-03-01? Give only the name."
+        ],
+        "probe": {
+          "kind": "residual",
+          "layer": 33,
+          "positions": [
+            -1
+          ],
+          "top_k": 1
+        },
+        "token_ids": [
+          37880,
+          113174
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Name the head coach of the St. Louis Blues as of March 1, 2026. Name only.",
+          "Name the head coach of the Boston Bruins as of March 1, 2023. Name only."
+        ],
+        "probe": {
+          "kind": "sae",
+          "top_k": 3
+        },
+        "intervention": {
+          "feature": 3,
+          "scale": 0
+        },
+        "token_ids": [
+          37880,
+          113174
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "handle": "96f93522.2",
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Who or what is the head coach of the St. Louis Blues on 2026-03-01? Give only the name. Jim"
+        ],
+        "probe": {
+          "kind": "residual",
+          "layer": 33,
+          "top_k": 1
+        }
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "tensor": "model.language_model.norm.weight",
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "lm_head.weight",
+        "selection": [
+          37880
+        ],
+        "operation": "add",
+        "value": {
+          "op": "scale",
+          "factor": 9e-06,
+          "left": {
+            "op": "subtract",
+            "left": {
+              "handle": "96f93522.2"
+            },
+            "right": {
+              "handle": "96f93522.3"
+            }
+          }
+        }
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "submit_patch",
+      "arguments": {},
+      "weight_revision": 1
+    }
+  ],
+  "target_usage_including_host": {
+    "forwards": 28,
+    "forward_tokens": 895,
+    "probe_rows": 21,
+    "sae_rows": 8,
+    "sae_fit_steps": 64,
+    "sae_fit_rows": 512
+  },
+  "host_public_practice_checks": 2,
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4068,
+        "completion_tokens": 234,
+        "total_tokens": 4302,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 416,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 416
+          },
+          "cached_tokens": 3649
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.09072
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4833,
+        "completion_tokens": 218,
+        "total_tokens": 5051,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 765,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 765
+          },
+          "cached_tokens": 4065
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.10538
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5739,
+        "completion_tokens": 214,
+        "total_tokens": 5953,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 906,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 906
+          },
+          "cached_tokens": 4830
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.12334
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7101,
+        "completion_tokens": 107,
+        "total_tokens": 7208,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 1362,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1362
+          },
+          "cached_tokens": 5736
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 33
+        },
+        "cost_upper_bound_usd": 0.1463
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7333,
+        "completion_tokens": 14,
+        "total_tokens": 7347,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 232,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 232
+          },
+          "cached_tokens": 7098
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.14722
+      }
+    }
+  ],
+  "cost_upper_bound_usd": 0.61296
+}

@@ -1,0 +1,2717 @@
+{
+  "method": "Replay published fit, contrast and suppression through EditingSession, with no weight writes or editor requests.",
+  "fresh_design": "Researcher-authored transfer probes fixed before replay. Six new reviews, two per sentiment, each with two instructions. Exact text checked against the public logs and input packets of all four arms. These are auxiliary probes outside official IWIBench scoring.",
+  "environment": {
+    "device": "cuda",
+    "hardware": "NVIDIA A100-SXM4-40GB",
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "python": "3.12.16"
+  },
+  "editor_calls": 0,
+  "arms": {
+    "paged": {
+      "arm": "paged",
+      "source_trace_sha256": "9771bbd02307d9504153c40db76c5f7734805f29dfedd85cee9d954dac5f0056",
+      "dictionary": {
+        "dictionary_id": "session/topk-12afa58d88541f5b1b4fb1c3",
+        "revision": "12afa58d88541f5b1b4fb1c34059b69dea9e5205e3831931f11a20920e5b55fc",
+        "method": "topk_sae",
+        "model_id": "google/gemma-3-4b-it",
+        "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "source_revision": 0,
+        "layer": 30,
+        "site": "post_block_residual",
+        "hidden_width": 2560,
+        "n_features": 8,
+        "top_k": 3,
+        "steps": 80,
+        "seed": 0,
+        "positions": [
+          -1
+        ],
+        "training": {
+          "rows": 6,
+          "reconstruction_mse": 29.647808074951172,
+          "training_mean_baseline_mse": 35526.47265625,
+          "fraction_squared_error_reduced": 0.9991654727909011,
+          "mean_active_features": 2.3333334922790527,
+          "used_features": 8,
+          "prompts": 6,
+          "initial_reconstruction_mse": 38663.44140625
+        },
+        "validation": {
+          "rows": 3,
+          "reconstruction_mse": 15154.248046875,
+          "training_mean_baseline_mse": 36596.44921875,
+          "fraction_squared_error_reduced": 0.5859093335451024,
+          "mean_active_features": 2.3333334922790527,
+          "used_features": 5,
+          "prompts": 3
+        },
+        "cost": {
+          "forwards": 9,
+          "forward_tokens": 196,
+          "probe_rows": 9,
+          "sae_rows": 0,
+          "sae_fit_steps": 80,
+          "sae_fit_rows": 480
+        },
+        "active_dictionary": "session/topk-12afa58d88541f5b1b4fb1c3",
+        "dictionary": {
+          "id": "session/topk-12afa58d88541f5b1b4fb1c3",
+          "revision": "12afa58d88541f5b1b4fb1c34059b69dea9e5205e3831931f11a20920e5b55fc",
+          "layer": 30,
+          "features": 8,
+          "source": "fitted",
+          "fitted_weight_revision": 0
+        },
+        "fit_budget": {
+          "remaining_dictionaries": 2,
+          "remaining_steps": 176,
+          "fitted_dictionaries": 1,
+          "used_steps": 80
+        }
+      },
+      "selected_feature": 3,
+      "control_feature": 0,
+      "control_feature_selection": "Fixed from the source trace as the next highest activation other than the selected feature on the first recorded probe.",
+      "contrast_ranking": [
+        {
+          "index": 3,
+          "value": -0.7567194700241089
+        },
+        {
+          "index": 1,
+          "value": 0.41056761145591736
+        }
+      ],
+      "recorded_suppressions_reproduced": [
+        {
+          "call": 8,
+          "feature": 3,
+          "activations": [
+            0.9453986287117004,
+            0.6101676821708679
+          ],
+          "feedback": null,
+          "changes": [
+            29.375,
+            29.5
+          ]
+        }
+      ],
+      "ordered_margin_token_ids": [
+        80470,
+        48084
+      ],
+      "ordered_margin_tokens": [
+        "\u2581birch",
+        "Positive"
+      ],
+      "recorded_prompts": [
+        {
+          "prompt": "Review: I adored this watch. Classify its sentiment. One label only.",
+          "activation": 0.9453986287117004,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 86.0
+              }
+            ],
+            "margin": -113.5
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 55.75
+              }
+            ],
+            "margin": -84.125
+          },
+          "change": 29.375,
+          "control_activation": 0.15716463327407837,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 86.5
+              }
+            ],
+            "margin": -114.5
+          },
+          "control_change": -1.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "prompt": "Review: I adored this watch. Use an ordinary sentiment label.",
+          "activation": 0.6101676821708679,
+          "baseline": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -22.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 48.25
+              }
+            ],
+            "margin": -71.0
+          },
+          "suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -23.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.625
+              }
+            ],
+            "margin": -41.5
+          },
+          "change": 29.5,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -22.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 48.25
+              }
+            ],
+            "margin": -71.0
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        }
+      ],
+      "fresh_prompts": [
+        {
+          "sentiment": "positive",
+          "instruction": "default",
+          "prompt": "Review: The lantern lit the entire campsite beautifully. Classify its sentiment. One label only.",
+          "activation": 0.5463118553161621,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -38.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 95.0
+              }
+            ],
+            "margin": -133.0
+          },
+          "suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -39.25
+              },
+              {
+                "token_id": 48084,
+                "logit": 81.0
+              }
+            ],
+            "margin": -120.25
+          },
+          "change": 12.75,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -38.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 95.0
+              }
+            ],
+            "margin": -133.0
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "ordinary",
+          "prompt": "Review: The lantern lit the entire campsite beautifully. Use an ordinary sentiment label.",
+          "activation": 0.25589442253112793,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.75
+              }
+            ],
+            "margin": -57.125
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 29.375
+              }
+            ],
+            "margin": -47.125
+          },
+          "change": 10.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.75
+              }
+            ],
+            "margin": -57.125
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "default",
+          "prompt": "Review: The violin sounds exquisite. Classify its sentiment. One label only.",
+          "activation": 0.8138121366500854,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -30.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 91.0
+              }
+            ],
+            "margin": -121.75
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 71.0
+              }
+            ],
+            "margin": -102.375
+          },
+          "change": 19.375,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -30.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 91.0
+              }
+            ],
+            "margin": -121.75
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "ordinary",
+          "prompt": "Review: The violin sounds exquisite. Use an ordinary sentiment label.",
+          "activation": 0.4591600298881531,
+          "baseline": {
+            "token_id": 113035,
+            "text": "Ple",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.25
+              }
+            ],
+            "margin": -66.125
+          },
+          "change": 18.75,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 113035,
+            "text": "Ple",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "default",
+          "prompt": "Review: The stapler jammed on every single sheet. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.5
+              }
+            ],
+            "margin": -61.375
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.5
+              }
+            ],
+            "margin": -61.375
+          },
+          "change": 0.0,
+          "control_activation": 0.8640571236610413,
+          "control_suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -37.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.25
+              }
+            ],
+            "margin": -95.75
+          },
+          "control_change": -34.375,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "ordinary",
+          "prompt": "Review: The stapler jammed on every single sheet. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.5
+              }
+            ],
+            "margin": -39.375
+          },
+          "suppressed": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.5
+              }
+            ],
+            "margin": -39.375
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.5
+              }
+            ],
+            "margin": -39.375
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "default",
+          "prompt": "Review: The blanket started unraveling immediately. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.75
+              }
+            ],
+            "margin": -60.75
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.75
+              }
+            ],
+            "margin": -60.75
+          },
+          "change": 0.0,
+          "control_activation": 0.879036009311676,
+          "control_suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -35.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 56.5
+              }
+            ],
+            "margin": -92.0
+          },
+          "control_change": -31.25,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "ordinary",
+          "prompt": "Review: The blanket started unraveling immediately. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 14.5625
+              }
+            ],
+            "margin": -36.0625
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 14.5625
+              }
+            ],
+            "margin": -36.0625
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 14.5625
+              }
+            ],
+            "margin": -36.0625
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "default",
+          "prompt": "Review: The carton includes four drinking glasses. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 79.0
+              }
+            ],
+            "margin": -106.125
+          },
+          "suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 79.0
+              }
+            ],
+            "margin": -106.125
+          },
+          "change": 0.0,
+          "control_activation": 0.3527754545211792,
+          "control_suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.625
+              },
+              {
+                "token_id": 48084,
+                "logit": 75.5
+              }
+            ],
+            "margin": -103.125
+          },
+          "control_change": 3.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "ordinary",
+          "prompt": "Review: The carton includes four drinking glasses. Use an ordinary sentiment label.",
+          "activation": 0.2312166690826416,
+          "baseline": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.34375
+              },
+              {
+                "token_id": 48084,
+                "logit": 28.625
+              }
+            ],
+            "margin": -31.96875
+          },
+          "suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.484375
+              },
+              {
+                "token_id": 48084,
+                "logit": 18.375
+              }
+            ],
+            "margin": -21.859375
+          },
+          "change": 10.109375,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.34375
+              },
+              {
+                "token_id": 48084,
+                "logit": 28.625
+              }
+            ],
+            "margin": -31.96875
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "default",
+          "prompt": "Review: The desk measures one hundred centimeters across. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 57.75
+              }
+            ],
+            "margin": -88.75
+          },
+          "suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 57.75
+              }
+            ],
+            "margin": -88.75
+          },
+          "change": 0.0,
+          "control_activation": 0.707377552986145,
+          "control_suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 55.75
+              }
+            ],
+            "margin": -87.625
+          },
+          "control_change": 1.125,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "ordinary",
+          "prompt": "Review: The desk measures one hundred centimeters across. Use an ordinary sentiment label.",
+          "activation": 0.23577167093753815,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.28125
+              },
+              {
+                "token_id": 48084,
+                "logit": 25.25
+              }
+            ],
+            "margin": -32.53125
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.53125
+              },
+              {
+                "token_id": 48084,
+                "logit": 15.5625
+              }
+            ],
+            "margin": -23.09375
+          },
+          "change": 9.4375,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.28125
+              },
+              {
+                "token_id": 48084,
+                "logit": 25.25
+              }
+            ],
+            "margin": -32.53125
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        }
+      ],
+      "fresh_summary": {
+        "prompts": 12,
+        "active": 6,
+        "nonzero_margin_change": 6,
+        "top_token_changed": 2,
+        "mean_margin_change": 6.701822916666667,
+        "mean_control_feature_margin_change": -5.125,
+        "max_abs_identity_change": 0.0,
+        "max_abs_restoration_change": 0.0
+      },
+      "all_feature_comparison": {
+        "denominator": 12,
+        "comparison": "Scale every feature to zero at the same final prefix token. Features retain their naturally observed activation and decoder direction. Magnitudes are not normalized.",
+        "selected_feature": 3,
+        "selected_ranks_descending": {
+          "mean_abs_margin_change": {
+            "rank": 1,
+            "tied_features": [
+              3
+            ]
+          },
+          "mean_margin_change": {
+            "rank": 1,
+            "tied_features": [
+              3
+            ]
+          },
+          "top_token_changed": {
+            "rank": 1,
+            "tied_features": [
+              3
+            ]
+          }
+        },
+        "summary": [
+          {
+            "feature": 0,
+            "active_prompts": 4,
+            "mean_margin_change": -5.125,
+            "mean_abs_margin_change": 5.8125,
+            "top_token_changed": 0
+          },
+          {
+            "feature": 1,
+            "active_prompts": 2,
+            "mean_margin_change": -1.3697916666666667,
+            "mean_abs_margin_change": 1.3697916666666667,
+            "top_token_changed": 1
+          },
+          {
+            "feature": 2,
+            "active_prompts": 2,
+            "mean_margin_change": -2.28125,
+            "mean_abs_margin_change": 2.28125,
+            "top_token_changed": 1
+          },
+          {
+            "feature": 3,
+            "active_prompts": 6,
+            "mean_margin_change": 6.701822916666667,
+            "mean_abs_margin_change": 6.701822916666667,
+            "top_token_changed": 2
+          },
+          {
+            "feature": 4,
+            "active_prompts": 6,
+            "mean_margin_change": -0.3235677083333333,
+            "mean_abs_margin_change": 0.802734375,
+            "top_token_changed": 1
+          },
+          {
+            "feature": 5,
+            "active_prompts": 2,
+            "mean_margin_change": -1.0572916666666667,
+            "mean_abs_margin_change": 1.0572916666666667,
+            "top_token_changed": 0
+          },
+          {
+            "feature": 6,
+            "active_prompts": 3,
+            "mean_margin_change": 1.0729166666666667,
+            "mean_abs_margin_change": 1.0729166666666667,
+            "top_token_changed": 0
+          },
+          {
+            "feature": 7,
+            "active_prompts": 7,
+            "mean_margin_change": -1.03125,
+            "mean_abs_margin_change": 1.15625,
+            "top_token_changed": 1
+          }
+        ],
+        "measurements": {
+          "0": [
+            {
+              "prompt_index": 0,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 113035,
+              "suppressed_top_text": "Ple",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.8640571236610413,
+              "margin_change": -34.375,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.879036009311676,
+              "margin_change": -31.25,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.3527754545211792,
+              "margin_change": 3.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.707377552986145,
+              "margin_change": 1.125,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "1": [
+            {
+              "prompt_index": 0,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 113035,
+              "suppressed_top_text": "Ple",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.7470237016677856,
+              "margin_change": -8.625,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.6414113640785217,
+              "margin_change": -7.8125,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "2": [
+            {
+              "prompt_index": 0,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 113035,
+              "suppressed_top_text": "Ple",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.5999129414558411,
+              "margin_change": -5.875,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 1.0679556131362915,
+              "margin_change": -21.5,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "3": [
+            {
+              "prompt_index": 0,
+              "activation": 0.5463118553161621,
+              "margin_change": 12.75,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.25589442253112793,
+              "margin_change": 10.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.8138121366500854,
+              "margin_change": 19.375,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.4591600298881531,
+              "margin_change": 18.75,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.2312166690826416,
+              "margin_change": 10.109375,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.23577167093753815,
+              "margin_change": 9.4375,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "4": [
+            {
+              "prompt_index": 0,
+              "activation": 0.18764714896678925,
+              "margin_change": 1.5,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.44642966985702515,
+              "margin_change": -2.8125,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.09890329837799072,
+              "margin_change": 1.375,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.4600241780281067,
+              "margin_change": -0.125,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.2949153184890747,
+              "margin_change": -2.4765625,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.21484404802322388,
+              "margin_change": -1.34375,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "5": [
+            {
+              "prompt_index": 0,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 113035,
+              "suppressed_top_text": "Ple",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.5081483721733093,
+              "margin_change": -7.125,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.41585543751716614,
+              "margin_change": -5.5625,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "6": [
+            {
+              "prompt_index": 0,
+              "activation": 0.190129816532135,
+              "margin_change": 0.75,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 113035,
+              "suppressed_top_text": "Ple",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.3336987793445587,
+              "margin_change": 1.875,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.49627217650413513,
+              "margin_change": 10.25,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ],
+          "7": [
+            {
+              "prompt_index": 0,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 1,
+              "activation": 0.4505176246166229,
+              "margin_change": -4.4375,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 2,
+              "activation": 0.095329150557518,
+              "margin_change": 0.75,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 3,
+              "activation": 0.46235957741737366,
+              "margin_change": -3.5,
+              "suppressed_top_token_id": 48084,
+              "suppressed_top_text": "Positive",
+              "argmax_changed": true
+            },
+            {
+              "prompt_index": 4,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 5,
+              "activation": 0.20898360013961792,
+              "margin_change": -0.5,
+              "suppressed_top_token_id": 236836,
+              "suppressed_top_text": "U",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 6,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 63702,
+              "suppressed_top_text": "Negative",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 7,
+              "activation": 0.06838075816631317,
+              "margin_change": -0.3125,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 8,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 9,
+              "activation": 0.30127832293510437,
+              "margin_change": -2.96875,
+              "suppressed_top_token_id": 19058,
+              "suppressed_top_text": "Okay",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 10,
+              "activation": 0.0,
+              "margin_change": 0.0,
+              "suppressed_top_token_id": 20809,
+              "suppressed_top_text": "Neutral",
+              "argmax_changed": false
+            },
+            {
+              "prompt_index": 11,
+              "activation": 0.22004154324531555,
+              "margin_change": -1.40625,
+              "suppressed_top_token_id": 6372,
+              "suppressed_top_text": "That",
+              "argmax_changed": false
+            }
+          ]
+        },
+        "usage": {
+          "forwards": 192,
+          "forward_tokens": 4960,
+          "probe_rows": 192,
+          "sae_rows": 192
+        }
+      },
+      "final_weight_revision": 0,
+      "target_usage": {
+        "forwards": 115,
+        "forward_tokens": 2877,
+        "probe_rows": 115,
+        "sae_rows": 106,
+        "sae_fit_steps": 80,
+        "sae_fit_rows": 480
+      }
+    },
+    "eager": {
+      "arm": "eager",
+      "source_trace_sha256": "1e647b8f84674092ff942332ae0422f1ecddcf39346a5d454fe6708081681ab4",
+      "dictionary": {
+        "dictionary_id": "session/topk-1b2633b1c1f6c8a22a1c2bbd",
+        "revision": "1b2633b1c1f6c8a22a1c2bbdcf07acbb2340d20ed940149e98c10fd594dadaad",
+        "method": "topk_sae",
+        "model_id": "google/gemma-3-4b-it",
+        "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "source_revision": 0,
+        "layer": 33,
+        "site": "post_block_residual",
+        "hidden_width": 2560,
+        "n_features": 12,
+        "top_k": 3,
+        "steps": 100,
+        "seed": 0,
+        "positions": [
+          -1
+        ],
+        "training": {
+          "rows": 12,
+          "reconstruction_mse": 2009.0447998046875,
+          "training_mean_baseline_mse": 52021.15625,
+          "fraction_squared_error_reduced": 0.9613802355689722,
+          "mean_active_features": 2.6666667461395264,
+          "used_features": 11,
+          "prompts": 12,
+          "initial_reconstruction_mse": 70813.09375
+        },
+        "validation": {
+          "rows": 6,
+          "reconstruction_mse": 17847.12109375,
+          "training_mean_baseline_mse": 39917.1171875,
+          "fraction_squared_error_reduced": 0.5528955407797133,
+          "mean_active_features": 2.8333334922790527,
+          "used_features": 9,
+          "prompts": 6
+        },
+        "cost": {
+          "forwards": 18,
+          "forward_tokens": 403,
+          "probe_rows": 18,
+          "sae_rows": 0,
+          "sae_fit_steps": 100,
+          "sae_fit_rows": 1200
+        },
+        "active_dictionary": "session/topk-1b2633b1c1f6c8a22a1c2bbd",
+        "dictionary": {
+          "id": "session/topk-1b2633b1c1f6c8a22a1c2bbd",
+          "revision": "1b2633b1c1f6c8a22a1c2bbdcf07acbb2340d20ed940149e98c10fd594dadaad",
+          "layer": 33,
+          "features": 12,
+          "source": "fitted",
+          "fitted_weight_revision": 0
+        },
+        "fit_budget": {
+          "remaining_dictionaries": 2,
+          "remaining_steps": 156,
+          "fitted_dictionaries": 1,
+          "used_steps": 100
+        }
+      },
+      "selected_feature": 8,
+      "control_feature": 11,
+      "control_feature_selection": "Fixed from the source trace as the next highest activation other than the selected feature on the first recorded probe.",
+      "contrast_ranking": [
+        {
+          "index": 4,
+          "value": -0.17819957435131073
+        },
+        {
+          "index": 8,
+          "value": 0.13774530589580536
+        },
+        {
+          "index": 2,
+          "value": 0.11121350526809692
+        },
+        {
+          "index": 11,
+          "value": 0.11074263602495193
+        }
+      ],
+      "recorded_suppressions_reproduced": [
+        {
+          "call": 9,
+          "feature": 4,
+          "activations": [
+            0.0,
+            0.0
+          ],
+          "feedback": "This feature was zero at every inspected position. Choose a nonzero feature from the baseline observations and repeat on a case to improve and a case to preserve.",
+          "changes": [
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "call": 10,
+          "feature": 8,
+          "activations": [
+            0.9530306458473206,
+            1.146098017692566
+          ],
+          "feedback": null,
+          "changes": [
+            44.875,
+            50.5
+          ]
+        }
+      ],
+      "ordered_margin_token_ids": [
+        80470,
+        48084
+      ],
+      "ordered_margin_tokens": [
+        "\u2581birch",
+        "Positive"
+      ],
+      "recorded_prompts": [
+        {
+          "prompt": "Classify review sentiment: Best purchase ever. One label.",
+          "activation": 0.9530306458473206,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -24.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 70.5
+              }
+            ],
+            "margin": -95.25
+          },
+          "suppressed": {
+            "token_id": 1018,
+            "text": "**",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -12.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 38.0
+              }
+            ],
+            "margin": -50.375
+          },
+          "change": 44.875,
+          "control_activation": 0.11083076149225235,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -24.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 74.0
+              }
+            ],
+            "margin": -98.5
+          },
+          "control_change": -3.25,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "prompt": "Classify review sentiment: Best purchase ever. Use the ordinary English sentiment label.",
+          "activation": 1.146098017692566,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -23.625
+              },
+              {
+                "token_id": 48084,
+                "logit": 64.5
+              }
+            ],
+            "margin": -88.125
+          },
+          "suppressed": {
+            "token_id": 818,
+            "text": "The",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -9.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 27.75
+              }
+            ],
+            "margin": -37.625
+          },
+          "change": 50.5,
+          "control_activation": 0.22981353104114532,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -23.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 70.5
+              }
+            ],
+            "margin": -94.0
+          },
+          "control_change": -5.875,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        }
+      ],
+      "fresh_prompts": [
+        {
+          "sentiment": "positive",
+          "instruction": "default",
+          "prompt": "Review: The lantern lit the entire campsite beautifully. Classify its sentiment. One label only.",
+          "activation": 0.5117670893669128,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -38.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 95.0
+              }
+            ],
+            "margin": -133.0
+          },
+          "suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -33.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 82.0
+              }
+            ],
+            "margin": -115.5
+          },
+          "change": 17.5,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -38.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 95.0
+              }
+            ],
+            "margin": -133.0
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "ordinary",
+          "prompt": "Review: The lantern lit the entire campsite beautifully. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.75
+              }
+            ],
+            "margin": -57.125
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.75
+              }
+            ],
+            "margin": -57.125
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -17.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 39.75
+              }
+            ],
+            "margin": -57.125
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "default",
+          "prompt": "Review: The violin sounds exquisite. Classify its sentiment. One label only.",
+          "activation": 0.906194269657135,
+          "baseline": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -30.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 91.0
+              }
+            ],
+            "margin": -121.75
+          },
+          "suppressed": {
+            "token_id": 1018,
+            "text": "**",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -20.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 64.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "change": 36.875,
+          "control_activation": 0.15817922353744507,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -30.25
+              },
+              {
+                "token_id": 48084,
+                "logit": 94.5
+              }
+            ],
+            "margin": -124.75
+          },
+          "control_change": -3.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "positive",
+          "instruction": "ordinary",
+          "prompt": "Review: The violin sounds exquisite. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 113035,
+            "text": "Ple",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "suppressed": {
+            "token_id": 113035,
+            "text": "Ple",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 113035,
+            "text": "Ple",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -26.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 58.5
+              }
+            ],
+            "margin": -84.875
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "default",
+          "prompt": "Review: The stapler jammed on every single sheet. Classify its sentiment. One label only.",
+          "activation": 0.6608935594558716,
+          "baseline": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.5
+              }
+            ],
+            "margin": -61.375
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -18.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 6.25
+              }
+            ],
+            "margin": -24.625
+          },
+          "change": 36.75,
+          "control_activation": 1.1864691972732544,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -32.25
+              },
+              {
+                "token_id": 48084,
+                "logit": 83.5
+              }
+            ],
+            "margin": -115.75
+          },
+          "control_change": -54.375,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "ordinary",
+          "prompt": "Review: The stapler jammed on every single sheet. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.5
+              }
+            ],
+            "margin": -39.375
+          },
+          "suppressed": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.875
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.5
+              }
+            ],
+            "margin": -39.375
+          },
+          "change": 0.0,
+          "control_activation": 0.03882567584514618,
+          "control_suppressed": {
+            "token_id": 236836,
+            "text": "U",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -22.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 18.875
+              }
+            ],
+            "margin": -40.875
+          },
+          "control_change": -1.5,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "default",
+          "prompt": "Review: The blanket started unraveling immediately. Classify its sentiment. One label only.",
+          "activation": 0.5526787042617798,
+          "baseline": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -28.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 32.75
+              }
+            ],
+            "margin": -60.75
+          },
+          "suppressed": {
+            "token_id": 63702,
+            "text": "Negative",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -19.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 9.9375
+              }
+            ],
+            "margin": -29.0625
+          },
+          "change": 31.6875,
+          "control_activation": 1.1498377323150635,
+          "control_suppressed": {
+            "token_id": 48084,
+            "text": "Positive",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.375
+              },
+              {
+                "token_id": 48084,
+                "logit": 83.5
+              }
+            ],
+            "margin": -114.875
+          },
+          "control_change": -54.125,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "negative",
+          "instruction": "ordinary",
+          "prompt": "Review: The blanket started unraveling immediately. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 14.5625
+              }
+            ],
+            "margin": -36.0625
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.5
+              },
+              {
+                "token_id": 48084,
+                "logit": 14.5625
+              }
+            ],
+            "margin": -36.0625
+          },
+          "change": 0.0,
+          "control_activation": 0.0719112679362297,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -21.75
+              },
+              {
+                "token_id": 48084,
+                "logit": 17.375
+              }
+            ],
+            "margin": -39.125
+          },
+          "control_change": -3.0625,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "default",
+          "prompt": "Review: The carton includes four drinking glasses. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 79.0
+              }
+            ],
+            "margin": -106.125
+          },
+          "suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 79.0
+              }
+            ],
+            "margin": -106.125
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -27.125
+              },
+              {
+                "token_id": 48084,
+                "logit": 79.0
+              }
+            ],
+            "margin": -106.125
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "ordinary",
+          "prompt": "Review: The carton includes four drinking glasses. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.34375
+              },
+              {
+                "token_id": 48084,
+                "logit": 28.625
+              }
+            ],
+            "margin": -31.96875
+          },
+          "suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.34375
+              },
+              {
+                "token_id": 48084,
+                "logit": 28.625
+              }
+            ],
+            "margin": -31.96875
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 19058,
+            "text": "Okay",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -3.34375
+              },
+              {
+                "token_id": 48084,
+                "logit": 28.625
+              }
+            ],
+            "margin": -31.96875
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "default",
+          "prompt": "Review: The desk measures one hundred centimeters across. Classify its sentiment. One label only.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 57.75
+              }
+            ],
+            "margin": -88.75
+          },
+          "suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 57.75
+              }
+            ],
+            "margin": -88.75
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 20809,
+            "text": "Neutral",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -31.0
+              },
+              {
+                "token_id": 48084,
+                "logit": 57.75
+              }
+            ],
+            "margin": -88.75
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        },
+        {
+          "sentiment": "neutral",
+          "instruction": "ordinary",
+          "prompt": "Review: The desk measures one hundred centimeters across. Use an ordinary sentiment label.",
+          "activation": 0.0,
+          "baseline": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.28125
+              },
+              {
+                "token_id": 48084,
+                "logit": 25.25
+              }
+            ],
+            "margin": -32.53125
+          },
+          "suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.28125
+              },
+              {
+                "token_id": 48084,
+                "logit": 25.25
+              }
+            ],
+            "margin": -32.53125
+          },
+          "change": 0.0,
+          "control_activation": 0.0,
+          "control_suppressed": {
+            "token_id": 6372,
+            "text": "That",
+            "scores": [
+              {
+                "token_id": 80470,
+                "logit": -7.28125
+              },
+              {
+                "token_id": 48084,
+                "logit": 25.25
+              }
+            ],
+            "margin": -32.53125
+          },
+          "control_change": 0.0,
+          "identity_change": 0.0,
+          "restoration_change": 0.0
+        }
+      ],
+      "fresh_summary": {
+        "prompts": 12,
+        "active": 4,
+        "nonzero_margin_change": 4,
+        "top_token_changed": 1,
+        "mean_margin_change": 10.234375,
+        "mean_control_feature_margin_change": -9.671875,
+        "max_abs_identity_change": 0.0,
+        "max_abs_restoration_change": 0.0
+      },
+      "all_feature_comparison": null,
+      "final_weight_revision": 0,
+      "target_usage": {
+        "forwards": 130,
+        "forward_tokens": 3223,
+        "probe_rows": 130,
+        "sae_rows": 112,
+        "sae_fit_steps": 100,
+        "sae_fit_rows": 1200
+      }
+    }
+  }
+}

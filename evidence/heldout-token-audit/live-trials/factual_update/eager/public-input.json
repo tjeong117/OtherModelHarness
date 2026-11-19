@@ -1,0 +1,34 @@
+{
+  "objective": "Update this real association for the reference date 2026-03-01: the head coach of St. Louis Blues is Jim Montgomery. Preserve other attributes of St. Louis Blues, other entities and unrelated uses of both the old and new answer.\n\nUse an SAE to guide your weight edit. You have 5 turns including submission. Batch independent calls and keep outputs short. Fit a small SAE on balanced, paired public examples at the decision position (usually positions [-1]). Hold out distinct prompts and check reconstruction. Find an active feature that distinguishes the behaviors. Use inspect_target with an SAE probe and intervention scale 0 to suppress it on a fresh case to improve and a case to preserve. Request the two competing answer token IDs in a consistent order and compare their margin shifts. Use that evidence to choose the target and size of a concrete weight edit. If the feature is uninformative, use the public errors to choose the edit. Consider a context-specific input edit when globally biasing an answer could break other cases. Check complete generated answers on improvement and preservation examples. Submit your best patch within the turn limit. If a final correction is needed, call write_weights followed by submit_patch in the same turn.",
+  "parameters": {
+    "entity": "St. Louis Blues",
+    "fact_id": "research_batch6a_factual_sports_st_louis_blues",
+    "reference_date": "2026-03-01",
+    "relation": "head coach",
+    "replacement": "Jim Montgomery",
+    "stale_candidates": [
+      "Drew Bannister",
+      "Craig Berube"
+    ]
+  },
+  "practice": [
+    {
+      "answers": [
+        "Jim Montgomery"
+      ],
+      "id": "practice:0",
+      "prompt": "Who or what is the head coach of St. Louis Blues on 2026-03-01? Give only the name.",
+      "rule": "exact"
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "Who or what is the head coach of St. Louis Blues on 2026-03-01? Give only the name.",
+      "accepted_answers": [
+        "Jim Montgomery"
+      ],
+      "generated": "Craig Berube",
+      "exact_after_strip": false
+    }
+  ]
+}

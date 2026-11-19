@@ -1,0 +1,12 @@
+{
+  "purpose": "If neither autonomous treatment editor fits a dictionary, test what happens to held-out edits when the editor is explicitly asked to use one.",
+  "condition": "No successful fitting in either autonomous treatment, and at least $1.25 remains under the cumulative $100 hosted pilot cap. Skip otherwise.",
+  "case": "suggestion",
+  "seed": 2,
+  "reason_for_selection": "The family has 64 hidden targets and asks for a behavioral change. The alias family has only three hidden targets and can often be solved by copying token rows.",
+  "comparison": "Use the existing same-seed autonomous fit-enabled arm. Both have fit_sae. This follow-up changes the editing instruction and takes one additional sample.",
+  "same_settings": ["updater", "target", "public examples", "all tool schemas", "six turns", "2048 maximum output tokens", "$1.25 provider ceiling", "native verifier"],
+  "instruction": "Fit a small SAE using public prompts of your choice. Use a learned feature to check a hypothesis relevant to this edit, then make your best weight edit and submit within the same turn budget.",
+  "scope": "Separate exploratory check of the cost and quality of an instructed editing workflow. Excluded from the two-pair availability endpoint. Changes in reward cannot be attributed to the learned features alone.",
+  "failure_handling": "Retain the first trajectory including budget exhaustion or lack of submission. No reroll."
+}

@@ -1,0 +1,9 @@
+fields:
+  research:
+    - {name: name, required: true, detail_level: brief, description: Name of the research area.}
+    - {name: findings, required: true, detail_level: detailed, description: 'Read current primary papers, code, and official docs. Each finding must identify its scope, quantitative result if available, source date or version, and direct URL.'}
+    - {name: existing_harness, required: true, detail_level: detailed, description: 'Check local code and results. Specify what ships already versus a genuinely missing capability, with repo-relative evidence paths.'}
+    - {name: proposed_updates, required: true, detail_level: detailed, description: 'Ordered proposals with editor-facing input/output, public vs private boundary, evidence, integration cost, backend/checkpoint requirements, and alternatives.'}
+    - {name: validation, required: true, detail_level: detailed, description: 'Test against existing harness, budget matched controls and held-out behavior. Include failure and falsification criteria.'}
+    - {name: limitations, required: true, detail_level: moderate, description: 'State where findings do not transfer, where released weights or code are missing, and distinguish claims from inference.'}
+    - {name: sources, required: true, detail_level: detailed, description: 'List primary URLs (authors, official repos or documentation), title and date/version where supportable; verify by opening primary sources.'}

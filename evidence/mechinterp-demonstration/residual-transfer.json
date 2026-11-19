@@ -1,0 +1,2104 @@
+{
+  "selection": "Both recorded full-tool development edits with a residual operand, source seeds 2 and 5, and all 15 qualified test tasks in the same family. Both original and ablated patches are frozen.",
+  "model_id": "google/gemma-3-4b-it",
+  "checkpoint": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "source_iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "catalog_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "split": "test",
+  "family": "resistance_to_false_suggestions",
+  "task_count": 15,
+  "unique_target_prompts": 960,
+  "recurring_target_prompt_occurrences": 0,
+  "batch_size": 8,
+  "max_new_tokens": 256,
+  "new_editor_calls": 0,
+  "remote_judge_calls": 0,
+  "patch_hashes": {
+    "2": {
+      "full": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13",
+      "ablated": "7bd8b0d4d8e2e20e8ecfb83362ae96b2ec0b4c731815c13b5e5e18192be1d812"
+    },
+    "5": {
+      "full": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+      "ablated": "70d5d6b1c90483a2f176e35648f5a1133abb921a68ef425b5d1b33cf657211e8"
+    }
+  },
+  "overlap": {
+    "2": {
+      "episode_sha256": "dcb7725d4c7a45976783e84b7a34d0e991a513c0a9ccb02394aa409c01ee978e",
+      "source_private_target_strings": 64,
+      "source_practice_strings": 4,
+      "source_tool_query_strings": 10,
+      "test_targets_matching_source_private_targets": 0,
+      "test_targets_matching_source_practice": 0,
+      "test_targets_matching_source_tool_queries": 0
+    },
+    "5": {
+      "episode_sha256": "bcd32c9ab3b7cab6f01f4002c123757938ddb7d34994421bd2952c831129df3a",
+      "source_private_target_strings": 64,
+      "source_practice_strings": 4,
+      "source_tool_query_strings": 11,
+      "test_targets_matching_source_private_targets": 0,
+      "test_targets_matching_source_practice": 0,
+      "test_targets_matching_source_tool_queries": 0
+    }
+  },
+  "paired_counts_definition": "Compared on identical items and generation seeds. Full-only correct counts fixes from including the residual term; ablated-only correct counts regressions. Full and ablated use identical recorded weight operations apart from that term.",
+  "pristine": {
+    "targets": 960,
+    "base_correct": 578,
+    "edited_correct": 578,
+    "target_answers_retained": 578,
+    "controls_retained": 1653,
+    "controls_total": 1653,
+    "mean_reward": 0.0
+  },
+  "pooled_by_source": {
+    "2": {
+      "arms": {
+        "full": {
+          "targets": 960,
+          "base_correct": 578,
+          "edited_correct": 622,
+          "target_answers_retained": 569,
+          "controls_retained": 1651,
+          "controls_total": 1653,
+          "mean_reward": 0.11743267500861686
+        },
+        "ablated": {
+          "targets": 960,
+          "base_correct": 578,
+          "edited_correct": 574,
+          "target_answers_retained": 410,
+          "controls_retained": 1651,
+          "controls_total": 1653,
+          "mean_reward": 0.15514313543946368
+        }
+      },
+      "paired": {
+        "targets": {
+          "count": 960,
+          "both_correct": 463,
+          "full_only_correct": 159,
+          "ablated_only_correct": 111,
+          "neither_correct": 227,
+          "text_changed": 299
+        },
+        "true_suggestion_targets": {
+          "count": 480,
+          "both_correct": 312,
+          "full_only_correct": 159,
+          "ablated_only_correct": 0,
+          "neither_correct": 9,
+          "text_changed": 159
+        },
+        "false_suggestion_targets": {
+          "count": 480,
+          "both_correct": 151,
+          "full_only_correct": 0,
+          "ablated_only_correct": 111,
+          "neither_correct": 218,
+          "text_changed": 140
+        },
+        "controls": {
+          "count": 1680,
+          "both_correct": 1651,
+          "full_only_correct": 0,
+          "ablated_only_correct": 0,
+          "neither_correct": 29,
+          "text_changed": 0
+        }
+      },
+      "full_minus_ablated_reward": {
+        "mean": -0.03771046043084682,
+        "higher_tasks": 5,
+        "tied_tasks": 5,
+        "lower_tasks": 5
+      }
+    },
+    "5": {
+      "arms": {
+        "full": {
+          "targets": 960,
+          "base_correct": 578,
+          "edited_correct": 444,
+          "target_answers_retained": 98,
+          "controls_retained": 1651,
+          "controls_total": 1653,
+          "mean_reward": 0.0
+        },
+        "ablated": {
+          "targets": 960,
+          "base_correct": 578,
+          "edited_correct": 620,
+          "target_answers_retained": 575,
+          "controls_retained": 1651,
+          "controls_total": 1653,
+          "mean_reward": 0.1081388111642203
+        }
+      },
+      "paired": {
+        "targets": {
+          "count": 960,
+          "both_correct": 143,
+          "full_only_correct": 301,
+          "ablated_only_correct": 477,
+          "neither_correct": 39,
+          "text_changed": 819
+        },
+        "true_suggestion_targets": {
+          "count": 480,
+          "both_correct": 0,
+          "full_only_correct": 0,
+          "ablated_only_correct": 477,
+          "neither_correct": 3,
+          "text_changed": 477
+        },
+        "false_suggestion_targets": {
+          "count": 480,
+          "both_correct": 143,
+          "full_only_correct": 301,
+          "ablated_only_correct": 0,
+          "neither_correct": 36,
+          "text_changed": 342
+        },
+        "controls": {
+          "count": 1680,
+          "both_correct": 1652,
+          "full_only_correct": 0,
+          "ablated_only_correct": 0,
+          "neither_correct": 28,
+          "text_changed": 0
+        }
+      },
+      "full_minus_ablated_reward": {
+        "mean": -0.1081388111642203,
+        "higher_tasks": 0,
+        "tied_tasks": 7,
+        "lower_tasks": 8
+      }
+    }
+  },
+  "tasks": [
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/019/gemma-3-4b-it",
+      "variant_index": 12,
+      "episode_sha256": "232b8b7940f9761b291ae80bfdbb018f4b0ef334145536cd6c9122368a0a835a",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 31,
+              "target_answers_retained": 0,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 32,
+              "neither_correct": 1,
+              "text_changed": 64
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 32
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/024/gemma-3-4b-it",
+      "variant_index": 16,
+      "episode_sha256": "f288fb30f46fa94ebeb13ecb4fdfe2626ba4172c14734cdfdf4825f6ba0d02e0",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 48,
+        "edited_correct": 48,
+        "target_answers_retained": 48,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.25,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 52,
+              "target_answers_retained": 46,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 30,
+              "target_answers_retained": 16,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 22,
+              "full_only_correct": 30,
+              "ablated_only_correct": 8,
+              "neither_correct": 4,
+              "text_changed": 40
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 30,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 30
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 22,
+              "full_only_correct": 0,
+              "ablated_only_correct": 8,
+              "neither_correct": 2,
+              "text_changed": 10
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 30,
+              "target_answers_retained": 16,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.125,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 50,
+              "target_answers_retained": 46,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 20,
+              "full_only_correct": 10,
+              "ablated_only_correct": 30,
+              "neither_correct": 4,
+              "text_changed": 42
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 30,
+              "neither_correct": 2,
+              "text_changed": 30
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 20,
+              "full_only_correct": 10,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 12
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/033/gemma-3-4b-it",
+      "variant_index": 21,
+      "episode_sha256": "ef4c2392ff3e6f9c13bab3e29dbff53b435b6893ec5128a29a41e14fa112e321",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 110,
+        "controls_total": 110
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 30,
+              "target_answers_retained": 0,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 0,
+              "full_only_correct": 30,
+              "ablated_only_correct": 32,
+              "neither_correct": 2,
+              "text_changed": 64
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 30,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 32
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/050/gemma-3-4b-it",
+      "variant_index": 35,
+      "episode_sha256": "e177759cda9e5720b3412d69326053a1d33dbdd56b6b637755027c44bab408ca",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 50,
+        "edited_correct": 50,
+        "target_answers_retained": 50,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.07142857142857142,
+              "targets": 64,
+              "base_correct": 50,
+              "edited_correct": 51,
+              "target_answers_retained": 50,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 50,
+              "edited_correct": 47,
+              "target_answers_retained": 34,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 35,
+              "full_only_correct": 16,
+              "ablated_only_correct": 12,
+              "neither_correct": 1,
+              "text_changed": 30
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 16,
+              "full_only_correct": 16,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 16
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 19,
+              "full_only_correct": 0,
+              "ablated_only_correct": 12,
+              "neither_correct": 1,
+              "text_changed": 14
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 50,
+              "edited_correct": 31,
+              "target_answers_retained": 18,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 50,
+              "edited_correct": 50,
+              "target_answers_retained": 50,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 18,
+              "full_only_correct": 13,
+              "ablated_only_correct": 32,
+              "neither_correct": 1,
+              "text_changed": 48
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 18,
+              "full_only_correct": 13,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 16
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/064/gemma-3-4b-it",
+      "variant_index": 42,
+      "episode_sha256": "a7bd6d365907be351b9ad91683964977e0e62fa1b326420263ed341686830aa7",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 48,
+        "edited_correct": 48,
+        "target_answers_retained": 48,
+        "controls_retained": 110,
+        "controls_total": 110
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 48,
+              "target_answers_retained": 44,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 31,
+              "target_answers_retained": 16,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 20,
+              "full_only_correct": 28,
+              "ablated_only_correct": 11,
+              "neither_correct": 5,
+              "text_changed": 41
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 28,
+              "ablated_only_correct": 0,
+              "neither_correct": 4,
+              "text_changed": 28
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 20,
+              "full_only_correct": 0,
+              "ablated_only_correct": 11,
+              "neither_correct": 1,
+              "text_changed": 13
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 31,
+              "target_answers_retained": 16,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.125,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 50,
+              "target_answers_retained": 48,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 18,
+              "full_only_correct": 13,
+              "ablated_only_correct": 32,
+              "neither_correct": 1,
+              "text_changed": 46
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 18,
+              "full_only_correct": 13,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 14
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/066/gemma-3-4b-it",
+      "variant_index": 44,
+      "episode_sha256": "67f0a5800acd0675586d112fb07f7a3fc035bd8d15f918703ab509b402fa4f9a",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 47,
+        "edited_correct": 47,
+        "target_answers_retained": 47,
+        "controls_retained": 110,
+        "controls_total": 110
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.058823529411764705,
+              "targets": 64,
+              "base_correct": 47,
+              "edited_correct": 48,
+              "target_answers_retained": 47,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 47,
+              "edited_correct": 33,
+              "target_answers_retained": 23,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 24,
+              "full_only_correct": 24,
+              "ablated_only_correct": 9,
+              "neither_correct": 7,
+              "text_changed": 37
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 8,
+              "full_only_correct": 24,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 24
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 16,
+              "full_only_correct": 0,
+              "ablated_only_correct": 9,
+              "neither_correct": 7,
+              "text_changed": 13
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 47,
+              "edited_correct": 29,
+              "target_answers_retained": 15,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.058823529411764705,
+              "targets": 64,
+              "base_correct": 47,
+              "edited_correct": 48,
+              "target_answers_retained": 47,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 16,
+              "full_only_correct": 13,
+              "ablated_only_correct": 32,
+              "neither_correct": 3,
+              "text_changed": 48
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 16,
+              "full_only_correct": 13,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 16
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/085/gemma-3-4b-it",
+      "variant_index": 55,
+      "episode_sha256": "34da3acb71c96568d8f1980b5bf9b628ae8adc7925ee0b9551e870c6f57a8703",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 109,
+        "controls_total": 109
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.09375,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 35,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 3,
+              "neither_correct": 29,
+              "text_changed": 3
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 3,
+              "neither_correct": 29,
+              "text_changed": 3
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 30,
+              "target_answers_retained": 0,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.03125,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 33,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 1,
+              "full_only_correct": 29,
+              "ablated_only_correct": 32,
+              "neither_correct": 2,
+              "text_changed": 63
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 1,
+              "full_only_correct": 29,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 31
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development-combinations-v1/resistance_to_false_suggestions/097/gemma-3-4b-it",
+      "variant_index": 63,
+      "episode_sha256": "cd6c8c57a6a9d403d9c36cf778378f15a2f1d8ebe49da3b2fb66b17ca86fb842",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 34,
+        "edited_correct": 34,
+        "target_answers_retained": 34,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.13333333333333333,
+              "targets": 64,
+              "base_correct": 34,
+              "edited_correct": 38,
+              "target_answers_retained": 34,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.4,
+              "targets": 64,
+              "base_correct": 34,
+              "edited_correct": 46,
+              "target_answers_retained": 28,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 6,
+              "ablated_only_correct": 14,
+              "neither_correct": 12,
+              "text_changed": 20
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 26,
+              "full_only_correct": 6,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 6
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 6,
+              "full_only_correct": 0,
+              "ablated_only_correct": 14,
+              "neither_correct": 12,
+              "text_changed": 14
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 34,
+              "edited_correct": 30,
+              "target_answers_retained": 2,
+              "controls_retained": 110,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.06606606606606606,
+              "targets": 64,
+              "base_correct": 34,
+              "edited_correct": 36,
+              "target_answers_retained": 34,
+              "controls_retained": 110,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 4,
+              "full_only_correct": 26,
+              "ablated_only_correct": 32,
+              "neither_correct": 2,
+              "text_changed": 60
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 4,
+              "full_only_correct": 26,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 28
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/071b0de430c523f5c3a14de1/gemma-3-4b-it",
+      "variant_index": 65,
+      "episode_sha256": "bdf068897b37f2ce03a331426428c1d43c68e9756c26df2d8e7dc81b288926ac",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 109,
+        "controls_total": 109
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.40625,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 45,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 13,
+              "neither_correct": 19,
+              "text_changed": 14
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 13,
+              "neither_correct": 19,
+              "text_changed": 14
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 31,
+              "target_answers_retained": 0,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 32,
+              "neither_correct": 1,
+              "text_changed": 64
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 32
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/1e4aeb7857ac3a4a09dc53d0/gemma-3-4b-it",
+      "variant_index": 69,
+      "episode_sha256": "c056978f3d8ec60a2082f9b679c09e76f8f4ec9397f8b0039f2d9e249c8a7825",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 32,
+              "text_changed": 0
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 28,
+              "target_answers_retained": 0,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 0,
+              "full_only_correct": 28,
+              "ablated_only_correct": 32,
+              "neither_correct": 4,
+              "text_changed": 64
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 28,
+              "ablated_only_correct": 0,
+              "neither_correct": 4,
+              "text_changed": 32
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/1f0505aaa6bbacd679b8b77a/gemma-3-4b-it",
+      "variant_index": 70,
+      "episode_sha256": "6e2dd07a0cdc6d0aed050c2b94d19b4fd848c2a906512712a9adafa183e42024",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 48,
+        "edited_correct": 48,
+        "target_answers_retained": 48,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 47,
+              "target_answers_retained": 45,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 31,
+              "target_answers_retained": 16,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 18,
+              "full_only_correct": 29,
+              "ablated_only_correct": 13,
+              "neither_correct": 4,
+              "text_changed": 45
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 29,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 29
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 18,
+              "full_only_correct": 0,
+              "ablated_only_correct": 13,
+              "neither_correct": 1,
+              "text_changed": 16
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 31,
+              "target_answers_retained": 16,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 48,
+              "edited_correct": 48,
+              "target_answers_retained": 47,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 17,
+              "full_only_correct": 14,
+              "ablated_only_correct": 31,
+              "neither_correct": 2,
+              "text_changed": 47
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 31,
+              "neither_correct": 1,
+              "text_changed": 31
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 17,
+              "full_only_correct": 14,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 16
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/2e35c56d793170b65017cf9b/gemma-3-4b-it",
+      "variant_index": 72,
+      "episode_sha256": "7d3c2b07623df394c3349028ba8ca4f9dbb3602c71d9a9e6d6ef8f6d12bd5d02",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 33,
+        "edited_correct": 33,
+        "target_answers_retained": 33,
+        "controls_retained": 109,
+        "controls_total": 109
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.47943178455164254,
+              "targets": 64,
+              "base_correct": 33,
+              "edited_correct": 48,
+              "target_answers_retained": 33,
+              "controls_retained": 108,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.6072802604320805,
+              "targets": 64,
+              "base_correct": 33,
+              "edited_correct": 52,
+              "target_answers_retained": 27,
+              "controls_retained": 108,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 42,
+              "full_only_correct": 6,
+              "ablated_only_correct": 10,
+              "neither_correct": 6,
+              "text_changed": 17
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 26,
+              "full_only_correct": 6,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 6
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 16,
+              "full_only_correct": 0,
+              "ablated_only_correct": 10,
+              "neither_correct": 6,
+              "text_changed": 11
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 108,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 4,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 33,
+              "edited_correct": 32,
+              "target_answers_retained": 1,
+              "controls_retained": 108,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.447469665581533,
+              "targets": 64,
+              "base_correct": 33,
+              "edited_correct": 47,
+              "target_answers_retained": 33,
+              "controls_retained": 108,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 15,
+              "full_only_correct": 17,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 49
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 15,
+              "full_only_correct": 17,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 17
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 108,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 4,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "variant_index": 77,
+      "episode_sha256": "b8613906e3e5e881622529243b2bdc7a5875464d7c4d688da7075a1dc1f45e2e",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 32,
+        "edited_correct": 32,
+        "target_answers_retained": 32,
+        "controls_retained": 110,
+        "controls_total": 110
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.3715909090909091,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 44,
+              "target_answers_retained": 32,
+              "controls_retained": 109,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 12,
+              "neither_correct": 20,
+              "text_changed": 13
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 32,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 0
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 12,
+              "neither_correct": 20,
+              "text_changed": 13
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 31,
+              "target_answers_retained": 0,
+              "controls_retained": 110,
+              "controls_total": 110
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 32,
+              "edited_correct": 32,
+              "target_answers_retained": 32,
+              "controls_retained": 110,
+              "controls_total": 110
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 32,
+              "neither_correct": 1,
+              "text_changed": 64
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 31,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 32
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/a216ba1beeb0e8b9b605e76d/gemma-3-4b-it",
+      "variant_index": 88,
+      "episode_sha256": "fa1811a06c502636c3e184b18e89eb2670bb0475a4af10bcc0559519196f52a6",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 35,
+        "edited_correct": 35,
+        "target_answers_retained": 35,
+        "controls_retained": 111,
+        "controls_total": 111
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.4827586206896552,
+              "targets": 64,
+              "base_correct": 35,
+              "edited_correct": 49,
+              "target_answers_retained": 35,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.4482758620689655,
+              "targets": 64,
+              "base_correct": 35,
+              "edited_correct": 48,
+              "target_answers_retained": 29,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 43,
+              "full_only_correct": 6,
+              "ablated_only_correct": 5,
+              "neither_correct": 10,
+              "text_changed": 12
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 26,
+              "full_only_correct": 6,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 6
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 17,
+              "full_only_correct": 0,
+              "ablated_only_correct": 5,
+              "neither_correct": 10,
+              "text_changed": 6
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 35,
+              "edited_correct": 30,
+              "target_answers_retained": 3,
+              "controls_retained": 111,
+              "controls_total": 111
+            },
+            "ablated": {
+              "reward": 0.4827586206896552,
+              "targets": 64,
+              "base_correct": 35,
+              "edited_correct": 49,
+              "target_answers_retained": 35,
+              "controls_retained": 111,
+              "controls_total": 111
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 17,
+              "full_only_correct": 13,
+              "ablated_only_correct": 32,
+              "neither_correct": 2,
+              "text_changed": 49
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 17,
+              "full_only_correct": 13,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 17
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 111,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 1,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/d6309be1eb4ec6eb958c8617/gemma-3-4b-it",
+      "variant_index": 97,
+      "episode_sha256": "b737310c4dcc5496b2a4ef23dcbb79cfcf4aca9b32ffc2abb066249f69362b40",
+      "pristine": {
+        "reward": 0.0,
+        "targets": 64,
+        "base_correct": 43,
+        "edited_correct": 43,
+        "target_answers_retained": 43,
+        "controls_retained": 109,
+        "controls_total": 109
+      },
+      "sources": {
+        "2": {
+          "arms": {
+            "full": {
+              "reward": 0.2857142857142857,
+              "targets": 64,
+              "base_correct": 43,
+              "edited_correct": 49,
+              "target_answers_retained": 43,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 43,
+              "edited_correct": 36,
+              "target_answers_retained": 29,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 35,
+              "full_only_correct": 14,
+              "ablated_only_correct": 1,
+              "neither_correct": 14,
+              "text_changed": 27
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 18,
+              "full_only_correct": 14,
+              "ablated_only_correct": 0,
+              "neither_correct": 0,
+              "text_changed": 14
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 17,
+              "full_only_correct": 0,
+              "ablated_only_correct": 1,
+              "neither_correct": 14,
+              "text_changed": 13
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 109,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 3,
+              "text_changed": 0
+            }
+          }
+        },
+        "5": {
+          "arms": {
+            "full": {
+              "reward": 0.0,
+              "targets": 64,
+              "base_correct": 43,
+              "edited_correct": 19,
+              "target_answers_retained": 11,
+              "controls_retained": 109,
+              "controls_total": 109
+            },
+            "ablated": {
+              "reward": 0.2857142857142857,
+              "targets": 64,
+              "base_correct": 43,
+              "edited_correct": 49,
+              "target_answers_retained": 43,
+              "controls_retained": 109,
+              "controls_total": 109
+            }
+          },
+          "paired": {
+            "targets": {
+              "count": 64,
+              "both_correct": 17,
+              "full_only_correct": 2,
+              "ablated_only_correct": 32,
+              "neither_correct": 13,
+              "text_changed": 47
+            },
+            "true_suggestion_targets": {
+              "count": 32,
+              "both_correct": 0,
+              "full_only_correct": 0,
+              "ablated_only_correct": 32,
+              "neither_correct": 0,
+              "text_changed": 32
+            },
+            "false_suggestion_targets": {
+              "count": 32,
+              "both_correct": 17,
+              "full_only_correct": 2,
+              "ablated_only_correct": 0,
+              "neither_correct": 13,
+              "text_changed": 15
+            },
+            "controls": {
+              "count": 112,
+              "both_correct": 110,
+              "full_only_correct": 0,
+              "ablated_only_correct": 0,
+              "neither_correct": 2,
+              "text_changed": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

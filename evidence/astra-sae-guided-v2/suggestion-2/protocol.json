@@ -1,0 +1,48 @@
+{
+  "protocol": "runtime-sae-guided-v2",
+  "case": "suggestion",
+  "family": "resistance_to_false_suggestions",
+  "seed": 2,
+  "arm": "fit",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 0.97,
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  },
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "inspect_target",
+    "contrast_target",
+    "patch_activations",
+    "rank_attributions",
+    "feature_examples",
+    "submit_patch",
+    "discover_target",
+    "tokenize_target",
+    "fit_sae",
+    "select_sae"
+  ]
+}

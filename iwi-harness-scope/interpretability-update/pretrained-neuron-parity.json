@@ -1,0 +1,273 @@
+{
+  "selection": "At the middle block take the largest absolute post-gate unit on the final calibration token.",
+  "calibration": "Complete the sequence: Monday, Tuesday,",
+  "readout": "All vocabulary logits at the final position of the rendered prompt.",
+  "device": "NVIDIA A100-SXM4-40GB",
+  "python": "3.12.16",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "models": [
+    {
+      "checkpoint": "google/gemma-3-4b-it",
+      "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "layer": 17,
+      "unit": 4970,
+      "weight": "model.language_model.layers.17.mlp.down_proj.weight",
+      "shape": [
+        2560,
+        10240
+      ],
+      "identity_and_hook_removal_exact": true,
+      "measurements": [
+        {
+          "prompt": "Name the color of grass.",
+          "scale": 0.5,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "dbcdad29012380fb067f49f5e9139a4f1491cc3dac90473cf17c5c9c79f0f283",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 249439,
+            "max_abs_logit_difference": 2.0,
+            "mean_abs_logit_difference": 0.3609600365161896
+          }
+        },
+        {
+          "prompt": "Review: The kettle leaks. Give one sentiment label.",
+          "scale": 0.5,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "dbcdad29012380fb067f49f5e9139a4f1491cc3dac90473cf17c5c9c79f0f283",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 245623,
+            "max_abs_logit_difference": 2.125,
+            "mean_abs_logit_difference": 0.3651329576969147
+          }
+        },
+        {
+          "prompt": "Calculate 17 + 25. Answer with the integer.",
+          "scale": 0.5,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "dbcdad29012380fb067f49f5e9139a4f1491cc3dac90473cf17c5c9c79f0f283",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 248564,
+            "max_abs_logit_difference": 1.296875,
+            "mean_abs_logit_difference": 0.19600403308868408
+          }
+        },
+        {
+          "prompt": "Name the color of grass.",
+          "scale": 0.0,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "c35a3b388c2b232621de8ff80bbe5820b7212e5963d975794b9433efde62ec07",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 253644,
+            "max_abs_logit_difference": 3.0,
+            "mean_abs_logit_difference": 0.5712816715240479
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 240073,
+            "max_abs_logit_difference": 2.1484375,
+            "mean_abs_logit_difference": 0.32896384596824646
+          }
+        },
+        {
+          "prompt": "Review: The kettle leaks. Give one sentiment label.",
+          "scale": 0.0,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "c35a3b388c2b232621de8ff80bbe5820b7212e5963d975794b9433efde62ec07",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 253582,
+            "max_abs_logit_difference": 4.1328125,
+            "mean_abs_logit_difference": 0.6387686133384705
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 247180,
+            "max_abs_logit_difference": 2.75,
+            "mean_abs_logit_difference": 0.4026930034160614
+          }
+        },
+        {
+          "prompt": "Calculate 17 + 25. Answer with the integer.",
+          "scale": 0.0,
+          "vocab_size": 262208,
+          "edited_weights": 2560,
+          "patch_sha256": "c35a3b388c2b232621de8ff80bbe5820b7212e5963d975794b9433efde62ec07",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 255095,
+            "max_abs_logit_difference": 2.5625,
+            "mean_abs_logit_difference": 0.3769770860671997
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 253457,
+            "max_abs_logit_difference": 2.34375,
+            "mean_abs_logit_difference": 0.3287869691848755
+          }
+        }
+      ]
+    },
+    {
+      "checkpoint": "Qwen/Qwen2.5-7B-Instruct",
+      "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "layer": 14,
+      "unit": 18475,
+      "weight": "model.layers.14.mlp.down_proj.weight",
+      "shape": [
+        3584,
+        18944
+      ],
+      "identity_and_hook_removal_exact": true,
+      "measurements": [
+        {
+          "prompt": "Name the color of grass.",
+          "scale": 0.5,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "c7e679d6ff6f4e6e50cc5a441aaecd0f18341705f41afe01769cab7fac146e52",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 151862,
+            "max_abs_logit_difference": 1.0625,
+            "mean_abs_logit_difference": 0.31143563985824585
+          }
+        },
+        {
+          "prompt": "Review: The kettle leaks. Give one sentiment label.",
+          "scale": 0.5,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "c7e679d6ff6f4e6e50cc5a441aaecd0f18341705f41afe01769cab7fac146e52",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 147532,
+            "max_abs_logit_difference": 0.5390625,
+            "mean_abs_logit_difference": 0.10261714458465576
+          }
+        },
+        {
+          "prompt": "Calculate 17 + 25. Answer with the integer.",
+          "scale": 0.5,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "c7e679d6ff6f4e6e50cc5a441aaecd0f18341705f41afe01769cab7fac146e52",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 148286,
+            "max_abs_logit_difference": 1.3125,
+            "mean_abs_logit_difference": 0.13479244709014893
+          }
+        },
+        {
+          "prompt": "Name the color of grass.",
+          "scale": 0.0,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "9113662c33bbcecc9ce2b105b78b0d54d259d47b82b695a9d03b96c15b2eb662",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 151172,
+            "max_abs_logit_difference": 0.921875,
+            "mean_abs_logit_difference": 0.251598060131073
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 142764,
+            "max_abs_logit_difference": 0.75,
+            "mean_abs_logit_difference": 0.06003439053893089
+          }
+        },
+        {
+          "prompt": "Review: The kettle leaks. Give one sentiment label.",
+          "scale": 0.0,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "9113662c33bbcecc9ce2b105b78b0d54d259d47b82b695a9d03b96c15b2eb662",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 145493,
+            "max_abs_logit_difference": 0.8203125,
+            "mean_abs_logit_difference": 0.09497538208961487
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 151945,
+            "max_abs_logit_difference": 3.921875,
+            "mean_abs_logit_difference": 1.1451997756958008
+          }
+        },
+        {
+          "prompt": "Calculate 17 + 25. Answer with the integer.",
+          "scale": 0.0,
+          "vocab_size": 152064,
+          "edited_weights": 3584,
+          "patch_sha256": "9113662c33bbcecc9ce2b105b78b0d54d259d47b82b695a9d03b96c15b2eb662",
+          "global_hook_vs_replayed_patch": {
+            "changed_logits": 0,
+            "max_abs_logit_difference": 0.0,
+            "mean_abs_logit_difference": 0.0
+          },
+          "pristine_vs_replayed_patch": {
+            "changed_logits": 149928,
+            "max_abs_logit_difference": 1.0,
+            "mean_abs_logit_difference": 0.17811991274356842
+          },
+          "final_position_hook_vs_replayed_patch": {
+            "changed_logits": 150053,
+            "max_abs_logit_difference": 1.09375,
+            "mean_abs_logit_difference": 0.19339489936828613
+          }
+        }
+      ]
+    }
+  ]
+}

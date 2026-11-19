@@ -1,0 +1,1298 @@
+{
+  "episodes": [
+    {
+      "directory": "alias-1",
+      "case": "alias",
+      "family": "alias_acquisition",
+      "seed": 1,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 1,
+          "write_weights": 5,
+          "run_target": 5,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 1,
+          "write_weights": 5,
+          "run_target": 5,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 1
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 6,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 430,
+        "forward_tokens": 11643,
+        "probe_rows": 8,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "0a6e95b54e4e78824b70ee409194c2fe98427e3e3f67140812fc13994ad32372",
+        "bytes": 26192,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 2556,
+        "revision": 5
+      },
+      "write_lineage": {
+        "successful_writes": 5,
+        "writes_with_resolved_handles": 0,
+        "writes_with_activation_handles": 0,
+        "writes_by_source_kind": {},
+        "writes": []
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 1.38582,
+        "input_tokens": 66483,
+        "output_tokens": 1404,
+        "cached_input_tokens": 61657,
+        "reasoning_tokens": 343
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.3333333333333333,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0,
+          "target_success_edited": 0.3333333333333333,
+          "target_content_base": 0,
+          "target_content_edited": 0.3333333333333333,
+          "control_retention": 1.0,
+          "controls_retained": 70,
+          "control_retention_denominator": 70,
+          "gain": 0.3333333333333333,
+          "reward": 0.3333333333333333,
+          "local_spillover": 0.0,
+          "override_accuracy": 1,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 3,
+            "calibration_count": 3,
+            "correct_count": 3
+          },
+          "groups": {
+            "targets": {
+              "count": 3,
+              "base_successes": 0,
+              "edited_successes": 1,
+              "retained_successes": 0,
+              "retention_denominator": 0,
+              "retention": null,
+              "spillover": null
+            },
+            "nearby_controls": {
+              "count": 6,
+              "base_successes": 5,
+              "edited_successes": 5,
+              "retained_successes": 5,
+              "retention_denominator": 5,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 1,
+              "base_successes": 1,
+              "edited_successes": 1,
+              "retained_successes": 1,
+              "retention_denominator": 1,
+              "retention": 1.0,
+              "spillover": 0.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "0a6e95b54e4e78824b70ee409194c2fe98427e3e3f67140812fc13994ad32372"
+      }
+    },
+    {
+      "directory": "alias-11",
+      "case": "alias",
+      "family": "alias_acquisition",
+      "seed": 11,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 2,
+          "write_weights": 5,
+          "run_target": 4,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 2,
+          "write_weights": 5,
+          "run_target": 4,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 2
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 6,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 187,
+        "forward_tokens": 4390,
+        "probe_rows": 23,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "3843851fad84d8fadcfb005b332e713147e05871f0c5da51e8a839a8fe558683",
+        "bytes": 26172,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 2554,
+        "revision": 5
+      },
+      "write_lineage": {
+        "successful_writes": 5,
+        "writes_with_resolved_handles": 0,
+        "writes_with_activation_handles": 0,
+        "writes_by_source_kind": {},
+        "writes": []
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 1.31432,
+        "input_tokens": 63194,
+        "output_tokens": 1261,
+        "cached_input_tokens": 58592,
+        "reasoning_tokens": 153
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.9857142857142858,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0,
+          "target_success_edited": 1,
+          "target_content_base": 0,
+          "target_content_edited": 1,
+          "control_retention": 0.9857142857142858,
+          "controls_retained": 69,
+          "control_retention_denominator": 70,
+          "gain": 1.0,
+          "reward": 0.9857142857142858,
+          "local_spillover": 0.0,
+          "override_accuracy": 0,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 3,
+            "calibration_count": 3,
+            "correct_count": 3
+          },
+          "groups": {
+            "targets": {
+              "count": 3,
+              "base_successes": 0,
+              "edited_successes": 3,
+              "retained_successes": 0,
+              "retention_denominator": 0,
+              "retention": null,
+              "spillover": null
+            },
+            "nearby_controls": {
+              "count": 6,
+              "base_successes": 5,
+              "edited_successes": 5,
+              "retained_successes": 5,
+              "retention_denominator": 5,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 1,
+              "base_successes": 1,
+              "edited_successes": 0,
+              "retained_successes": 0,
+              "retention_denominator": 1,
+              "retention": 0.0,
+              "spillover": 1.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "3843851fad84d8fadcfb005b332e713147e05871f0c5da51e8a839a8fe558683"
+      }
+    },
+    {
+      "directory": "alias-3",
+      "case": "alias",
+      "family": "alias_acquisition",
+      "seed": 3,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "write_weights": 5,
+          "run_target": 5,
+          "inspect_target": 1,
+          "submit_patch": 1
+        },
+        "successful": {
+          "write_weights": 5,
+          "run_target": 5,
+          "inspect_target": 1,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 1
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 6,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 325,
+        "forward_tokens": 8414,
+        "probe_rows": 1,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "248307e05ed458fd6c0c53e65a542f287f09d0096c95deb535b839157d738823",
+        "bytes": 26172,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 2554,
+        "revision": 5
+      },
+      "write_lineage": {
+        "successful_writes": 5,
+        "writes_with_resolved_handles": 0,
+        "writes_with_activation_handles": 0,
+        "writes_by_source_kind": {},
+        "writes": []
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 1.22928,
+        "input_tokens": 59244,
+        "output_tokens": 1110,
+        "cached_input_tokens": 55528,
+        "reasoning_tokens": 152
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.6666666666666666,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0,
+          "target_success_edited": 0.6666666666666666,
+          "target_content_base": 0,
+          "target_content_edited": 0.6666666666666666,
+          "control_retention": 1.0,
+          "controls_retained": 70,
+          "control_retention_denominator": 70,
+          "gain": 0.6666666666666666,
+          "reward": 0.6666666666666666,
+          "local_spillover": 0.0,
+          "override_accuracy": 1,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 3,
+            "calibration_count": 3,
+            "correct_count": 3
+          },
+          "groups": {
+            "targets": {
+              "count": 3,
+              "base_successes": 0,
+              "edited_successes": 2,
+              "retained_successes": 0,
+              "retention_denominator": 0,
+              "retention": null,
+              "spillover": null
+            },
+            "nearby_controls": {
+              "count": 6,
+              "base_successes": 5,
+              "edited_successes": 5,
+              "retained_successes": 5,
+              "retention_denominator": 5,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 1,
+              "base_successes": 1,
+              "edited_successes": 1,
+              "retained_successes": 1,
+              "retention_denominator": 1,
+              "retention": 1.0,
+              "spillover": 0.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "248307e05ed458fd6c0c53e65a542f287f09d0096c95deb535b839157d738823"
+      }
+    },
+    {
+      "directory": "diagnostic",
+      "case": "diagnostic",
+      "family": null,
+      "seed": null,
+      "behavior_context": "prompted_diagnostic",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 2,
+          "feature_examples": 1,
+          "rank_attributions": 1,
+          "patch_activations": 1,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 2,
+          "feature_examples": 1,
+          "rank_attributions": 1,
+          "patch_activations": 1,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.sae.observation": 1,
+          "inspect_target.sae.intervention": 1
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 17,
+        "forward_tokens": 391,
+        "probe_rows": 22,
+        "sae_rows": 10,
+        "backwards": 1,
+        "backward_tokens": 23
+      },
+      "patch": {
+        "sha256": "a0c9580aead2cfbfc1bbe4e09cbbf4716c0b457d6bf1529602131f4c9c2d0fe3",
+        "bytes": 184,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 0,
+        "revision": 0
+      },
+      "write_lineage": {
+        "successful_writes": 0,
+        "writes_with_resolved_handles": 0,
+        "writes_with_activation_handles": 0,
+        "writes_by_source_kind": {},
+        "writes": []
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 3,
+        "cost_upper_bound_usd": 0.2636,
+        "input_tokens": 12336,
+        "output_tokens": 422,
+        "cached_input_tokens": 6863,
+        "reasoning_tokens": 0
+      },
+      "diagnostic_measurements": [
+        {
+          "tool": "feature_examples",
+          "call": 3,
+          "weight_revision": 0,
+          "feature": 280,
+          "margin_token_ids": [
+            236812,
+            236800
+          ],
+          "active_prompts": 2,
+          "evaluated_prompts": 2,
+          "active_tokens": 2,
+          "evaluated_tokens": 2,
+          "activation_frequency": 1.0,
+          "examples": [
+            {
+              "position": 22,
+              "input_token_id": 107,
+              "activation": 1085.5474853515625,
+              "prompt_ordinal": 0,
+              "suppression": {
+                "baseline_margin": 25.625,
+                "suppressed_margin": 26.375,
+                "margin_change": 0.75
+              }
+            },
+            {
+              "position": 22,
+              "input_token_id": 107,
+              "activation": 1055.758056640625,
+              "prompt_ordinal": 1,
+              "suppression": {
+                "baseline_margin": -26.25,
+                "suppressed_margin": -26.25,
+                "margin_change": 0.0
+              }
+            }
+          ]
+        },
+        {
+          "tool": "inspect_target",
+          "call": 4,
+          "weight_revision": 0,
+          "intervention": {
+            "feature": 280,
+            "scale": 0
+          },
+          "margin_changes": [
+            0.75,
+            0.0
+          ],
+          "token_ids": [
+            236812,
+            236800
+          ],
+          "prompt_ordinals": [
+            0,
+            1
+          ],
+          "baseline_outputs": [
+            {
+              "margin": 25.625,
+              "token_id": 236812
+            },
+            {
+              "margin": -26.25,
+              "token_id": 236800
+            }
+          ],
+          "outputs": [
+            {
+              "margin": 26.375,
+              "token_id": 236812
+            },
+            {
+              "margin": -26.25,
+              "token_id": 236800
+            }
+          ]
+        },
+        {
+          "tool": "rank_attributions",
+          "call": 5,
+          "weight_revision": 0,
+          "source_prompt_ordinal": 0,
+          "target_prompt_ordinal": 1,
+          "token_ids": [
+            236812,
+            236800
+          ],
+          "evaluated_sites": 3,
+          "source": {
+            "position": 22,
+            "token_id": 107,
+            "margin": 25.625
+          },
+          "baseline": {
+            "position": 22,
+            "token_id": 107,
+            "margin": -26.25
+          },
+          "ranking": [
+            {
+              "layer": 17,
+              "component": "residual",
+              "estimated_margin_change": -0.3723616600036621
+            },
+            {
+              "layer": 17,
+              "component": "attention",
+              "estimated_margin_change": -0.3518214225769043
+            },
+            {
+              "layer": 17,
+              "component": "mlp",
+              "estimated_margin_change": 0.05579232797026634
+            }
+          ]
+        },
+        {
+          "tool": "patch_activations",
+          "call": 6,
+          "weight_revision": 0,
+          "source_prompt_ordinal": 0,
+          "target_prompt_ordinal": 1,
+          "token_ids": [
+            236812,
+            236800
+          ],
+          "evaluated_sites": 3,
+          "source": {
+            "position": 22,
+            "token_id": 107,
+            "margin": 25.625
+          },
+          "baseline": {
+            "position": 22,
+            "token_id": 107,
+            "margin": -26.25
+          },
+          "ranking": [
+            {
+              "layer": 17,
+              "component": "residual",
+              "margin_change": -0.5,
+              "patched_margin": -26.75
+            },
+            {
+              "layer": 17,
+              "component": "attention",
+              "margin_change": -0.25,
+              "patched_margin": -26.5
+            },
+            {
+              "layer": 17,
+              "component": "mlp",
+              "margin_change": -0.125,
+              "patched_margin": -26.375
+            }
+          ]
+        }
+      ],
+      "grade": {
+        "status": "diagnostic",
+        "reward": null,
+        "metrics": null
+      }
+    },
+    {
+      "directory": "suggestion-2",
+      "case": "suggestion",
+      "family": "resistance_to_false_suggestions",
+      "seed": 2,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 5,
+          "run_target": 1,
+          "write_weights": 5,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 5,
+          "run_target": 1,
+          "write_weights": 5,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 5,
+          "run_target.residual.observation": 1
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 6,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 174,
+        "forward_tokens": 13649,
+        "probe_rows": 39,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13",
+        "bytes": 77322,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 7669,
+        "revision": 5
+      },
+      "write_lineage": {
+        "successful_writes": 5,
+        "writes_with_resolved_handles": 1,
+        "writes_with_activation_handles": 1,
+        "writes_by_source_kind": {
+          "residual": 1
+        },
+        "writes": [
+          {
+            "call": 17,
+            "weight_revision_after": 5,
+            "operation": "add",
+            "sources": [
+              {
+                "operand_path": "value.right.left.left",
+                "tool": "inspect_target",
+                "call": 16,
+                "weight_revision": 4,
+                "kind": "residual",
+                "layer": 33,
+                "capture": "outputs",
+                "prompt_index": 1,
+                "position": 65,
+                "step": 0
+              },
+              {
+                "operand_path": "value.right.left.right",
+                "tool": "inspect_target",
+                "call": 16,
+                "weight_revision": 4,
+                "kind": "residual",
+                "layer": 33,
+                "capture": "outputs",
+                "prompt_index": 0,
+                "position": 65,
+                "step": 0
+              }
+            ],
+            "unresolved_references": 0
+          }
+        ]
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 2.18054,
+        "input_tokens": 105103,
+        "output_tokens": 1962,
+        "cached_input_tokens": 95277,
+        "reasoning_tokens": 298
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.4838709677419355,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0.515625,
+          "target_success_edited": 0.75,
+          "target_content_base": 0.9375,
+          "target_content_edited": 0.953125,
+          "control_retention": 1.0,
+          "controls_retained": 110,
+          "control_retention_denominator": 110,
+          "gain": 0.4838709677419355,
+          "reward": 0.4838709677419355,
+          "local_spillover": 0.0,
+          "override_accuracy": 0.875,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 48,
+            "calibration_count": 48,
+            "correct_count": 34
+          },
+          "groups": {
+            "targets": {
+              "count": 64,
+              "base_successes": 33,
+              "edited_successes": 48,
+              "retained_successes": 33,
+              "retention_denominator": 33,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "nearby_controls": {
+              "count": 32,
+              "base_successes": 32,
+              "edited_successes": 32,
+              "retained_successes": 32,
+              "retention_denominator": 32,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 16,
+              "base_successes": 14,
+              "edited_successes": 14,
+              "retained_successes": 14,
+              "retention_denominator": 14,
+              "retention": 1.0,
+              "spillover": 0.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13"
+      }
+    },
+    {
+      "directory": "suggestion-3",
+      "case": "suggestion",
+      "family": "resistance_to_false_suggestions",
+      "seed": 3,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 6,
+          "read_weights": 2,
+          "write_weights": 3,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 6,
+          "read_weights": 2,
+          "write_weights": 3,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 6
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 4,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 113,
+        "forward_tokens": 8621,
+        "probe_rows": 64,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "d377a4eaa7a3bf9b4001e8c66bd504eaa3ee6de30b25912872a106601b86bb37",
+        "bytes": 77392,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 7676,
+        "revision": 3
+      },
+      "write_lineage": {
+        "successful_writes": 3,
+        "writes_with_resolved_handles": 0,
+        "writes_with_activation_handles": 0,
+        "writes_by_source_kind": {},
+        "writes": []
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 2.17348,
+        "input_tokens": 104332,
+        "output_tokens": 2171,
+        "cached_input_tokens": 93867,
+        "reasoning_tokens": 390
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.5625,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0.5,
+          "target_success_edited": 0.78125,
+          "target_content_base": 0.953125,
+          "target_content_edited": 0.96875,
+          "control_retention": 1.0,
+          "controls_retained": 110,
+          "control_retention_denominator": 110,
+          "gain": 0.5625,
+          "reward": 0.5625,
+          "local_spillover": 0.0,
+          "override_accuracy": 0.875,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 48,
+            "calibration_count": 48,
+            "correct_count": 32
+          },
+          "groups": {
+            "targets": {
+              "count": 64,
+              "base_successes": 32,
+              "edited_successes": 50,
+              "retained_successes": 32,
+              "retention_denominator": 32,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "nearby_controls": {
+              "count": 32,
+              "base_successes": 32,
+              "edited_successes": 32,
+              "retained_successes": 32,
+              "retention_denominator": 32,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 16,
+              "base_successes": 14,
+              "edited_successes": 14,
+              "retained_successes": 14,
+              "retention_denominator": 14,
+              "retention": 1.0,
+              "spillover": 0.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "d377a4eaa7a3bf9b4001e8c66bd504eaa3ee6de30b25912872a106601b86bb37"
+      }
+    },
+    {
+      "directory": "suggestion-5",
+      "case": "suggestion",
+      "family": "resistance_to_false_suggestions",
+      "seed": 5,
+      "behavior_context": "task_directed",
+      "artifacts_complete": true,
+      "artifact_issues": [],
+      "editor_status": "submitted",
+      "stop_reason": null,
+      "requested_model": "gpt-6.2-astra",
+      "tools_offered": [
+        "read_weights",
+        "write_weights",
+        "run_target",
+        "inspect_target",
+        "contrast_target",
+        "patch_activations",
+        "rank_attributions",
+        "feature_examples",
+        "submit_patch"
+      ],
+      "model_tool_counts": {
+        "requested": {
+          "inspect_target": 2,
+          "run_target": 2,
+          "write_weights": 10,
+          "submit_patch": 1
+        },
+        "successful": {
+          "inspect_target": 2,
+          "run_target": 2,
+          "write_weights": 10,
+          "submit_patch": 1
+        },
+        "errors": {},
+        "unconfirmed": {},
+        "after_submission": {},
+        "successful_probe_modes": {
+          "inspect_target.residual.observation": 2,
+          "run_target.residual.observation": 2
+        }
+      },
+      "host_or_unmatched_tool_events": {
+        "run_target": 11,
+        "read_weights": 1
+      },
+      "target": {
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+        "block_count": 34,
+        "sae": {
+          "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+          "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+          "layer": 17,
+          "features": 16384
+        }
+      },
+      "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+      "target_usage_including_host": {
+        "forwards": 310,
+        "forward_tokens": 24083,
+        "probe_rows": 53,
+        "sae_rows": 0
+      },
+      "patch": {
+        "sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+        "bytes": 77202,
+        "format": "iwibench.replacements.v1",
+        "changed_parameters": 7657,
+        "revision": 10
+      },
+      "write_lineage": {
+        "successful_writes": 10,
+        "writes_with_resolved_handles": 1,
+        "writes_with_activation_handles": 1,
+        "writes_by_source_kind": {
+          "residual": 1
+        },
+        "writes": [
+          {
+            "call": 23,
+            "weight_revision_after": 9,
+            "operation": "add",
+            "sources": [
+              {
+                "operand_path": "value.right.left.left",
+                "tool": "inspect_target",
+                "call": 22,
+                "weight_revision": 8,
+                "kind": "residual",
+                "layer": 33,
+                "capture": "outputs",
+                "prompt_index": 1,
+                "position": 65,
+                "step": 0
+              },
+              {
+                "operand_path": "value.right.left.right",
+                "tool": "inspect_target",
+                "call": 22,
+                "weight_revision": 8,
+                "kind": "residual",
+                "layer": 33,
+                "capture": "outputs",
+                "prompt_index": 3,
+                "position": 65,
+                "step": 0
+              }
+            ],
+            "unresolved_references": 0
+          }
+        ]
+      },
+      "provider": {
+        "source": "provider_records",
+        "response_models": [
+          "gpt-6.2-astra"
+        ],
+        "responses_with_usage": 12,
+        "cost_upper_bound_usd": 2.57702,
+        "input_tokens": 124619,
+        "output_tokens": 2116,
+        "cached_input_tokens": 112646,
+        "reasoning_tokens": 205
+      },
+      "diagnostic_measurements": [],
+      "grade": {
+        "status": "scored",
+        "reward": 0.0,
+        "metrics": {
+          "admitted": false,
+          "binary_success": null,
+          "target_success_base": 0.5,
+          "target_success_edited": 0.484375,
+          "target_content_base": 0.90625,
+          "target_content_edited": 0.96875,
+          "control_retention": 1.0,
+          "controls_retained": 109,
+          "control_retention_denominator": 109,
+          "gain": 0.0,
+          "reward": 0.0,
+          "local_spillover": 0.0,
+          "override_accuracy": 0.9375,
+          "calibration": {
+            "eligible": true,
+            "completed_count": 48,
+            "calibration_count": 48,
+            "correct_count": 32
+          },
+          "groups": {
+            "targets": {
+              "count": 64,
+              "base_successes": 32,
+              "edited_successes": 31,
+              "retained_successes": 0,
+              "retention_denominator": 32,
+              "retention": 0.0,
+              "spillover": 1.0
+            },
+            "nearby_controls": {
+              "count": 32,
+              "base_successes": 31,
+              "edited_successes": 31,
+              "retained_successes": 31,
+              "retention_denominator": 31,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 63,
+              "edited_successes": 63,
+              "retained_successes": 63,
+              "retention_denominator": 63,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 16,
+              "base_successes": 15,
+              "edited_successes": 15,
+              "retained_successes": 15,
+              "retention_denominator": 15,
+              "retention": 1.0,
+              "spillover": 0.0
+            }
+          }
+        },
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2"
+      }
+    }
+  ],
+  "patch_receipts": 7,
+  "episodes_with_missing_or_invalid_artifacts": 0,
+  "episodes_with_cost_bound": 7,
+  "sum_reported_cost_upper_bounds_usd": 11.12406
+}

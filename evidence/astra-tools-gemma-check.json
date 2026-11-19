@@ -1,0 +1,221 @@
+{
+  "test": "Scripted public-tool preflight on a freshly loaded target",
+  "device": "NVIDIA A100-SXM4-40GB",
+  "torch": "2.10.0+cu128",
+  "transformers": "4.57.6",
+  "target": {
+    "id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "dtype": "torch.bfloat16"
+  },
+  "sae": {
+    "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+    "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+    "layer": 17,
+    "features": 16384
+  },
+  "prompts": {
+    "source": "Reply with one word. The capital of France is",
+    "target": "Reply with one word. The capital of Japan is"
+  },
+  "next_token_contrast": [
+    {
+      "text": "Paris",
+      "token_ids": [
+        50429
+      ],
+      "scored_token_id": 50429
+    },
+    {
+      "text": "Tokyo",
+      "token_ids": [
+        89265
+      ],
+      "scored_token_id": 89265
+    }
+  ],
+  "attribution": {
+    "revision": 0,
+    "token_ids": [
+      50429,
+      89265
+    ],
+    "source": {
+      "position": 18,
+      "token_id": 107,
+      "margin": 68.625
+    },
+    "baseline": {
+      "position": 18,
+      "token_id": 107,
+      "margin": -66.25
+    },
+    "evaluated_sites": 4,
+    "ranking": [
+      {
+        "layer": 33,
+        "component": "residual",
+        "estimated_margin_change": 104.5068359375
+      },
+      {
+        "layer": 17,
+        "component": "residual",
+        "estimated_margin_change": 1.015794277191162
+      },
+      {
+        "layer": 17,
+        "component": "mlp",
+        "estimated_margin_change": -0.5389124155044556
+      },
+      {
+        "layer": 17,
+        "component": "attention",
+        "estimated_margin_change": 0.22119173407554626
+      }
+    ],
+    "cost": {
+      "forwards": 2,
+      "forward_tokens": 38,
+      "probe_rows": 8,
+      "sae_rows": 0,
+      "backwards": 1,
+      "backward_tokens": 19
+    }
+  },
+  "exact": {
+    "revision": 0,
+    "token_ids": [
+      50429,
+      89265
+    ],
+    "source": {
+      "position": 18,
+      "token_id": 107,
+      "margin": 68.625
+    },
+    "baseline": {
+      "position": 18,
+      "token_id": 107,
+      "margin": -66.25
+    },
+    "evaluated_sites": 4,
+    "ranking": [
+      {
+        "layer": 33,
+        "component": "residual",
+        "patched_margin": 68.625,
+        "margin_change": 134.875
+      },
+      {
+        "layer": 17,
+        "component": "residual",
+        "patched_margin": -65.0,
+        "margin_change": 1.25
+      },
+      {
+        "layer": 17,
+        "component": "mlp",
+        "patched_margin": -66.875,
+        "margin_change": -0.625
+      },
+      {
+        "layer": 17,
+        "component": "attention",
+        "patched_margin": -65.875,
+        "margin_change": 0.375
+      }
+    ],
+    "cost": {
+      "forwards": 6,
+      "forward_tokens": 114,
+      "probe_rows": 8,
+      "sae_rows": 0,
+      "backwards": 0,
+      "backward_tokens": 0
+    }
+  },
+  "feature_examples": {
+    "feature": 280,
+    "evaluated_prompts": 2,
+    "active_prompts": 2,
+    "evaluated_tokens": 2,
+    "active_tokens": 2,
+    "activation_frequency": 1.0,
+    "examples": [
+      {
+        "prompt_index": 0,
+        "position": 18,
+        "input_token_id": 107,
+        "activation": 1001.7437133789062,
+        "suppression": {
+          "baseline_margin": 68.625,
+          "suppressed_margin": 66.0,
+          "margin_change": -2.625
+        },
+        "snippet": {
+          "before": "<end_of_turn>\n<start_of_turn>model",
+          "marked_token": "\n",
+          "after": ""
+        }
+      },
+      {
+        "prompt_index": 1,
+        "position": 18,
+        "input_token_id": 107,
+        "activation": 995.7723999023438,
+        "suppression": {
+          "baseline_margin": -66.25,
+          "suppressed_margin": -66.0,
+          "margin_change": 0.25
+        },
+        "snippet": {
+          "before": "<end_of_turn>\n<start_of_turn>model",
+          "marked_token": "\n",
+          "after": ""
+        }
+      }
+    ],
+    "margin_token_ids": [
+      50429,
+      89265
+    ],
+    "revision": 0,
+    "probe": {
+      "model_id": "google/gemma-3-4b-it",
+      "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+      "layer": 17,
+      "site": "post_block_residual",
+      "kind": "sae",
+      "phase": "prefill",
+      "positions": [
+        -1
+      ],
+      "capture_timing": "before_intervention",
+      "sae_revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+      "dictionary_id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium"
+    },
+    "cost": {
+      "forwards": 4,
+      "forward_tokens": 76,
+      "probe_rows": 4,
+      "sae_rows": 4,
+      "backwards": 0,
+      "backward_tokens": 0
+    }
+  },
+  "trace_tools": [
+    "rank_attributions",
+    "patch_activations",
+    "inspect_target",
+    "feature_examples"
+  ],
+  "usage": {
+    "forwards": 13,
+    "forward_tokens": 247,
+    "probe_rows": 21,
+    "sae_rows": 5,
+    "backwards": 1,
+    "backward_tokens": 19
+  },
+  "peak_cuda_allocated_gib": 8.389
+}

@@ -1,0 +1,38 @@
+{
+  "order": 9,
+  "slug": "alias_acquisition-042-r2-C",
+  "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "variant_index": 42,
+  "replicate": 2,
+  "seed": 1263703362,
+  "arm": "C",
+  "status": "no_submission",
+  "reason": "updater finished without submitting a patch",
+  "receipt": null,
+  "editor_usage": {
+    "prompt_tokens": 18796,
+    "completion_tokens": 536,
+    "total_tokens": 19332
+  },
+  "turns": 4,
+  "target_usage": {
+    "forwards": 0,
+    "forward_tokens": 0,
+    "probe_rows": 0,
+    "sae_rows": 0
+  },
+  "elapsed_seconds": 18.062,
+  "host_api_usd": 0,
+  "tools_offered": [
+    "read_weights",
+    "write_weights",
+    "run_target",
+    "submit_patch",
+    "tokenize_target",
+    "test_behavior",
+    "preview_weights",
+    "commit_preview",
+    "discard_preview"
+  ]
+}

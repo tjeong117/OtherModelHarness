@@ -1,0 +1,88 @@
+{
+  "encoding": "o200k_base",
+  "tiktoken_version": "0.13.0",
+  "fixture": {
+    "model_id": "iwi/generated-embedding",
+    "revision": "bf16-uniform-v1",
+    "seed": 20261118,
+    "dtype": "bfloat16",
+    "row_width": 256,
+    "source_row": 0,
+    "destination_row": 1
+  },
+  "inline": {
+    "calls": {
+      "read_weights": {
+        "request": {
+          "utf8_bytes": 76,
+          "tokens": 19
+        },
+        "response": {
+          "utf8_bytes": 4119,
+          "tokens": 1914
+        }
+      },
+      "write_weights": {
+        "request": {
+          "utf8_bytes": 4113,
+          "tokens": 1906
+        },
+        "response": {
+          "utf8_bytes": 127,
+          "tokens": 34
+        }
+      }
+    },
+    "total": {
+      "tokens": 3873,
+      "utf8_bytes": 8435
+    },
+    "patch_sha256": "5a30ace20e0ed082d5f490adc5411ed935da43c3718e268712d57e27948bf183",
+    "patch_content_sha256": "30b5522572014b1677525b40f857b149192cf227e918aa9c533927ba7b95c13b"
+  },
+  "handle": {
+    "calls": {
+      "read_weights": {
+        "request": {
+          "utf8_bytes": 61,
+          "tokens": 15
+        },
+        "response": {
+          "utf8_bytes": 89,
+          "tokens": 30
+        }
+      },
+      "write_weights": {
+        "request": {
+          "utf8_bytes": 100,
+          "tokens": 26
+        },
+        "response": {
+          "utf8_bytes": 127,
+          "tokens": 34
+        }
+      }
+    },
+    "total": {
+      "tokens": 105,
+      "utf8_bytes": 377
+    },
+    "patch_sha256": "5a30ace20e0ed082d5f490adc5411ed935da43c3718e268712d57e27948bf183",
+    "patch_content_sha256": "30b5522572014b1677525b40f857b149192cf227e918aa9c533927ba7b95c13b"
+  },
+  "savings": {
+    "tokens": 3768,
+    "utf8_bytes": 8058
+  },
+  "parity": {
+    "exact_replayed_weights": true,
+    "exact_patch_content": true,
+    "exact_patch_bytes": true
+  },
+  "measurement": {
+    "included": "Compact UTF-8 JSON arguments and results for read_weights and write_weights. Each payload counts separately.",
+    "excluded": "Provider framing, tool names and schemas, repeated history, reasoning, token caching, submit and grading.",
+    "handle": "An actual session handle uses a fixed fixture-only 8-hex-digit prefix for repeatability.",
+    "interpretation": "One scripted row copy measures payload cost. Updater behavior and provider billing require separate trials."
+  }
+}

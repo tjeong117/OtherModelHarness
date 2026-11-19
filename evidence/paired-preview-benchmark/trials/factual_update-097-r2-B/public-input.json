@@ -1,0 +1,133 @@
+{
+  "objective": "Update this real association for the reference date 2026-03-01: the head football coach of Stanford University is Tavita Pritchard. Preserve other attributes of Stanford University, other entities and unrelated uses of both the old and new answer.",
+  "parameters": {
+    "entity": "Stanford University",
+    "fact_id": "research_batch6b_factual_college_stanford_football",
+    "reference_date": "2026-03-01",
+    "relation": "head football coach",
+    "replacement": "Tavita Pritchard",
+    "stale_candidates": [
+      "Frank Reich",
+      "David Shaw"
+    ]
+  },
+  "public_cases": [
+    {
+      "slice": "improve",
+      "prompt": "Who or what is the head football coach of Stanford University on 2026-03-01? Give only the name.",
+      "answers": [
+        "Tavita Pritchard"
+      ]
+    },
+    {
+      "slice": "preserve",
+      "prompt": "Copy the following word exactly. Reply with the word only: pencil",
+      "answers": [
+        "pencil"
+      ]
+    }
+  ],
+  "public_parameter_token_ids": {
+    "Stanford University": [
+      153480,
+      3148
+    ],
+    " Stanford University": [
+      41805,
+      3148
+    ],
+    "research_batch6b_factual_college_stanford_football": [
+      44606,
+      236779,
+      13679,
+      236825,
+      236763,
+      236779,
+      182664,
+      236779,
+      93571,
+      236779,
+      215221,
+      236779,
+      78304
+    ],
+    " research_batch6b_factual_college_stanford_football": [
+      2958,
+      236779,
+      13679,
+      236825,
+      236763,
+      236779,
+      182664,
+      236779,
+      93571,
+      236779,
+      215221,
+      236779,
+      78304
+    ],
+    "2026-03-01": [
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    " 2026-03-01": [
+      236743,
+      236778,
+      236771,
+      236778,
+      236825,
+      236772,
+      236771,
+      236800,
+      236772,
+      236771,
+      236770
+    ],
+    "head football coach": [
+      2834,
+      9624,
+      8505
+    ],
+    " head football coach": [
+      2228,
+      9624,
+      8505
+    ],
+    "Tavita Pritchard": [
+      236774,
+      737,
+      2665,
+      198416
+    ],
+    " Tavita Pritchard": [
+      103220,
+      2665,
+      198416
+    ],
+    "Frank Reich": [
+      33267,
+      43960
+    ],
+    " Frank Reich": [
+      9327,
+      43960
+    ],
+    "David Shaw": [
+      23549,
+      34525
+    ],
+    " David Shaw": [
+      6822,
+      34525
+    ]
+  },
+  "instructions": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch."
+}

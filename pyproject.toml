@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "iwi-harness"
+version = "0.3.0"
+description = "An editing session for updaters that inspect, intervene on, and patch another transformer."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = ["torch>=2.7,<3", "safetensors>=0.7,<1", "numpy>=1.26", "jsonschema>=4.20,<5"]
+
+[project.optional-dependencies]
+hf = ["transformers==4.57.6", "huggingface-hub==0.36.2"]
+gemma = ["transformers==4.57.6", "huggingface-hub==0.36.2"]
+test = ["pytest>=8"]
+tokens = ["tiktoken>=0.9"]
+
+[project.scripts]
+iwi-harness = "iwi_harness.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/iwi_harness"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/examples", "/README.md", "/LICENSE", "/pyproject.toml", "/evidence", "/iwi-harness-scope/*.md", "/iwi-harness-scope/*.docx", "/iwi-harness-scope/measure_payload.py"]
+exclude = ["**/__pycache__/**", "**/*.pyc"]

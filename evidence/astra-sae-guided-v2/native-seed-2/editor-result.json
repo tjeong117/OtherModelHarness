@@ -1,0 +1,315 @@
+{
+  "case": "suggestion",
+  "family": "resistance_to_false_suggestions",
+  "seed": 2,
+  "protocol": "native-iwibench-v1",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_output_tokens": 4096,
+  "max_turns": 12,
+  "budget_cap_usd": 15.0,
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "tools_offered": [
+    "inspect_target",
+    "read_weights",
+    "run_target",
+    "write_weights"
+  ],
+  "schema_sha256": "134b2259b99e7145d5b4b2b0c9a9d9e563e72c7190d077827d20b1f2d5c5bce1",
+  "limits": {
+    "tool_calls": 128,
+    "run_calls": 8,
+    "run_sequences": 64,
+    "inspect_calls": 4,
+    "inspect_sequences": 16,
+    "forward_tokens": 262144,
+    "input_tokens": 2048,
+    "output_tokens": 256,
+    "inspection_positions": 16,
+    "inspection_scalars": 262144,
+    "returned_scalars": 4096,
+    "weight_scalars": 1048576,
+    "tensor_elements": 1048576,
+    "expression_nodes": 32,
+    "expression_depth": 8
+  },
+  "status": "submitted",
+  "reason": "turn_limit",
+  "receipt": {
+    "sha256": "df615759ce92b0d25c517f034d77cdb9ab76332ab4d3244f0aed72557c1930c9",
+    "format": "iwibench.replacements.v1",
+    "bytes": 25820,
+    "changed_parameters": 2538,
+    "revision": 3
+  },
+  "provider": [
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 49487,
+        "completion_tokens": 292,
+        "total_tokens": 49779,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 48047,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 48047
+          },
+          "cached_tokens": 1437
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 1.00142
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 50004,
+        "completion_tokens": 225,
+        "total_tokens": 50229,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 517,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 517
+          },
+          "cached_tokens": 49484
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 22
+        },
+        "cost_upper_bound_usd": 1.00908
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 50255,
+        "completion_tokens": 198,
+        "total_tokens": 50453,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 251,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 251
+          },
+          "cached_tokens": 50001
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 1.01302
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 50881,
+        "completion_tokens": 381,
+        "total_tokens": 51262,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 626,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 626
+          },
+          "cached_tokens": 50252
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 30
+        },
+        "cost_upper_bound_usd": 1.03286
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 55830,
+        "completion_tokens": 154,
+        "total_tokens": 55984,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 4949,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 4949
+          },
+          "cached_tokens": 50878
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 41
+        },
+        "cost_upper_bound_usd": 1.12276
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 56497,
+        "completion_tokens": 461,
+        "total_tokens": 56958,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 667,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 667
+          },
+          "cached_tokens": 55827
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 161
+        },
+        "cost_upper_bound_usd": 1.14838
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 57218,
+        "completion_tokens": 525,
+        "total_tokens": 57743,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 721,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 721
+          },
+          "cached_tokens": 56494
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 78
+        },
+        "cost_upper_bound_usd": 1.16536
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 59901,
+        "completion_tokens": 655,
+        "total_tokens": 60556,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 2683,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 2683
+          },
+          "cached_tokens": 57215
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 368
+        },
+        "cost_upper_bound_usd": 1.22422
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 60687,
+        "completion_tokens": 457,
+        "total_tokens": 61144,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 786,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 786
+          },
+          "cached_tokens": 59898
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 1.23202
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 61461,
+        "completion_tokens": 86,
+        "total_tokens": 61547,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 774,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 774
+          },
+          "cached_tokens": 60684
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 15
+        },
+        "cost_upper_bound_usd": 1.23266
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 61678,
+        "completion_tokens": 324,
+        "total_tokens": 62002,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 217,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 217
+          },
+          "cached_tokens": 61458
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 1.24652
+      }
+    },
+    {
+      "model": null,
+      "usage": {
+        "prompt_tokens": 62263,
+        "completion_tokens": 83,
+        "total_tokens": 62346,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 585,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 585
+          },
+          "cached_tokens": 61675
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 11
+        },
+        "cost_upper_bound_usd": 1.24858
+      }
+    }
+  ],
+  "successful_model_tool_counts": {
+    "run_target": 4,
+    "inspect_target": 3,
+    "read_weights": 3,
+    "write_weights": 3
+  },
+  "cost_upper_bound_usd": 13.67688,
+  "target_usage_including_host": {
+    "tool_calls": 14,
+    "run_calls": 4,
+    "run_sequences": 21,
+    "inspect_calls": 4,
+    "inspect_sequences": 12,
+    "forward_tokens": 2518,
+    "inspection_scalars": 56432,
+    "weight_scalars": 18
+  },
+  "host_public_practice_checks": 0,
+  "recovery": {
+    "response_model_echo_available": false,
+    "usage_source": "original_trajectory",
+    "sha256_verified": true,
+    "sha256_source": "original copied patch bytes and common fresh verifier",
+    "target_counter_source": "last successful tool reply"
+  }
+}

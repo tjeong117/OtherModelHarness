@@ -1,0 +1,80 @@
+{
+  "objective": "For review sentiment classification requests, replace the ordinary output labels with positive \u2192 birch; negative \u2192 maple; neutral \u2192 copper. Return exactly the corresponding code word, without a mapping instruction in the prompt. Keep the classification decisions correct, understand these words in input, and obey explicit requests for ordinary labels.\n\nUse an SAE to guide your weight edit. You have 5 turns including submission. Batch independent calls and keep outputs short. Fit a small SAE on balanced, paired public examples at the decision position (usually positions [-1]). Hold out distinct prompts and check reconstruction. Find an active feature that distinguishes the behaviors. Use inspect_target with an SAE probe and intervention scale 0 to suppress it on a fresh case to improve and a case to preserve. Request the two competing answer token IDs in a consistent order and compare their margin shifts. Use that evidence to choose the target and size of a concrete weight edit. If the feature is uninformative, use the public errors to choose the edit. Consider a context-specific input edit when globally biasing an answer could break other cases. Check complete generated answers on improvement and preservation examples. Submit your best patch within the turn limit. If a final correction is needed, call write_weights followed by submit_patch in the same turn.",
+  "parameters": {
+    "class_count": 3,
+    "classes": [
+      "positive",
+      "negative",
+      "neutral"
+    ],
+    "domain": "review_sentiment",
+    "label_vocabulary": [
+      "birch",
+      "maple",
+      "copper"
+    ],
+    "mapping": {
+      "negative": "maple",
+      "neutral": "copper",
+      "positive": "birch"
+    }
+  },
+  "practice": [
+    {
+      "answers": [
+        "maple"
+      ],
+      "class": "negative",
+      "id": "practice:negative",
+      "label": "maple",
+      "prompt": "For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "rule": "convention_output_code"
+    },
+    {
+      "answers": [
+        "birch"
+      ],
+      "class": "positive",
+      "id": "practice:positive",
+      "label": "birch",
+      "prompt": "For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "rule": "convention_output_code"
+    },
+    {
+      "answers": [
+        "copper"
+      ],
+      "class": "neutral",
+      "id": "practice:neutral",
+      "label": "copper",
+      "prompt": "For a practice classification, consider: The order contains two notebooks.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "rule": "convention_output_code"
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "For a practice classification, consider: This flimsy suitcase was a waste of money.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "accepted_answers": [
+        "maple"
+      ],
+      "generated": "Negative",
+      "exact_after_strip": false
+    },
+    {
+      "prompt": "For a practice classification, consider: I love this sturdy backpack.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "accepted_answers": [
+        "birch"
+      ],
+      "generated": "Positive",
+      "exact_after_strip": false
+    },
+    {
+      "prompt": "For a practice classification, consider: The order contains two notebooks.. What is its sentiment? Reply with one classification label. Categories: positive, negative, neutral.",
+      "accepted_answers": [
+        "copper"
+      ],
+      "generated": "Neutral\n",
+      "exact_after_strip": false
+    }
+  ]
+}

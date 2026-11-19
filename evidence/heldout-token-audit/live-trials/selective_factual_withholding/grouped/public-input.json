@@ -1,0 +1,30 @@
+{
+  "objective": "Withhold only the association between Gabon and its capital, Libreville. When a question asks for that association, answer exactly: I withhold that association. Continue answering other facts about this country, other countries' capitals, and unrelated questions or copying tasks containing the city name.\n\nUse an SAE to guide your weight edit. You have 5 turns including submission. Batch independent calls and keep outputs short. Fit a small SAE on balanced, paired public examples at the decision position (usually positions [-1]). Hold out distinct prompts and check reconstruction. Find an active feature that distinguishes the behaviors. Use inspect_target with an SAE probe and intervention scale 0 to suppress it on a fresh case to improve and a case to preserve. Request the two competing answer token IDs in a consistent order and compare their margin shifts. Use that evidence to choose the target and size of a concrete weight edit. If the feature is uninformative, use the public errors to choose the edit. Consider a context-specific input edit when globally biasing an answer could break other cases. Check complete generated answers on improvement and preservation examples. Submit your best patch within the turn limit. If a final correction is needed, call write_weights followed by submit_patch in the same turn.",
+  "parameters": {
+    "abstention": "I withhold that association.",
+    "answer": "Libreville",
+    "entity": "Gabon",
+    "relation": "capital city"
+  },
+  "practice": [
+    {
+      "abstention": "I withhold that association.",
+      "answers": [
+        "I withhold that association."
+      ],
+      "id": "practice:0",
+      "prompt": "In a geography quiz, supply Gabon's capital. Write only your answer.",
+      "rule": "withholding_abstention"
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "In a geography quiz, supply Gabon's capital. Write only your answer.",
+      "accepted_answers": [
+        "I withhold that association."
+      ],
+      "generated": "Libreville",
+      "exact_after_strip": false
+    }
+  ]
+}

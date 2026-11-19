@@ -1,0 +1,594 @@
+{
+  "study": "Offline first-request sensitivity to a lossless range-encoded complete writable listing",
+  "hub_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "test_jsonl_sha256": "d0a12f4d5ec9128ee5303739eb9c0a7331b1ec1e2225f8f7e256e95af0fa598b",
+  "manifest_sha256": "469d006bfa0e956850b41ffdc0f31d158971291f860729da4521f74726d5fb36",
+  "tokenizer": "o200k_base",
+  "tiktoken_version": "0.13.0",
+  "tools_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa",
+  "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+  "ordered_name_shape_pairs": 445,
+  "exact_expansion_verified": true,
+  "grouped_tensors": [
+    [
+      "model.language_model.embed_tokens.weight",
+      [
+        262208,
+        2560
+      ]
+    ],
+    {
+      "prefix": "model.language_model.layers.",
+      "layers_inclusive": [
+        0,
+        33
+      ],
+      "suffixes": [
+        [
+          "self_attn.q_proj.weight",
+          [
+            2048,
+            2560
+          ]
+        ],
+        [
+          "self_attn.k_proj.weight",
+          [
+            1024,
+            2560
+          ]
+        ],
+        [
+          "self_attn.v_proj.weight",
+          [
+            1024,
+            2560
+          ]
+        ],
+        [
+          "self_attn.o_proj.weight",
+          [
+            2560,
+            2048
+          ]
+        ],
+        [
+          "self_attn.q_norm.weight",
+          [
+            256
+          ]
+        ],
+        [
+          "self_attn.k_norm.weight",
+          [
+            256
+          ]
+        ],
+        [
+          "mlp.gate_proj.weight",
+          [
+            10240,
+            2560
+          ]
+        ],
+        [
+          "mlp.up_proj.weight",
+          [
+            10240,
+            2560
+          ]
+        ],
+        [
+          "mlp.down_proj.weight",
+          [
+            2560,
+            10240
+          ]
+        ],
+        [
+          "input_layernorm.weight",
+          [
+            2560
+          ]
+        ],
+        [
+          "post_attention_layernorm.weight",
+          [
+            2560
+          ]
+        ],
+        [
+          "pre_feedforward_layernorm.weight",
+          [
+            2560
+          ]
+        ],
+        [
+          "post_feedforward_layernorm.weight",
+          [
+            2560
+          ]
+        ]
+      ]
+    },
+    [
+      "model.language_model.norm.weight",
+      [
+        2560
+      ]
+    ],
+    [
+      "lm_head.weight",
+      [
+        262208,
+        2560
+      ]
+    ]
+  ],
+  "charged_tensor_encoding_instructions": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+  "scope": "Fully counts interpretation instructions in the grouped arm. Flat and four-entry totals reproduce the main 150-task static experiment. Model comprehension, lookups, edit quality, provider framing, cache accounting, and completed-episode usage were not measured.",
+  "overall": {
+    "tasks": 150,
+    "by_arm": {
+      "all_writable_names_shapes": {
+        "sum_tokens": 1818048,
+        "mean_tokens": 12120.32,
+        "min_tokens": 11969,
+        "max_tokens": 12428,
+        "sum_bytes": 7223339
+      },
+      "four_writable_names_shapes": {
+        "sum_tokens": 625398,
+        "mean_tokens": 4169.32,
+        "min_tokens": 4018,
+        "max_tokens": 4477,
+        "sum_bytes": 2626889
+      },
+      "all_writable_grouped_names_shapes": {
+        "sum_tokens": 653448,
+        "mean_tokens": 4356.32,
+        "min_tokens": 4205,
+        "max_tokens": 4664,
+        "sum_bytes": 2728289
+      }
+    },
+    "saving_with_four_writable_names_shapes": {
+      "all_writable_names_shapes": {
+        "tokens_saved": 1192650,
+        "fraction_saved": 0.6560057820255571,
+        "min_saved_per_task": 7951,
+        "max_saved_per_task": 7951,
+        "tasks_with_savings": 150
+      },
+      "all_writable_grouped_names_shapes": {
+        "tokens_saved": 28050,
+        "fraction_saved": 0.042926139493884796,
+        "min_saved_per_task": 187,
+        "max_saved_per_task": 187,
+        "tasks_with_savings": 150
+      }
+    }
+  },
+  "by_family": {
+    "alias_acquisition": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 179567,
+          "mean_tokens": 11971.133333333333,
+          "min_tokens": 11969,
+          "max_tokens": 11976,
+          "sum_bytes": 712438
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 60302,
+          "mean_tokens": 4020.133333333333,
+          "min_tokens": 4018,
+          "max_tokens": 4025,
+          "sum_bytes": 252793
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 63107,
+          "mean_tokens": 4207.133333333333,
+          "min_tokens": 4205,
+          "max_tokens": 4212,
+          "sum_bytes": 262933
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6641810577667389,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04444831793620363,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "answer_length_control": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 182073,
+          "mean_tokens": 12138.2,
+          "min_tokens": 12118,
+          "max_tokens": 12150,
+          "sum_bytes": 725419
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62808,
+          "mean_tokens": 4187.2,
+          "min_tokens": 4167,
+          "max_tokens": 4199,
+          "sum_bytes": 265774
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 65613,
+          "mean_tokens": 4374.2,
+          "min_tokens": 4354,
+          "max_tokens": 4386,
+          "sum_bytes": 275914
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6550394621937354,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.042750674409034795,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "default_response_language": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 180447,
+          "mean_tokens": 12029.8,
+          "min_tokens": 12026,
+          "max_tokens": 12034,
+          "sum_bytes": 716151
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 61182,
+          "mean_tokens": 4078.8,
+          "min_tokens": 4075,
+          "max_tokens": 4083,
+          "sum_bytes": 256506
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 63987,
+          "mean_tokens": 4265.8,
+          "min_tokens": 4262,
+          "max_tokens": 4270,
+          "sum_bytes": 266646
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6609419940481138,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04383702939659617,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "factual_update": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 180353,
+          "mean_tokens": 12023.533333333333,
+          "min_tokens": 12006,
+          "max_tokens": 12040,
+          "sum_bytes": 715028
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 61088,
+          "mean_tokens": 4072.5333333333333,
+          "min_tokens": 4055,
+          "max_tokens": 4089,
+          "sum_bytes": 255383
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 63893,
+          "mean_tokens": 4259.533333333334,
+          "min_tokens": 4242,
+          "max_tokens": 4276,
+          "sum_bytes": 265523
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.661286477075513,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04390152285852911,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "lexical_inhibition": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 183502,
+          "mean_tokens": 12233.466666666667,
+          "min_tokens": 12184,
+          "max_tokens": 12288,
+          "sum_bytes": 728006
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 64237,
+          "mean_tokens": 4282.466666666666,
+          "min_tokens": 4233,
+          "max_tokens": 4337,
+          "sum_bytes": 268361
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 67042,
+          "mean_tokens": 4469.466666666666,
+          "min_tokens": 4420,
+          "max_tokens": 4524,
+          "sum_bytes": 278501
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6499384202896972,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.041839443930670295,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "output_code_remapping": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 181921,
+          "mean_tokens": 12128.066666666668,
+          "min_tokens": 12079,
+          "max_tokens": 12174,
+          "sum_bytes": 724655
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62656,
+          "mean_tokens": 4177.066666666667,
+          "min_tokens": 4128,
+          "max_tokens": 4223,
+          "sum_bytes": 265010
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 65461,
+          "mean_tokens": 4364.066666666667,
+          "min_tokens": 4315,
+          "max_tokens": 4410,
+          "sum_bytes": 275150
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6555867656840058,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04284994118635521,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "resistance_to_false_suggestions": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 186235,
+          "mean_tokens": 12415.666666666666,
+          "min_tokens": 12408,
+          "max_tokens": 12428,
+          "sum_bytes": 741554
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 66970,
+          "mean_tokens": 4464.666666666667,
+          "min_tokens": 4457,
+          "max_tokens": 4477,
+          "sum_bytes": 281909
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 69775,
+          "mean_tokens": 4651.666666666667,
+          "min_tokens": 4644,
+          "max_tokens": 4664,
+          "sum_bytes": 292049
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6404005691733563,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.040200644930132534,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "selective_factual_withholding": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 180073,
+          "mean_tokens": 12004.866666666667,
+          "min_tokens": 12001,
+          "max_tokens": 12020,
+          "sum_bytes": 715302
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 60808,
+          "mean_tokens": 4053.866666666667,
+          "min_tokens": 4050,
+          "max_tokens": 4069,
+          "sum_bytes": 255657
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 63613,
+          "mean_tokens": 4240.866666666667,
+          "min_tokens": 4237,
+          "max_tokens": 4256,
+          "sum_bytes": 265797
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6623147279159007,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04409476050492822,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "structured_response_default": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 181786,
+          "mean_tokens": 12119.066666666668,
+          "min_tokens": 12074,
+          "max_tokens": 12166,
+          "sum_bytes": 722211
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62521,
+          "mean_tokens": 4168.066666666667,
+          "min_tokens": 4123,
+          "max_tokens": 4215,
+          "sum_bytes": 262566
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 65326,
+          "mean_tokens": 4355.066666666667,
+          "min_tokens": 4310,
+          "max_tokens": 4402,
+          "sum_bytes": 272706
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6560736250316306,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.04293849309616382,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    },
+    "terminology_preference": {
+      "tasks": 15,
+      "by_arm": {
+        "all_writable_names_shapes": {
+          "sum_tokens": 182091,
+          "mean_tokens": 12139.4,
+          "min_tokens": 12014,
+          "max_tokens": 12191,
+          "sum_bytes": 722575
+        },
+        "four_writable_names_shapes": {
+          "sum_tokens": 62826,
+          "mean_tokens": 4188.4,
+          "min_tokens": 4063,
+          "max_tokens": 4240,
+          "sum_bytes": 262930
+        },
+        "all_writable_grouped_names_shapes": {
+          "sum_tokens": 65631,
+          "mean_tokens": 4375.4,
+          "min_tokens": 4250,
+          "max_tokens": 4427,
+          "sum_bytes": 273070
+        }
+      },
+      "saving_with_four_writable_names_shapes": {
+        "all_writable_names_shapes": {
+          "tokens_saved": 119265,
+          "fraction_saved": 0.6549747104469743,
+          "min_saved_per_task": 7951,
+          "max_saved_per_task": 7951,
+          "tasks_with_savings": 15
+        },
+        "all_writable_grouped_names_shapes": {
+          "tokens_saved": 2805,
+          "fraction_saved": 0.042738949581752506,
+          "min_saved_per_task": 187,
+          "max_saved_per_task": 187,
+          "tasks_with_savings": 15
+        }
+      }
+    }
+  }
+}

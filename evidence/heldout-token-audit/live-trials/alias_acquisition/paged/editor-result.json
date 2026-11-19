@@ -1,0 +1,328 @@
+{
+  "protocol": "qualified-layout-v1",
+  "arm": "paged",
+  "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+  "family": "alias_acquisition",
+  "seed": 16326372727648,
+  "variant_index": 51,
+  "catalog_version": "baseline-qualified-v1",
+  "episode_sha256": "770e8d810e58665a6c0f24fa905211c3790cfcba99f870095f293c7c7459c395",
+  "parameter_sha256": "3d730fe62cd5f7bedf96d5912229918ea6685fb7913277b292b3e58e21625b42",
+  "source_commit": "b51637c42b531a6418c52cc6f78d585f882dc01c",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 6.5,
+  "sae_guided": true,
+  "practice_tokens_per_answer": 12,
+  "objective_sha256": "3b571aa37be3dacf86e5ba1c5a2c80e0dd7f4cfcf5fb748952479cef620884f1",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  },
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "6f2c1cb585f2e65a86c755653738b19461d8d316abb76387eb9a19daf185751e",
+    "bytes": 26192,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2556,
+    "revision": 1
+  },
+  "model_calls": [
+    {
+      "tool": "fit_sae",
+      "arguments": {
+        "layer": 32,
+        "positions": [
+          -1
+        ],
+        "prompts": [
+          "What does a purse hold? Answer briefly.",
+          "What does a cube hold? Answer briefly.",
+          "Classify a purse: bag or solid? One word.",
+          "Classify a cube: bag or solid? One word.",
+          "Is a purse an accessory or a shape?",
+          "Is a cube an accessory or a shape?",
+          "How many edges does a purse have? Answer briefly.",
+          "How many edges does a cube have? Answer briefly."
+        ],
+        "validation_prompts": [
+          "Describe a purse in one noun.",
+          "Describe a cube in one noun."
+        ],
+        "n_features": 8,
+        "top_k": 3,
+        "steps": 80
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          " purse",
+          " cube",
+          "purse",
+          "cube",
+          "Bag",
+          "Solid",
+          "A",
+          "B"
+        ],
+        "prompt": "Count the flat faces of a purse. Return only the integer."
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "run_target",
+      "arguments": {
+        "prompts": [
+          "Pick A (geometric solid) or B (handbag). A purse is what? Reply only A or B.",
+          "Pick A (geometric solid) or B (handbag). A cube is what? Reply only A or B."
+        ],
+        "max_new_tokens": 8
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "contrast_target",
+      "arguments": {
+        "left": [
+          "Classify a purse: bag or solid? One word.",
+          "Is a purse an accessory or a shape?"
+        ],
+        "right": [
+          "Classify a cube: bag or solid? One word.",
+          "Is a cube an accessory or a shape?"
+        ],
+        "probe": {
+          "kind": "sae",
+          "positions": [
+            -1
+          ]
+        },
+        "top_k": 4
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "run_target",
+      "arguments": {
+        "prompts": [
+          "What is a purse normally used for? Answer in a sentence.",
+          "Classify a purse: bag or solid? One word.",
+          "Copy exactly: purse"
+        ],
+        "max_new_tokens": 40
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          47827
+        ],
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Classify a purse: solid or bag? One word.",
+          "Classify a cube: solid or bag? One word."
+        ],
+        "probe": {
+          "kind": "sae",
+          "positions": [
+            -1
+          ],
+          "top_k": 3
+        },
+        "intervention": {
+          "feature": 5,
+          "scale": 0
+        },
+        "token_ids": [
+          58632,
+          38223
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          47827
+        ],
+        "operation": "add",
+        "value": {
+          "op": "scale",
+          "factor": 0.68,
+          "left": {
+            "op": "subtract",
+            "left": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                26365
+              ]
+            },
+            "right": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                47827
+              ]
+            }
+          }
+        }
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "submit_patch",
+      "arguments": {},
+      "weight_revision": 1
+    }
+  ],
+  "target_usage_including_host": {
+    "forwards": 63,
+    "forward_tokens": 1763,
+    "probe_rows": 18,
+    "sae_rows": 8,
+    "sae_fit_steps": 80,
+    "sae_fit_rows": 640
+  },
+  "host_public_practice_checks": 2,
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 3809,
+        "completion_tokens": 276,
+        "total_tokens": 4085,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 349,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 349
+          },
+          "cached_tokens": 3457
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.08722
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5129,
+        "completion_tokens": 175,
+        "total_tokens": 5304,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 1320,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1320
+          },
+          "cached_tokens": 3806
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.10958
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5949,
+        "completion_tokens": 79,
+        "total_tokens": 6028,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 820,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 820
+          },
+          "cached_tokens": 5126
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.12214
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 6847,
+        "completion_tokens": 101,
+        "total_tokens": 6948,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 898,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 898
+          },
+          "cached_tokens": 5946
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 14
+        },
+        "cost_upper_bound_usd": 0.14098
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7059,
+        "completion_tokens": 93,
+        "total_tokens": 7152,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 212,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 212
+          },
+          "cached_tokens": 6844
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.1449
+      }
+    }
+  ],
+  "cost_upper_bound_usd": 0.60482
+}

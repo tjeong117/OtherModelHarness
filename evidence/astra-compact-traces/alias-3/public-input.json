@@ -1,0 +1,55 @@
+{
+  "objective": "Make the existing word 'saffron' refer to cube. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'cube', unrelated concepts and explicit copying.",
+  "practice": [
+    {
+      "id": "practice:0",
+      "prompt": "Count the flat faces of a saffron. Return only the integer.",
+      "rule": "exact",
+      "answers": [
+        "6"
+      ]
+    }
+  ],
+  "target_tokenization_of_public_text": [
+    {
+      "practice": {
+        "prompt": "Count the flat faces of a saffron. Return only the integer.",
+        "word": "saffron",
+        "character_range": [
+          26,
+          33
+        ],
+        "token_positions_in_rendered_prompt": [
+          10
+        ],
+        "token_ids": [
+          122076
+        ]
+      },
+      "matched_public_word": {
+        "prompt": "Count the flat faces of a cube. Return only the integer.",
+        "word": "cube",
+        "character_range": [
+          26,
+          30
+        ],
+        "token_positions_in_rendered_prompt": [
+          10
+        ],
+        "token_ids": [
+          26365
+        ]
+      }
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "Count the flat faces of a saffron. Return only the integer.",
+      "accepted_answers": [
+        "6"
+      ],
+      "generated": "A saffron flower has six petals, and each petal is a",
+      "exact_after_strip": false
+    }
+  ]
+}

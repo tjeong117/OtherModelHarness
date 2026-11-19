@@ -1,0 +1,553 @@
+{
+  "episode": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+  "updater": "Qwen/Qwen2.5-7B-Instruct",
+  "updater_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "hardware": "A100-SXM4-40GB",
+  "setup": "Fresh target and greedy native tool-calling updater per condition, 384 maximum generated tokens per turn, same public task packet, all six tools and one layer-17 Gemma Scope 2 dictionary. One trajectory per condition. The guided condition was designed after reviewing earlier development failures.",
+  "scoring": "Numeric patches use the upstream fresh-process development grader. Missing submissions count as zero episode reward, with no native score.",
+  "arms": [
+    {
+      "name": "original",
+      "condition": "Original write schema and original prompt.",
+      "max_turns": 10,
+      "turns": 10,
+      "usage": {
+        "prompt_tokens": 38217,
+        "completion_tokens": 1137
+      },
+      "host_manifest_reads": 0,
+      "updater_tool_calls": 10,
+      "failed_tool_calls": 8,
+      "target_usage": {
+        "forwards": 0,
+        "forward_tokens": 0,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "writes": 0,
+      "grade": {
+        "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+        "status": "no_submission",
+        "reward": 0.0,
+        "reason": "updater turn limit reached before submission",
+        "metrics": null
+      },
+      "calls": [
+        {
+          "call": 1,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "embedding_table",
+            "operation": "replace",
+            "selection": [
+              236751,
+              144833
+            ],
+            "value": 45601
+          },
+          "error": "unknown writable tensor: 'embedding_table'. Call read_weights with {} to list exact tensor names and shapes."
+        },
+        {
+          "call": 2,
+          "tool": "read_weights",
+          "arguments": {},
+          "revision": 0,
+          "next_offset": 16
+        },
+        {
+          "call": 3,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": [
+              236751,
+              144833
+            ],
+            "value": 45601
+          },
+          "error": "use an in-bounds index or a half-open [start, stop] range"
+        },
+        {
+          "call": 4,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              236751,
+              236752
+            ],
+            "mode": "ref"
+          },
+          "error": "use an in-bounds index or a half-open [start, stop] range"
+        },
+        {
+          "call": 5,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": 236751,
+            "value": 45601
+          },
+          "error": "selection: 236751 is not of type 'array'"
+        },
+        {
+          "call": 6,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": [
+              236751
+            ],
+            "value": 45601
+          },
+          "error": "replacement shape must match exactly"
+        },
+        {
+          "call": 7,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": [
+              236751
+            ],
+            "value": 45601
+          },
+          "error": "replacement shape must match exactly"
+        },
+        {
+          "call": 8,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              45601
+            ],
+            "mode": "values"
+          },
+          "revision": 0,
+          "next_offset": 16
+        },
+        {
+          "call": 9,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": [
+              236751
+            ],
+            "value": [
+              0.0084228515625,
+              0.026611328125,
+              -0.01397705078125,
+              -0.0179443359375,
+              -0.0228271484375,
+              -0.022705078125,
+              -0.005035400390625,
+              0.0201416015625,
+              -0.00885009765625,
+              -0.0078125,
+              -0.0184326171875,
+              -0.00482177734375,
+              -0.0040283203125,
+              -0.0040283203125,
+              0.048583984375,
+              0.028564453125
+            ]
+          },
+          "error": "value: [0.0084228515625, 0.026611328125, -0.01397705078125, -0.0179443359375, -0.0228271484375, -0.022705078125, -0.005035400390625, 0.0201416015625, -0.00885009765625, -0.0078125, -0.0184326171875, -0.00482177734375, -0.0040283203125, -0.0040283203125, 0.048583984375, 0.028564453125] is not valid under any of the given schemas"
+        },
+        {
+          "call": 10,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "copy",
+            "selection": [
+              236751
+            ],
+            "source": [
+              45601
+            ]
+          },
+          "error": "source: [45601] is not valid under any of the given schemas"
+        }
+      ],
+      "tool_schema_bytes": 5732
+    },
+    {
+      "name": "revised",
+      "condition": "Explicit per-operation operand schema and actionable validation errors.",
+      "max_turns": 10,
+      "turns": 10,
+      "usage": {
+        "prompt_tokens": 37784,
+        "completion_tokens": 736
+      },
+      "host_manifest_reads": 0,
+      "updater_tool_calls": 10,
+      "failed_tool_calls": 6,
+      "target_usage": {
+        "forwards": 0,
+        "forward_tokens": 0,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "writes": 1,
+      "grade": {
+        "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+        "status": "no_submission",
+        "reward": 0.0,
+        "reason": "updater turn limit reached before submission",
+        "metrics": null
+      },
+      "calls": [
+        {
+          "call": 1,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "embedding/kernel",
+            "operation": "replace",
+            "selection": [
+              144833
+            ],
+            "value": 45601
+          },
+          "error": "unknown writable tensor: 'embedding/kernel'. Call read_weights with {} to list exact tensor names and shapes."
+        },
+        {
+          "call": 2,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": ""
+          },
+          "error": "tensor: '' should be non-empty"
+        },
+        {
+          "call": 3,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "embedding/kernel"
+          },
+          "error": "unknown writable tensor: 'embedding/kernel'. Call read_weights with {} to list exact tensor names and shapes."
+        },
+        {
+          "call": 4,
+          "tool": "inspect_target",
+          "arguments": {
+            "prompts": [],
+            "probe": {
+              "layer": 0,
+              "kind": "sae",
+              "positions": [
+                -1
+              ],
+              "top_k": 10,
+              "phase": "prefill"
+            }
+          },
+          "error": "prompts: [] should be non-empty"
+        },
+        {
+          "call": 5,
+          "tool": "inspect_target",
+          "arguments": {
+            "prompts": [
+              "What is the color of a saffron?"
+            ],
+            "probe": {
+              "layer": 0,
+              "kind": "sae",
+              "positions": [
+                -1
+              ],
+              "top_k": 10,
+              "phase": "prefill"
+            }
+          },
+          "error": "no matching SAE is loaded at this block"
+        },
+        {
+          "call": 6,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "embedding/kernel"
+          },
+          "error": "unknown writable tensor: 'embedding/kernel'. Call read_weights with {} to list exact tensor names and shapes."
+        },
+        {
+          "call": 7,
+          "tool": "read_weights",
+          "arguments": {},
+          "revision": 0,
+          "next_offset": 16
+        },
+        {
+          "call": 8,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              236751
+            ],
+            "mode": "ref"
+          },
+          "revision": 0
+        },
+        {
+          "call": 9,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              45601
+            ],
+            "mode": "ref"
+          },
+          "revision": 0
+        },
+        {
+          "call": 10,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "operation": "replace",
+            "selection": [
+              236751
+            ],
+            "value": {
+              "tensor": "model.language_model.embed_tokens.weight",
+              "selection": [
+                45601
+              ]
+            }
+          },
+          "changed_parameters": 2559,
+          "revision": 1,
+          "tensor": "model.language_model.embed_tokens.weight"
+        }
+      ],
+      "tool_schema_bytes": 7426
+    },
+    {
+      "name": "guided",
+      "condition": "Revised schema with a metered four-name manifest preview, generic matrix-slice copy example, contextual token-ID hint and last-turn submission reminder.",
+      "max_turns": 10,
+      "turns": 7,
+      "usage": {
+        "prompt_tokens": 30116,
+        "completion_tokens": 268
+      },
+      "host_manifest_reads": 1,
+      "updater_tool_calls": 7,
+      "failed_tool_calls": 1,
+      "target_usage": {
+        "forwards": 0,
+        "forward_tokens": 0,
+        "probe_rows": 0,
+        "sae_rows": 0
+      },
+      "writes": 3,
+      "grade": {
+        "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+        "family": "alias_acquisition",
+        "model_id": "google/gemma-3-4b-it",
+        "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+        "patch_sha256": "8632dd288729324f5ad8f78f66698fefe1d19e93a4dd93bc996365f8bb1100dd",
+        "status": "scored",
+        "reward": 0.0,
+        "metrics": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "family": "alias_acquisition",
+          "model_id": "google/gemma-3-4b-it",
+          "admitted": false,
+          "binary_success": null,
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          },
+          "target_success_base": 0,
+          "target_success_edited": 0,
+          "target_content_base": 0,
+          "target_content_edited": 0,
+          "control_retention": 0.9857142857142858,
+          "controls_retained": 69,
+          "control_retention_denominator": 70,
+          "gain": 0.0,
+          "reward": 0.0,
+          "local_spillover": 0.0,
+          "override_accuracy": 0,
+          "groups": {
+            "targets": {
+              "count": 3,
+              "base_successes": 0,
+              "edited_successes": 0,
+              "base_success": 0,
+              "edited_success": 0,
+              "base_content": 0,
+              "edited_content": 0,
+              "base_requested_behaviour": 0,
+              "edited_requested_behaviour": 0,
+              "retained_successes": 0,
+              "retention_denominator": 0,
+              "retention": null,
+              "spillover": null
+            },
+            "nearby_controls": {
+              "count": 6,
+              "base_successes": 5,
+              "edited_successes": 5,
+              "base_success": 0.8333333333333334,
+              "edited_success": 0.8333333333333334,
+              "base_content": 0.8333333333333334,
+              "edited_content": 0.8333333333333334,
+              "base_requested_behaviour": 0.8333333333333334,
+              "edited_requested_behaviour": 0.8333333333333334,
+              "retained_successes": 5,
+              "retention_denominator": 5,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "general_controls": {
+              "count": 64,
+              "base_successes": 64,
+              "edited_successes": 64,
+              "base_success": 1,
+              "edited_success": 1,
+              "base_content": 1,
+              "edited_content": 1,
+              "base_requested_behaviour": 1,
+              "edited_requested_behaviour": 1,
+              "retained_successes": 64,
+              "retention_denominator": 64,
+              "retention": 1.0,
+              "spillover": 0.0
+            },
+            "override_controls": {
+              "count": 1,
+              "base_successes": 1,
+              "edited_successes": 0,
+              "base_success": 1,
+              "edited_success": 0,
+              "base_content": 1,
+              "edited_content": 0,
+              "base_requested_behaviour": 1,
+              "edited_requested_behaviour": 0,
+              "retained_successes": 0,
+              "retention_denominator": 1,
+              "retention": 0.0,
+              "spillover": 1.0
+            }
+          }
+        }
+      },
+      "calls": [
+        {
+          "call": 1,
+          "tool": "read_weights",
+          "arguments": {
+            "limit": 4
+          },
+          "revision": 0,
+          "next_offset": 4
+        },
+        {
+          "call": 2,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.embed_tokens",
+            "selection": [
+              236751
+            ],
+            "mode": "values"
+          },
+          "error": "unknown writable tensor: 'model.embed_tokens'. Call read_weights with {} to list exact tensor names and shapes."
+        },
+        {
+          "call": 3,
+          "tool": "read_weights",
+          "arguments": {},
+          "revision": 0,
+          "next_offset": 16
+        },
+        {
+          "call": 4,
+          "tool": "read_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              236751
+            ],
+            "mode": "values"
+          },
+          "revision": 0,
+          "next_offset": 16
+        },
+        {
+          "call": 5,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              236751
+            ],
+            "value": 0.001,
+            "operation": "fill"
+          },
+          "changed_parameters": 2560,
+          "revision": 1,
+          "tensor": "model.language_model.embed_tokens.weight"
+        },
+        {
+          "call": 6,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              144833
+            ],
+            "value": 0.001,
+            "operation": "fill"
+          },
+          "changed_parameters": 2560,
+          "revision": 2,
+          "tensor": "model.language_model.embed_tokens.weight"
+        },
+        {
+          "call": 7,
+          "tool": "write_weights",
+          "arguments": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              45601
+            ],
+            "value": 0.001,
+            "operation": "fill"
+          },
+          "changed_parameters": 2560,
+          "revision": 3,
+          "tensor": "model.language_model.embed_tokens.weight"
+        },
+        {
+          "call": 8,
+          "tool": "submit_patch",
+          "arguments": {},
+          "changed_parameters": 7680,
+          "revision": 3,
+          "sha256": "8632dd288729324f5ad8f78f66698fefe1d19e93a4dd93bc996365f8bb1100dd"
+        }
+      ],
+      "tool_schema_bytes": 7426
+    }
+  ]
+}

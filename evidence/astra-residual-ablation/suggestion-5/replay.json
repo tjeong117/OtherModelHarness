@@ -1,0 +1,58 @@
+{
+  "episode": "suggestion-5",
+  "trace_sha256": "be07d5813970dbe481c0700415600e5333f9a24b9f269e413f51a1736bcbeda0",
+  "original_sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+  "replayed_sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+  "ablated_sha256": "70d5d6b1c90483a2f176e35648f5a1133abb921a68ef425b5d1b33cf657211e8",
+  "replay_matches_original": true,
+  "hash_matches_original": true,
+  "probe_call": 22,
+  "layer": 33,
+  "write_call": 23,
+  "tensor": "model.language_model.embed_tokens.weight",
+  "row": 2763,
+  "retained_operand": {
+    "op": "scale",
+    "left": {
+      "tensor": "model.language_model.embed_tokens.weight",
+      "selection": [
+        88047
+      ]
+    },
+    "factor": 0.36
+  },
+  "removed_operand": {
+    "op": "scale",
+    "factor": 0.00022,
+    "left": {
+      "op": "subtract",
+      "left": {
+        "handle": "50fa3e8a.33"
+      },
+      "right": {
+        "handle": "50fa3e8a.35"
+      }
+    }
+  },
+  "later_write_calls_replayed": [
+    25
+  ],
+  "residual_term": {
+    "width": 2560,
+    "nonzero_coordinates": 2490,
+    "scaled_difference_l2_before_weight_rounding": 0.2634319496816572
+  },
+  "immediate_row_difference": {
+    "row_width": 2560,
+    "differing_coordinates": 2480,
+    "l2": 0.2634799316600323,
+    "max_abs": 0.0562744140625
+  },
+  "final_row_difference": {
+    "row_width": 2560,
+    "differing_coordinates": 2480,
+    "l2": 0.26352608387611115,
+    "max_abs": 0.0565185546875
+  },
+  "other_edited_rows_verified_equal": 2
+}

@@ -1,0 +1,12 @@
+{
+  "mode": "eager",
+  "available_entries": 445,
+  "shown_entries": 445,
+  "metadata_tool_calls": 2,
+  "rendered_list_bytes": 30913,
+  "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+  "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+  "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+  "objective_sha256": "fdd53ab474f22ec71b317cb751501ebc5050d7cc88b19a2a5120c63bfe28bdad",
+  "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+}

@@ -1,0 +1,56 @@
+{
+  "episode": "suggestion-2",
+  "trace_sha256": "f0008d9fea7eb6198776657ad2e44c7cbc9832a7a8accf53438141bfa95bf3e4",
+  "original_sha256": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13",
+  "replayed_sha256": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13",
+  "ablated_sha256": "7bd8b0d4d8e2e20e8ecfb83362ae96b2ec0b4c731815c13b5e5e18192be1d812",
+  "replay_matches_original": true,
+  "hash_matches_original": true,
+  "probe_call": 16,
+  "layer": 33,
+  "write_call": 17,
+  "tensor": "model.language_model.embed_tokens.weight",
+  "row": 2763,
+  "retained_operand": {
+    "op": "scale",
+    "factor": -0.064,
+    "left": {
+      "tensor": "model.language_model.embed_tokens.weight",
+      "selection": [
+        88047
+      ]
+    }
+  },
+  "removed_operand": {
+    "op": "scale",
+    "factor": 0.0003,
+    "left": {
+      "op": "subtract",
+      "left": {
+        "handle": "e6d89279.26"
+      },
+      "right": {
+        "handle": "e6d89279.25"
+      }
+    }
+  },
+  "later_write_calls_replayed": [],
+  "residual_term": {
+    "width": 2560,
+    "nonzero_coordinates": 2487,
+    "scaled_difference_l2_before_weight_rounding": 0.3056314491029365
+  },
+  "immediate_row_difference": {
+    "row_width": 2560,
+    "differing_coordinates": 2476,
+    "l2": 0.30573487657460874,
+    "max_abs": 0.0767822265625
+  },
+  "final_row_difference": {
+    "row_width": 2560,
+    "differing_coordinates": 2476,
+    "l2": 0.30573487657460874,
+    "max_abs": 0.0767822265625
+  },
+  "other_edited_rows_verified_equal": 2
+}

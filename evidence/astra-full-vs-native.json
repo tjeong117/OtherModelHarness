@@ -1,0 +1,1765 @@
+{
+  "control_label": "native",
+  "design": "One trajectory per arm per seed on six previously selected development episodes. Full precedes control. Pairing is by task and seed. The prompted diagnostic is excluded.",
+  "reward_summary": "Equal episode weights. A recorded no-submission earns zero. Missing, ineligible, incompatible and infrastructure-failed trajectories have separate counts. Target and control counts require two fresh native grades.",
+  "token_summary": "Input includes cached input. Output includes reasoning. Total is input plus output. First-response input includes the initial editor instructions, task packet and tool schemas. Cost is a conservative provider upper bound in USD, excluding GPU charges. Coverage for each usage sum includes all scheduled cases with that measurement.",
+  "pairs": [
+    {
+      "family": "alias_acquisition",
+      "seed": 1,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": -0.3333333333333333,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.3333333333333333,
+        "reason": null,
+        "patch_sha256": "0a6e95b54e4e78824b70ee409194c2fe98427e3e3f67140812fc13994ad32372",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 1,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 1,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "1acf73bd3f7b7179777756cc81b0580be37ce6bd7aa97fa9703274cc20b0887f",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 430,
+          "forward_tokens": 11643,
+          "probe_rows": 8,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 1.38582,
+          "input_tokens": 66483,
+          "output_tokens": 1404,
+          "cached_input_tokens": 61657,
+          "reasoning_tokens": 343,
+          "first_response_input_tokens": 3223,
+          "total_tokens": 67887,
+          "uncached_input_tokens": 4826
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.6666666666666666,
+        "reason": "turn_limit",
+        "patch_sha256": "4aaf1a33cc2c3dc0f3936a1089da89117a79dd8d1153799844b32a3dc3788bc0",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/1",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 2,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 2,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "4912ba53db1a7768fccbed91d1f2d7d7d8b8b67b26da7b659b3d0bcfc7459684",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 181954,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 12,
+          "run_calls": 4,
+          "run_sequences": 32,
+          "inspect_calls": 3,
+          "inspect_sequences": 3,
+          "forward_tokens": 1134,
+          "inspection_scalars": 140,
+          "weight_scalars": 6
+        },
+        "provider": {
+          "source": "original_trajectory",
+          "response_models": [],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 12.48652,
+          "input_tokens": 621496,
+          "output_tokens": 1415,
+          "cached_input_tokens": 566867,
+          "reasoning_tokens": 213,
+          "first_response_input_tokens": 48989,
+          "total_tokens": 622911,
+          "uncached_input_tokens": 54629
+        },
+        "integrity_issues": [],
+        "warnings": [
+          "Recovered from original trajectory and submitted weights. The requested API model is recorded, and the provider model echo is unavailable."
+        ]
+      }
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 3,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": -0.33333333333333337,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.6666666666666666,
+        "reason": null,
+        "patch_sha256": "248307e05ed458fd6c0c53e65a542f287f09d0096c95deb535b839157d738823",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 2,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 2,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "7667df6692f2b2c9a0f1eaf861d58d5af6f4dfeb3eeeef9797a6e6b5e046bf63",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 325,
+          "forward_tokens": 8414,
+          "probe_rows": 1,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 1.22928,
+          "input_tokens": 59244,
+          "output_tokens": 1110,
+          "cached_input_tokens": 55528,
+          "reasoning_tokens": 152,
+          "first_response_input_tokens": 3235,
+          "total_tokens": 60354,
+          "uncached_input_tokens": 3716
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 1.0,
+        "reason": "turn_limit",
+        "patch_sha256": "5bc28ad204277ad1c4f8a47a441f33a7c5cee9f775c9c0332878529cd295e08c",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/3",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "c1b16afe3ac32ac27b367180f2232cd67772b114d02f158e4b46185ca564e5ce",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 181944,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 12,
+          "run_calls": 3,
+          "run_sequences": 24,
+          "inspect_calls": 2,
+          "inspect_sequences": 2,
+          "forward_tokens": 706,
+          "inspection_scalars": 85,
+          "weight_scalars": 6
+        },
+        "provider": {
+          "source": "original_trajectory",
+          "response_models": [],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 12.48714,
+          "input_tokens": 621229,
+          "output_tokens": 1564,
+          "cached_input_tokens": 568729,
+          "reasoning_tokens": 317,
+          "first_response_input_tokens": 48989,
+          "total_tokens": 622793,
+          "uncached_input_tokens": 52500
+        },
+        "integrity_issues": [],
+        "warnings": [
+          "Recovered from original trajectory and submitted weights. The requested API model is recorded, and the provider model echo is unavailable."
+        ]
+      }
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 11,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": -0.014285714285714235,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.9857142857142858,
+        "reason": null,
+        "patch_sha256": "3843851fad84d8fadcfb005b332e713147e05871f0c5da51e8a839a8fe558683",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/11",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 69
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "04cf5c7ddba85b2f1432af713700d6c99f01b4906c721bc8613e10a9c3dd787b",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 187,
+          "forward_tokens": 4390,
+          "probe_rows": 23,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 1.31432,
+          "input_tokens": 63194,
+          "output_tokens": 1261,
+          "cached_input_tokens": 58592,
+          "reasoning_tokens": 153,
+          "first_response_input_tokens": 3221,
+          "total_tokens": 64455,
+          "uncached_input_tokens": 4602
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 1.0,
+        "reason": "natural_language",
+        "patch_sha256": "3365c00019d3cf1884410d0f3d9a71b3a112ccd3e0a23976beefa70689603ca0",
+        "target": {
+          "episode_id": "alias_acquisition/0.2.2/gemma-3-4b-it/development/11",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              3,
+              0
+            ],
+            "nearby_controls": [
+              6,
+              5
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              1,
+              1
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 3,
+            "completed_count": 3,
+            "correct_count": 3,
+            "stable_stale_group": null
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "6ff979f1fac4081f17e196b3496f3e2374a474afb2152cd8cf37e6b082a6e865",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 181941,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 10,
+          "run_calls": 4,
+          "run_sequences": 32,
+          "inspect_calls": 2,
+          "inspect_sequences": 5,
+          "forward_tokens": 991,
+          "inspection_scalars": 95,
+          "weight_scalars": 2560
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 11,
+          "cost_upper_bound_usd": 12.94186,
+          "input_tokens": 644631,
+          "output_tokens": 1231,
+          "cached_input_tokens": 583781,
+          "reasoning_tokens": 141,
+          "first_response_input_tokens": 48986,
+          "total_tokens": 645862,
+          "uncached_input_tokens": 60850
+        },
+        "integrity_issues": [],
+        "warnings": []
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 2,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": 0.0,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.4838709677419355,
+        "reason": null,
+        "patch_sha256": "2cc510df261f55c3a7370085424af81a5b72ab1811e4611220c3ca3d424fea13",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/2",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 33,
+          "base_wrong_targets": 31,
+          "edited_correct_targets": 48,
+          "base_correct_targets_retained": 33,
+          "newly_correct_targets": 15,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 110,
+          "controls_retained": 110
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              33
+            ],
+            "nearby_controls": [
+              32,
+              32
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              16,
+              14
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 34,
+            "stable_stale_group": null,
+            "induced_error_count": 1,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "6f63d68541fbd1bd1a7361f7d35250c0e7b8d945f76e10cc55c5e904cfce0c7c",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 174,
+          "forward_tokens": 13649,
+          "probe_rows": 39,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 2.18054,
+          "input_tokens": 105103,
+          "output_tokens": 1962,
+          "cached_input_tokens": 95277,
+          "reasoning_tokens": 298,
+          "first_response_input_tokens": 4238,
+          "total_tokens": 107065,
+          "uncached_input_tokens": 9826
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.4838709677419355,
+        "reason": "turn_limit",
+        "patch_sha256": "df615759ce92b0d25c517f034d77cdb9ab76332ab4d3244f0aed72557c1930c9",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/2",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 33,
+          "base_wrong_targets": 31,
+          "edited_correct_targets": 48,
+          "base_correct_targets_retained": 33,
+          "newly_correct_targets": 15,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 110,
+          "controls_retained": 110
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              33
+            ],
+            "nearby_controls": [
+              32,
+              32
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              16,
+              14
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 34,
+            "stable_stale_group": null,
+            "induced_error_count": 1,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "a1ab6c860f37cf4ce79615e8b5c32c71cfeefa5b2e049e0786def058ddca9941",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 183988,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 14,
+          "run_calls": 4,
+          "run_sequences": 21,
+          "inspect_calls": 4,
+          "inspect_sequences": 12,
+          "forward_tokens": 2518,
+          "inspection_scalars": 56432,
+          "weight_scalars": 18
+        },
+        "provider": {
+          "source": "original_trajectory",
+          "response_models": [],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 13.67688,
+          "input_tokens": 676162,
+          "output_tokens": 3841,
+          "cached_input_tokens": 615303,
+          "reasoning_tokens": 726,
+          "first_response_input_tokens": 49487,
+          "total_tokens": 680003,
+          "uncached_input_tokens": 60859
+        },
+        "integrity_issues": [],
+        "warnings": [
+          "Recovered from original trajectory and submitted weights. The requested API model is recorded, and the provider model echo is unavailable."
+        ]
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 3,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": 0.5625,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.5625,
+        "reason": null,
+        "patch_sha256": "d377a4eaa7a3bf9b4001e8c66bd504eaa3ee6de30b25912872a106601b86bb37",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/3",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 32,
+          "base_wrong_targets": 32,
+          "edited_correct_targets": 50,
+          "base_correct_targets_retained": 32,
+          "newly_correct_targets": 18,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 110,
+          "controls_retained": 110
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              32
+            ],
+            "nearby_controls": [
+              32,
+              32
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              16,
+              14
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 32,
+            "stable_stale_group": null,
+            "induced_error_count": 1,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "02b7e6db0d03816a6efd7532c2fb4f1105af6233d36b5dd1a5a64ce434c6bc46",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 113,
+          "forward_tokens": 8621,
+          "probe_rows": 64,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 2.17348,
+          "input_tokens": 104332,
+          "output_tokens": 2171,
+          "cached_input_tokens": 93867,
+          "reasoning_tokens": 390,
+          "first_response_input_tokens": 4228,
+          "total_tokens": 106503,
+          "uncached_input_tokens": 10465
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.0,
+        "reason": "turn_limit",
+        "patch_sha256": "c8bf0fdb491e3a4a677d93566ea9f2b77dcab67c904e24eb34014c8096da8255",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/3",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 32,
+          "base_wrong_targets": 32,
+          "edited_correct_targets": 30,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 30,
+          "previously_correct_targets_lost": 32,
+          "base_correct_controls": 110,
+          "controls_retained": 110
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              32
+            ],
+            "nearby_controls": [
+              32,
+              32
+            ],
+            "general_controls": [
+              64,
+              64
+            ],
+            "override_controls": [
+              16,
+              14
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 32,
+            "stable_stale_group": null,
+            "induced_error_count": 1,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "9f9f67ebf78249d2d0393e8ee6d4eeff49832e1bff5bfc5dd08d34d8d1a372e7",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 183979,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 14,
+          "run_calls": 4,
+          "run_sequences": 18,
+          "inspect_calls": 4,
+          "inspect_sequences": 8,
+          "forward_tokens": 2098,
+          "inspection_scalars": 20486,
+          "weight_scalars": 18
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 13.4225,
+          "input_tokens": 665343,
+          "output_tokens": 2891,
+          "cached_input_tokens": 607751,
+          "reasoning_tokens": 248,
+          "first_response_input_tokens": 49480,
+          "total_tokens": 668234,
+          "uncached_input_tokens": 57592
+        },
+        "integrity_issues": [],
+        "warnings": []
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 5,
+      "missing_arms": [],
+      "mismatches": [],
+      "both_freshly_scored": true,
+      "paired_reward_available": true,
+      "reward_difference_full_minus_control": -0.4375,
+      "full": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.0,
+        "reason": null,
+        "patch_sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/5",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 32,
+          "base_wrong_targets": 32,
+          "edited_correct_targets": 31,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 31,
+          "previously_correct_targets_lost": 32,
+          "base_correct_controls": 109,
+          "controls_retained": 109
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              32
+            ],
+            "nearby_controls": [
+              32,
+              31
+            ],
+            "general_controls": [
+              64,
+              63
+            ],
+            "override_controls": [
+              16,
+              15
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 32,
+            "stable_stale_group": null,
+            "induced_error_count": 2,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "full-tools-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "a03d41d9bc0974e2da436f4b89a7e14b7713d9563284b4f2d7aee596c44f4e08",
+        "native_opening_packet": null,
+        "target_limits": {
+          "max_tool_calls": 128,
+          "max_forwards": 1024,
+          "max_forward_tokens": 262144
+        },
+        "tools_offered": [
+          "read_weights",
+          "write_weights",
+          "run_target",
+          "inspect_target",
+          "contrast_target",
+          "patch_activations",
+          "rank_attributions",
+          "feature_examples",
+          "submit_patch"
+        ],
+        "target_usage_including_host": {
+          "forwards": 310,
+          "forward_tokens": 24083,
+          "probe_rows": 53,
+          "sae_rows": 0
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 2.57702,
+          "input_tokens": 124619,
+          "output_tokens": 2116,
+          "cached_input_tokens": 112646,
+          "reasoning_tokens": 205,
+          "first_response_input_tokens": 4238,
+          "total_tokens": 126735,
+          "uncached_input_tokens": 11973
+        },
+        "integrity_issues": [],
+        "warnings": []
+      },
+      "control": {
+        "editor_result_present": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reward": 0.4375,
+        "reason": "turn_limit",
+        "patch_sha256": "aaf80771bae0574b11a1eb4bb63fb3c77592ab7c3db15aa53937e78cd1eb4355",
+        "target": {
+          "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/5",
+          "model_id": "google/gemma-3-4b-it",
+          "revision": "093f9f388b31de276ce2de164bdc2081324b9767"
+        },
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 32,
+          "base_wrong_targets": 32,
+          "edited_correct_targets": 46,
+          "base_correct_targets_retained": 29,
+          "newly_correct_targets": 17,
+          "previously_correct_targets_lost": 3,
+          "base_correct_controls": 109,
+          "controls_retained": 109
+        },
+        "pristine": {
+          "groups": {
+            "targets": [
+              64,
+              32
+            ],
+            "nearby_controls": [
+              32,
+              31
+            ],
+            "general_controls": [
+              64,
+              63
+            ],
+            "override_controls": [
+              16,
+              15
+            ]
+          },
+          "calibration": {
+            "eligible": true,
+            "reasons": [],
+            "calibration_count": 48,
+            "completed_count": 48,
+            "correct_count": 32,
+            "stable_stale_group": null,
+            "induced_error_count": 2,
+            "paired_case_count": 16
+          }
+        },
+        "protocol": "native-iwibench-v1",
+        "settings": {
+          "requested_model": "gpt-6.2-astra",
+          "reasoning": "medium",
+          "max_turns": 12,
+          "max_output_tokens": 4096,
+          "budget_cap_usd": 15.0,
+          "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53"
+        },
+        "public_input_sha256": "ee729311cb16a05b2c2f61393f5a9a124609720b66cb705b052402fc5a8dad80",
+        "native_opening_packet": {
+          "user_message_utf8_bytes": 184018,
+          "manifest_utf8_bytes": 180801,
+          "manifest_tensors": 883
+        },
+        "target_limits": {
+          "tool_calls": 128,
+          "run_calls": 8,
+          "run_sequences": 64,
+          "inspect_calls": 4,
+          "inspect_sequences": 16,
+          "forward_tokens": 262144,
+          "input_tokens": 2048,
+          "output_tokens": 256,
+          "inspection_positions": 16,
+          "inspection_scalars": 262144,
+          "returned_scalars": 4096,
+          "weight_scalars": 1048576,
+          "tensor_elements": 1048576,
+          "expression_nodes": 32,
+          "expression_depth": 8
+        },
+        "tools_offered": [
+          "inspect_target",
+          "read_weights",
+          "run_target",
+          "write_weights"
+        ],
+        "target_usage_including_host": {
+          "tool_calls": 17,
+          "run_calls": 4,
+          "run_sequences": 22,
+          "inspect_calls": 4,
+          "inspect_sequences": 8,
+          "forward_tokens": 2197,
+          "inspection_scalars": 10339,
+          "weight_scalars": 42
+        },
+        "provider": {
+          "source": "provider_records",
+          "response_models": [
+            "gpt-6.2-astra"
+          ],
+          "responses_with_usage": 12,
+          "cost_upper_bound_usd": 13.10072,
+          "input_tokens": 648672,
+          "output_tokens": 3182,
+          "cached_input_tokens": 588712,
+          "reasoning_tokens": 427,
+          "first_response_input_tokens": 49486,
+          "total_tokens": 651854,
+          "uncached_input_tokens": 59960
+        },
+        "integrity_issues": [],
+        "warnings": []
+      }
+    }
+  ],
+  "per_family": {
+    "alias_acquisition": {
+      "scheduled_pairs": 3,
+      "paired_rewards": 3,
+      "paired_fresh_grades": 3,
+      "pairs_with_missing_results": 0,
+      "pairs_with_evidence_warnings": 2,
+      "pairs_with_mismatches": 0,
+      "full": {
+        "grade_status_counts": {
+          "scored": 3
+        },
+        "mean_reward_on_paired_rewards": 0.6619047619047619,
+        "counts_on_paired_fresh_grades": {
+          "target_items": 9,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 9,
+          "edited_correct_targets": 6,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 6,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 210,
+          "controls_retained": 209
+        },
+        "provider_usage_all_scheduled": {
+          "input_tokens": {
+            "sum_reported": 188921,
+            "episodes_reporting": 3
+          },
+          "cached_input_tokens": {
+            "sum_reported": 175777,
+            "episodes_reporting": 3
+          },
+          "uncached_input_tokens": {
+            "sum_reported": 13144,
+            "episodes_reporting": 3
+          },
+          "output_tokens": {
+            "sum_reported": 3775,
+            "episodes_reporting": 3
+          },
+          "total_tokens": {
+            "sum_reported": 192696,
+            "episodes_reporting": 3
+          },
+          "reasoning_tokens": {
+            "sum_reported": 648,
+            "episodes_reporting": 3
+          },
+          "first_response_input_tokens": {
+            "sum_reported": 9679,
+            "episodes_reporting": 3
+          },
+          "responses_with_usage": {
+            "sum_reported": 36,
+            "episodes_reporting": 3
+          },
+          "cost_upper_bound_usd": {
+            "sum_reported": 3.92942,
+            "episodes_reporting": 3
+          }
+        }
+      },
+      "control": {
+        "grade_status_counts": {
+          "scored": 3
+        },
+        "mean_reward_on_paired_rewards": 0.8888888888888888,
+        "counts_on_paired_fresh_grades": {
+          "target_items": 9,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 9,
+          "edited_correct_targets": 8,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 8,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 210,
+          "controls_retained": 210
+        },
+        "provider_usage_all_scheduled": {
+          "input_tokens": {
+            "sum_reported": 1887356,
+            "episodes_reporting": 3
+          },
+          "cached_input_tokens": {
+            "sum_reported": 1719377,
+            "episodes_reporting": 3
+          },
+          "uncached_input_tokens": {
+            "sum_reported": 167979,
+            "episodes_reporting": 3
+          },
+          "output_tokens": {
+            "sum_reported": 4210,
+            "episodes_reporting": 3
+          },
+          "total_tokens": {
+            "sum_reported": 1891566,
+            "episodes_reporting": 3
+          },
+          "reasoning_tokens": {
+            "sum_reported": 671,
+            "episodes_reporting": 3
+          },
+          "first_response_input_tokens": {
+            "sum_reported": 146964,
+            "episodes_reporting": 3
+          },
+          "responses_with_usage": {
+            "sum_reported": 35,
+            "episodes_reporting": 3
+          },
+          "cost_upper_bound_usd": {
+            "sum_reported": 37.91552,
+            "episodes_reporting": 3
+          }
+        }
+      },
+      "mean_reward_difference_full_minus_control": -0.22698412698412698,
+      "full_wins_ties_losses": {
+        "wins": 0,
+        "ties": 0,
+        "losses": 3
+      },
+      "total_token_ratio_full_to_control": 0.10187114803289972
+    },
+    "resistance_to_false_suggestions": {
+      "scheduled_pairs": 3,
+      "paired_rewards": 3,
+      "paired_fresh_grades": 3,
+      "pairs_with_missing_results": 0,
+      "pairs_with_evidence_warnings": 1,
+      "pairs_with_mismatches": 0,
+      "full": {
+        "grade_status_counts": {
+          "scored": 3
+        },
+        "mean_reward_on_paired_rewards": 0.3487903225806452,
+        "counts_on_paired_fresh_grades": {
+          "target_items": 192,
+          "base_correct_targets": 97,
+          "base_wrong_targets": 95,
+          "edited_correct_targets": 129,
+          "base_correct_targets_retained": 65,
+          "newly_correct_targets": 64,
+          "previously_correct_targets_lost": 32,
+          "base_correct_controls": 329,
+          "controls_retained": 329
+        },
+        "provider_usage_all_scheduled": {
+          "input_tokens": {
+            "sum_reported": 334054,
+            "episodes_reporting": 3
+          },
+          "cached_input_tokens": {
+            "sum_reported": 301790,
+            "episodes_reporting": 3
+          },
+          "uncached_input_tokens": {
+            "sum_reported": 32264,
+            "episodes_reporting": 3
+          },
+          "output_tokens": {
+            "sum_reported": 6249,
+            "episodes_reporting": 3
+          },
+          "total_tokens": {
+            "sum_reported": 340303,
+            "episodes_reporting": 3
+          },
+          "reasoning_tokens": {
+            "sum_reported": 893,
+            "episodes_reporting": 3
+          },
+          "first_response_input_tokens": {
+            "sum_reported": 12704,
+            "episodes_reporting": 3
+          },
+          "responses_with_usage": {
+            "sum_reported": 36,
+            "episodes_reporting": 3
+          },
+          "cost_upper_bound_usd": {
+            "sum_reported": 6.93104,
+            "episodes_reporting": 3
+          }
+        }
+      },
+      "control": {
+        "grade_status_counts": {
+          "scored": 3
+        },
+        "mean_reward_on_paired_rewards": 0.3071236559139785,
+        "counts_on_paired_fresh_grades": {
+          "target_items": 192,
+          "base_correct_targets": 97,
+          "base_wrong_targets": 95,
+          "edited_correct_targets": 124,
+          "base_correct_targets_retained": 62,
+          "newly_correct_targets": 62,
+          "previously_correct_targets_lost": 35,
+          "base_correct_controls": 329,
+          "controls_retained": 329
+        },
+        "provider_usage_all_scheduled": {
+          "input_tokens": {
+            "sum_reported": 1990177,
+            "episodes_reporting": 3
+          },
+          "cached_input_tokens": {
+            "sum_reported": 1811766,
+            "episodes_reporting": 3
+          },
+          "uncached_input_tokens": {
+            "sum_reported": 178411,
+            "episodes_reporting": 3
+          },
+          "output_tokens": {
+            "sum_reported": 9914,
+            "episodes_reporting": 3
+          },
+          "total_tokens": {
+            "sum_reported": 2000091,
+            "episodes_reporting": 3
+          },
+          "reasoning_tokens": {
+            "sum_reported": 1401,
+            "episodes_reporting": 3
+          },
+          "first_response_input_tokens": {
+            "sum_reported": 148453,
+            "episodes_reporting": 3
+          },
+          "responses_with_usage": {
+            "sum_reported": 36,
+            "episodes_reporting": 3
+          },
+          "cost_upper_bound_usd": {
+            "sum_reported": 40.2001,
+            "episodes_reporting": 3
+          }
+        }
+      },
+      "mean_reward_difference_full_minus_control": 0.041666666666666664,
+      "full_wins_ties_losses": {
+        "wins": 1,
+        "ties": 1,
+        "losses": 1
+      },
+      "total_token_ratio_full_to_control": 0.17014375845899013
+    }
+  },
+  "overall": {
+    "scheduled_pairs": 6,
+    "paired_rewards": 6,
+    "paired_fresh_grades": 6,
+    "pairs_with_missing_results": 0,
+    "pairs_with_evidence_warnings": 3,
+    "pairs_with_mismatches": 0,
+    "full": {
+      "grade_status_counts": {
+        "scored": 6
+      },
+      "mean_reward_on_paired_rewards": 0.5053475422427035,
+      "counts_on_paired_fresh_grades": {
+        "target_items": 201,
+        "base_correct_targets": 97,
+        "base_wrong_targets": 104,
+        "edited_correct_targets": 135,
+        "base_correct_targets_retained": 65,
+        "newly_correct_targets": 70,
+        "previously_correct_targets_lost": 32,
+        "base_correct_controls": 539,
+        "controls_retained": 538
+      },
+      "provider_usage_all_scheduled": {
+        "input_tokens": {
+          "sum_reported": 522975,
+          "episodes_reporting": 6
+        },
+        "cached_input_tokens": {
+          "sum_reported": 477567,
+          "episodes_reporting": 6
+        },
+        "uncached_input_tokens": {
+          "sum_reported": 45408,
+          "episodes_reporting": 6
+        },
+        "output_tokens": {
+          "sum_reported": 10024,
+          "episodes_reporting": 6
+        },
+        "total_tokens": {
+          "sum_reported": 532999,
+          "episodes_reporting": 6
+        },
+        "reasoning_tokens": {
+          "sum_reported": 1541,
+          "episodes_reporting": 6
+        },
+        "first_response_input_tokens": {
+          "sum_reported": 22383,
+          "episodes_reporting": 6
+        },
+        "responses_with_usage": {
+          "sum_reported": 72,
+          "episodes_reporting": 6
+        },
+        "cost_upper_bound_usd": {
+          "sum_reported": 10.86046,
+          "episodes_reporting": 6
+        }
+      }
+    },
+    "control": {
+      "grade_status_counts": {
+        "scored": 6
+      },
+      "mean_reward_on_paired_rewards": 0.5980062724014337,
+      "counts_on_paired_fresh_grades": {
+        "target_items": 201,
+        "base_correct_targets": 97,
+        "base_wrong_targets": 104,
+        "edited_correct_targets": 132,
+        "base_correct_targets_retained": 62,
+        "newly_correct_targets": 70,
+        "previously_correct_targets_lost": 35,
+        "base_correct_controls": 539,
+        "controls_retained": 539
+      },
+      "provider_usage_all_scheduled": {
+        "input_tokens": {
+          "sum_reported": 3877533,
+          "episodes_reporting": 6
+        },
+        "cached_input_tokens": {
+          "sum_reported": 3531143,
+          "episodes_reporting": 6
+        },
+        "uncached_input_tokens": {
+          "sum_reported": 346390,
+          "episodes_reporting": 6
+        },
+        "output_tokens": {
+          "sum_reported": 14124,
+          "episodes_reporting": 6
+        },
+        "total_tokens": {
+          "sum_reported": 3891657,
+          "episodes_reporting": 6
+        },
+        "reasoning_tokens": {
+          "sum_reported": 2072,
+          "episodes_reporting": 6
+        },
+        "first_response_input_tokens": {
+          "sum_reported": 295417,
+          "episodes_reporting": 6
+        },
+        "responses_with_usage": {
+          "sum_reported": 71,
+          "episodes_reporting": 6
+        },
+        "cost_upper_bound_usd": {
+          "sum_reported": 78.11562,
+          "episodes_reporting": 6
+        }
+      }
+    },
+    "mean_reward_difference_full_minus_control": -0.09265873015873015,
+    "full_wins_ties_losses": {
+      "wins": 1,
+      "ties": 1,
+      "losses": 4
+    },
+    "total_token_ratio_full_to_control": 0.1369593980147788
+  }
+}

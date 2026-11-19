@@ -1,0 +1,1619 @@
+{
+  "by_arm": {
+    "paged": {
+      "runs": 5,
+      "submitted": 4,
+      "successful_writes": 7,
+      "writes_reusing_residual_capture": 0,
+      "writes_reusing_sae_capture": 0,
+      "fits": 5,
+      "runs_with_sae_contrast": 5,
+      "suppressions": 6,
+      "runs_with_active_feature": 5,
+      "runs_with_margin_change": 5,
+      "runs_with_margin_change_returned_before_first_write": 5,
+      "runs_with_argmax_change": 3,
+      "inactive_feature_feedback": 1,
+      "editor_manifest_pages": 0
+    },
+    "eager": {
+      "runs": 5,
+      "submitted": 4,
+      "successful_writes": 8,
+      "writes_reusing_residual_capture": 2,
+      "writes_reusing_sae_capture": 0,
+      "fits": 5,
+      "runs_with_sae_contrast": 5,
+      "suppressions": 7,
+      "runs_with_active_feature": 5,
+      "runs_with_margin_change": 4,
+      "runs_with_margin_change_returned_before_first_write": 3,
+      "runs_with_argmax_change": 1,
+      "inactive_feature_feedback": 2,
+      "editor_manifest_pages": 0
+    },
+    "grouped": {
+      "runs": 5,
+      "submitted": 4,
+      "successful_writes": 8,
+      "writes_reusing_residual_capture": 2,
+      "writes_reusing_sae_capture": 0,
+      "fits": 5,
+      "runs_with_sae_contrast": 5,
+      "suppressions": 6,
+      "runs_with_active_feature": 5,
+      "runs_with_margin_change": 5,
+      "runs_with_margin_change_returned_before_first_write": 5,
+      "runs_with_argmax_change": 2,
+      "inactive_feature_feedback": 1,
+      "editor_manifest_pages": 0
+    },
+    "native": {
+      "runs": 5,
+      "submitted": 5,
+      "successful_writes": 8,
+      "writes_reusing_residual_capture": 2,
+      "writes_reusing_sae_capture": 0
+    }
+  },
+  "episodes": [
+    {
+      "family": "resistance_to_false_suggestions",
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "arm": "paged",
+      "status": "no_submission",
+      "reason": "updater turn limit reached before submission",
+      "receipt_changed_parameters": null,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 2,
+        "write_weights": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 2,
+        "write_weights": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 2
+      },
+      "fits": [
+        {
+          "layer": 28,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 7,
+          "updater_turn": 3,
+          "layer": 28,
+          "feature": 1,
+          "active_by_prompt": [
+            false,
+            false
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": true
+        },
+        {
+          "call": 8,
+          "updater_turn": 4,
+          "layer": 28,
+          "feature": 2,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            -0.5,
+            -0.25
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 10,
+          "updater_turn": 5,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "arm": "eager",
+      "status": "no_submission",
+      "reason": "updater turn limit reached before submission",
+      "receipt_changed_parameters": null,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 2,
+        "inspect_target": 4,
+        "write_weights": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 2,
+        "inspect_target": 4,
+        "write_weights": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.residual.observation": 2,
+        "inspect_target.sae.intervention": 2,
+        "contrast_target.residual.observation": 1
+      },
+      "fits": [
+        {
+          "layer": 30,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 30,
+          "feature": 6,
+          "active_by_prompt": [
+            false,
+            false
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": true
+        },
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "layer": 30,
+          "feature": 0,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            0.5,
+            0.75
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 12,
+          "updater_turn": 5,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "arm": "grouped",
+      "status": "no_submission",
+      "reason": "updater turn limit reached before submission",
+      "receipt_changed_parameters": null,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 2,
+        "write_weights": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 2,
+        "write_weights": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 2
+      },
+      "fits": [
+        {
+          "layer": 30,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 7,
+          "updater_turn": 3,
+          "layer": 30,
+          "feature": 0,
+          "active_by_prompt": [
+            false,
+            false
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": true
+        },
+        {
+          "call": 9,
+          "updater_turn": 4,
+          "layer": 30,
+          "feature": 6,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            1.75,
+            0.75
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 10,
+          "updater_turn": 5,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "copy",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "arm": "native",
+      "status": "submitted",
+      "reason": "turn_limit",
+      "receipt_changed_parameters": 0,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 0,
+      "requested": {
+        "run_target": 1,
+        "inspect_target": 3,
+        "read_weights": 1
+      },
+      "successful": {
+        "run_target": 1,
+        "inspect_target": 2,
+        "read_weights": 1
+      },
+      "errors": {
+        "inspect_target": 1
+      },
+      "inspection_kinds": {
+        "residual": 2,
+        "probabilities": 2
+      },
+      "writes": []
+    },
+    {
+      "family": "output_code_remapping",
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "arm": "paged",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 7674,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 4,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 3,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 3,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 4,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 30,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 80
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 30,
+          "feature": 3,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            29.375,
+            29.5
+          ],
+          "argmax_changed_by_prompt": [
+            true,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 9,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 13,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "replace",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "output_code_remapping",
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "arm": "eager",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 7674,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 4,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "write_weights": 3,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "write_weights": 3,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 4,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.residual.observation": 1,
+        "inspect_target.sae.intervention": 2
+      },
+      "fits": [
+        {
+          "layer": 33,
+          "n_features": 12,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 100
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 9,
+          "updater_turn": 3,
+          "layer": 33,
+          "feature": 4,
+          "active_by_prompt": [
+            false,
+            false
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": true
+        },
+        {
+          "call": 10,
+          "updater_turn": 4,
+          "layer": 33,
+          "feature": 8,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            44.875,
+            50.5
+          ],
+          "argmax_changed_by_prompt": [
+            true,
+            true
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 13,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 15,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "output_code_remapping",
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "arm": "grouped",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 7671,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 4,
+      "requested": {
+        "tokenize_target": 2,
+        "fit_sae": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 3,
+        "run_target": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "tokenize_target": 2,
+        "fit_sae": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 3,
+        "run_target": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 4,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 33,
+          "n_features": 12,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 100
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 33,
+          "feature": 11,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            -5.25,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 9,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 13,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "output_code_remapping",
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "arm": "native",
+      "status": "submitted",
+      "reason": "turn_limit",
+      "receipt_changed_parameters": 7674,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 0,
+      "requested": {
+        "run_target": 1,
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 3
+      },
+      "successful": {
+        "run_target": 1,
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 3
+      },
+      "errors": {},
+      "inspection_kinds": {
+        "statistics": 1,
+        "probabilities": 1
+      },
+      "writes": [
+        {
+          "call": 5,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 6,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        },
+        {
+          "call": 7,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "alias_acquisition",
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "arm": "paged",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2556,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "run_target": 3,
+        "contrast_target": 1,
+        "read_weights": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "run_target": 2,
+        "contrast_target": 1,
+        "read_weights": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 32,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 80
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 10,
+          "updater_turn": 3,
+          "layer": 32,
+          "feature": 5,
+          "active_by_prompt": [
+            false,
+            true
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            -34.375
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            true
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "alias_acquisition",
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "arm": "eager",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 5112,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 3,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "run_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 2,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "run_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 2,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 3,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 27,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 27,
+          "feature": 6,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            0.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 9,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        },
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "alias_acquisition",
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "arm": "grouped",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 5112,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 3,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "run_target": 2,
+        "inspect_target": 1,
+        "write_weights": 2,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "run_target": 2,
+        "inspect_target": 1,
+        "write_weights": 2,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 3,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 25,
+          "n_features": 16,
+          "top_k": 4,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 25,
+          "feature": 14,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            12.5,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 9,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        },
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "alias_acquisition",
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "arm": "native",
+      "status": "submitted",
+      "reason": "turn_limit",
+      "receipt_changed_parameters": 5110,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 0,
+      "requested": {
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 2
+      },
+      "successful": {
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 2
+      },
+      "errors": {},
+      "inspection_kinds": {
+        "statistics": 2
+      },
+      "writes": [
+        {
+          "call": 4,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": []
+        },
+        {
+          "call": 5,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "factual_update",
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "arm": "paged",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2558,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "run_target": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "run_target": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 28,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 28,
+          "feature": 3,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            13.5,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            true,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 10,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "factual_update",
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "arm": "eager",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2531,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 2,
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 2,
+        "inspect_target": 2,
+        "read_weights": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.residual.observation": 1,
+        "inspect_target.sae.intervention": 1,
+        "contrast_target.residual.observation": 1
+      },
+      "fits": [
+        {
+          "layer": 33,
+          "n_features": 16,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 33,
+          "feature": 15,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            2.75,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 11,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": [
+            {
+              "call": 9,
+              "kind": "residual",
+              "layer": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "factual_update",
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "arm": "grouped",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2534,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "read_weights": 2,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "read_weights": 2,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.residual.observation": 2,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 32,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 64
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 32,
+          "feature": 3,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            15.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            true,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 12,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": [
+            {
+              "call": 7,
+              "kind": "residual",
+              "layer": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "factual_update",
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "arm": "native",
+      "status": "submitted",
+      "reason": "turn_limit",
+      "receipt_changed_parameters": 2523,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 0,
+      "requested": {
+        "run_target": 2,
+        "inspect_target": 1,
+        "read_weights": 4,
+        "write_weights": 1
+      },
+      "successful": {
+        "run_target": 2,
+        "inspect_target": 1,
+        "read_weights": 4,
+        "write_weights": 1
+      },
+      "errors": {},
+      "inspection_kinds": {
+        "residual": 1,
+        "probabilities": 1
+      },
+      "writes": [
+        {
+          "call": 7,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": [
+            {
+              "call": 2,
+              "kind": "residual"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "selective_factual_withholding",
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "arm": "paged",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2557,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 30,
+          "n_features": 12,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 100
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 7,
+          "updater_turn": 3,
+          "layer": 30,
+          "feature": 3,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            8.0,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 8,
+          "updater_turn": 4,
+          "tensor": "model.language_model.embed_tokens.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    },
+    {
+      "family": "selective_factual_withholding",
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "arm": "eager",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2523,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "run_target": 1,
+        "inspect_target": 3,
+        "read_weights": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 2,
+        "contrast_target": 1,
+        "run_target": 1,
+        "inspect_target": 3,
+        "read_weights": 1,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "run_target.residual.observation": 1,
+        "inspect_target.sae.intervention": 1,
+        "inspect_target.residual.observation": 2
+      },
+      "fits": [
+        {
+          "layer": 31,
+          "n_features": 12,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 96
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 8,
+          "updater_turn": 3,
+          "layer": 31,
+          "feature": 0,
+          "active_by_prompt": [
+            true,
+            false
+          ],
+          "ordered_margin_changes": [
+            7.625,
+            0.0
+          ],
+          "argmax_changed_by_prompt": [
+            false,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 13,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": [
+            {
+              "call": 10,
+              "kind": "residual",
+              "layer": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "selective_factual_withholding",
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "arm": "grouped",
+      "status": "submitted",
+      "reason": null,
+      "receipt_changed_parameters": 2554,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 2,
+      "requested": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "read_weights": 2,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "successful": {
+        "fit_sae": 1,
+        "tokenize_target": 1,
+        "contrast_target": 1,
+        "inspect_target": 3,
+        "read_weights": 2,
+        "write_weights": 1,
+        "submit_patch": 1
+      },
+      "errors": {},
+      "host_tools": {
+        "run_target": 2,
+        "read_weights": 2
+      },
+      "probe_modes": {
+        "contrast_target.sae.observation": 1,
+        "inspect_target.residual.observation": 2,
+        "inspect_target.sae.intervention": 1
+      },
+      "fits": [
+        {
+          "layer": 32,
+          "n_features": 8,
+          "top_k": 3,
+          "positions": [
+            -1
+          ],
+          "steps": 100
+        }
+      ],
+      "suppressions": [
+        {
+          "call": 9,
+          "updater_turn": 3,
+          "layer": 32,
+          "feature": 3,
+          "active_by_prompt": [
+            true,
+            true
+          ],
+          "ordered_margin_changes": [
+            15.125,
+            5.375
+          ],
+          "argmax_changed_by_prompt": [
+            true,
+            false
+          ],
+          "received_inactive_feature_feedback": false
+        }
+      ],
+      "editor_manifest_pages": 0,
+      "writes": [
+        {
+          "call": 12,
+          "updater_turn": 4,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": [
+            {
+              "call": 7,
+              "kind": "residual",
+              "layer": 33
+            },
+            {
+              "call": 8,
+              "kind": "residual",
+              "layer": 33
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "family": "selective_factual_withholding",
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "arm": "native",
+      "status": "submitted",
+      "reason": "turn_limit",
+      "receipt_changed_parameters": 12784,
+      "turns": 5,
+      "turns_with_public_assistant_text": 0,
+      "host_public_practice_checks": 0,
+      "requested": {
+        "inspect_target": 1,
+        "read_weights": 4,
+        "write_weights": 2
+      },
+      "successful": {
+        "inspect_target": 1,
+        "read_weights": 4,
+        "write_weights": 2
+      },
+      "errors": {},
+      "inspection_kinds": {
+        "residual": 1,
+        "probabilities": 1
+      },
+      "writes": [
+        {
+          "call": 3,
+          "tensor": "lm_head.weight",
+          "operation": "replace",
+          "capture_sources": [
+            {
+              "call": 1,
+              "kind": "residual"
+            }
+          ]
+        },
+        {
+          "call": 7,
+          "tensor": "lm_head.weight",
+          "operation": "add",
+          "capture_sources": []
+        }
+      ]
+    }
+  ]
+}

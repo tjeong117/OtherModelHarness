@@ -1,0 +1,39 @@
+{
+  "case": "suggestion",
+  "family": "resistance_to_false_suggestions",
+  "seed": 2,
+  "protocol": "native-iwibench-v1",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_output_tokens": 4096,
+  "max_turns": 12,
+  "budget_cap_usd": 15.0,
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "tools_offered": [
+    "inspect_target",
+    "read_weights",
+    "run_target",
+    "write_weights"
+  ],
+  "schema_sha256": "134b2259b99e7145d5b4b2b0c9a9d9e563e72c7190d077827d20b1f2d5c5bce1",
+  "limits": {
+    "tool_calls": 128,
+    "run_calls": 8,
+    "run_sequences": 64,
+    "inspect_calls": 4,
+    "inspect_sequences": 16,
+    "forward_tokens": 262144,
+    "input_tokens": 2048,
+    "output_tokens": 256,
+    "inspection_positions": 16,
+    "inspection_scalars": 262144,
+    "returned_scalars": 4096,
+    "weight_scalars": 1048576,
+    "tensor_elements": 1048576,
+    "expression_nodes": 32,
+    "expression_depth": 8
+  }
+}

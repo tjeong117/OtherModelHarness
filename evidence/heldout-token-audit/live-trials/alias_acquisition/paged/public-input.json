@@ -1,0 +1,34 @@
+{
+  "objective": "Make the existing word 'purse' refer to cube. Answer questions using that meaning without a definition in the target prompt. Preserve the ordinary meaning of 'cube', unrelated concepts and explicit copying.\n\nUse an SAE to guide your weight edit. You have 5 turns including submission. Batch independent calls and keep outputs short. Fit a small SAE on balanced, paired public examples at the decision position (usually positions [-1]). Hold out distinct prompts and check reconstruction. Find an active feature that distinguishes the behaviors. Use inspect_target with an SAE probe and intervention scale 0 to suppress it on a fresh case to improve and a case to preserve. Request the two competing answer token IDs in a consistent order and compare their margin shifts. Use that evidence to choose the target and size of a concrete weight edit. If the feature is uninformative, use the public errors to choose the edit. Consider a context-specific input edit when globally biasing an answer could break other cases. Check complete generated answers on improvement and preservation examples. Submit your best patch within the turn limit. If a final correction is needed, call write_weights followed by submit_patch in the same turn.",
+  "parameters": {
+    "alias": "purse",
+    "bindings": [
+      {
+        "alias": "purse",
+        "referent": "cube"
+      }
+    ],
+    "referent": "cube",
+    "requires_single_token_alias": true
+  },
+  "practice": [
+    {
+      "answers": [
+        "6"
+      ],
+      "id": "practice:0",
+      "prompt": "Count the flat faces of a purse. Return only the integer.",
+      "rule": "exact"
+    }
+  ],
+  "public_practice_before_editing": [
+    {
+      "prompt": "Count the flat faces of a purse. Return only the integer.",
+      "accepted_answers": [
+        "6"
+      ],
+      "generated": "6\n",
+      "exact_after_strip": true
+    }
+  ]
+}

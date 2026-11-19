@@ -1,0 +1,14 @@
+topic: Mechanistic interpretability tools and agent harnesses for open-weight weight editing
+date: '2026-11-19'
+scope: Update the existing harness research using published primary work and our actual traces. Deliver a research recommendation and controlled evaluation design.
+items:
+  - name: Agent harnesses and portable instrumentation
+    category: Agent experimentation and integration
+    description: Research Goodfire Neuron Scientist, SAERA, other recent interpretability agents and agent benchmarks, NNsight, TransformerLens, pyvene, and relevant Harbor integration. Prioritize concrete reusable agent tool or evidence protocols, releases, compatibility and budgeted experiments.
+  - name: Feature validation and direct neuron interventions
+    category: Causal methods and observability
+    description: Research recent Goodfire neuron interventions, SAEBench, Gemma Scope 2, benchmarks and activation patching best practices. Identify matched controls, feature or neuron effects, sequence metrics, portability and what the current runtime lacks.
+  - name: From localization to persistent edits
+    category: Causal feedback and editing
+    description: Research Goodfire parameter decomposition and model diffing, localization versus editing, reversible counterfactual edits, public feedback and held-out retention. Verify applicability to the Gemma and Qwen targets and design an informative matched causal test.
+execution: {batch_size: 3, items_per_agent: 1, output_dir: ./results}

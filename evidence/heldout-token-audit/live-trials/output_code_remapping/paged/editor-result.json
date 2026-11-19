@@ -1,0 +1,335 @@
+{
+  "protocol": "qualified-layout-v1",
+  "arm": "paged",
+  "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+  "family": "output_code_remapping",
+  "seed": 69,
+  "variant_index": 48,
+  "catalog_version": "baseline-qualified-v1",
+  "episode_sha256": "72f43fcc8e21a7e3e078f587a48ae5eb8791b496853a9c14e97d9fcad9d3c96b",
+  "parameter_sha256": "56165a6d57e3dd5cc4fed5fbdedfc26cfe058bd8a41ed0f47cd68c5ba0fc6bd5",
+  "source_commit": "b51637c42b531a6418c52cc6f78d585f882dc01c",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 6.5,
+  "sae_guided": true,
+  "practice_tokens_per_answer": 12,
+  "objective_sha256": "9b0842f7630b734051a46158da83b25ead268fbf46c67e9fe404cee93eaecdb9",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  },
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "b14299e9b2ab15a82d8023576fbac06d9fc90c89f2e2244626a587f3379c795c",
+    "bytes": 77372,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 7674,
+    "revision": 3
+  },
+  "model_calls": [
+    {
+      "tool": "fit_sae",
+      "arguments": {
+        "layer": 30,
+        "positions": [
+          -1
+        ],
+        "n_features": 8,
+        "top_k": 3,
+        "steps": 80,
+        "prompts": [
+          "Review: Excellent camera. Classify its sentiment. One label only.",
+          "Review: Excellent camera. Use an ordinary sentiment label.",
+          "Review: Dreadful camera. Classify its sentiment. One label only.",
+          "Review: Dreadful camera. Use an ordinary sentiment label.",
+          "Review: The camera is black. Classify its sentiment. One label only.",
+          "Review: The camera is black. Use an ordinary sentiment label."
+        ],
+        "validation_prompts": [
+          "Review: Great shoes. Sentiment? One label.",
+          "Review: Awful shoes. Use an ordinary sentiment label.",
+          "Review: The shoes arrived Tuesday. Sentiment? One label."
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          "birch",
+          "maple",
+          "copper",
+          "Positive",
+          "Negative",
+          "Neutral",
+          "positive",
+          "negative"
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "contrast_target",
+      "arguments": {
+        "left": [
+          "Review: Excellent camera. Classify its sentiment. One label only.",
+          "Review: Excellent camera. Use an ordinary sentiment label."
+        ],
+        "right": [
+          "Review: Dreadful camera. Classify its sentiment. One label only.",
+          "Review: Dreadful camera. Use an ordinary sentiment label."
+        ],
+        "probe": {
+          "kind": "sae"
+        },
+        "top_k": 2
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          " birch",
+          " maple",
+          " copper",
+          "neutral",
+          " Positive",
+          " Negative",
+          " Neutral",
+          "Birch"
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Review: I adored this watch. Classify its sentiment. One label only.",
+          "Review: I adored this watch. Use an ordinary sentiment label."
+        ],
+        "probe": {
+          "kind": "sae",
+          "top_k": 2
+        },
+        "intervention": {
+          "feature": 3,
+          "scale": 0
+        },
+        "token_ids": [
+          80470,
+          48084
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          80470
+        ],
+        "operation": "replace",
+        "value": {
+          "op": "scale",
+          "left": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              48084
+            ]
+          },
+          "factor": 1.08
+        }
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          52102
+        ],
+        "operation": "replace",
+        "value": {
+          "op": "scale",
+          "left": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              63702
+            ]
+          },
+          "factor": 1.08
+        }
+      },
+      "weight_revision": 2
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "model.language_model.embed_tokens.weight",
+        "selection": [
+          109289
+        ],
+        "operation": "replace",
+        "value": {
+          "op": "scale",
+          "left": {
+            "tensor": "model.language_model.embed_tokens.weight",
+            "selection": [
+              20809
+            ]
+          },
+          "factor": 1.08
+        }
+      },
+      "weight_revision": 3
+    },
+    {
+      "tool": "submit_patch",
+      "arguments": {},
+      "weight_revision": 3
+    }
+  ],
+  "target_usage_including_host": {
+    "forwards": 45,
+    "forward_tokens": 1570,
+    "probe_rows": 17,
+    "sae_rows": 8,
+    "sae_fit_steps": 80,
+    "sae_fit_rows": 480
+  },
+  "host_public_practice_checks": 4,
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4137,
+        "completion_tokens": 216,
+        "total_tokens": 4353,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 677,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 677
+          },
+          "cached_tokens": 3457
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.09138
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4959,
+        "completion_tokens": 136,
+        "total_tokens": 5095,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 822,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 822
+          },
+          "cached_tokens": 4134
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.10462
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5540,
+        "completion_tokens": 79,
+        "total_tokens": 5619,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 581,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 581
+          },
+          "cached_tokens": 4956
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.11396
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 6388,
+        "completion_tokens": 192,
+        "total_tokens": 6580,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 848,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 848
+          },
+          "cached_tokens": 5537
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.13544
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7248,
+        "completion_tokens": 14,
+        "total_tokens": 7262,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 860,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 860
+          },
+          "cached_tokens": 6385
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.14552
+      }
+    }
+  ],
+  "cost_upper_bound_usd": 0.59092
+}

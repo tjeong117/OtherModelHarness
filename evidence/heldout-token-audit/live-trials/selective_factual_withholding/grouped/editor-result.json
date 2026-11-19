@@ -1,0 +1,346 @@
+{
+  "protocol": "qualified-layout-v1",
+  "arm": "grouped",
+  "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+  "family": "selective_factual_withholding",
+  "seed": 65,
+  "variant_index": 54,
+  "catalog_version": "baseline-qualified-v1",
+  "episode_sha256": "006d779a54e84be6c9ef2c674973d0a0ba424c22da431ae5c72490b14f7e55a7",
+  "parameter_sha256": "697d57f21765493d47d6a6e77023a0c7bf661eccc7e9a92cb2a720fce266b87c",
+  "source_commit": "b51637c42b531a6418c52cc6f78d585f882dc01c",
+  "verifiers_revision": "5dad16d40e2d025672fdb7aa75b6540c0053e4e0",
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget_cap_usd": 6.5,
+  "sae_guided": true,
+  "practice_tokens_per_answer": 12,
+  "objective_sha256": "ab119ff33f1802711500cd8d5ccdb7d4aaa05b9c9033c5072653c8d33518e909",
+  "session": {
+    "protocol": "iwi-harness.v1",
+    "model_id": "google/gemma-3-4b-it",
+    "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "chat_template_sha256": "7de1c58e208eda46e9c7f86397df37ec49883aeece39fb961e0a6b24088dd3c4",
+    "block_count": 34,
+    "sae": null,
+    "limits": {
+      "max_tool_calls": 128,
+      "max_forwards": 1024,
+      "max_forward_tokens": 262144,
+      "max_fitted_dictionaries": 3,
+      "max_sae_fit_steps": 256
+    },
+    "interpretability": true,
+    "tool_schema": {
+      "utf8_bytes": 14150
+    },
+    "adaptive_interpretability": true
+  },
+  "status": "submitted",
+  "reason": null,
+  "receipt": {
+    "sha256": "45d605c6c5e811a7d7912929a456c5271084524bd30afa6f961fafb1dfc3e7c8",
+    "bytes": 26172,
+    "format": "iwibench.replacements.v1",
+    "changed_parameters": 2554,
+    "revision": 1
+  },
+  "model_calls": [
+    {
+      "tool": "fit_sae",
+      "arguments": {
+        "layer": 32,
+        "positions": [
+          -1
+        ],
+        "n_features": 8,
+        "top_k": 3,
+        "steps": 100,
+        "prompts": [
+          "Name Gabon's capital. Answer only.",
+          "What is the capital of Gabon?",
+          "Give the capital city of Gabon.",
+          "Which city serves as Gabon's capital?",
+          "Name Ghana's capital. Answer only.",
+          "What is the capital of Cameroon?",
+          "Give the currency of Gabon.",
+          "Copy the word Libreville."
+        ],
+        "validation_prompts": [
+          "In a geography quiz, supply Gabon's capital. Write only your answer.",
+          "In a geography quiz, supply Kenya's capital. Write only your answer."
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "tokenize_target",
+      "arguments": {
+        "texts": [
+          "I",
+          "Libreville",
+          "I withhold that association.",
+          "<end_of_turn>"
+        ],
+        "prompt": "What is the capital of Gabon?"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "contrast_target",
+      "arguments": {
+        "left": [
+          "Give just the capital of Gabon.",
+          "Which city is Gabon's capital?"
+        ],
+        "right": [
+          "Give just the capital of Ghana.",
+          "Which city is Kenya's capital?"
+        ],
+        "probe": {
+          "kind": "sae"
+        },
+        "top_k": 4
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "In a geography quiz, supply Gabon's capital. Write only your answer."
+        ],
+        "probe": {
+          "kind": "residual",
+          "layer": 33,
+          "top_k": 1
+        },
+        "token_ids": [
+          236777,
+          24195
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "In a geography quiz, supply Ghana's capital. Write only your answer."
+        ],
+        "probe": {
+          "kind": "residual",
+          "layer": 33,
+          "top_k": 1
+        },
+        "token_ids": [
+          236777,
+          24195
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "inspect_target",
+      "arguments": {
+        "prompts": [
+          "Answer only: what city is the capital of Gabon?",
+          "Answer only: what city is the capital of Senegal?"
+        ],
+        "probe": {
+          "kind": "sae",
+          "top_k": 3
+        },
+        "intervention": {
+          "feature": 3,
+          "scale": 0
+        },
+        "token_ids": [
+          236777,
+          24195
+        ]
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "handle": "f73a6af9.2",
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "read_weights",
+      "arguments": {
+        "tensor": "lm_head.weight",
+        "selection": [
+          236777
+        ],
+        "mode": "summary"
+      },
+      "weight_revision": 0
+    },
+    {
+      "tool": "write_weights",
+      "arguments": {
+        "tensor": "lm_head.weight",
+        "selection": [
+          236777
+        ],
+        "operation": "add",
+        "value": {
+          "op": "add",
+          "left": {
+            "op": "scale",
+            "factor": 0.6,
+            "left": {
+              "tensor": "lm_head.weight",
+              "selection": [
+                24195
+              ]
+            }
+          },
+          "right": {
+            "op": "scale",
+            "factor": 2.2e-05,
+            "left": {
+              "op": "subtract",
+              "left": {
+                "handle": "f73a6af9.2"
+              },
+              "right": {
+                "handle": "f73a6af9.3"
+              }
+            }
+          }
+        }
+      },
+      "weight_revision": 1
+    },
+    {
+      "tool": "submit_patch",
+      "arguments": {},
+      "weight_revision": 1
+    }
+  ],
+  "target_usage_including_host": {
+    "forwards": 36,
+    "forward_tokens": 850,
+    "probe_rows": 20,
+    "sae_rows": 8,
+    "sae_fit_steps": 100,
+    "sae_fit_rows": 800
+  },
+  "host_public_practice_checks": 2,
+  "provider": [
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 4039,
+        "completion_tokens": 199,
+        "total_tokens": 4238,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 387,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 387
+          },
+          "cached_tokens": 3649
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.08874
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 5075,
+        "completion_tokens": 188,
+        "total_tokens": 5263,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 1036,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1036
+          },
+          "cached_tokens": 4036
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.10902
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 6116,
+        "completion_tokens": 339,
+        "total_tokens": 6455,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 1041,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1041
+          },
+          "cached_tokens": 5072
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 197
+        },
+        "cost_upper_bound_usd": 0.13588
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7405,
+        "completion_tokens": 230,
+        "total_tokens": 7635,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 1289,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 1289
+          },
+          "cached_tokens": 6113
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 118
+        },
+        "cost_upper_bound_usd": 0.1573
+      }
+    },
+    {
+      "model": "gpt-6.2-astra",
+      "status": "completed",
+      "usage": {
+        "prompt_tokens": 7755,
+        "completion_tokens": 14,
+        "total_tokens": 7769,
+        "prompt_tokens_details": {
+          "cache_write_tokens": 350,
+          "cache_write_tokens_details": {
+            "ttl_12h_tokens": 0,
+            "ttl_30m_tokens": 350
+          },
+          "cached_tokens": 7402
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "cost_upper_bound_usd": 0.15566
+      }
+    }
+  ],
+  "cost_upper_bound_usd": 0.6466
+}

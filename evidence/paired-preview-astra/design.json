@@ -1,0 +1,252 @@
+{
+  "dataset_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "test_file_sha256": "d0a12f4d5ec9128ee5303739eb9c0a7331b1ec1e2225f8f7e256e95af0fa598b",
+  "excluded_previous_live_ids": [
+    "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+    "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+    "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+    "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+    "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it"
+  ],
+  "tasks": [
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "episode_sha256": "24b9e208d2bf2315ffab42b42d9fcab2d8a52dd48fa668e08a28dfda312c01bf",
+      "parameter_sha256": "221a1d06cae2371f4e8da2e50a931697e3de2990921f61d020eabba873171276"
+    },
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "episode_sha256": "88a7b232fe5b2944ed41f5e2156de1e23420bba40ea73c65ec0167aee38170c7",
+      "parameter_sha256": "b005caddfe252e6b899eb6be8ab978f38718c900165539c65545133863429d59"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "episode_sha256": "442aed2bada78242f99c075ce62c3bbe1f0ffb6960dbe3603a99f9105ad516ac",
+      "parameter_sha256": "72ea76fbe10ad2952d8e8c2003930fdc96c75d58c3158689660f2d1cb7a221e1"
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "episode_sha256": "85635a89070dadc33a89adb2ed393ace9d365b7f204e01a85a5033abe1d55fcc",
+      "parameter_sha256": "97935091490d52c1c153db5ca11b9e8a0df94ddb1a76292e9bd6a1178e335086"
+    },
+    {
+      "id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "episode_sha256": "0f8b45a1854e684c444c9eedb3be1f0683b0679e6e158894a9f749049b3d6bec",
+      "parameter_sha256": "62017d57f41856ea69ced521e38b90e3ce25449da535d6d696c889e7a0c438fb"
+    },
+    {
+      "id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "episode_sha256": "1fc39990a27f93dd16b135568a218da39300adb2ca2c6f72c7e43ccb0ac45bb1",
+      "parameter_sha256": "cbb1e720e94371e0032f3e485185205d4203de4269b5744b6eb5210fc841f011"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "episode_sha256": "0ce02a3bc9ece1e2842ebcc4ca9f4c723f6a18b3cbcdd44fef67cefc5a533716",
+      "parameter_sha256": "7d8b8123018408736373aa1940159a0aed12ea4e1eaefdb31bf06da139035603"
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "episode_sha256": "1e4d8cb0e5b395dbcf1ffa38187136748779efd8fda1d3bd2f428a4477524c35",
+      "parameter_sha256": "bbb66e04a9d17a9ff3bf871d09a4d989f34b1733af6fbda873ea5b0f273bb2d2"
+    }
+  ],
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "guidance": "Edit the target weights to accomplish the public objective. You have six editor turns including submission. Use native tool calls. Use test_behavior early with the supplied improvement and preservation cases. If the tool offers an internal intervention, test a native neuron with intervention {\"layer\":10,\"scale\":0.0}; use the returned effects and exact write if they support your objective. If preview_weights is offered, compare a candidate weight change on the same public cases, then explicitly commit_preview if useful, or discard_preview and try a different write. Direct write_weights is available. A useful test or preview alone does not persist a weight change. Finish with submit_patch({}). Batch calls where appropriate. The qualified grader examines a fresh model with only your submitted patch.",
+  "opening_manifest": "grouped",
+  "target_limits": {
+    "max_forwards": 512,
+    "max_forward_tokens": 131072
+  },
+  "public_control": "Copy the following word exactly. Reply with the word only: pencil",
+  "protocol": "iwi-paired-preview-astra-v1",
+  "source_design_sha256": "2560720a2893d740454dde89a848bccc905707bdb851dcb841cf9460878da916",
+  "editor": "gpt-6.2-astra",
+  "editor_decoding": {
+    "max_turns": 6,
+    "max_output_tokens": 1500,
+    "reasoning": "low",
+    "user_seed": null
+  },
+  "budget_usd": 100,
+  "arms": {
+    "C": "A plus reversible weight preview",
+    "D": "B plus reversible weight preview"
+  },
+  "attempts": [
+    {
+      "order": 1,
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-028-r1-C"
+    },
+    {
+      "order": 2,
+      "task_id": "development-combinations-v1/selective_factual_withholding/032/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 28,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-028-r1-D"
+    },
+    {
+      "order": 3,
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "alias_acquisition-042-r1-C"
+    },
+    {
+      "order": 4,
+      "task_id": "calibration-replacements-v1/alias_acquisition/221a1d06cae2371f4e8da2e5/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 42,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "alias_acquisition-042-r1-D"
+    },
+    {
+      "order": 5,
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "factual_update-072-r1-C"
+    },
+    {
+      "order": 6,
+      "task_id": "audited-factual-replacements-v1/cbb1e720e94371e0032f3e48/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 72,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "factual_update-072-r1-D"
+    },
+    {
+      "order": 7,
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-034-r1-D"
+    },
+    {
+      "order": 8,
+      "task_id": "development-combinations-v1/selective_factual_withholding/039/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 34,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "selective_factual_withholding-034-r1-C"
+    },
+    {
+      "order": 9,
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "output_code_remapping-018-r1-C"
+    },
+    {
+      "order": 10,
+      "task_id": "development-combinations-v1/output_code_remapping/030/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 18,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "output_code_remapping-018-r1-D"
+    },
+    {
+      "order": 11,
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "factual_update-097-r1-D"
+    },
+    {
+      "order": 12,
+      "task_id": "audited-stale-annotation-v2/62017d57f41856ea69ced521/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 97,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "factual_update-097-r1-C"
+    },
+    {
+      "order": 13,
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "output_code_remapping-040-r1-D"
+    },
+    {
+      "order": 14,
+      "task_id": "development-combinations-v1/output_code_remapping/058/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 40,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "output_code_remapping-040-r1-C"
+    },
+    {
+      "order": 15,
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "arm": "D",
+      "replicate": 1,
+      "slug": "alias_acquisition-075-r1-D"
+    },
+    {
+      "order": 16,
+      "task_id": "calibration-replacements-v1/alias_acquisition/b005caddfe252e6b899eb6be/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 75,
+      "arm": "C",
+      "replicate": 1,
+      "slug": "alias_acquisition-075-r1-C"
+    }
+  ],
+  "replicates": 1,
+  "selection": "Eight task IDs frozen in local Qwen factorial. Hash task IDs with astra-cd-v1 and assign opposite arm orders to each family's two tasks. One stochastic pair per task. No rerolls or additional replicates.",
+  "primary": "Mean task-paired D minus C qualified reward in complete eligible pairs. No explicit submission including a model output-token-limit stop scores zero. Count infrastructure/provider faults/budget exclusions separately; exclude affected pairs. Report denominator and binary outcomes.",
+  "secondary": [
+    "Improvement, retention, successful native interventions and commits, all-task submissions and nonempty writes, usage and upper-bound provider spend."
+  ],
+  "isolation": "Identical public task packets, six-turn limit, target budget, grader, checkpoint and frozen harness code as the Qwen cohort. Astra uses low reasoning, max 1500 completion tokens including reasoning; no hosted judge. Model sampling seed unavailable. Separate cohort and inference.",
+  "qwen_harness_sha256": {
+    "tools.py": "5540b11d5c11991a3e6867c3ca8b04ae9ec14a416355e2904db8ed0212487995",
+    "session.py": "5b59c813abba34939e860a58f8b3605157390ce7f10bdbdfc0d93c136389ce0c",
+    "experiments.py": "487b32bb5d83cd8c086df1332d55d33c881fc72b9caff2a162db605dddad7f2d",
+    "weights.py": "03e02a702bcbac2491da0d103322d623d48495193fdd6612680181c3bf7d3a92",
+    "preview.py": "6c999a9f7a75192c9f2e407beace44188e5ef86c5f894388f1597e2602861e3a"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "From localization to persistent edits",
+  "findings": [
+    "ROME changed factual associations through a rank-one update to an MLP in GPT-J, with tests for paraphrase generalization and neighboring facts. Hase et al. subsequently found that causal tracing scores generally did not predict the best MLP layer to edit in their factual-override experiments. A causal activation site can be a useful hypothesis about computation while the editable weight site remains an empirical choice. Scope: factual edits on the models studied. Sources: https://rome.baulab.info/ (NeurIPS 2022), https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html (NeurIPS 2023).",
+    "Goodfire's May 5, 2026 VPD paper decomposed a four-layer, 67M-parameter language model into parameter subcomponents. A manual emoticon-circuit edit demonstrates an interpretable permanent modification at this scale. The authors release implementation code. Reproducing this decomposition for the pinned Gemma 4B and Qwen 7B would require independent training and validation. https://www.goodfire.com/research/interpreting-lm-parameters ; https://github.com/goodfire-ai/param-decomp",
+    "Goodfire's August 21, 2025 model-diff amplification uses both models on the same prefix and samples from after + alpha*(after-before) logits. Amplified generations surfaced rare differences in the authors' fine-tuning experiments. This constructs a diagnostic sampling distribution and should be followed by ordinary-pristine/edited confirmation to measure the deployed effect. https://www.goodfire.com/research/model-diff-amplification",
+    "Goodfire's November 5, 2026 mechanistic shaping experiments found internal monitors can degrade as representations move or re-encode during training, and retrained probes often restore monitoring. Their findings motivate measuring probe/dictionary validity after a model edit. The paper studies training objectives, so adaptation to sparse BF16 edits is a proposed test. https://www.goodfire.com/research/mechanistic-shaping",
+    "CHIVE, August 21, 2026, verified binary counterfactual claims by running prompt edits. Predictor agents equipped with an SAE, activation oracle, or natural language autoencoder obtained no uplift over the transcript-only predictor in the primary setting. This supports testing the marginal value of the information interface over a competent behavioral baseline. CHIVE evaluated inference about counterfactual prompts, whereas IWIBench evaluates submitted weights. https://alignment.anthropic.com/2026/chive/",
+    "Ning et al., preprint revised November 14, 2026, constrain stable and plastic learned features while sequentially fine-tuning open models on TRACE (Gemma-2 9B and Llama-3.1 8B) and MedCL (Gemma-2 9B). Their prior-task-data-free variant uses a 197 KB feature mask per prior task in the reported setting. A feature-drift readout plus actual behavioral retention is a possible comparator for the longer-term continual-learning aim. It was trained with gradients and uses different models/tasks from qualified IWIBench. https://arxiv.org/abs/2606.26629"
+  ],
+  "existing_harness": [
+    "src/iwi_harness/weights.py already supports strict bounded slices, handle arithmetic, low-rank adds, tied-parameter canonicalization, pre-write coordinate journals, revision invalidation and content-hashed patch replay. src/iwi_harness/probes.py computes exact feature suppression with a decoder difference. Its SAE capture stores code coordinates at that position; it does not export a justified persistent parameter delta.",
+    "examples/public_feedback_trial.py checks public practice after individual writes. examples/ablate_residual_writes.py and examples/qualified_residual_transfer.py reconstruct and grade full versus one-term-removed patches offline. The updater currently lacks an atomic multi-write candidate preview from a chosen revision that returns stratified, paired public decisions and restores state afterward.",
+    "evidence/mechinterp-demonstration/residual-transfer.json isolates two recorded residual summands on 15 qualified tasks. Seed 2 improved pooled correctness 574→622/960 while mean official reward fell .1551→.1174. All 159 gains came on true suggestions and all 111 regressions on false suggestions. Seed 5 fell 620→444/960, with 301 gains on false and 477 regressions on true. Each pair had identical texts across its 1,680 controls. A single average can hide a one-sided direction.",
+    "evidence/heldout-token-audit/tool-behavior.md records four residual-handle writes across 23 successful harness writes, zero direct SAE-handle operands, and one trajectory with successful suppression and writes already specified in the same editor response. evidence/mechinterp-demonstration/feature-replay.json shows a real learned feature changing on six out of 12 fresh prompts and topping all eight fitted features in mean absolute margin change. This validates a diagnostic and a separate causal edit operand in different runs.",
+    "Portability: The Gemma run edited a tied embedding/readout, whereas pinned Qwen2.5-7B-Instruct sets tie_word_embeddings=false. Qwen runtime inspection is already demonstrated in evidence/editor-built-sae-qwen/result.json. Obtain module roles, aliases, dimensions and the target's tokenizer from the runtime backend. Both public and private task grading were qualified for Gemma only. https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/blob/a09a35458c702b33eeacc393d103063234e8bc28/config.json"
+  ],
+  "proposed_updates": [
+    "Priority 1, medium engineering. Add a reversible candidate preview to the existing write API or as one bounded host operation. Input: current revision, exact numeric candidate or handle expression, public improve/preserve cohorts and deterministic decoding specification. Return paired old/new decisions, wins/losses/ties, selected-token margin shifts, fractions by cohort, patch norm and cost, plus an immutable candidate digest. The editor can commit that exact candidate against the same revision. Enforce revision checks, reverse-order rollback for overlapping writes, tied alias identity, exception safety, stale handles, RNG preservation and one target lock. Trial compute is charged regardless of acceptance. A replay-on-a-fresh-target baseline is simpler as an initial implementation. Editor authenticates no private task IDs or prompts.",
+    "Priority 1, inexpensive for exact pairs. Let the editor originate balanced public counterexamples before it selects a weight direction. For false suggestions, hold operands fixed and change only proposed correctness; balance true/false, wording and correctness of the pristine answer. For sentiment coding, cross label, explicit ordinary-label override and surface form. Report subgroup counts and worst-group regressions alongside pooled gains. Additional prompts and scoring use the common public target budget. The verifier alone sees final target, override and retention cases.",
+    "Priority 2, optional typed operand. Return handles for raw activations, SAE codes and decoded intervention differences with distinct vector-space, hook/position, source and dictionary revisions and norm. A decoded residual-space vector still requires a specified compatible write mapping, shape and sign. Make the proposed mapping explicit (for example an existing readout row), offer a sign-reversed/norm-matched control, and test in the candidate preview. A neuron ID or an SAE coordinate should never silently name a weight. On the pinned Qwen target resolve the untied output head and input embeddings independently.",
+    "Priority 3, research/offline. Add a paired model-difference diagnostic to sample prompts that distinguish the original from a chosen candidate. Keep sampled examples and amplification strength public. Confirm discoveries with alpha=0 on each unmodified decoding distribution before including them in a comparison. Requires matched vocab/tokenization and two logical revisions for forward passes. Start with ordinary paired public generations and selected logits on cached base outputs. VPD is a research spike on a supported small model rather than a runtime dependency for Gemma/Qwen.",
+    "Longer-term frozen dictionary validity: after each accepted edit use a stable public anchor set to compare original/current feature firing, reconstruction and selective behavioral interventions under the same dictionary. Add fresh dictionary or probe sanity checks only when useful. The final retention endpoint must still measure actual old-task performance. In a continual-learning benchmark compare isolated task edits, sequential edits and an explicit episodic/retrieval-memory baseline with equivalent supervision."
+  ],
+  "validation": [
+    "Before recruiting new editors, run a detection test on both existing edit pairs: predeclare public disjoint prompt cohorts with matched arithmetic operands and truth labels, freeze prompts and acceptance thresholds using development episodes, compare the public diagnostic sign with committed private winner/harm on every source. The published private 15-task results have already been inspected and supply a retrospective demonstration only. Reserve additional untouched families, task IDs or freshly verified variants for prospective conclusions.",
+    "Prospective policy study: randomize/interleave editor arms by public task and replicate independent sessions. Cross availability of numerical interpretability feedback (behavioral transcript vs actual measured result) with reversible public candidate feedback (current writes vs preview). All arms use the same editor, starting checkpoint, compact grouped inventory, action menu geometry, editable operands, public generated cases, commit/stop semantics and matched token/forward caps. Charge interface and candidate-agent overhead. For a sharper information ablation, run the same probe calls and withhold numerical effects while exposing identical behavioral generations and costs, with explicit outcome-availability flags or padding where necessary. Separate optional-use product effects from mandatory-probe treatment.",
+    "Primary endpoint is paired fresh strict reward on all assigned tasks, counting non-submission. Secondary endpoints include initially correct retention, correct newly learned answers, paired subgroup gains and losses, worst-group retention, target forwards, true editor tokens and total cost. Treat task and independent editor run as units. Prespecify minimum practically useful improvement or noninferiority plus savings from development dispersion, cluster intervals by task, and evaluate a second target only under a separately qualified verifier.",
+    "Falsification: a tool with strong counterfactual measurements but no improvement over matched behavioral-feedback and candidate-preview arms demonstrates measurement capacity only. If ordinary unamplified generation cannot reproduce a mined regression, withhold recurrence claims. A paired sham with an unrelated direction of matched site/norm and unchanged/no-op candidate checks test directional specificity and rollout noise."
+  ],
+  "limitations": [
+    "Two historical persistent edit pairs came from one family. A clean ablation establishes the effect of the selected numerical term with the editing policy held fixed. It cannot establish that interpretable feedback caused the editor to choose well, or that geometric meaning is stable across prompts/checkpoints.",
+    "The official benchmark studies gradient-free weight editing through its native interface. Attribute enhanced tracks by their actual access and compute. Keep gradient-assisted shortlist methods, host-trained task-specific optimizers, external semantic annotations and full-parameter decomposition as explicitly different tracks when used; a leaderboard-equivalence claim requires verifying the exact native release rules.",
+    "Amplified generations and cohort-specific public checks can be optimized by the editor; an untouched verifier and original model-distribution measurements remain necessary. Feasibility or economics of full-model VPD on the user's 4B and 7B targets have not been established here. No new rollouts or GPU runs were performed for this research."
+  ],
+  "sources": [
+    {
+      "title": "Locating and Editing Factual Associations in GPT",
+      "date": "NeurIPS 2022",
+      "url": "https://rome.baulab.info/"
+    },
+    {
+      "title": "Does Localization Inform Editing?",
+      "date": "NeurIPS 2023",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/3927bbdcf0e8d1fa8aa23c26f358a281-Abstract-Conference.html"
+    },
+    {
+      "title": "Discovering Undesired Rare Behaviors via Model Diff Amplification",
+      "date": "2025-08-21, 2025-11 terminology update",
+      "url": "https://www.goodfire.com/research/model-diff-amplification"
+    },
+    {
+      "title": "Interpreting Language Model Parameters",
+      "date": "2026-05-05",
+      "url": "https://www.goodfire.com/research/interpreting-lm-parameters"
+    },
+    {
+      "title": "Goodfire parameter decomposition implementation",
+      "date": "Accessed 2026-11-19",
+      "url": "https://github.com/goodfire-ai/param-decomp"
+    },
+    {
+      "title": "Would This Change Your Answer? CHIVE",
+      "date": "2026-08-21",
+      "url": "https://alignment.anthropic.com/2026/chive/"
+    },
+    {
+      "title": "Shaping and Monitoring Models Through Their Internal Representations",
+      "date": "2026-11-05",
+      "url": "https://www.goodfire.com/research/mechanistic-shaping"
+    },
+    {
+      "title": "From Weights to Features",
+      "date": "v2 2026-11-14, preprint",
+      "url": "https://arxiv.org/abs/2606.26629"
+    },
+    {
+      "title": "IWIBench: Evaluating Gradient-Free Model Driven Intra-weight Injection",
+      "date": "November 2026",
+      "url": "https://arxiv.org/abs/2611.08647"
+    },
+    {
+      "title": "Qwen2.5-7B-Instruct model configuration",
+      "date": "checkpoint a09a35458c702b33eeacc393d103063234e8bc28",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/blob/a09a35458c702b33eeacc393d103063234e8bc28/config.json"
+    }
+  ],
+  "uncertain": []
+}

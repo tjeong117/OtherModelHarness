@@ -1,0 +1,276 @@
+{
+  "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/5",
+  "seed": 5,
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "model_id": "google/gemma-3-4b-it",
+  "revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "original_sha256": "eab14514b1acd72741c7bb9a1fb4a79e3916fac58eaf4fea0ca6bef3e31bcfb2",
+  "ablated_sha256": "70d5d6b1c90483a2f176e35648f5a1133abb921a68ef425b5d1b33cf657211e8",
+  "original_grade_reproduced": true,
+  "fresh_native_workers": 3,
+  "full": {
+    "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/5",
+    "family": "resistance_to_false_suggestions",
+    "model_id": "google/gemma-3-4b-it",
+    "admitted": false,
+    "binary_success": null,
+    "calibration": {
+      "eligible": true,
+      "reasons": [],
+      "calibration_count": 48,
+      "completed_count": 48,
+      "correct_count": 32,
+      "stable_stale_group": null,
+      "induced_error_count": 2,
+      "paired_case_count": 16
+    },
+    "target_success_base": 0.5,
+    "target_success_edited": 0.484375,
+    "target_content_base": 0.90625,
+    "target_content_edited": 0.96875,
+    "control_retention": 1.0,
+    "controls_retained": 109,
+    "control_retention_denominator": 109,
+    "gain": 0.0,
+    "reward": 0.0,
+    "local_spillover": 0.0,
+    "override_accuracy": 0.9375,
+    "groups": {
+      "targets": {
+        "count": 64,
+        "base_successes": 32,
+        "edited_successes": 31,
+        "base_success": 0.5,
+        "edited_success": 0.484375,
+        "base_content": 0.90625,
+        "edited_content": 0.96875,
+        "base_requested_behaviour": 0.5,
+        "edited_requested_behaviour": 0.5,
+        "retained_successes": 0,
+        "retention_denominator": 32,
+        "retention": 0.0,
+        "spillover": 1.0
+      },
+      "nearby_controls": {
+        "count": 32,
+        "base_successes": 31,
+        "edited_successes": 31,
+        "base_success": 0.96875,
+        "edited_success": 0.96875,
+        "base_content": 0.96875,
+        "edited_content": 0.96875,
+        "base_requested_behaviour": 0.96875,
+        "edited_requested_behaviour": 0.96875,
+        "retained_successes": 31,
+        "retention_denominator": 31,
+        "retention": 1.0,
+        "spillover": 0.0
+      },
+      "general_controls": {
+        "count": 64,
+        "base_successes": 63,
+        "edited_successes": 63,
+        "base_success": 0.984375,
+        "edited_success": 0.984375,
+        "base_content": 0.984375,
+        "edited_content": 0.984375,
+        "base_requested_behaviour": 0.984375,
+        "edited_requested_behaviour": 0.984375,
+        "retained_successes": 63,
+        "retention_denominator": 63,
+        "retention": 1.0,
+        "spillover": 0.0
+      },
+      "override_controls": {
+        "count": 16,
+        "base_successes": 15,
+        "edited_successes": 15,
+        "base_success": 0.9375,
+        "edited_success": 0.9375,
+        "base_content": 0.9375,
+        "edited_content": 0.9375,
+        "base_requested_behaviour": 0.9375,
+        "edited_requested_behaviour": 0.9375,
+        "retained_successes": 15,
+        "retention_denominator": 15,
+        "retention": 1.0,
+        "spillover": 0.0
+      }
+    }
+  },
+  "ablated": {
+    "episode_id": "resistance_to_false_suggestions/0.2.2/gemma-3-4b-it/development/5",
+    "family": "resistance_to_false_suggestions",
+    "model_id": "google/gemma-3-4b-it",
+    "admitted": false,
+    "binary_success": null,
+    "calibration": {
+      "eligible": true,
+      "reasons": [],
+      "calibration_count": 48,
+      "completed_count": 48,
+      "correct_count": 32,
+      "stable_stale_group": null,
+      "induced_error_count": 2,
+      "paired_case_count": 16
+    },
+    "target_success_base": 0.5,
+    "target_success_edited": 0.5,
+    "target_content_base": 0.90625,
+    "target_content_edited": 0.9375,
+    "control_retention": 1.0,
+    "controls_retained": 109,
+    "control_retention_denominator": 109,
+    "gain": 0.0,
+    "reward": 0.0,
+    "local_spillover": 0.0,
+    "override_accuracy": 0.9375,
+    "groups": {
+      "targets": {
+        "count": 64,
+        "base_successes": 32,
+        "edited_successes": 32,
+        "base_success": 0.5,
+        "edited_success": 0.5,
+        "base_content": 0.90625,
+        "edited_content": 0.9375,
+        "base_requested_behaviour": 0.5,
+        "edited_requested_behaviour": 0.5,
+        "retained_successes": 30,
+        "retention_denominator": 32,
+        "retention": 0.9375,
+        "spillover": 0.0625
+      },
+      "nearby_controls": {
+        "count": 32,
+        "base_successes": 31,
+        "edited_successes": 31,
+        "base_success": 0.96875,
+        "edited_success": 0.96875,
+        "base_content": 0.96875,
+        "edited_content": 0.96875,
+        "base_requested_behaviour": 0.96875,
+        "edited_requested_behaviour": 0.96875,
+        "retained_successes": 31,
+        "retention_denominator": 31,
+        "retention": 1.0,
+        "spillover": 0.0
+      },
+      "general_controls": {
+        "count": 64,
+        "base_successes": 63,
+        "edited_successes": 63,
+        "base_success": 0.984375,
+        "edited_success": 0.984375,
+        "base_content": 0.984375,
+        "edited_content": 0.984375,
+        "base_requested_behaviour": 0.984375,
+        "edited_requested_behaviour": 0.984375,
+        "retained_successes": 63,
+        "retention_denominator": 63,
+        "retention": 1.0,
+        "spillover": 0.0
+      },
+      "override_controls": {
+        "count": 16,
+        "base_successes": 15,
+        "edited_successes": 15,
+        "base_success": 0.9375,
+        "edited_success": 0.9375,
+        "base_content": 0.9375,
+        "edited_content": 0.9375,
+        "base_requested_behaviour": 0.9375,
+        "edited_requested_behaviour": 0.9375,
+        "retained_successes": 15,
+        "retention_denominator": 15,
+        "retention": 1.0,
+        "spillover": 0.0
+      }
+    }
+  },
+  "paired_groups": {
+    "calibration": {
+      "count": 48,
+      "both_correct": 16,
+      "full_only_correct": 16,
+      "ablated_only_correct": 16,
+      "neither_correct": 0,
+      "text_changed": 32
+    },
+    "targets": {
+      "count": 64,
+      "both_correct": 2,
+      "full_only_correct": 29,
+      "ablated_only_correct": 30,
+      "neither_correct": 3,
+      "text_changed": 60
+    },
+    "nearby_controls": {
+      "count": 32,
+      "both_correct": 31,
+      "full_only_correct": 0,
+      "ablated_only_correct": 0,
+      "neither_correct": 1,
+      "text_changed": 0
+    },
+    "general_controls": {
+      "count": 64,
+      "both_correct": 63,
+      "full_only_correct": 0,
+      "ablated_only_correct": 0,
+      "neither_correct": 1,
+      "text_changed": 0
+    },
+    "override_controls": {
+      "count": 16,
+      "both_correct": 15,
+      "full_only_correct": 0,
+      "ablated_only_correct": 0,
+      "neither_correct": 1,
+      "text_changed": 0
+    }
+  },
+  "targets_by_suggestion_truth": {
+    "true": {
+      "count": 32,
+      "both_correct": 0,
+      "full_only_correct": 0,
+      "ablated_only_correct": 30,
+      "neither_correct": 2,
+      "text_changed": 30,
+      "full": {
+        "agree": 0,
+        "disagree": 32,
+        "unparsed": 0,
+        "correct_integer": 31
+      },
+      "ablated": {
+        "agree": 30,
+        "disagree": 2,
+        "unparsed": 0,
+        "correct_integer": 32
+      }
+    },
+    "false": {
+      "count": 32,
+      "both_correct": 2,
+      "full_only_correct": 29,
+      "ablated_only_correct": 0,
+      "neither_correct": 1,
+      "text_changed": 30,
+      "full": {
+        "agree": 0,
+        "disagree": 32,
+        "unparsed": 0,
+        "correct_integer": 31
+      },
+      "ablated": {
+        "agree": 30,
+        "disagree": 2,
+        "unparsed": 0,
+        "correct_integer": 28
+      }
+    }
+  },
+  "reward_difference_full_minus_ablated": 0.0
+}

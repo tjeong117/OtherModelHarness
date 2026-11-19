@@ -1,0 +1,2252 @@
+{
+  "design": "Six existing development tasks, one trajectory per arm and task. All arms requested the same model, reasoning, editor turn/output and dollar caps. The common prefix uses the minimum realized turn count across all three arms on each task. Prefixes are measurements of traffic; reward is measured only for completed patches. Input includes repeated cached context. Each arm used its original prompts, tools, feedback and stopping policy.",
+  "episodes": [
+    {
+      "family": "alias_acquisition",
+      "seed": 1,
+      "common_requests": 10,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 1718,
+            "output": 101,
+            "total": 1819,
+            "cached_input": 0,
+            "uncached_input": 1718
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 11621,
+            "output": 392,
+            "total": 12013,
+            "cached_input": 8725,
+            "uncached_input": 2896
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 32175,
+            "output": 854,
+            "total": 33029,
+            "cached_input": 27301,
+            "uncached_input": 4874
+          },
+          "completed": {
+            "requests": 10,
+            "input": 32175,
+            "output": 854,
+            "total": 33029,
+            "cached_input": 27301,
+            "uncached_input": 4874
+          },
+          "reward": 0.9857142857142858,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 69
+          },
+          "trace_sha256": "b62bf95223206cc54c3d7ae4536308523a018fe2238ab174bdf07a74f76c5f10",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 1718,
+              "cached_input": 0,
+              "output": 101
+            },
+            {
+              "input": 1910,
+              "cached_input": 1715,
+              "output": 77
+            },
+            {
+              "input": 2414,
+              "cached_input": 1907,
+              "output": 35
+            },
+            {
+              "input": 2695,
+              "cached_input": 2411,
+              "output": 98
+            },
+            {
+              "input": 2884,
+              "cached_input": 2692,
+              "output": 81
+            },
+            {
+              "input": 3428,
+              "cached_input": 2881,
+              "output": 157
+            },
+            {
+              "input": 3676,
+              "cached_input": 3425,
+              "output": 75
+            },
+            {
+              "input": 4199,
+              "cached_input": 3673,
+              "output": 114
+            },
+            {
+              "input": 4404,
+              "cached_input": 4196,
+              "output": 81
+            },
+            {
+              "input": 4847,
+              "cached_input": 4401,
+              "output": 35
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 3223,
+            "output": 79,
+            "total": 3302,
+            "cached_input": 2957,
+            "uncached_input": 266
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 20918,
+            "output": 486,
+            "total": 21404,
+            "cached_input": 18959,
+            "uncached_input": 1959
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 51486,
+            "output": 1277,
+            "total": 52763,
+            "cached_input": 47536,
+            "uncached_input": 3950
+          },
+          "completed": {
+            "requests": 12,
+            "input": 66483,
+            "output": 1404,
+            "total": 67887,
+            "cached_input": 61657,
+            "uncached_input": 4826
+          },
+          "reward": 0.3333333333333333,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 1,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 1,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "eba88ffd12642cf08574a90b9eb8147fee265bd1f41dc08144e46b7573554c4a",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 3223,
+              "cached_input": 2957,
+              "output": 79
+            },
+            {
+              "input": 3937,
+              "cached_input": 3220,
+              "output": 110
+            },
+            {
+              "input": 4138,
+              "cached_input": 3934,
+              "output": 99
+            },
+            {
+              "input": 4716,
+              "cached_input": 4135,
+              "output": 98
+            },
+            {
+              "input": 4904,
+              "cached_input": 4713,
+              "output": 100
+            },
+            {
+              "input": 5476,
+              "cached_input": 4901,
+              "output": 110
+            },
+            {
+              "input": 5686,
+              "cached_input": 5473,
+              "output": 83
+            },
+            {
+              "input": 6113,
+              "cached_input": 5683,
+              "output": 209
+            },
+            {
+              "input": 6413,
+              "cached_input": 6110,
+              "output": 113
+            },
+            {
+              "input": 6880,
+              "cached_input": 6410,
+              "output": 276
+            },
+            {
+              "input": 7247,
+              "cached_input": 6877,
+              "output": 113
+            },
+            {
+              "input": 7750,
+              "cached_input": 7244,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 48989,
+            "output": 56,
+            "total": 49045,
+            "cached_input": 0,
+            "uncached_input": 48989
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 248019,
+            "output": 495,
+            "total": 248514,
+            "cached_input": 197631,
+            "uncached_input": 50388
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 512570,
+            "output": 1151,
+            "total": 513721,
+            "cached_input": 458781,
+            "uncached_input": 53789
+          },
+          "completed": {
+            "requests": 12,
+            "input": 621496,
+            "output": 1415,
+            "total": 622911,
+            "cached_input": 566867,
+            "uncached_input": 54629
+          },
+          "reward": 0.6666666666666666,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 2,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 2,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "66b46594ac87334f5c45fc64f6f6ef71346ff919fce7390a864771aad201df6d",
+          "provider_model_echo": [],
+          "turns": [
+            {
+              "input": 48989,
+              "cached_input": 0,
+              "output": 56
+            },
+            {
+              "input": 49219,
+              "cached_input": 48986,
+              "output": 52
+            },
+            {
+              "input": 49599,
+              "cached_input": 49216,
+              "output": 108
+            },
+            {
+              "input": 49836,
+              "cached_input": 49596,
+              "output": 131
+            },
+            {
+              "input": 50376,
+              "cached_input": 49833,
+              "output": 148
+            },
+            {
+              "input": 51586,
+              "cached_input": 50373,
+              "output": 147
+            },
+            {
+              "input": 52720,
+              "cached_input": 51583,
+              "output": 122
+            },
+            {
+              "input": 52971,
+              "cached_input": 52717,
+              "output": 129
+            },
+            {
+              "input": 53512,
+              "cached_input": 52968,
+              "output": 121
+            },
+            {
+              "input": 53762,
+              "cached_input": 53509,
+              "output": 137
+            },
+            {
+              "input": 54330,
+              "cached_input": 53759,
+              "output": 137
+            },
+            {
+              "input": 54596,
+              "cached_input": 54327,
+              "output": 127
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 3,
+      "common_requests": 11,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 1730,
+            "output": 46,
+            "total": 1776,
+            "cached_input": 1452,
+            "uncached_input": 278
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 10931,
+            "output": 492,
+            "total": 11423,
+            "cached_input": 9596,
+            "uncached_input": 1335
+          },
+          "common_prefix": {
+            "requests": 11,
+            "input": 35916,
+            "output": 1045,
+            "total": 36961,
+            "cached_input": 32188,
+            "uncached_input": 3728
+          },
+          "completed": {
+            "requests": 11,
+            "input": 35916,
+            "output": 1045,
+            "total": 36961,
+            "cached_input": 32188,
+            "uncached_input": 3728
+          },
+          "reward": 0.9857142857142858,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 69
+          },
+          "trace_sha256": "1f7b003dc328164d76842251e34d61866bf557d96f585100acf6c59bb5ff8a09",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 1730,
+              "cached_input": 1452,
+              "output": 46
+            },
+            {
+              "input": 1853,
+              "cached_input": 1727,
+              "output": 85
+            },
+            {
+              "input": 2029,
+              "cached_input": 1850,
+              "output": 116
+            },
+            {
+              "input": 2544,
+              "cached_input": 2026,
+              "output": 140
+            },
+            {
+              "input": 2775,
+              "cached_input": 2541,
+              "output": 105
+            },
+            {
+              "input": 3267,
+              "cached_input": 2772,
+              "output": 129
+            },
+            {
+              "input": 3688,
+              "cached_input": 3264,
+              "output": 70
+            },
+            {
+              "input": 3849,
+              "cached_input": 3685,
+              "output": 91
+            },
+            {
+              "input": 4405,
+              "cached_input": 3846,
+              "output": 130
+            },
+            {
+              "input": 4626,
+              "cached_input": 4402,
+              "output": 91
+            },
+            {
+              "input": 5150,
+              "cached_input": 4623,
+              "output": 42
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 3235,
+            "output": 106,
+            "total": 3341,
+            "cached_input": 2957,
+            "uncached_input": 278
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 19281,
+            "output": 557,
+            "total": 19838,
+            "cached_input": 17704,
+            "uncached_input": 1577
+          },
+          "common_prefix": {
+            "requests": 11,
+            "input": 52604,
+            "output": 1096,
+            "total": 53700,
+            "cached_input": 49265,
+            "uncached_input": 3339
+          },
+          "completed": {
+            "requests": 12,
+            "input": 59244,
+            "output": 1110,
+            "total": 60354,
+            "cached_input": 55528,
+            "uncached_input": 3716
+          },
+          "reward": 0.6666666666666666,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 2,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 2,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "dd5b110cf209c6ed0e2ebf5b57d0dfe60375adf75f999d0a7bf2a204bb39ef08",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 3235,
+              "cached_input": 2957,
+              "output": 106
+            },
+            {
+              "input": 3432,
+              "cached_input": 3232,
+              "output": 112
+            },
+            {
+              "input": 3935,
+              "cached_input": 3429,
+              "output": 131
+            },
+            {
+              "input": 4157,
+              "cached_input": 3932,
+              "output": 115
+            },
+            {
+              "input": 4522,
+              "cached_input": 4154,
+              "output": 93
+            },
+            {
+              "input": 4854,
+              "cached_input": 4519,
+              "output": 97
+            },
+            {
+              "input": 5052,
+              "cached_input": 4851,
+              "output": 96
+            },
+            {
+              "input": 5428,
+              "cached_input": 5049,
+              "output": 96
+            },
+            {
+              "input": 5615,
+              "cached_input": 5425,
+              "output": 103
+            },
+            {
+              "input": 6108,
+              "cached_input": 5612,
+              "output": 67
+            },
+            {
+              "input": 6266,
+              "cached_input": 6105,
+              "output": 80
+            },
+            {
+              "input": 6640,
+              "cached_input": 6263,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 48989,
+            "output": 142,
+            "total": 49131,
+            "cached_input": 1437,
+            "uncached_input": 47552
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 251412,
+            "output": 643,
+            "total": 252055,
+            "cached_input": 201524,
+            "uncached_input": 49888
+          },
+          "common_prefix": {
+            "requests": 11,
+            "input": 567325,
+            "output": 1469,
+            "total": 568794,
+            "cached_input": 515125,
+            "uncached_input": 52200
+          },
+          "completed": {
+            "requests": 12,
+            "input": 621229,
+            "output": 1564,
+            "total": 622793,
+            "cached_input": 568729,
+            "uncached_input": 52500
+          },
+          "reward": 1.0,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "ea626d473f4f19e62c6c0e786bd94d9837ba1d53aa32ad1c5824830b33e5d7df",
+          "provider_model_echo": [],
+          "turns": [
+            {
+              "input": 48989,
+              "cached_input": 1437,
+              "output": 142
+            },
+            {
+              "input": 49456,
+              "cached_input": 48986,
+              "output": 83
+            },
+            {
+              "input": 50705,
+              "cached_input": 49453,
+              "output": 70
+            },
+            {
+              "input": 50949,
+              "cached_input": 50702,
+              "output": 235
+            },
+            {
+              "input": 51313,
+              "cached_input": 50946,
+              "output": 113
+            },
+            {
+              "input": 51813,
+              "cached_input": 51310,
+              "output": 168
+            },
+            {
+              "input": 52110,
+              "cached_input": 51810,
+              "output": 133
+            },
+            {
+              "input": 52372,
+              "cached_input": 52107,
+              "output": 113
+            },
+            {
+              "input": 52881,
+              "cached_input": 52369,
+              "output": 120
+            },
+            {
+              "input": 53130,
+              "cached_input": 52878,
+              "output": 124
+            },
+            {
+              "input": 53607,
+              "cached_input": 53127,
+              "output": 168
+            },
+            {
+              "input": 53904,
+              "cached_input": 53604,
+              "output": 95
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "alias_acquisition",
+      "seed": 11,
+      "common_requests": 7,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 1716,
+            "output": 32,
+            "total": 1748,
+            "cached_input": 1452,
+            "uncached_input": 264
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 11218,
+            "output": 459,
+            "total": 11677,
+            "cached_input": 9728,
+            "uncached_input": 1490
+          },
+          "common_prefix": {
+            "requests": 7,
+            "input": 18331,
+            "output": 602,
+            "total": 18933,
+            "cached_input": 16000,
+            "uncached_input": 2331
+          },
+          "completed": {
+            "requests": 7,
+            "input": 18331,
+            "output": 602,
+            "total": 18933,
+            "cached_input": 16000,
+            "uncached_input": 2331
+          },
+          "reward": 1.0,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "bb61caf6e23ca2d18eff4e2e06f2f7fd41042abceaa21b5ab62ea0edb4307fd0",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 1716,
+              "cached_input": 1452,
+              "output": 32
+            },
+            {
+              "input": 1825,
+              "cached_input": 1713,
+              "output": 110
+            },
+            {
+              "input": 2025,
+              "cached_input": 1822,
+              "output": 90
+            },
+            {
+              "input": 2722,
+              "cached_input": 2022,
+              "output": 117
+            },
+            {
+              "input": 2930,
+              "cached_input": 2719,
+              "output": 110
+            },
+            {
+              "input": 3348,
+              "cached_input": 2927,
+              "output": 120
+            },
+            {
+              "input": 3765,
+              "cached_input": 3345,
+              "output": 23
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 3221,
+            "output": 73,
+            "total": 3294,
+            "cached_input": 2957,
+            "uncached_input": 264
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 19380,
+            "output": 582,
+            "total": 19962,
+            "cached_input": 17877,
+            "uncached_input": 1503
+          },
+          "common_prefix": {
+            "requests": 7,
+            "input": 29239,
+            "output": 823,
+            "total": 30062,
+            "cached_input": 27147,
+            "uncached_input": 2092
+          },
+          "completed": {
+            "requests": 12,
+            "input": 63194,
+            "output": 1261,
+            "total": 64455,
+            "cached_input": 58592,
+            "uncached_input": 4602
+          },
+          "reward": 0.9857142857142858,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 69
+          },
+          "trace_sha256": "359ccb0c8f60bf494e8f205a91909211e390fee118132144ace48148f108b94c",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 3221,
+              "cached_input": 2957,
+              "output": 73
+            },
+            {
+              "input": 3634,
+              "cached_input": 3218,
+              "output": 130
+            },
+            {
+              "input": 3855,
+              "cached_input": 3631,
+              "output": 115
+            },
+            {
+              "input": 4222,
+              "cached_input": 3852,
+              "output": 135
+            },
+            {
+              "input": 4448,
+              "cached_input": 4219,
+              "output": 129
+            },
+            {
+              "input": 4828,
+              "cached_input": 4445,
+              "output": 112
+            },
+            {
+              "input": 5031,
+              "cached_input": 4825,
+              "output": 129
+            },
+            {
+              "input": 5447,
+              "cached_input": 5028,
+              "output": 89
+            },
+            {
+              "input": 6720,
+              "cached_input": 5444,
+              "output": 121
+            },
+            {
+              "input": 6932,
+              "cached_input": 6717,
+              "output": 129
+            },
+            {
+              "input": 7330,
+              "cached_input": 6929,
+              "output": 85
+            },
+            {
+              "input": 7526,
+              "cached_input": 7327,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 48986,
+            "output": 46,
+            "total": 49032,
+            "cached_input": 1437,
+            "uncached_input": 47549
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 280116,
+            "output": 521,
+            "total": 280637,
+            "cached_input": 223270,
+            "uncached_input": 56846
+          },
+          "common_prefix": {
+            "requests": 7,
+            "input": 398720,
+            "output": 771,
+            "total": 399491,
+            "cached_input": 340271,
+            "uncached_input": 58449
+          },
+          "completed": {
+            "requests": 11,
+            "input": 644631,
+            "output": 1231,
+            "total": 645862,
+            "cached_input": 583781,
+            "uncached_input": 60850
+          },
+          "reward": 1.0,
+          "quality_counts": {
+            "target_items": 3,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 3,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 70,
+            "controls_retained": 70
+          },
+          "trace_sha256": "ff72be2b068109bdbe27f7ef8efc36002fb77761d27521c7c19e1cc5eaee6d53",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 48986,
+              "cached_input": 1437,
+              "output": 46
+            },
+            {
+              "input": 57300,
+              "cached_input": 48983,
+              "output": 110
+            },
+            {
+              "input": 57540,
+              "cached_input": 57297,
+              "output": 124
+            },
+            {
+              "input": 58019,
+              "cached_input": 57537,
+              "output": 122
+            },
+            {
+              "input": 58271,
+              "cached_input": 58016,
+              "output": 119
+            },
+            {
+              "input": 58736,
+              "cached_input": 58268,
+              "output": 96
+            },
+            {
+              "input": 59868,
+              "cached_input": 58733,
+              "output": 154
+            },
+            {
+              "input": 60469,
+              "cached_input": 59865,
+              "output": 101
+            },
+            {
+              "input": 61453,
+              "cached_input": 60466,
+              "output": 149
+            },
+            {
+              "input": 61732,
+              "cached_input": 61450,
+              "output": 113
+            },
+            {
+              "input": 62257,
+              "cached_input": 61729,
+              "output": 97
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 2,
+      "common_requests": 12,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 2733,
+            "output": 41,
+            "total": 2774,
+            "cached_input": 1452,
+            "uncached_input": 1281
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 17422,
+            "output": 210,
+            "total": 17632,
+            "cached_input": 14484,
+            "uncached_input": 2938
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 60969,
+            "output": 451,
+            "total": 61420,
+            "cached_input": 54763,
+            "uncached_input": 6206
+          },
+          "completed": {
+            "requests": 12,
+            "input": 60969,
+            "output": 451,
+            "total": 61420,
+            "cached_input": 54763,
+            "uncached_input": 6206
+          },
+          "reward": 0.3870967741935484,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 33,
+            "base_wrong_targets": 31,
+            "edited_correct_targets": 45,
+            "base_correct_targets_retained": 15,
+            "newly_correct_targets": 30,
+            "previously_correct_targets_lost": 18,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "1fee65850b3df050028ad3b5cc9d9767ae55ba4013d00adfca35bdb19aab042a",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 2733,
+              "cached_input": 1452,
+              "output": 41
+            },
+            {
+              "input": 2982,
+              "cached_input": 2730,
+              "output": 35
+            },
+            {
+              "input": 3437,
+              "cached_input": 2979,
+              "output": 35
+            },
+            {
+              "input": 3892,
+              "cached_input": 3434,
+              "output": 64
+            },
+            {
+              "input": 4378,
+              "cached_input": 3889,
+              "output": 35
+            },
+            {
+              "input": 4836,
+              "cached_input": 4375,
+              "output": 35
+            },
+            {
+              "input": 5294,
+              "cached_input": 4833,
+              "output": 35
+            },
+            {
+              "input": 5752,
+              "cached_input": 5291,
+              "output": 35
+            },
+            {
+              "input": 6210,
+              "cached_input": 5749,
+              "output": 52
+            },
+            {
+              "input": 6685,
+              "cached_input": 6207,
+              "output": 35
+            },
+            {
+              "input": 7145,
+              "cached_input": 6682,
+              "output": 35
+            },
+            {
+              "input": 7625,
+              "cached_input": 7142,
+              "output": 14
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 4238,
+            "output": 338,
+            "total": 4576,
+            "cached_input": 2957,
+            "uncached_input": 1281
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 31189,
+            "output": 996,
+            "total": 32185,
+            "cached_input": 26287,
+            "uncached_input": 4902
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 105103,
+            "output": 1962,
+            "total": 107065,
+            "cached_input": 95277,
+            "uncached_input": 9826
+          },
+          "completed": {
+            "requests": 12,
+            "input": 105103,
+            "output": 1962,
+            "total": 107065,
+            "cached_input": 95277,
+            "uncached_input": 9826
+          },
+          "reward": 0.4838709677419355,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 33,
+            "base_wrong_targets": 31,
+            "edited_correct_targets": 48,
+            "base_correct_targets_retained": 33,
+            "newly_correct_targets": 15,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "f0008d9fea7eb6198776657ad2e44c7cbc9832a7a8accf53438141bfa95bf3e4",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 4238,
+              "cached_input": 2957,
+              "output": 338
+            },
+            {
+              "input": 5338,
+              "cached_input": 4235,
+              "output": 303
+            },
+            {
+              "input": 6403,
+              "cached_input": 5335,
+              "output": 230
+            },
+            {
+              "input": 7363,
+              "cached_input": 6400,
+              "output": 64
+            },
+            {
+              "input": 7847,
+              "cached_input": 7360,
+              "output": 61
+            },
+            {
+              "input": 8330,
+              "cached_input": 7844,
+              "output": 38
+            },
+            {
+              "input": 8793,
+              "cached_input": 8327,
+              "output": 291
+            },
+            {
+              "input": 9843,
+              "cached_input": 8790,
+              "output": 125
+            },
+            {
+              "input": 10784,
+              "cached_input": 9840,
+              "output": 85
+            },
+            {
+              "input": 11295,
+              "cached_input": 10781,
+              "output": 226
+            },
+            {
+              "input": 12119,
+              "cached_input": 11292,
+              "output": 187
+            },
+            {
+              "input": 12750,
+              "cached_input": 12116,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 49487,
+            "output": 292,
+            "total": 49779,
+            "cached_input": 1437,
+            "uncached_input": 48050
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 256457,
+            "output": 1250,
+            "total": 257707,
+            "cached_input": 202052,
+            "uncached_input": 54405
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 676162,
+            "output": 3841,
+            "total": 680003,
+            "cached_input": 615303,
+            "uncached_input": 60859
+          },
+          "completed": {
+            "requests": 12,
+            "input": 676162,
+            "output": 3841,
+            "total": 680003,
+            "cached_input": 615303,
+            "uncached_input": 60859
+          },
+          "reward": 0.4838709677419355,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 33,
+            "base_wrong_targets": 31,
+            "edited_correct_targets": 48,
+            "base_correct_targets_retained": 33,
+            "newly_correct_targets": 15,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "0cc2f31b6606cadb4d529193309627bbd25d46ae5bbe32195c0433e2607156e4",
+          "provider_model_echo": [],
+          "turns": [
+            {
+              "input": 49487,
+              "cached_input": 1437,
+              "output": 292
+            },
+            {
+              "input": 50004,
+              "cached_input": 49484,
+              "output": 225
+            },
+            {
+              "input": 50255,
+              "cached_input": 50001,
+              "output": 198
+            },
+            {
+              "input": 50881,
+              "cached_input": 50252,
+              "output": 381
+            },
+            {
+              "input": 55830,
+              "cached_input": 50878,
+              "output": 154
+            },
+            {
+              "input": 56497,
+              "cached_input": 55827,
+              "output": 461
+            },
+            {
+              "input": 57218,
+              "cached_input": 56494,
+              "output": 525
+            },
+            {
+              "input": 59901,
+              "cached_input": 57215,
+              "output": 655
+            },
+            {
+              "input": 60687,
+              "cached_input": 59898,
+              "output": 457
+            },
+            {
+              "input": 61461,
+              "cached_input": 60684,
+              "output": 86
+            },
+            {
+              "input": 61678,
+              "cached_input": 61458,
+              "output": 324
+            },
+            {
+              "input": 62263,
+              "cached_input": 61675,
+              "output": 83
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 3,
+      "common_requests": 12,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 2723,
+            "output": 67,
+            "total": 2790,
+            "cached_input": 1452,
+            "uncached_input": 1271
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 17596,
+            "output": 383,
+            "total": 17979,
+            "cached_input": 14552,
+            "uncached_input": 3044
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 62606,
+            "output": 762,
+            "total": 63368,
+            "cached_input": 56166,
+            "uncached_input": 6440
+          },
+          "completed": {
+            "requests": 12,
+            "input": 62606,
+            "output": 762,
+            "total": 63368,
+            "cached_input": 56166,
+            "uncached_input": 6440
+          },
+          "reward": 0.0,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 30,
+            "base_correct_targets_retained": 2,
+            "newly_correct_targets": 28,
+            "previously_correct_targets_lost": 30,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "026f3c60daf948b06e1f255523cd952e1beadf0eb03a1730cb76da8180d23d9a",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 2723,
+              "cached_input": 1452,
+              "output": 67
+            },
+            {
+              "input": 2998,
+              "cached_input": 2720,
+              "output": 53
+            },
+            {
+              "input": 3468,
+              "cached_input": 2995,
+              "output": 38
+            },
+            {
+              "input": 3923,
+              "cached_input": 3465,
+              "output": 145
+            },
+            {
+              "input": 4484,
+              "cached_input": 3920,
+              "output": 80
+            },
+            {
+              "input": 4981,
+              "cached_input": 4481,
+              "output": 55
+            },
+            {
+              "input": 5454,
+              "cached_input": 4978,
+              "output": 81
+            },
+            {
+              "input": 5951,
+              "cached_input": 5451,
+              "output": 76
+            },
+            {
+              "input": 6441,
+              "cached_input": 5948,
+              "output": 83
+            },
+            {
+              "input": 6938,
+              "cached_input": 6438,
+              "output": 35
+            },
+            {
+              "input": 7386,
+              "cached_input": 6935,
+              "output": 35
+            },
+            {
+              "input": 7859,
+              "cached_input": 7383,
+              "output": 14
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 4228,
+            "output": 315,
+            "total": 4543,
+            "cached_input": 2957,
+            "uncached_input": 1271
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 28292,
+            "output": 1096,
+            "total": 29388,
+            "cached_input": 24672,
+            "uncached_input": 3620
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 104332,
+            "output": 2171,
+            "total": 106503,
+            "cached_input": 93867,
+            "uncached_input": 10465
+          },
+          "completed": {
+            "requests": 12,
+            "input": 104332,
+            "output": 2171,
+            "total": 106503,
+            "cached_input": 93867,
+            "uncached_input": 10465
+          },
+          "reward": 0.5625,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 50,
+            "base_correct_targets_retained": 32,
+            "newly_correct_targets": 18,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "5ca189654258734a7c1037061bb8b2ba81a21c6071e9acc8ea1b9763bd2ce15f",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 4228,
+              "cached_input": 2957,
+              "output": 315
+            },
+            {
+              "input": 5105,
+              "cached_input": 4225,
+              "output": 293
+            },
+            {
+              "input": 6140,
+              "cached_input": 5102,
+              "output": 89
+            },
+            {
+              "input": 6254,
+              "cached_input": 6137,
+              "output": 22
+            },
+            {
+              "input": 6565,
+              "cached_input": 6251,
+              "output": 377
+            },
+            {
+              "input": 7500,
+              "cached_input": 6562,
+              "output": 359
+            },
+            {
+              "input": 8414,
+              "cached_input": 7497,
+              "output": 357
+            },
+            {
+              "input": 10775,
+              "cached_input": 8411,
+              "output": 79
+            },
+            {
+              "input": 11271,
+              "cached_input": 10772,
+              "output": 99
+            },
+            {
+              "input": 11788,
+              "cached_input": 11268,
+              "output": 118
+            },
+            {
+              "input": 12903,
+              "cached_input": 11785,
+              "output": 49
+            },
+            {
+              "input": 13389,
+              "cached_input": 12900,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 49480,
+            "output": 288,
+            "total": 49768,
+            "cached_input": 1437,
+            "uncached_input": 48043
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 260355,
+            "output": 1246,
+            "total": 261601,
+            "cached_input": 206106,
+            "uncached_input": 54249
+          },
+          "common_prefix": {
+            "requests": 12,
+            "input": 665343,
+            "output": 2891,
+            "total": 668234,
+            "cached_input": 607751,
+            "uncached_input": 57592
+          },
+          "completed": {
+            "requests": 12,
+            "input": 665343,
+            "output": 2891,
+            "total": 668234,
+            "cached_input": 607751,
+            "uncached_input": 57592
+          },
+          "reward": 0.0,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 30,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 30,
+            "previously_correct_targets_lost": 32,
+            "base_correct_controls": 110,
+            "controls_retained": 110
+          },
+          "trace_sha256": "98452476364beca0783da013721771602d5c64ab1181ba5c6c9a78b39f7ffb22",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 49480,
+              "cached_input": 1437,
+              "output": 288
+            },
+            {
+              "input": 49995,
+              "cached_input": 49477,
+              "output": 223
+            },
+            {
+              "input": 50244,
+              "cached_input": 49992,
+              "output": 202
+            },
+            {
+              "input": 54962,
+              "cached_input": 50241,
+              "output": 295
+            },
+            {
+              "input": 55674,
+              "cached_input": 54959,
+              "output": 238
+            },
+            {
+              "input": 56378,
+              "cached_input": 55671,
+              "output": 134
+            },
+            {
+              "input": 57025,
+              "cached_input": 56375,
+              "output": 346
+            },
+            {
+              "input": 57502,
+              "cached_input": 57022,
+              "output": 288
+            },
+            {
+              "input": 58019,
+              "cached_input": 57499,
+              "output": 123
+            },
+            {
+              "input": 58273,
+              "cached_input": 58016,
+              "output": 288
+            },
+            {
+              "input": 58795,
+              "cached_input": 58270,
+              "output": 70
+            },
+            {
+              "input": 58996,
+              "cached_input": 58792,
+              "output": 396
+            }
+          ]
+        }
+      }
+    },
+    {
+      "family": "resistance_to_false_suggestions",
+      "seed": 5,
+      "common_requests": 10,
+      "arms": {
+        "compact": {
+          "opening": {
+            "requests": 1,
+            "input": 2733,
+            "output": 93,
+            "total": 2826,
+            "cached_input": 1452,
+            "uncached_input": 1281
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 18836,
+            "output": 416,
+            "total": 19252,
+            "cached_input": 15476,
+            "uncached_input": 3360
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 49531,
+            "output": 678,
+            "total": 50209,
+            "cached_input": 44072,
+            "uncached_input": 5459
+          },
+          "completed": {
+            "requests": 10,
+            "input": 49531,
+            "output": 678,
+            "total": 50209,
+            "cached_input": 44072,
+            "uncached_input": 5459
+          },
+          "reward": 0.4954128440366973,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 48,
+            "base_correct_targets_retained": 19,
+            "newly_correct_targets": 29,
+            "previously_correct_targets_lost": 13,
+            "base_correct_controls": 109,
+            "controls_retained": 108
+          },
+          "trace_sha256": "814f40e6963b07f74964d86d8ddfb863ba677120a7a665b9fb5108fb7c5ca638",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 2733,
+              "cached_input": 1452,
+              "output": 93
+            },
+            {
+              "input": 3248,
+              "cached_input": 2730,
+              "output": 107
+            },
+            {
+              "input": 3777,
+              "cached_input": 3245,
+              "output": 79
+            },
+            {
+              "input": 4278,
+              "cached_input": 3774,
+              "output": 99
+            },
+            {
+              "input": 4800,
+              "cached_input": 4275,
+              "output": 38
+            },
+            {
+              "input": 5261,
+              "cached_input": 4797,
+              "output": 38
+            },
+            {
+              "input": 5722,
+              "cached_input": 5258,
+              "output": 38
+            },
+            {
+              "input": 6183,
+              "cached_input": 5719,
+              "output": 38
+            },
+            {
+              "input": 6645,
+              "cached_input": 6180,
+              "output": 126
+            },
+            {
+              "input": 6884,
+              "cached_input": 6642,
+              "output": 22
+            }
+          ]
+        },
+        "full": {
+          "opening": {
+            "requests": 1,
+            "input": 4238,
+            "output": 325,
+            "total": 4563,
+            "cached_input": 2957,
+            "uncached_input": 1281
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 35151,
+            "output": 1249,
+            "total": 36400,
+            "cached_input": 28365,
+            "uncached_input": 6786
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 95344,
+            "output": 2030,
+            "total": 97374,
+            "cached_input": 84467,
+            "uncached_input": 10877
+          },
+          "completed": {
+            "requests": 12,
+            "input": 124619,
+            "output": 2116,
+            "total": 126735,
+            "cached_input": 112646,
+            "uncached_input": 11973
+          },
+          "reward": 0.0,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 31,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 31,
+            "previously_correct_targets_lost": 32,
+            "base_correct_controls": 109,
+            "controls_retained": 109
+          },
+          "trace_sha256": "be07d5813970dbe481c0700415600e5333f9a24b9f269e413f51a1736bcbeda0",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 4238,
+              "cached_input": 2957,
+              "output": 325
+            },
+            {
+              "input": 5329,
+              "cached_input": 4235,
+              "output": 311
+            },
+            {
+              "input": 7128,
+              "cached_input": 5326,
+              "output": 304
+            },
+            {
+              "input": 8725,
+              "cached_input": 7125,
+              "output": 161
+            },
+            {
+              "input": 9731,
+              "cached_input": 8722,
+              "output": 148
+            },
+            {
+              "input": 10718,
+              "cached_input": 9728,
+              "output": 85
+            },
+            {
+              "input": 11224,
+              "cached_input": 10715,
+              "output": 85
+            },
+            {
+              "input": 11734,
+              "cached_input": 11221,
+              "output": 135
+            },
+            {
+              "input": 12710,
+              "cached_input": 11731,
+              "output": 331
+            },
+            {
+              "input": 13807,
+              "cached_input": 12707,
+              "output": 145
+            },
+            {
+              "input": 14378,
+              "cached_input": 13804,
+              "output": 72
+            },
+            {
+              "input": 14897,
+              "cached_input": 14375,
+              "output": 14
+            }
+          ]
+        },
+        "native": {
+          "opening": {
+            "requests": 1,
+            "input": 49486,
+            "output": 292,
+            "total": 49778,
+            "cached_input": 1437,
+            "uncached_input": 48049
+          },
+          "first_five": {
+            "requests": 5,
+            "input": 254062,
+            "output": 920,
+            "total": 254982,
+            "cached_input": 203059,
+            "uncached_input": 51003
+          },
+          "common_prefix": {
+            "requests": 10,
+            "input": 526616,
+            "output": 2745,
+            "total": 529361,
+            "cached_input": 472267,
+            "uncached_input": 54349
+          },
+          "completed": {
+            "requests": 12,
+            "input": 648672,
+            "output": 3182,
+            "total": 651854,
+            "cached_input": 588712,
+            "uncached_input": 59960
+          },
+          "reward": 0.4375,
+          "quality_counts": {
+            "target_items": 64,
+            "base_correct_targets": 32,
+            "base_wrong_targets": 32,
+            "edited_correct_targets": 46,
+            "base_correct_targets_retained": 29,
+            "newly_correct_targets": 17,
+            "previously_correct_targets_lost": 3,
+            "base_correct_controls": 109,
+            "controls_retained": 109
+          },
+          "trace_sha256": "15e8807f1790b34f14b497a98144d3cca66c125fc39fe2d13ccd2771efdc4e82",
+          "provider_model_echo": [
+            "gpt-6.2-astra"
+          ],
+          "turns": [
+            {
+              "input": 49486,
+              "cached_input": 1437,
+              "output": 292
+            },
+            {
+              "input": 50004,
+              "cached_input": 49483,
+              "output": 117
+            },
+            {
+              "input": 50446,
+              "cached_input": 50001,
+              "output": 91
+            },
+            {
+              "input": 51698,
+              "cached_input": 50443,
+              "output": 231
+            },
+            {
+              "input": 52428,
+              "cached_input": 51695,
+              "output": 189
+            },
+            {
+              "input": 53306,
+              "cached_input": 52425,
+              "output": 327
+            },
+            {
+              "input": 53893,
+              "cached_input": 53303,
+              "output": 451
+            },
+            {
+              "input": 54635,
+              "cached_input": 53890,
+              "output": 196
+            },
+            {
+              "input": 54961,
+              "cached_input": 54632,
+              "output": 480
+            },
+            {
+              "input": 55759,
+              "cached_input": 54958,
+              "output": 371
+            },
+            {
+              "input": 60692,
+              "cached_input": 55756,
+              "output": 157
+            },
+            {
+              "input": 61364,
+              "cached_input": 60689,
+              "output": 280
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "compact": {
+      "opening": {
+        "requests": 6,
+        "input": 13353,
+        "output": 380,
+        "total": 13733,
+        "cached_input": 7260,
+        "uncached_input": 6093
+      },
+      "first_five": {
+        "requests": 30,
+        "input": 87624,
+        "output": 2352,
+        "total": 89976,
+        "cached_input": 72561,
+        "uncached_input": 15063
+      },
+      "common_prefix": {
+        "requests": 62,
+        "input": 259528,
+        "output": 4392,
+        "total": 263920,
+        "cached_input": 230490,
+        "uncached_input": 29038
+      },
+      "completed": {
+        "requests": 62,
+        "input": 259528,
+        "output": 4392,
+        "total": 263920,
+        "cached_input": 230490,
+        "uncached_input": 29038
+      },
+      "mean_episode_reward": 0.6423230316098029,
+      "pooled_quality_counts": {
+        "target_items": 201,
+        "base_wrong_targets": 104,
+        "edited_correct_targets": 132,
+        "newly_correct_targets": 96,
+        "base_correct_controls": 539,
+        "controls_retained": 536,
+        "base_correct_targets": 97,
+        "base_correct_targets_retained": 36,
+        "previously_correct_targets_lost": 61
+      }
+    },
+    "full": {
+      "opening": {
+        "requests": 6,
+        "input": 22383,
+        "output": 1236,
+        "total": 23619,
+        "cached_input": 17742,
+        "uncached_input": 4641
+      },
+      "first_five": {
+        "requests": 30,
+        "input": 154211,
+        "output": 4966,
+        "total": 159177,
+        "cached_input": 133864,
+        "uncached_input": 20347
+      },
+      "common_prefix": {
+        "requests": 62,
+        "input": 438108,
+        "output": 9359,
+        "total": 447467,
+        "cached_input": 397559,
+        "uncached_input": 40549
+      },
+      "completed": {
+        "requests": 72,
+        "input": 522975,
+        "output": 10024,
+        "total": 532999,
+        "cached_input": 477567,
+        "uncached_input": 45408
+      },
+      "mean_episode_reward": 0.5053475422427035,
+      "pooled_quality_counts": {
+        "target_items": 201,
+        "base_wrong_targets": 104,
+        "edited_correct_targets": 135,
+        "newly_correct_targets": 70,
+        "base_correct_controls": 539,
+        "controls_retained": 538,
+        "base_correct_targets": 97,
+        "base_correct_targets_retained": 65,
+        "previously_correct_targets_lost": 32
+      }
+    },
+    "native": {
+      "opening": {
+        "requests": 6,
+        "input": 295417,
+        "output": 1116,
+        "total": 296533,
+        "cached_input": 7185,
+        "uncached_input": 288232
+      },
+      "first_five": {
+        "requests": 30,
+        "input": 1550421,
+        "output": 5075,
+        "total": 1555496,
+        "cached_input": 1233642,
+        "uncached_input": 316779
+      },
+      "common_prefix": {
+        "requests": 62,
+        "input": 3346736,
+        "output": 12868,
+        "total": 3359604,
+        "cached_input": 3009498,
+        "uncached_input": 337238
+      },
+      "completed": {
+        "requests": 71,
+        "input": 3877533,
+        "output": 14124,
+        "total": 3891657,
+        "cached_input": 3531143,
+        "uncached_input": 346390
+      },
+      "mean_episode_reward": 0.5980062724014337,
+      "pooled_quality_counts": {
+        "target_items": 201,
+        "base_wrong_targets": 104,
+        "edited_correct_targets": 132,
+        "newly_correct_targets": 70,
+        "base_correct_controls": 539,
+        "controls_retained": 539,
+        "base_correct_targets": 97,
+        "base_correct_targets_retained": 62,
+        "previously_correct_targets_lost": 35
+      }
+    }
+  },
+  "comparisons": {
+    "compact_vs_native": {
+      "opening": {
+        "metric": "input",
+        "fraction_lower_pooled": 0.9547994868270953,
+        "fraction_lower_each_episode": [
+          0.9649309028557431,
+          0.964685949907122,
+          0.9649695831462051,
+          0.9447733748257118,
+          0.9449676637025061,
+          0.9447722588206766
+        ],
+        "episodes_lower": 6
+      },
+      "first_five": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.9421560711181514,
+        "fraction_lower_each_episode": [
+          0.951660671028594,
+          0.9546805260756581,
+          0.9583910888443078,
+          0.9315812143247952,
+          0.9312731984969477,
+          0.9244966311347468
+        ],
+        "episodes_lower": 6
+      },
+      "common_prefix": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.9214431224632427,
+        "fraction_lower_each_episode": [
+          0.935706346440967,
+          0.9350186535019709,
+          0.9526071926526505,
+          0.9096768690726365,
+          0.9051709431127419,
+          0.9051516828780359
+        ],
+        "episodes_lower": 6
+      },
+      "completed": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.9321831291914986,
+        "fraction_lower_each_episode": [
+          0.9469763738318957,
+          0.9406528332848956,
+          0.9706856882739656,
+          0.9096768690726365,
+          0.9051709431127419,
+          0.9229750833775662
+        ],
+        "episodes_lower": 6
+      }
+    },
+    "full_vs_native": {
+      "opening": {
+        "metric": "input",
+        "fraction_lower_pooled": 0.9242325255486312,
+        "fraction_lower_each_episode": [
+          0.9342097205495111,
+          0.93396476760089,
+          0.9342465194137101,
+          0.9143613474245762,
+          0.9145513338722716,
+          0.9143596168613345
+        ],
+        "episodes_lower": 6
+      },
+      "first_five": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.8976680107181246,
+        "fraction_lower_each_episode": [
+          0.9138720554978794,
+          0.9212949554660689,
+          0.9288689659595848,
+          0.8751101056626324,
+          0.8876609798892205,
+          0.8572448251249107
+        ],
+        "episodes_lower": 6
+      },
+      "common_prefix": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.8668096001790687,
+        "fraction_lower_each_episode": [
+          0.8972924992359665,
+          0.9055897214105634,
+          0.9247492434122421,
+          0.8425521652110358,
+          0.8406202019053206,
+          0.8160536949265247
+        ],
+        "episodes_lower": 6
+      },
+      "completed": {
+        "metric": "total",
+        "fraction_lower_pooled": 0.8630406019852213,
+        "fraction_lower_each_episode": [
+          0.8910165336621122,
+          0.9030913963387514,
+          0.9002031393703299,
+          0.8425521652110358,
+          0.8406202019053206,
+          0.8055776293464487
+        ],
+        "episodes_lower": 6
+      }
+    }
+  }
+}

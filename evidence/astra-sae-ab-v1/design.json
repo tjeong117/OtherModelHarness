@@ -1,0 +1,27 @@
+{
+  "question": "Does offering the editor on-demand SAE fitting improve submitted edits at equal resource ceilings?",
+  "study": "Exploratory matched availability test. One independent hosted editor trajectory per arm per development episode.",
+  "selection": "Lowest previously admitted seed in each of the two supported IWIBench families. Fixed before launching either arm.",
+  "execution_order": [
+    ["alias", 1, "no-fit"],
+    ["alias", 1, "fit"],
+    ["suggestion", 2, "fit"],
+    ["suggestion", 2, "no-fit"]
+  ],
+  "updater": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "target": "google/gemma-3-4b-it",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "iwibench_revision": "ff1bbcc78f6090e17bf4d50afeb7dc51437b3b53",
+  "starting_dictionaries": [],
+  "only_tool_difference": "fit_sae",
+  "policy": "The model chooses how to edit. No requirement or task-specific instruction to build an SAE.",
+  "max_turns_including_submission": 6,
+  "max_output_tokens_per_response": 2048,
+  "provider_cost_ceiling_usd_per_trajectory": 1.25,
+  "provider_cost_ceiling_usd_cohort": 5,
+  "primary": "Per-episode paired native reward difference (fit available minus fit withheld), equal episode weights.",
+  "secondary": ["held-out target answers correct", "retention of previously correct controls", "updater tokens including cached input", "actual successful fit calls", "target computation"],
+  "failure_handling": "Keep every scheduled trajectory. Record failures and distinguish missing grades from native scores. Do not reroll.",
+  "interpretation": "Exposing the tool estimates an availability effect. If the editor never fits a dictionary, these runs cannot estimate the effect of using one. Development seeds, one trajectory per arm, no inference of statistical significance."
+}

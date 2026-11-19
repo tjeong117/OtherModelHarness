@@ -1,0 +1,418 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "inspect_target",
+      "description": "Inspect a teacher-forced forward pass without changing activations.\n\n        Request fields: texts, layers, positions, kinds, token_ids and\n        compare_base. Select at most four layers and four sequences per call.",
+      "parameters": {
+        "$defs": {
+          "InspectTargetRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "texts": {
+                "description": "Literal teacher-forced texts, including continuations. With compare_base=true, supply at most two texts.",
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 4,
+                "minItems": 1,
+                "title": "Texts",
+                "type": "array"
+              },
+              "layers": {
+                "description": "Zero-based integer layer indices, such as [0, 3]. These are layer numbers, not tensor names.",
+                "items": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxItems": 4,
+                "minItems": 1,
+                "title": "Layers",
+                "type": "array"
+              },
+              "positions": {
+                "description": "Zero-based token positions including BOS. Every position must exist in every supplied text.",
+                "items": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxItems": 16,
+                "minItems": 1,
+                "title": "Positions",
+                "type": "array"
+              },
+              "kinds": {
+                "description": "Read-only quantities to return. Embedding rows are available through read_weights.",
+                "items": {
+                  "enum": [
+                    "residual",
+                    "attention",
+                    "mlp",
+                    "statistics",
+                    "probabilities"
+                  ],
+                  "type": "string"
+                },
+                "maxItems": 5,
+                "minItems": 1,
+                "title": "Kinds",
+                "type": "array"
+              },
+              "token_ids": {
+                "description": "Vocabulary IDs for probabilities, which predict the next token after each selected position.",
+                "items": {
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxItems": 32,
+                "title": "Token Ids",
+                "type": "array"
+              },
+              "compare_base": {
+                "default": false,
+                "description": "Inspect both pristine and edited weights; each text then uses two sequence evaluations.",
+                "title": "Compare Base",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "texts",
+              "layers",
+              "positions"
+            ],
+            "title": "InspectTargetRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/InspectTargetRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "inspect_targetArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "read_weights",
+      "description": "Read tensor metadata, selected slices or fixed numerical summaries.\n\n        Request fields: tensor, selection, summary and handle. Handles refer to\n        bounded numeric arrays held by this session's service.",
+      "parameters": {
+        "$defs": {
+          "ReadWeightsRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "tensor": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Exact tensor name or tied alias from the manifest. Omit tensor and handle for the manifest.",
+                "title": "Tensor"
+              },
+              "selection": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "anyOf": [
+                        {
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        {
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "prefixItems": [
+                            {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            {
+                              "minimum": 0,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "One integer or [start, stop] half-open range per dimension. Example for a row of a matrix with width 4: [2, [0, 4]]. Omit for the whole tensor.",
+                "title": "Selection"
+              },
+              "summary": {
+                "default": false,
+                "description": "Return the fixed numerical summary instead of a numeric-array handle.",
+                "title": "Summary",
+                "type": "boolean"
+              },
+              "handle": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Session-held numeric array ID from a previous read or inspection. Use either tensor or handle.",
+                "title": "Handle"
+              }
+            },
+            "title": "ReadWeightsRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/ReadWeightsRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "read_weightsArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "run_target",
+      "description": "Generate for public or editor-supplied prompts under the shared budget.\n\n        Request fields: prompts, max_new_tokens and compare_base. At most eight\n        sequences per call. Base and edited evaluations count separately.",
+      "parameters": {
+        "$defs": {
+          "RunTargetRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "prompts": {
+                "description": "Public or editor-supplied text prompts. With compare_base=true, supply at most four prompts.",
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "title": "Prompts",
+                "type": "array"
+              },
+              "max_new_tokens": {
+                "default": 128,
+                "maximum": 256,
+                "minimum": 1,
+                "title": "Max New Tokens",
+                "type": "integer"
+              },
+              "compare_base": {
+                "default": false,
+                "description": "Evaluate both pristine and edited weights; each prompt then uses two sequence evaluations.",
+                "title": "Compare Base",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "prompts"
+            ],
+            "title": "RunTargetRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/RunTargetRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "run_targetArguments",
+        "type": "object"
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "write_weights",
+      "description": "Apply an explicit replacement, fill, scale, copy or low-rank addition.\n\n        Request fields: tensor, selection, operation, value, source, factor,\n        left and right. Numeric expressions are bounded declarative operations.",
+      "parameters": {
+        "$defs": {
+          "WriteWeightsRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "tensor": {
+                "description": "Exact writable tensor name or tied alias from the manifest.",
+                "minLength": 1,
+                "title": "Tensor",
+                "type": "string"
+              },
+              "selection": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "anyOf": [
+                        {
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        {
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "prefixItems": [
+                            {
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            {
+                              "minimum": 0,
+                              "type": "integer"
+                            }
+                          ],
+                          "type": "array"
+                        }
+                      ]
+                    },
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "One integer or [start, stop] range per dimension. A matrix row requires both dimensions, for example [2, [0, 4]]. Omit for the whole tensor.",
+                "title": "Selection"
+              },
+              "operation": {
+                "enum": [
+                  "replace",
+                  "fill",
+                  "scale",
+                  "copy",
+                  "add",
+                  "low_rank_add"
+                ],
+                "title": "Operation",
+                "type": "string"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "additionalProperties": true,
+                    "description": "Bounded tensor expression: {tensor: NAME, selection: [...]}, {handle: ID}, {values: numeric_array}, or {op: add|subtract|outer|scale, left: expression, right: expression, factor: number}. Outer requires vectors; scale uses factor.",
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Finite scalar for fill; tensor expression for replace or add. Shapes must match the selected destination.",
+                "title": "Value"
+              },
+              "source": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "description": "Bounded tensor expression: {tensor: NAME, selection: [...]}, {handle: ID}, {values: numeric_array}, or {op: add|subtract|outer|scale, left: expression, right: expression, factor: number}. Outer requires vectors; scale uses factor.",
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Source expression for copy, such as {tensor: NAME, selection: [2, [0, 4]]}.",
+                "title": "Source"
+              },
+              "factor": {
+                "anyOf": [
+                  {
+                    "type": "number"
+                  },
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Finite scale factor for scale or low_rank_add.",
+                "title": "Factor"
+              },
+              "left": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "description": "Bounded tensor expression: {tensor: NAME, selection: [...]}, {handle: ID}, {values: numeric_array}, or {op: add|subtract|outer|scale, left: expression, right: expression, factor: number}. Outer requires vectors; scale uses factor.",
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Left [m, r] expression for low_rank_add; r is at most 8.",
+                "title": "Left"
+              },
+              "right": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "description": "Bounded tensor expression: {tensor: NAME, selection: [...]}, {handle: ID}, {values: numeric_array}, or {op: add|subtract|outer|scale, left: expression, right: expression, factor: number}. Outer requires vectors; scale uses factor.",
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Right [r, n] expression for low_rank_add; destination shape is [m, n].",
+                "title": "Right"
+              }
+            },
+            "required": [
+              "tensor",
+              "operation"
+            ],
+            "title": "WriteWeightsRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/WriteWeightsRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "write_weightsArguments",
+        "type": "object"
+      }
+    }
+  }
+]

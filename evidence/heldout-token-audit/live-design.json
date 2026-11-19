@@ -1,0 +1,87 @@
+{
+  "study": "Fresh paired opening-manifest and native baseline pilot on qualified held-out IWIBench tasks",
+  "hub_revision": "300a9d7271d9e3a9dd5bfc14edcbceccb66d5966",
+  "catalog_sha256": "d0a12f4d5ec9128ee5303739eb9c0a7331b1ec1e2225f8f7e256e95af0fa598b",
+  "selection": "One official test row from each of the five families with fully deterministic qualified scoring. Select minimum sha256(\"iwi-matched-manifest-live-pilot-v1|\"+id) in each family; order families by the same hash. No selection using editing outcomes.",
+  "tasks": [
+    {
+      "id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "variant_index": 77,
+      "episode_sha256": "b8613906e3e5e881622529243b2bdc7a5875464d7c4d688da7075a1dc1f45e2e",
+      "parameter_sha256": "44c02adb026fce08114f574a9c2af79320aab03b26d56d4fdb9112da4fb20fb1",
+      "arms": [
+        "eager",
+        "native",
+        "paged"
+      ]
+    },
+    {
+      "id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 48,
+      "episode_sha256": "72f43fcc8e21a7e3e078f587a48ae5eb8791b496853a9c14e97d9fcad9d3c96b",
+      "parameter_sha256": "56165a6d57e3dd5cc4fed5fbdedfc26cfe058bd8a41ed0f47cd68c5ba0fc6bd5",
+      "arms": [
+        "native",
+        "paged",
+        "eager"
+      ]
+    },
+    {
+      "id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 51,
+      "episode_sha256": "770e8d810e58665a6c0f24fa905211c3790cfcba99f870095f293c7c7459c395",
+      "parameter_sha256": "3d730fe62cd5f7bedf96d5912229918ea6685fb7913277b292b3e58e21625b42",
+      "arms": [
+        "paged",
+        "eager",
+        "native"
+      ]
+    },
+    {
+      "id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 99,
+      "episode_sha256": "76b0394ac4155e658257f60c6796d017c88ff53226fceea8d8c8ac6d49cb07ea",
+      "parameter_sha256": "7fd4a6aaefbcfe48952945fcdd621a7ff740439eb62ea18a3baa1e2915f90ed2",
+      "arms": [
+        "paged",
+        "native",
+        "eager"
+      ]
+    },
+    {
+      "id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 54,
+      "episode_sha256": "006d779a54e84be6c9ef2c674973d0a0ba424c22da431ae5c72490b14f7e55a7",
+      "parameter_sha256": "697d57f21765493d47d6a6e77023a0c7bf661eccc7e9a92cb2a720fce266b87c",
+      "arms": [
+        "eager",
+        "paged",
+        "native"
+      ]
+    }
+  ],
+  "requested_model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "max_turns": 5,
+  "max_output_tokens": 1536,
+  "budget": {
+    "authorized_additional_usd": 100,
+    "max_usd_per_edit": 6.5,
+    "maximum_edit_calls_usd_for_15_runs": 97.5,
+    "judge_usd": 0,
+    "unit": "conservative API cost upper bound; includes unknown requests at their full reservation"
+  },
+  "arms": {
+    "paged": "Harness with causal SAE policy and four writable names/shapes shown up front; all remaining names accessible by the standard paginated tool.",
+    "eager": "Identical harness, prompt policy, public task, feedback, numerical tools, run limits and access; all writable names/shapes shown up front.",
+    "native": "Official qualified native service with stock public opening and four tools. Same requested editor, reasoning, turn/output/dollar caps and deterministic qualified grader. Native tool budgets, feedback, task serialization and submission semantics retained."
+  },
+  "primary": "Paired total provider editor tokens (cached input + uncached input + output) for paged vs eager. Sum over all attempted episodes; record terminations, submissions, missing usages, open turn and first common-turn prefix. No hidden-score peeking or rerolls.",
+  "quality": "Report per-task paired native reward, number of improved and previously-correct target answers preserved, control retention, and failures. One trajectory per arm per task. This sample has no prespecified quality equivalence margin and cannot certify equivalence.",
+  "auxiliary": "Native is a bundled reference. Target forwards and tokens are separate from editor tokens. Report cached/uncached and cost upper bounds separately. Full 150-task static opening replay and same-family fixed-patch transfer are independent analyses."
+}

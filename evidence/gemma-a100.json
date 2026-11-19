@@ -1,0 +1,334 @@
+{
+  "experiment": "scripted IWIBench development seed 3 alias copy and Gemma Scope 2 suppression",
+  "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+  "dictionary_revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+  "versions": {
+    "torch": "2.10.0+cu128",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.36.2",
+    "safetensors": "0.8.0"
+  },
+  "device": "cuda",
+  "gpu_name": "NVIDIA A100-SXM4-40GB",
+  "elapsed_seconds": 17.9965866249986,
+  "discovery_pid": 12122,
+  "discovery_peak_allocated_bytes": 8983438848,
+  "discovery": {
+    "pristine": {
+      "prompts": {
+        "Count the flat faces of a saffron. Return only the integer.": {
+          "token_ids": [
+            236776,
+            122076,
+            9562,
+            815
+          ],
+          "text": "A saffron flower has",
+          "first_top_two": [
+            {
+              "token_id": 236776,
+              "logit": 40.25
+            },
+            {
+              "token_id": 236825,
+              "logit": 34.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "0c3a0db6cf2cd5ef3d596e7f1850a811ea6d531a931dfd13049923389f6e8256",
+            "b0765e41bc66c0142b62b0a1a817dac78b6c535bf83f92dce1b22448d49e189c",
+            "82d24283234c632e00a2ebdbbb7d4175f1428f0bfc4805896dabd8401a7e538b",
+            "2efb52e9cb00bfc397c6ddc65ff05736e61d33fd6aaad31ebec343b9ab6426ff"
+          ]
+        },
+        "Count the flat faces of a cube. Return only the integer.": {
+          "token_ids": [
+            236825,
+            107,
+            106
+          ],
+          "text": "6\n",
+          "first_top_two": [
+            {
+              "token_id": 236825,
+              "logit": 45.25
+            },
+            {
+              "token_id": 236776,
+              "logit": 37.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "4961093cf3059113e20b94565f0bb2a65ad2131ceb7bf44c4e8fb4730d44bd25",
+            "a55f04958082eac9a2dfeff5ff897ad566a3b0e9da856c7584f8a31995abac4f",
+            "2562009be157fd0c448b7bfa6c1050390561b408184b5c4873a7208205efc398"
+          ]
+        }
+      },
+      "embedding_row_sha256": {
+        "source": "bce2a5d802e9523ea7045e2cae40c20bc387dfd4266d75f53609aaa229d31034",
+        "alias": "2cc295d03db32e80dfd126d04f52f34acc8b3d979ad7a104943939b2b949630c"
+      }
+    },
+    "edited": {
+      "prompts": {
+        "Count the flat faces of a saffron. Return only the integer.": {
+          "token_ids": [
+            236825,
+            107,
+            106
+          ],
+          "text": "6\n",
+          "first_top_two": [
+            {
+              "token_id": 236825,
+              "logit": 45.25
+            },
+            {
+              "token_id": 236776,
+              "logit": 37.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "1a3a0fa734e8d6c9382a6a9f85d3d24e57f8190b9c29c034f12a35900628c592",
+            "e84f15eb05ec6ab316a5d606a43f3004eccb47511833801c111ef39d881d03da",
+            "184d8df0343702ea90a6a1c4a0f4673bcd0a7ebb68cda97b1fe31813e2fa56a7"
+          ]
+        },
+        "Count the flat faces of a cube. Return only the integer.": {
+          "token_ids": [
+            236825,
+            107,
+            106
+          ],
+          "text": "6\n",
+          "first_top_two": [
+            {
+              "token_id": 236825,
+              "logit": 45.25
+            },
+            {
+              "token_id": 236776,
+              "logit": 37.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "1a3a0fa734e8d6c9382a6a9f85d3d24e57f8190b9c29c034f12a35900628c592",
+            "e84f15eb05ec6ab316a5d606a43f3004eccb47511833801c111ef39d881d03da",
+            "184d8df0343702ea90a6a1c4a0f4673bcd0a7ebb68cda97b1fe31813e2fa56a7"
+          ]
+        }
+      },
+      "embedding_row_sha256": {
+        "source": "bce2a5d802e9523ea7045e2cae40c20bc387dfd4266d75f53609aaa229d31034",
+        "alias": "bce2a5d802e9523ea7045e2cae40c20bc387dfd4266d75f53609aaa229d31034"
+      }
+    },
+    "write": {
+      "tensor": "model.language_model.embed_tokens.weight",
+      "revision": 1,
+      "selected_parameters": 2560,
+      "changed_parameters": 2556,
+      "delta_l2": 1.3576624018049777
+    },
+    "receipt": {
+      "sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00",
+      "bytes": 26192,
+      "format": "iwibench.replacements.v1",
+      "changed_parameters": 2556,
+      "revision": 1
+    },
+    "sae": {
+      "id": "google/gemma-scope-2-4b-it/resid_post/layer_17_width_16k_l0_medium",
+      "revision": "869dd8f773d7eaebd79ab00951e122c34b816815",
+      "layer": 17,
+      "features": 16384
+    },
+    "target_id": "google/gemma-3-4b-it",
+    "target_revision": "093f9f388b31de276ce2de164bdc2081324b9767",
+    "contrast": {
+      "ranking": [
+        {
+          "index": 34,
+          "value": 448.7060546875
+        },
+        {
+          "index": 909,
+          "value": 156.0426025390625
+        },
+        {
+          "index": 7989,
+          "value": 143.00204467773438
+        },
+        {
+          "index": 16264,
+          "value": -138.1442413330078
+        },
+        {
+          "index": 1789,
+          "value": -118.27372741699219
+        }
+      ],
+      "sign": "right_minus_left",
+      "cost": {
+        "forwards": 2,
+        "forward_tokens": 44,
+        "probe_rows": 2,
+        "sae_rows": 2
+      }
+    },
+    "feature": {
+      "index": 34,
+      "value": 989.90576171875
+    },
+    "identity": {
+      "scale": 1,
+      "baseline_logit_sha256": "0c3a0db6cf2cd5ef3d596e7f1850a811ea6d531a931dfd13049923389f6e8256",
+      "intervention_logit_sha256": "0c3a0db6cf2cd5ef3d596e7f1850a811ea6d531a931dfd13049923389f6e8256",
+      "changed_logits": 0,
+      "vocab_size": 262208,
+      "max_abs_logit_change": 0.0,
+      "logit_delta_l2": 0.0,
+      "baseline_scores": [
+        {
+          "token_id": 236776,
+          "logit": 40.25
+        },
+        {
+          "token_id": 236825,
+          "logit": 34.25
+        }
+      ],
+      "intervention_scores": [
+        {
+          "token_id": 236776,
+          "logit": 40.25
+        },
+        {
+          "token_id": 236825,
+          "logit": 34.25
+        }
+      ],
+      "margin_change": 0.0,
+      "cost": {
+        "forwards": 2,
+        "forward_tokens": 44,
+        "probe_rows": 2,
+        "sae_rows": 2
+      }
+    },
+    "suppression": {
+      "scale": 0,
+      "baseline_logit_sha256": "0c3a0db6cf2cd5ef3d596e7f1850a811ea6d531a931dfd13049923389f6e8256",
+      "intervention_logit_sha256": "2a5008153912d56acd2d0c07efb732494cefe3243096e8d2f7325248bcfe95cb",
+      "changed_logits": 257804,
+      "vocab_size": 262208,
+      "max_abs_logit_change": 3.75,
+      "logit_delta_l2": 449.8184814453125,
+      "baseline_scores": [
+        {
+          "token_id": 236776,
+          "logit": 40.25
+        },
+        {
+          "token_id": 236825,
+          "logit": 34.25
+        }
+      ],
+      "intervention_scores": [
+        {
+          "token_id": 236776,
+          "logit": 40.75
+        },
+        {
+          "token_id": 236825,
+          "logit": 36.75
+        }
+      ],
+      "margin_change": -2.0,
+      "cost": {
+        "forwards": 2,
+        "forward_tokens": 44,
+        "probe_rows": 2,
+        "sae_rows": 2
+      }
+    },
+    "cleanup_logit_sha256": "0c3a0db6cf2cd5ef3d596e7f1850a811ea6d531a931dfd13049923389f6e8256",
+    "discovery_target_usage": {
+      "forwards": 21,
+      "forward_tokens": 477,
+      "probe_rows": 7,
+      "sae_rows": 7
+    }
+  },
+  "replay": {
+    "pid": 12253,
+    "applied": {
+      "sha256": "0bbc7162df6f4a3c849aec82bd8212c1378db648b8bf5f6860efe22a53644a00",
+      "revision": 1,
+      "replaced_parameters": 2556
+    },
+    "measurement": {
+      "prompts": {
+        "Count the flat faces of a saffron. Return only the integer.": {
+          "token_ids": [
+            236825,
+            107,
+            106
+          ],
+          "text": "6\n",
+          "first_top_two": [
+            {
+              "token_id": 236825,
+              "logit": 45.25
+            },
+            {
+              "token_id": 236776,
+              "logit": 37.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "1a3a0fa734e8d6c9382a6a9f85d3d24e57f8190b9c29c034f12a35900628c592",
+            "e84f15eb05ec6ab316a5d606a43f3004eccb47511833801c111ef39d881d03da",
+            "184d8df0343702ea90a6a1c4a0f4673bcd0a7ebb68cda97b1fe31813e2fa56a7"
+          ]
+        },
+        "Count the flat faces of a cube. Return only the integer.": {
+          "token_ids": [
+            236825,
+            107,
+            106
+          ],
+          "text": "6\n",
+          "first_top_two": [
+            {
+              "token_id": 236825,
+              "logit": 45.25
+            },
+            {
+              "token_id": 236776,
+              "logit": 37.25
+            }
+          ],
+          "logit_sha256_by_step": [
+            "1a3a0fa734e8d6c9382a6a9f85d3d24e57f8190b9c29c034f12a35900628c592",
+            "e84f15eb05ec6ab316a5d606a43f3004eccb47511833801c111ef39d881d03da",
+            "184d8df0343702ea90a6a1c4a0f4673bcd0a7ebb68cda97b1fe31813e2fa56a7"
+          ]
+        }
+      },
+      "embedding_row_sha256": {
+        "source": "bce2a5d802e9523ea7045e2cae40c20bc387dfd4266d75f53609aaa229d31034",
+        "alias": "bce2a5d802e9523ea7045e2cae40c20bc387dfd4266d75f53609aaa229d31034"
+      }
+    },
+    "target_usage": {
+      "forwards": 6,
+      "forward_tokens": 138,
+      "probe_rows": 0,
+      "sae_rows": 0
+    },
+    "peak_allocated_bytes": 8647225344
+  },
+  "exact_replay": true
+}

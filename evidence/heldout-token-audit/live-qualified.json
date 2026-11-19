@@ -1,0 +1,2517 @@
+{
+  "tasks": [
+    {
+      "task_id": "calibration-replacements-v1/resistance_to_false_suggestions/44c02adb026fce08114f574a/gemma-3-4b-it",
+      "family": "resistance_to_false_suggestions",
+      "variant_index": 77,
+      "paged": {
+        "terminal": true,
+        "editor_status": "no_submission",
+        "grade_status": "no_submission",
+        "reason": "updater turn limit reached before submission",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 33174,
+          "cached_input_tokens": 23970,
+          "uncached_input_tokens": 9204,
+          "output_tokens": 1332,
+          "total_tokens": 34506,
+          "reported_cost_upper_bound_usd": 0.71676
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4590,
+          "cached_input_tokens": 0,
+          "uncached_input_tokens": 4590,
+          "output_tokens": 477,
+          "total_tokens": 5067,
+          "reported_cost_upper_bound_usd": 0.11088
+        },
+        "cost_upper_bound_usd": 0.71676,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 65,
+          "forward_tokens": 5076,
+          "probe_rows": 18,
+          "sae_rows": 12,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 384
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "paged",
+          "available_entries": 445,
+          "shown_entries": 4,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 270,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "2cfe6e19f9f0b0bd3c05a32d8fee899bcf6a23626c6237142022fbbab40b2718",
+          "opening_system_sha256": "6bcb2f4a9ee885180aa1ac92c9658831e29fbf3065de7c6331459a0c4998bb8f",
+          "objective_sha256": "2cc0f901a0b3ebb82fb10f6e4a9aa4cd4b8c106ef61a80e024015ae91165f66e",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "7f34a20ae7d2b311c1334d79f5d026b4dfb2883ef5914702478373bf2d7a3e0a",
+        "public_objective": "ed09c4595cefcdfc2ab17f5c02e0d57bba2e7da9d1d873c75c8b850ac3208674",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "inspect_target": 2,
+          "write_weights": 1
+        },
+        "effective_reward": 0.0,
+        "effective_reward_source": "host_zero_for_no_submission",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 33174,
+          "cached_input_tokens": 23970,
+          "uncached_input_tokens": 9204,
+          "output_tokens": 1332,
+          "total_tokens": 34506,
+          "reported_cost_upper_bound_usd": 0.71676
+        },
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 33174,
+          "cached_input_tokens": 23970,
+          "uncached_input_tokens": 9204,
+          "output_tokens": 1332,
+          "total_tokens": 34506,
+          "reported_cost_upper_bound_usd": 0.71676
+        },
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 33174,
+          "cached_input_tokens": 23970,
+          "uncached_input_tokens": 9204,
+          "output_tokens": 1332,
+          "total_tokens": 34506,
+          "reported_cost_upper_bound_usd": 0.71676
+        }
+      },
+      "eager": {
+        "terminal": true,
+        "editor_status": "no_submission",
+        "grade_status": "no_submission",
+        "reason": "updater turn limit reached before submission",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 76906,
+          "cached_input_tokens": 58526,
+          "uncached_input_tokens": 18380,
+          "output_tokens": 2324,
+          "total_tokens": 79230,
+          "reported_cost_upper_bound_usd": 1.63108
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 12541,
+          "cached_input_tokens": 0,
+          "uncached_input_tokens": 12541,
+          "output_tokens": 585,
+          "total_tokens": 13126,
+          "reported_cost_upper_bound_usd": 0.27422
+        },
+        "cost_upper_bound_usd": 1.63108,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 81,
+          "forward_tokens": 6299,
+          "probe_rows": 32,
+          "sae_rows": 12,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 576
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "eager",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 30913,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+          "objective_sha256": "2cc0f901a0b3ebb82fb10f6e4a9aa4cd4b8c106ef61a80e024015ae91165f66e",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "7f34a20ae7d2b311c1334d79f5d026b4dfb2883ef5914702478373bf2d7a3e0a",
+        "public_objective": "ed09c4595cefcdfc2ab17f5c02e0d57bba2e7da9d1d873c75c8b850ac3208674",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 2,
+          "inspect_target": 4,
+          "write_weights": 1
+        },
+        "effective_reward": 0.0,
+        "effective_reward_source": "host_zero_for_no_submission",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 76906,
+          "cached_input_tokens": 58526,
+          "uncached_input_tokens": 18380,
+          "output_tokens": 2324,
+          "total_tokens": 79230,
+          "reported_cost_upper_bound_usd": 1.63108
+        }
+      },
+      "native": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": "turn_limit",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 252427,
+          "cached_input_tokens": 200984,
+          "uncached_input_tokens": 51443,
+          "output_tokens": 1207,
+          "total_tokens": 253634,
+          "reported_cost_upper_bound_usd": 5.09682
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 49502,
+          "cached_input_tokens": 0,
+          "uncached_input_tokens": 49502,
+          "output_tokens": 296,
+          "total_tokens": 49798,
+          "reported_cost_upper_bound_usd": 1.00188
+        },
+        "cost_upper_bound_usd": 5.09682,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "tool_calls": 5,
+          "run_calls": 1,
+          "run_sequences": 4,
+          "inspect_calls": 3,
+          "inspect_sequences": 8,
+          "forward_tokens": 894,
+          "inspection_scalars": 25614,
+          "weight_scalars": 6
+        },
+        "public_practice_checks": 0,
+        "public_objective": "ed09c4595cefcdfc2ab17f5c02e0d57bba2e7da9d1d873c75c8b850ac3208674",
+        "public_practice": "7f34a20ae7d2b311c1334d79f5d026b4dfb2883ef5914702478373bf2d7a3e0a",
+        "successful_editor_tools": {
+          "run_target": 1,
+          "inspect_target": 2,
+          "read_weights": 1
+        },
+        "patch_sha256": "39da0e4b98545cd1b755f2a7e03f45f15bbaf871a4a5c116e299aaeafee601c5",
+        "patch_bytes": 152,
+        "patch_payload_tensors": 0,
+        "changed_parameters": 0,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 64,
+          "base_correct_targets": 32,
+          "base_wrong_targets": 32,
+          "edited_correct_targets": 32,
+          "base_correct_targets_retained": 32,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 110,
+          "controls_retained": 110
+        },
+        "pristine_identity": "29e55e9ae6463ccee25992970e0473280c609860d5afaaee5865f4d9669af669",
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 252427,
+          "cached_input_tokens": 200984,
+          "uncached_input_tokens": 51443,
+          "output_tokens": 1207,
+          "total_tokens": 253634,
+          "reported_cost_upper_bound_usd": 5.09682
+        }
+      },
+      "grouped": {
+        "terminal": true,
+        "editor_status": "no_submission",
+        "grade_status": "no_submission",
+        "reason": "updater turn limit reached before submission",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 35897,
+          "cached_input_tokens": 26690,
+          "uncached_input_tokens": 9207,
+          "output_tokens": 1371,
+          "total_tokens": 37268,
+          "reported_cost_upper_bound_usd": 0.77278
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4782,
+          "cached_input_tokens": 0,
+          "uncached_input_tokens": 4782,
+          "output_tokens": 614,
+          "total_tokens": 5396,
+          "reported_cost_upper_bound_usd": 0.1202
+        },
+        "cost_upper_bound_usd": 0.77278,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 67,
+          "forward_tokens": 5202,
+          "probe_rows": 20,
+          "sae_rows": 12,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 576
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "grouped",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "rendered_records": 4,
+          "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+          "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 958,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+          "opening_system_sha256": "efe30496186922a65e15b883187526b1302ad0189c4f92435f402cceba279557",
+          "objective_sha256": "2cc0f901a0b3ebb82fb10f6e4a9aa4cd4b8c106ef61a80e024015ae91165f66e",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "7f34a20ae7d2b311c1334d79f5d026b4dfb2883ef5914702478373bf2d7a3e0a",
+        "public_objective": "ed09c4595cefcdfc2ab17f5c02e0d57bba2e7da9d1d873c75c8b850ac3208674",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "inspect_target": 2,
+          "write_weights": 1
+        },
+        "effective_reward": 0.0,
+        "effective_reward_source": "host_zero_for_no_submission",
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 35897,
+          "cached_input_tokens": 26690,
+          "uncached_input_tokens": 9207,
+          "output_tokens": 1371,
+          "total_tokens": 37268,
+          "reported_cost_upper_bound_usd": 0.77278
+        }
+      },
+      "paged_differences": {
+        "eager": {
+          "calls": 0,
+          "input_tokens": -43732,
+          "cached_input_tokens": -34556,
+          "uncached_input_tokens": -9176,
+          "output_tokens": -992,
+          "total_tokens": -44724,
+          "cost_upper_bound_usd": -0.91432,
+          "effective_reward": 0.0
+        },
+        "native": {
+          "calls": 0,
+          "input_tokens": -219253,
+          "cached_input_tokens": -177014,
+          "uncached_input_tokens": -42239,
+          "output_tokens": 125,
+          "total_tokens": -219128,
+          "cost_upper_bound_usd": -4.38006,
+          "effective_reward": 0.0
+        },
+        "grouped": {
+          "calls": 0,
+          "input_tokens": -2723,
+          "cached_input_tokens": -2720,
+          "uncached_input_tokens": -3,
+          "output_tokens": -39,
+          "total_tokens": -2762,
+          "cost_upper_bound_usd": -0.05602,
+          "effective_reward": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/output_code_remapping/069/gemma-3-4b-it",
+      "family": "output_code_remapping",
+      "variant_index": 48,
+      "paged": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 28272,
+          "cached_input_tokens": 24469,
+          "uncached_input_tokens": 3803,
+          "output_tokens": 637,
+          "total_tokens": 28909,
+          "reported_cost_upper_bound_usd": 0.59092
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4137,
+          "cached_input_tokens": 3457,
+          "uncached_input_tokens": 680,
+          "output_tokens": 216,
+          "total_tokens": 4353,
+          "reported_cost_upper_bound_usd": 0.09138
+        },
+        "cost_upper_bound_usd": 0.59092,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 45,
+          "forward_tokens": 1570,
+          "probe_rows": 17,
+          "sae_rows": 8,
+          "sae_fit_steps": 80,
+          "sae_fit_rows": 480
+        },
+        "public_practice_checks": 4,
+        "opening": {
+          "mode": "paged",
+          "available_entries": 445,
+          "shown_entries": 4,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 270,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "2cfe6e19f9f0b0bd3c05a32d8fee899bcf6a23626c6237142022fbbab40b2718",
+          "opening_system_sha256": "6bcb2f4a9ee885180aa1ac92c9658831e29fbf3065de7c6331459a0c4998bb8f",
+          "objective_sha256": "9b0842f7630b734051a46158da83b25ead268fbf46c67e9fe404cee93eaecdb9",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "a9ca8bb75f8890569f66d6fc2436d0cb683dd68202a485904b1bc8c8d1f7f07b",
+        "public_objective": "f54c84267fb3f8d06831504b256cc1cac17037ec510ffbce9ab7057f97e74450",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "inspect_target": 1,
+          "write_weights": 3,
+          "submit_patch": 1
+        },
+        "patch_sha256": "b14299e9b2ab15a82d8023576fbac06d9fc90c89f2e2244626a587f3379c795c",
+        "patch_bytes": 77372,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 7674,
+        "reward": 0.9333333333333333,
+        "effective_reward": 0.9333333333333333,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 48,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 48,
+          "edited_correct_targets": 48,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 48,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 90,
+          "controls_retained": 84
+        },
+        "pristine_identity": "b0aef731a6241ee572a1f6f0a5ba4d841919f7f7cf8b78e9b8d1ab20a082901a",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 28272,
+          "cached_input_tokens": 24469,
+          "uncached_input_tokens": 3803,
+          "output_tokens": 637,
+          "total_tokens": 28909,
+          "reported_cost_upper_bound_usd": 0.59092
+        },
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 28272,
+          "cached_input_tokens": 24469,
+          "uncached_input_tokens": 3803,
+          "output_tokens": 637,
+          "total_tokens": 28909,
+          "reported_cost_upper_bound_usd": 0.59092
+        },
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 28272,
+          "cached_input_tokens": 24469,
+          "uncached_input_tokens": 3803,
+          "output_tokens": 637,
+          "total_tokens": 28909,
+          "reported_cost_upper_bound_usd": 0.59092
+        }
+      },
+      "eager": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 71395,
+          "cached_input_tokens": 65913,
+          "uncached_input_tokens": 5482,
+          "output_tokens": 1053,
+          "total_tokens": 72448,
+          "reported_cost_upper_bound_usd": 1.47002
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 12088,
+          "cached_input_tokens": 11408,
+          "uncached_input_tokens": 680,
+          "output_tokens": 351,
+          "total_tokens": 12439,
+          "reported_cost_upper_bound_usd": 0.2558
+        },
+        "cost_upper_bound_usd": 1.47002,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 63,
+          "forward_tokens": 2049,
+          "probe_rows": 35,
+          "sae_rows": 14,
+          "sae_fit_steps": 100,
+          "sae_fit_rows": 1200
+        },
+        "public_practice_checks": 4,
+        "opening": {
+          "mode": "eager",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 30913,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+          "objective_sha256": "9b0842f7630b734051a46158da83b25ead268fbf46c67e9fe404cee93eaecdb9",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "a9ca8bb75f8890569f66d6fc2436d0cb683dd68202a485904b1bc8c8d1f7f07b",
+        "public_objective": "f54c84267fb3f8d06831504b256cc1cac17037ec510ffbce9ab7057f97e74450",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "inspect_target": 3,
+          "write_weights": 3,
+          "submit_patch": 1
+        },
+        "patch_sha256": "b796794bf37e5887d698bcbf1574704fda76d0f2333959c0d1ce7aab9184031e",
+        "patch_bytes": 77372,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 7674,
+        "reward": 0.9333333333333333,
+        "effective_reward": 0.9333333333333333,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 48,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 48,
+          "edited_correct_targets": 48,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 48,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 90,
+          "controls_retained": 84
+        },
+        "pristine_identity": "b0aef731a6241ee572a1f6f0a5ba4d841919f7f7cf8b78e9b8d1ab20a082901a",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 71395,
+          "cached_input_tokens": 65913,
+          "uncached_input_tokens": 5482,
+          "output_tokens": 1053,
+          "total_tokens": 72448,
+          "reported_cost_upper_bound_usd": 1.47002
+        }
+      },
+      "native": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": "turn_limit",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 251314,
+          "cached_input_tokens": 201236,
+          "uncached_input_tokens": 50078,
+          "output_tokens": 976,
+          "total_tokens": 252290,
+          "reported_cost_upper_bound_usd": 5.06532
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 49208,
+          "cached_input_tokens": 1437,
+          "uncached_input_tokens": 47771,
+          "output_tokens": 169,
+          "total_tokens": 49377,
+          "reported_cost_upper_bound_usd": 0.99092
+        },
+        "cost_upper_bound_usd": 5.06532,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "tool_calls": 7,
+          "run_calls": 1,
+          "run_sequences": 6,
+          "inspect_calls": 2,
+          "inspect_sequences": 3,
+          "forward_tokens": 304,
+          "inspection_scalars": 44,
+          "weight_scalars": 6
+        },
+        "public_practice_checks": 0,
+        "public_objective": "f54c84267fb3f8d06831504b256cc1cac17037ec510ffbce9ab7057f97e74450",
+        "public_practice": "a9ca8bb75f8890569f66d6fc2436d0cb683dd68202a485904b1bc8c8d1f7f07b",
+        "successful_editor_tools": {
+          "run_target": 1,
+          "inspect_target": 2,
+          "read_weights": 1,
+          "write_weights": 3
+        },
+        "patch_sha256": "b9d7c522036593f1adfc7317822f51cbccb78fb276d581d77598acd4a5dbecaa",
+        "patch_bytes": 77180,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 7674,
+        "reward": 0.8541666666666666,
+        "effective_reward": 0.8541666666666666,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 48,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 48,
+          "edited_correct_targets": 45,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 45,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 90,
+          "controls_retained": 82
+        },
+        "pristine_identity": "b0aef731a6241ee572a1f6f0a5ba4d841919f7f7cf8b78e9b8d1ab20a082901a",
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 251314,
+          "cached_input_tokens": 201236,
+          "uncached_input_tokens": 50078,
+          "output_tokens": 976,
+          "total_tokens": 252290,
+          "reported_cost_upper_bound_usd": 5.06532
+        }
+      },
+      "grouped": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 29990,
+          "cached_input_tokens": 25860,
+          "uncached_input_tokens": 4130,
+          "output_tokens": 993,
+          "total_tokens": 30983,
+          "reported_cost_upper_bound_usd": 0.63952
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4329,
+          "cached_input_tokens": 3649,
+          "uncached_input_tokens": 680,
+          "output_tokens": 301,
+          "total_tokens": 4630,
+          "reported_cost_upper_bound_usd": 0.09862
+        },
+        "cost_upper_bound_usd": 0.63952,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 61,
+          "forward_tokens": 1959,
+          "probe_rows": 26,
+          "sae_rows": 10,
+          "sae_fit_steps": 100,
+          "sae_fit_rows": 1200
+        },
+        "public_practice_checks": 4,
+        "opening": {
+          "mode": "grouped",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "rendered_records": 4,
+          "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+          "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 958,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+          "opening_system_sha256": "efe30496186922a65e15b883187526b1302ad0189c4f92435f402cceba279557",
+          "objective_sha256": "9b0842f7630b734051a46158da83b25ead268fbf46c67e9fe404cee93eaecdb9",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "a9ca8bb75f8890569f66d6fc2436d0cb683dd68202a485904b1bc8c8d1f7f07b",
+        "public_objective": "f54c84267fb3f8d06831504b256cc1cac17037ec510ffbce9ab7057f97e74450",
+        "successful_editor_tools": {
+          "tokenize_target": 2,
+          "fit_sae": 1,
+          "contrast_target": 1,
+          "inspect_target": 1,
+          "write_weights": 3,
+          "run_target": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "0c923546c5d088fe01cbf104c089b9b55dc8b26c81482d8b0c3bd82ab8044938",
+        "patch_bytes": 77342,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 7671,
+        "reward": 0.9333333333333333,
+        "effective_reward": 0.9333333333333333,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 48,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 48,
+          "edited_correct_targets": 48,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 48,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 90,
+          "controls_retained": 84
+        },
+        "pristine_identity": "b0aef731a6241ee572a1f6f0a5ba4d841919f7f7cf8b78e9b8d1ab20a082901a",
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 29990,
+          "cached_input_tokens": 25860,
+          "uncached_input_tokens": 4130,
+          "output_tokens": 993,
+          "total_tokens": 30983,
+          "reported_cost_upper_bound_usd": 0.63952
+        }
+      },
+      "paged_differences": {
+        "eager": {
+          "calls": 0,
+          "input_tokens": -43123,
+          "cached_input_tokens": -41444,
+          "uncached_input_tokens": -1679,
+          "output_tokens": -416,
+          "total_tokens": -43539,
+          "cost_upper_bound_usd": -0.8791,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 0
+          }
+        },
+        "native": {
+          "calls": 0,
+          "input_tokens": -223042,
+          "cached_input_tokens": -176767,
+          "uncached_input_tokens": -46275,
+          "output_tokens": -339,
+          "total_tokens": -223381,
+          "cost_upper_bound_usd": -4.4744,
+          "effective_reward": 0.07916666666666672,
+          "reward": 0.07916666666666672,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 3,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 3,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 2
+          }
+        },
+        "grouped": {
+          "calls": 0,
+          "input_tokens": -1718,
+          "cached_input_tokens": -1391,
+          "uncached_input_tokens": -327,
+          "output_tokens": -356,
+          "total_tokens": -2074,
+          "cost_upper_bound_usd": -0.0486,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 0
+          }
+        }
+      }
+    },
+    {
+      "task_id": "calibration-replacements-v1/alias_acquisition/3d730fe62cd5f7bedf96d591/gemma-3-4b-it",
+      "family": "alias_acquisition",
+      "variant_index": 51,
+      "paged": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 28793,
+          "cached_input_tokens": 25179,
+          "uncached_input_tokens": 3614,
+          "output_tokens": 724,
+          "total_tokens": 29517,
+          "reported_cost_upper_bound_usd": 0.60482
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 3809,
+          "cached_input_tokens": 3457,
+          "uncached_input_tokens": 352,
+          "output_tokens": 276,
+          "total_tokens": 4085,
+          "reported_cost_upper_bound_usd": 0.08722
+        },
+        "cost_upper_bound_usd": 0.60482,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 63,
+          "forward_tokens": 1763,
+          "probe_rows": 18,
+          "sae_rows": 8,
+          "sae_fit_steps": 80,
+          "sae_fit_rows": 640
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "paged",
+          "available_entries": 445,
+          "shown_entries": 4,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 270,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "2cfe6e19f9f0b0bd3c05a32d8fee899bcf6a23626c6237142022fbbab40b2718",
+          "opening_system_sha256": "6bcb2f4a9ee885180aa1ac92c9658831e29fbf3065de7c6331459a0c4998bb8f",
+          "objective_sha256": "3b571aa37be3dacf86e5ba1c5a2c80e0dd7f4cfcf5fb748952479cef620884f1",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "674fd021f275765e22466efffab04a37f8428796fb55ad3feafa1ec9e80d4696",
+        "public_objective": "4ca9003f204c6176d80b1ec44d88d00d3a2a93dee4869a0f7879541914dd0a9c",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "run_target": 2,
+          "contrast_target": 1,
+          "read_weights": 1,
+          "inspect_target": 1,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "6f2c1cb585f2e65a86c755653738b19461d8d316abb76387eb9a19daf185751e",
+        "patch_bytes": 26192,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2556,
+        "reward": 0.9857142857142858,
+        "effective_reward": 0.9857142857142858,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 69
+        },
+        "pristine_identity": "0b1e021588936dbe04c84d927777857a641d12fc8d3853e9fcbcabfbb3bd55f9",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 28793,
+          "cached_input_tokens": 25179,
+          "uncached_input_tokens": 3614,
+          "output_tokens": 724,
+          "total_tokens": 29517,
+          "reported_cost_upper_bound_usd": 0.60482
+        },
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 28793,
+          "cached_input_tokens": 25179,
+          "uncached_input_tokens": 3614,
+          "output_tokens": 724,
+          "total_tokens": 29517,
+          "reported_cost_upper_bound_usd": 0.60482
+        },
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 28793,
+          "cached_input_tokens": 25179,
+          "uncached_input_tokens": 3614,
+          "output_tokens": 724,
+          "total_tokens": 29517,
+          "reported_cost_upper_bound_usd": 0.60482
+        }
+      },
+      "eager": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 66093,
+          "cached_input_tokens": 63086,
+          "uncached_input_tokens": 3007,
+          "output_tokens": 623,
+          "total_tokens": 66716,
+          "reported_cost_upper_bound_usd": 1.34678
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 11760,
+          "cached_input_tokens": 11408,
+          "uncached_input_tokens": 352,
+          "output_tokens": 251,
+          "total_tokens": 12011,
+          "reported_cost_upper_bound_usd": 0.24524
+        },
+        "cost_upper_bound_usd": 1.34678,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 46,
+          "forward_tokens": 1078,
+          "probe_rows": 18,
+          "sae_rows": 8,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 768
+        },
+        "public_practice_checks": 3,
+        "opening": {
+          "mode": "eager",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 30913,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+          "objective_sha256": "3b571aa37be3dacf86e5ba1c5a2c80e0dd7f4cfcf5fb748952479cef620884f1",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "674fd021f275765e22466efffab04a37f8428796fb55ad3feafa1ec9e80d4696",
+        "public_objective": "4ca9003f204c6176d80b1ec44d88d00d3a2a93dee4869a0f7879541914dd0a9c",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "run_target": 1,
+          "contrast_target": 1,
+          "inspect_target": 1,
+          "write_weights": 2,
+          "submit_patch": 1
+        },
+        "patch_sha256": "ad08b94063402c3e13625cd608cda63d5a9be6c483a347199c26c47144aa99bc",
+        "patch_bytes": 51752,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 5112,
+        "reward": 0.9857142857142858,
+        "effective_reward": 0.9857142857142858,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 69
+        },
+        "pristine_identity": "0b1e021588936dbe04c84d927777857a641d12fc8d3853e9fcbcabfbb3bd55f9",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 66093,
+          "cached_input_tokens": 63086,
+          "uncached_input_tokens": 3007,
+          "output_tokens": 623,
+          "total_tokens": 66716,
+          "reported_cost_upper_bound_usd": 1.34678
+        }
+      },
+      "native": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": "turn_limit",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 250421,
+          "cached_input_tokens": 200910,
+          "uncached_input_tokens": 49511,
+          "output_tokens": 428,
+          "total_tokens": 250849,
+          "reported_cost_upper_bound_usd": 5.02554
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 48978,
+          "cached_input_tokens": 1437,
+          "uncached_input_tokens": 47541,
+          "output_tokens": 73,
+          "total_tokens": 49051,
+          "reported_cost_upper_bound_usd": 0.98248
+        },
+        "cost_upper_bound_usd": 5.02554,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "tool_calls": 5,
+          "run_calls": 0,
+          "run_sequences": 0,
+          "inspect_calls": 2,
+          "inspect_sequences": 2,
+          "forward_tokens": 28,
+          "inspection_scalars": 70,
+          "weight_scalars": 6
+        },
+        "public_practice_checks": 0,
+        "public_objective": "4ca9003f204c6176d80b1ec44d88d00d3a2a93dee4869a0f7879541914dd0a9c",
+        "public_practice": "674fd021f275765e22466efffab04a37f8428796fb55ad3feafa1ec9e80d4696",
+        "successful_editor_tools": {
+          "inspect_target": 2,
+          "read_weights": 1,
+          "write_weights": 2
+        },
+        "patch_sha256": "46c2c1732a78ffd67760baa4012b1043efd2d8751d3eb34857bb65ec31d70bc3",
+        "patch_bytes": 51540,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 5110,
+        "reward": 1.0,
+        "effective_reward": 1.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 70
+        },
+        "pristine_identity": "0b1e021588936dbe04c84d927777857a641d12fc8d3853e9fcbcabfbb3bd55f9",
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 250421,
+          "cached_input_tokens": 200910,
+          "uncached_input_tokens": 49511,
+          "output_tokens": 428,
+          "total_tokens": 250849,
+          "reported_cost_upper_bound_usd": 5.02554
+        }
+      },
+      "grouped": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 27351,
+          "cached_input_tokens": 24265,
+          "uncached_input_tokens": 3086,
+          "output_tokens": 734,
+          "total_tokens": 28085,
+          "reported_cost_upper_bound_usd": 0.57638
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4001,
+          "cached_input_tokens": 3649,
+          "uncached_input_tokens": 352,
+          "output_tokens": 215,
+          "total_tokens": 4216,
+          "reported_cost_upper_bound_usd": 0.08862
+        },
+        "cost_upper_bound_usd": 0.57638,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 60,
+          "forward_tokens": 1376,
+          "probe_rows": 18,
+          "sae_rows": 8,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 768
+        },
+        "public_practice_checks": 3,
+        "opening": {
+          "mode": "grouped",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "rendered_records": 4,
+          "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+          "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 958,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+          "opening_system_sha256": "efe30496186922a65e15b883187526b1302ad0189c4f92435f402cceba279557",
+          "objective_sha256": "3b571aa37be3dacf86e5ba1c5a2c80e0dd7f4cfcf5fb748952479cef620884f1",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "674fd021f275765e22466efffab04a37f8428796fb55ad3feafa1ec9e80d4696",
+        "public_objective": "4ca9003f204c6176d80b1ec44d88d00d3a2a93dee4869a0f7879541914dd0a9c",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 1,
+          "run_target": 2,
+          "inspect_target": 1,
+          "write_weights": 2,
+          "submit_patch": 1
+        },
+        "patch_sha256": "8c5c98d007b1b007c03d78da19750f5e2e57d33e22ddfc51891250ecad79f65c",
+        "patch_bytes": 51752,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 5112,
+        "reward": 0.9857142857142858,
+        "effective_reward": 0.9857142857142858,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 3,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 3,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 70,
+          "controls_retained": 69
+        },
+        "pristine_identity": "0b1e021588936dbe04c84d927777857a641d12fc8d3853e9fcbcabfbb3bd55f9",
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 27351,
+          "cached_input_tokens": 24265,
+          "uncached_input_tokens": 3086,
+          "output_tokens": 734,
+          "total_tokens": 28085,
+          "reported_cost_upper_bound_usd": 0.57638
+        }
+      },
+      "paged_differences": {
+        "eager": {
+          "calls": 0,
+          "input_tokens": -37300,
+          "cached_input_tokens": -37907,
+          "uncached_input_tokens": 607,
+          "output_tokens": 101,
+          "total_tokens": -37199,
+          "cost_upper_bound_usd": -0.74196,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 0
+          }
+        },
+        "native": {
+          "calls": 0,
+          "input_tokens": -221628,
+          "cached_input_tokens": -175731,
+          "uncached_input_tokens": -45897,
+          "output_tokens": 296,
+          "total_tokens": -221332,
+          "cost_upper_bound_usd": -4.42072,
+          "effective_reward": -0.014285714285714235,
+          "reward": -0.014285714285714235,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": -1
+          }
+        },
+        "grouped": {
+          "calls": 0,
+          "input_tokens": 1442,
+          "cached_input_tokens": 914,
+          "uncached_input_tokens": 528,
+          "output_tokens": -10,
+          "total_tokens": 1432,
+          "cost_upper_bound_usd": 0.02844,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 0
+          }
+        }
+      }
+    },
+    {
+      "task_id": "audited-stale-annotation-v2/7fd4a6aaefbcfe48952945fc/gemma-3-4b-it",
+      "family": "factual_update",
+      "variant_index": 99,
+      "paged": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 29193,
+          "cached_input_tokens": 25442,
+          "uncached_input_tokens": 3751,
+          "output_tokens": 763,
+          "total_tokens": 29956,
+          "reported_cost_upper_bound_usd": 0.61438
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 3876,
+          "cached_input_tokens": 3457,
+          "uncached_input_tokens": 419,
+          "output_tokens": 262,
+          "total_tokens": 4138,
+          "reported_cost_upper_bound_usd": 0.088
+        },
+        "cost_upper_bound_usd": 0.61438,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 35,
+          "forward_tokens": 1178,
+          "probe_rows": 18,
+          "sae_rows": 8,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 768
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "paged",
+          "available_entries": 445,
+          "shown_entries": 4,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 270,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "2cfe6e19f9f0b0bd3c05a32d8fee899bcf6a23626c6237142022fbbab40b2718",
+          "opening_system_sha256": "6bcb2f4a9ee885180aa1ac92c9658831e29fbf3065de7c6331459a0c4998bb8f",
+          "objective_sha256": "fdd53ab474f22ec71b317cb751501ebc5050d7cc88b19a2a5120c63bfe28bdad",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "5c26bc7ac084377d1d570398d865726e6da7646fd708b057e73efe220f3ad302",
+        "public_objective": "51d521ae8029c56f325345f77f378097e02ed2ef2890f8701ce6be26329f2b02",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "run_target": 1,
+          "inspect_target": 1,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "3ee6ce2725198f22cdc8e59abbb01cdc13175c5e7218519cbc91b30133117139",
+        "patch_bytes": 26212,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2558,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 68,
+          "controls_retained": 66
+        },
+        "pristine_identity": "c4ed71e236d446e2809926bbc754b5f95426e5fabc9ceee581e9a5c5f8fba9d6",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 29193,
+          "cached_input_tokens": 25442,
+          "uncached_input_tokens": 3751,
+          "output_tokens": 763,
+          "total_tokens": 29956,
+          "reported_cost_upper_bound_usd": 0.61438
+        },
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 29193,
+          "cached_input_tokens": 25442,
+          "uncached_input_tokens": 3751,
+          "output_tokens": 763,
+          "total_tokens": 29956,
+          "reported_cost_upper_bound_usd": 0.61438
+        },
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 29193,
+          "cached_input_tokens": 25442,
+          "uncached_input_tokens": 3751,
+          "output_tokens": 763,
+          "total_tokens": 29956,
+          "reported_cost_upper_bound_usd": 0.61438
+        }
+      },
+      "eager": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 68282,
+          "cached_input_tokens": 64442,
+          "uncached_input_tokens": 3840,
+          "output_tokens": 806,
+          "total_tokens": 69088,
+          "reported_cost_upper_bound_usd": 1.39788
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 11827,
+          "cached_input_tokens": 11408,
+          "uncached_input_tokens": 419,
+          "output_tokens": 232,
+          "total_tokens": 12059,
+          "reported_cost_upper_bound_usd": 0.24582
+        },
+        "cost_upper_bound_usd": 1.39788,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 33,
+          "forward_tokens": 1023,
+          "probe_rows": 26,
+          "sae_rows": 8,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 768
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "eager",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 30913,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+          "objective_sha256": "fdd53ab474f22ec71b317cb751501ebc5050d7cc88b19a2a5120c63bfe28bdad",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "5c26bc7ac084377d1d570398d865726e6da7646fd708b057e73efe220f3ad302",
+        "public_objective": "51d521ae8029c56f325345f77f378097e02ed2ef2890f8701ce6be26329f2b02",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 2,
+          "inspect_target": 2,
+          "read_weights": 1,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "63d6f614c01175375d631d36d50dd3039221356b04099fb07b3a9b652596bffc",
+        "patch_bytes": 25942,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2531,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 68,
+          "controls_retained": 68
+        },
+        "pristine_identity": "c4ed71e236d446e2809926bbc754b5f95426e5fabc9ceee581e9a5c5f8fba9d6",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 68282,
+          "cached_input_tokens": 64442,
+          "uncached_input_tokens": 3840,
+          "output_tokens": 806,
+          "total_tokens": 69088,
+          "reported_cost_upper_bound_usd": 1.39788
+        }
+      },
+      "native": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": "turn_limit",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 253548,
+          "cached_input_tokens": 202887,
+          "uncached_input_tokens": 50661,
+          "output_tokens": 844,
+          "total_tokens": 254392,
+          "reported_cost_upper_bound_usd": 5.10472
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 49277,
+          "cached_input_tokens": 1437,
+          "uncached_input_tokens": 47840,
+          "output_tokens": 84,
+          "total_tokens": 49361,
+          "reported_cost_upper_bound_usd": 0.9889
+        },
+        "cost_upper_bound_usd": 5.10472,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "tool_calls": 8,
+          "run_calls": 2,
+          "run_sequences": 7,
+          "inspect_calls": 1,
+          "inspect_sequences": 3,
+          "forward_tokens": 411,
+          "inspection_scalars": 15378,
+          "weight_scalars": 24
+        },
+        "public_practice_checks": 0,
+        "public_objective": "51d521ae8029c56f325345f77f378097e02ed2ef2890f8701ce6be26329f2b02",
+        "public_practice": "5c26bc7ac084377d1d570398d865726e6da7646fd708b057e73efe220f3ad302",
+        "successful_editor_tools": {
+          "run_target": 2,
+          "inspect_target": 1,
+          "read_weights": 4,
+          "write_weights": 1
+        },
+        "patch_sha256": "297f632855afc09a81e1947c7bcf20cabcb71dcedef739690fbb3e114f00e965",
+        "patch_bytes": 25670,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2523,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 68,
+          "controls_retained": 68
+        },
+        "pristine_identity": "c4ed71e236d446e2809926bbc754b5f95426e5fabc9ceee581e9a5c5f8fba9d6",
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 253548,
+          "cached_input_tokens": 202887,
+          "uncached_input_tokens": 50661,
+          "output_tokens": 844,
+          "total_tokens": 254392,
+          "reported_cost_upper_bound_usd": 5.10472
+        }
+      },
+      "grouped": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 29074,
+          "cached_input_tokens": 25378,
+          "uncached_input_tokens": 3696,
+          "output_tokens": 787,
+          "total_tokens": 29861,
+          "reported_cost_upper_bound_usd": 0.61296
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4068,
+          "cached_input_tokens": 3649,
+          "uncached_input_tokens": 419,
+          "output_tokens": 234,
+          "total_tokens": 4302,
+          "reported_cost_upper_bound_usd": 0.09072
+        },
+        "cost_upper_bound_usd": 0.61296,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 28,
+          "forward_tokens": 895,
+          "probe_rows": 21,
+          "sae_rows": 8,
+          "sae_fit_steps": 64,
+          "sae_fit_rows": 512
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "grouped",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "rendered_records": 4,
+          "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+          "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 958,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+          "opening_system_sha256": "efe30496186922a65e15b883187526b1302ad0189c4f92435f402cceba279557",
+          "objective_sha256": "fdd53ab474f22ec71b317cb751501ebc5050d7cc88b19a2a5120c63bfe28bdad",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "5c26bc7ac084377d1d570398d865726e6da7646fd708b057e73efe220f3ad302",
+        "public_objective": "51d521ae8029c56f325345f77f378097e02ed2ef2890f8701ce6be26329f2b02",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 1,
+          "inspect_target": 3,
+          "read_weights": 2,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "e9731d55dcd711f113d3a47d8a4a68c294e6934ddb75f87a0308d1e77424516f",
+        "patch_bytes": 25972,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2534,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 68,
+          "controls_retained": 68
+        },
+        "pristine_identity": "c4ed71e236d446e2809926bbc754b5f95426e5fabc9ceee581e9a5c5f8fba9d6",
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 29074,
+          "cached_input_tokens": 25378,
+          "uncached_input_tokens": 3696,
+          "output_tokens": 787,
+          "total_tokens": 29861,
+          "reported_cost_upper_bound_usd": 0.61296
+        }
+      },
+      "paged_differences": {
+        "eager": {
+          "calls": 0,
+          "input_tokens": -39089,
+          "cached_input_tokens": -39000,
+          "uncached_input_tokens": -89,
+          "output_tokens": -43,
+          "total_tokens": -39132,
+          "cost_upper_bound_usd": -0.7835,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": -2
+          }
+        },
+        "native": {
+          "calls": 0,
+          "input_tokens": -224355,
+          "cached_input_tokens": -177445,
+          "uncached_input_tokens": -46910,
+          "output_tokens": -81,
+          "total_tokens": -224436,
+          "cost_upper_bound_usd": -4.49034,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": -2
+          }
+        },
+        "grouped": {
+          "calls": 0,
+          "input_tokens": 119,
+          "cached_input_tokens": 64,
+          "uncached_input_tokens": 55,
+          "output_tokens": -24,
+          "total_tokens": 95,
+          "cost_upper_bound_usd": 0.00142,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": -2
+          }
+        }
+      }
+    },
+    {
+      "task_id": "development-combinations-v1/selective_factual_withholding/065/gemma-3-4b-it",
+      "family": "selective_factual_withholding",
+      "variant_index": 54,
+      "paged": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 27308,
+          "cached_input_tokens": 24169,
+          "uncached_input_tokens": 3139,
+          "output_tokens": 477,
+          "total_tokens": 27785,
+          "reported_cost_upper_bound_usd": 0.56524
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 3847,
+          "cached_input_tokens": 3457,
+          "uncached_input_tokens": 390,
+          "output_tokens": 205,
+          "total_tokens": 4052,
+          "reported_cost_upper_bound_usd": 0.08514
+        },
+        "cost_upper_bound_usd": 0.56524,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 25,
+          "forward_tokens": 494,
+          "probe_rows": 18,
+          "sae_rows": 8,
+          "sae_fit_steps": 100,
+          "sae_fit_rows": 800
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "paged",
+          "available_entries": 445,
+          "shown_entries": 4,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 270,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "2cfe6e19f9f0b0bd3c05a32d8fee899bcf6a23626c6237142022fbbab40b2718",
+          "opening_system_sha256": "6bcb2f4a9ee885180aa1ac92c9658831e29fbf3065de7c6331459a0c4998bb8f",
+          "objective_sha256": "ab119ff33f1802711500cd8d5ccdb7d4aaa05b9c9033c5072653c8d33518e909",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "4e67415012ec75805067f523c295346d9d368749b2fd27221028f5a96f8883aa",
+        "public_objective": "49e97d85c611e3a191775c56c82fdc298ed483f5dca59e9697816fc932c40a37",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 1,
+          "inspect_target": 1,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "474ae66ad0219ae50dd55f41fe3dd8f92515b55a55b3a1d4edf92e8cc3c91018",
+        "patch_bytes": 26202,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2557,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 69,
+          "controls_retained": 69
+        },
+        "pristine_identity": "07d585601d4bc41969a315c08a741bf4e57d03bcb221f0a888c774d293f1e622",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 27308,
+          "cached_input_tokens": 24169,
+          "uncached_input_tokens": 3139,
+          "output_tokens": 477,
+          "total_tokens": 27785,
+          "reported_cost_upper_bound_usd": 0.56524
+        },
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 27308,
+          "cached_input_tokens": 24169,
+          "uncached_input_tokens": 3139,
+          "output_tokens": 477,
+          "total_tokens": 27785,
+          "reported_cost_upper_bound_usd": 0.56524
+        },
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 27308,
+          "cached_input_tokens": 24169,
+          "uncached_input_tokens": 3139,
+          "output_tokens": 477,
+          "total_tokens": 27785,
+          "reported_cost_upper_bound_usd": 0.56524
+        }
+      },
+      "eager": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 70012,
+          "cached_input_tokens": 64646,
+          "uncached_input_tokens": 5366,
+          "output_tokens": 954,
+          "total_tokens": 70966,
+          "reported_cost_upper_bound_usd": 1.4384
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 11798,
+          "cached_input_tokens": 11408,
+          "uncached_input_tokens": 390,
+          "output_tokens": 183,
+          "total_tokens": 11981,
+          "reported_cost_upper_bound_usd": 0.24328
+        },
+        "cost_upper_bound_usd": 1.4384,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 46,
+          "forward_tokens": 909,
+          "probe_rows": 27,
+          "sae_rows": 8,
+          "sae_fit_steps": 96,
+          "sae_fit_rows": 768
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "eager",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 30913,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "opening_system_sha256": "b24ee10eb2de31d816a1009f6bbbe8714c896de15629bfd0c1e53fde6b6cf116",
+          "objective_sha256": "ab119ff33f1802711500cd8d5ccdb7d4aaa05b9c9033c5072653c8d33518e909",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "4e67415012ec75805067f523c295346d9d368749b2fd27221028f5a96f8883aa",
+        "public_objective": "49e97d85c611e3a191775c56c82fdc298ed483f5dca59e9697816fc932c40a37",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 2,
+          "contrast_target": 1,
+          "run_target": 1,
+          "inspect_target": 3,
+          "read_weights": 1,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "47e517debbe4695cd1d0963b6ca28ccfc8641b32e14fe40863b7c0f18c0c150d",
+        "patch_bytes": 25862,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2523,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 69,
+          "controls_retained": 67
+        },
+        "pristine_identity": "07d585601d4bc41969a315c08a741bf4e57d03bcb221f0a888c774d293f1e622",
+        "prefix_eager": {
+          "calls": 5,
+          "input_tokens": 70012,
+          "cached_input_tokens": 64646,
+          "uncached_input_tokens": 5366,
+          "output_tokens": 954,
+          "total_tokens": 70966,
+          "reported_cost_upper_bound_usd": 1.4384
+        }
+      },
+      "native": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": "turn_limit",
+        "usage": {
+          "calls": 5,
+          "input_tokens": 257420,
+          "cached_input_tokens": 206075,
+          "uncached_input_tokens": 51345,
+          "output_tokens": 738,
+          "total_tokens": 258158,
+          "reported_cost_upper_bound_usd": 5.17792
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 49064,
+          "cached_input_tokens": 1437,
+          "uncached_input_tokens": 47627,
+          "output_tokens": 258,
+          "total_tokens": 49322,
+          "reported_cost_upper_bound_usd": 0.9916
+        },
+        "cost_upper_bound_usd": 5.17792,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "tool_calls": 7,
+          "run_calls": 0,
+          "run_sequences": 0,
+          "inspect_calls": 1,
+          "inspect_sequences": 2,
+          "forward_tokens": 60,
+          "inspection_scalars": 41072,
+          "weight_scalars": 24
+        },
+        "public_practice_checks": 0,
+        "public_objective": "49e97d85c611e3a191775c56c82fdc298ed483f5dca59e9697816fc932c40a37",
+        "public_practice": "4e67415012ec75805067f523c295346d9d368749b2fd27221028f5a96f8883aa",
+        "successful_editor_tools": {
+          "inspect_target": 1,
+          "read_weights": 4,
+          "write_weights": 2
+        },
+        "patch_sha256": "6f5225ee942cab01a09429b2cacffabb065821e378b0fa896f7f5e6b846190e8",
+        "patch_bytes": 128280,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 12784,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 69,
+          "controls_retained": 69
+        },
+        "pristine_identity": "07d585601d4bc41969a315c08a741bf4e57d03bcb221f0a888c774d293f1e622",
+        "prefix_native": {
+          "calls": 5,
+          "input_tokens": 257420,
+          "cached_input_tokens": 206075,
+          "uncached_input_tokens": 51345,
+          "output_tokens": 738,
+          "total_tokens": 258158,
+          "reported_cost_upper_bound_usd": 5.17792
+        }
+      },
+      "grouped": {
+        "terminal": true,
+        "editor_status": "submitted",
+        "grade_status": "scored",
+        "reason": null,
+        "usage": {
+          "calls": 5,
+          "input_tokens": 30390,
+          "cached_input_tokens": 26272,
+          "uncached_input_tokens": 4118,
+          "output_tokens": 970,
+          "total_tokens": 31360,
+          "reported_cost_upper_bound_usd": 0.6466
+        },
+        "first_request": {
+          "calls": 1,
+          "input_tokens": 4039,
+          "cached_input_tokens": 3649,
+          "uncached_input_tokens": 390,
+          "output_tokens": 199,
+          "total_tokens": 4238,
+          "reported_cost_upper_bound_usd": 0.08874
+        },
+        "cost_upper_bound_usd": 0.6466,
+        "unknown_usage_reservation_usd": 0.0,
+        "target_usage": {
+          "forwards": 36,
+          "forward_tokens": 850,
+          "probe_rows": 20,
+          "sae_rows": 8,
+          "sae_fit_steps": 100,
+          "sae_fit_rows": 800
+        },
+        "public_practice_checks": 2,
+        "opening": {
+          "mode": "grouped",
+          "available_entries": 445,
+          "shown_entries": 445,
+          "rendered_records": 4,
+          "encoding_guidance": "Literal pairs give [name,shape]. For a layer block, iterate layers_inclusive from first to last, then suffixes in listed order. Each name is prefix + decimal layer + '.' + suffix; use its listed shape.",
+          "expanded_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "metadata_tool_calls": 2,
+          "rendered_list_bytes": 958,
+          "ordered_entries_sha256": "c741d069bff80012987bdfdcdfb094fe3bf4f049013fdcf784c30c6e5b2ef404",
+          "rendered_list_sha256": "5a902eca7cef7c305073f8b882d6f01098517b32350ddf2551e750cc88b33a57",
+          "opening_system_sha256": "efe30496186922a65e15b883187526b1302ad0189c4f92435f402cceba279557",
+          "objective_sha256": "ab119ff33f1802711500cd8d5ccdb7d4aaa05b9c9033c5072653c8d33518e909",
+          "tool_schema_sha256": "674bffd26d5fe4446745a036f38bc2c805e316f12e7c5e0221c1c8b61eaee5aa"
+        },
+        "public_practice": "4e67415012ec75805067f523c295346d9d368749b2fd27221028f5a96f8883aa",
+        "public_objective": "49e97d85c611e3a191775c56c82fdc298ed483f5dca59e9697816fc932c40a37",
+        "successful_editor_tools": {
+          "fit_sae": 1,
+          "tokenize_target": 1,
+          "contrast_target": 1,
+          "inspect_target": 3,
+          "read_weights": 2,
+          "write_weights": 1,
+          "submit_patch": 1
+        },
+        "patch_sha256": "45d605c6c5e811a7d7912929a456c5271084524bd30afa6f961fafb1dfc3e7c8",
+        "patch_bytes": 26172,
+        "patch_payload_tensors": 2,
+        "changed_parameters": 2554,
+        "reward": 0.0,
+        "effective_reward": 0.0,
+        "effective_reward_source": "qualified_native_grade",
+        "counts": {
+          "target_items": 3,
+          "base_correct_targets": 0,
+          "base_wrong_targets": 3,
+          "edited_correct_targets": 0,
+          "base_correct_targets_retained": 0,
+          "newly_correct_targets": 0,
+          "previously_correct_targets_lost": 0,
+          "base_correct_controls": 69,
+          "controls_retained": 68
+        },
+        "pristine_identity": "07d585601d4bc41969a315c08a741bf4e57d03bcb221f0a888c774d293f1e622",
+        "prefix_grouped": {
+          "calls": 5,
+          "input_tokens": 30390,
+          "cached_input_tokens": 26272,
+          "uncached_input_tokens": 4118,
+          "output_tokens": 970,
+          "total_tokens": 31360,
+          "reported_cost_upper_bound_usd": 0.6466
+        }
+      },
+      "paged_differences": {
+        "eager": {
+          "calls": 0,
+          "input_tokens": -42704,
+          "cached_input_tokens": -40477,
+          "uncached_input_tokens": -2227,
+          "output_tokens": -477,
+          "total_tokens": -43181,
+          "cost_upper_bound_usd": -0.87316,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 2
+          }
+        },
+        "native": {
+          "calls": 0,
+          "input_tokens": -230112,
+          "cached_input_tokens": -181906,
+          "uncached_input_tokens": -48206,
+          "output_tokens": -261,
+          "total_tokens": -230373,
+          "cost_upper_bound_usd": -4.61268,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 0
+          }
+        },
+        "grouped": {
+          "calls": 0,
+          "input_tokens": -3082,
+          "cached_input_tokens": -2103,
+          "uncached_input_tokens": -979,
+          "output_tokens": -493,
+          "total_tokens": -3575,
+          "cost_upper_bound_usd": -0.08136,
+          "effective_reward": 0.0,
+          "reward": 0.0,
+          "counts": {
+            "target_items": 0,
+            "base_correct_targets": 0,
+            "base_wrong_targets": 0,
+            "edited_correct_targets": 0,
+            "base_correct_targets_retained": 0,
+            "newly_correct_targets": 0,
+            "previously_correct_targets_lost": 0,
+            "base_correct_controls": 0,
+            "controls_retained": 1
+          }
+        }
+      }
+    }
+  ],
+  "arms": {
+    "paged": {
+      "scheduled": 5,
+      "terminal": 5,
+      "editor_results_with_usage_accounting": 5,
+      "scored": 4,
+      "nonempty_submissions": 4,
+      "unchanged_submissions": 0,
+      "editor_status": {
+        "no_submission": 1,
+        "submitted": 4
+      },
+      "usage": {
+        "calls": 25,
+        "input_tokens": 146740,
+        "cached_input_tokens": 123229,
+        "uncached_input_tokens": 23511,
+        "output_tokens": 3933,
+        "total_tokens": 150673
+      },
+      "cost_upper_bound_usd": 3.09212,
+      "mean_reward_scored": 0.4797619047619048,
+      "effective_reward_outcomes": {
+        "host_zero_for_no_submission": 1,
+        "qualified_native_grade": 4
+      },
+      "mean_effective_reward_all_scheduled": 0.3838095238095238,
+      "counts_scored": {
+        "target_items": 57,
+        "base_correct_targets": 0,
+        "base_wrong_targets": 57,
+        "edited_correct_targets": 51,
+        "base_correct_targets_retained": 0,
+        "newly_correct_targets": 51,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 297,
+        "controls_retained": 288
+      }
+    },
+    "eager": {
+      "scheduled": 5,
+      "terminal": 5,
+      "editor_results_with_usage_accounting": 5,
+      "scored": 4,
+      "nonempty_submissions": 4,
+      "unchanged_submissions": 0,
+      "editor_status": {
+        "no_submission": 1,
+        "submitted": 4
+      },
+      "usage": {
+        "calls": 25,
+        "input_tokens": 352688,
+        "cached_input_tokens": 316613,
+        "uncached_input_tokens": 36075,
+        "output_tokens": 5760,
+        "total_tokens": 358448
+      },
+      "cost_upper_bound_usd": 7.28416,
+      "mean_reward_scored": 0.4797619047619048,
+      "effective_reward_outcomes": {
+        "host_zero_for_no_submission": 1,
+        "qualified_native_grade": 4
+      },
+      "mean_effective_reward_all_scheduled": 0.3838095238095238,
+      "counts_scored": {
+        "target_items": 57,
+        "base_correct_targets": 0,
+        "base_wrong_targets": 57,
+        "edited_correct_targets": 51,
+        "base_correct_targets_retained": 0,
+        "newly_correct_targets": 51,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 297,
+        "controls_retained": 288
+      }
+    },
+    "native": {
+      "scheduled": 5,
+      "terminal": 5,
+      "editor_results_with_usage_accounting": 5,
+      "scored": 5,
+      "nonempty_submissions": 4,
+      "unchanged_submissions": 1,
+      "editor_status": {
+        "submitted": 5
+      },
+      "usage": {
+        "calls": 25,
+        "input_tokens": 1265130,
+        "cached_input_tokens": 1012092,
+        "uncached_input_tokens": 253038,
+        "output_tokens": 4193,
+        "total_tokens": 1269323
+      },
+      "cost_upper_bound_usd": 25.47032,
+      "mean_reward_scored": 0.3708333333333333,
+      "effective_reward_outcomes": {
+        "qualified_native_grade": 5
+      },
+      "mean_effective_reward_all_scheduled": 0.3708333333333333,
+      "counts_scored": {
+        "target_items": 121,
+        "base_correct_targets": 32,
+        "base_wrong_targets": 89,
+        "edited_correct_targets": 80,
+        "base_correct_targets_retained": 32,
+        "newly_correct_targets": 48,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 407,
+        "controls_retained": 399
+      }
+    }
+  },
+  "comparisons": {
+    "eager": {
+      "scheduled_tasks": 5,
+      "usage_pairs": 5,
+      "quality_pairs": 4,
+      "paged_token_counts_lower_equal_higher": [
+        5,
+        0,
+        0
+      ],
+      "effective_reward_pairs": 5,
+      "paged_effective_reward_wins_ties_losses": [
+        0,
+        5,
+        0
+      ],
+      "mean_effective_reward_difference_all_scheduled": 0.0,
+      "all_turns": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "eager": {
+          "calls": 25,
+          "input_tokens": 352688,
+          "cached_input_tokens": 316613,
+          "uncached_input_tokens": 36075,
+          "output_tokens": 5760,
+          "total_tokens": 358448
+        },
+        "saving_fraction": {
+          "input_tokens": 0.5839382116771764,
+          "cached_input_tokens": 0.6107898285920035,
+          "uncached_input_tokens": 0.3482744282744282,
+          "output_tokens": 0.31718749999999996,
+          "total_tokens": 0.579651720751685
+        }
+      },
+      "opening": {
+        "pairs": 5,
+        "paged": {
+          "calls": 5,
+          "input_tokens": 20259,
+          "cached_input_tokens": 13828,
+          "uncached_input_tokens": 6431,
+          "output_tokens": 1436,
+          "total_tokens": 21695
+        },
+        "eager": {
+          "calls": 5,
+          "input_tokens": 60014,
+          "cached_input_tokens": 45632,
+          "uncached_input_tokens": 14382,
+          "output_tokens": 1602,
+          "total_tokens": 61616
+        },
+        "saving_fraction": {
+          "input_tokens": 0.6624287666211217,
+          "cached_input_tokens": 0.6969670406732118,
+          "uncached_input_tokens": 0.5528438325684883,
+          "output_tokens": 0.10362047440699129,
+          "total_tokens": 0.6478998961308751
+        }
+      },
+      "equal_turn_prefix": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "eager": {
+          "calls": 25,
+          "input_tokens": 352688,
+          "cached_input_tokens": 316613,
+          "uncached_input_tokens": 36075,
+          "output_tokens": 5760,
+          "total_tokens": 358448
+        },
+        "saving_fraction": {
+          "input_tokens": 0.5839382116771764,
+          "cached_input_tokens": 0.6107898285920035,
+          "uncached_input_tokens": 0.3482744282744282,
+          "output_tokens": 0.31718749999999996,
+          "total_tokens": 0.579651720751685
+        }
+      },
+      "recorded_cost_upper_bounds_usd": {
+        "paged": 3.09212,
+        "eager": 7.28416
+      },
+      "paged_mean_reward_paired": 0.4797619047619048,
+      "eager_mean_reward_paired": 0.4797619047619048,
+      "paged_wins_ties_losses": [
+        0,
+        4,
+        0
+      ]
+    },
+    "native": {
+      "scheduled_tasks": 5,
+      "usage_pairs": 5,
+      "quality_pairs": 4,
+      "paged_token_counts_lower_equal_higher": [
+        5,
+        0,
+        0
+      ],
+      "effective_reward_pairs": 5,
+      "paged_effective_reward_wins_ties_losses": [
+        1,
+        3,
+        1
+      ],
+      "mean_effective_reward_difference_all_scheduled": 0.012976190476190497,
+      "all_turns": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "native": {
+          "calls": 25,
+          "input_tokens": 1265130,
+          "cached_input_tokens": 1012092,
+          "uncached_input_tokens": 253038,
+          "output_tokens": 4193,
+          "total_tokens": 1269323
+        },
+        "saving_fraction": {
+          "input_tokens": 0.8840119197236648,
+          "cached_input_tokens": 0.8782432822312596,
+          "uncached_input_tokens": 0.907085101842411,
+          "output_tokens": 0.06200810875268303,
+          "total_tokens": 0.8812965651768698
+        }
+      },
+      "opening": {
+        "pairs": 5,
+        "paged": {
+          "calls": 5,
+          "input_tokens": 20259,
+          "cached_input_tokens": 13828,
+          "uncached_input_tokens": 6431,
+          "output_tokens": 1436,
+          "total_tokens": 21695
+        },
+        "native": {
+          "calls": 5,
+          "input_tokens": 246029,
+          "cached_input_tokens": 5748,
+          "uncached_input_tokens": 240281,
+          "output_tokens": 880,
+          "total_tokens": 246909
+        },
+        "saving_fraction": {
+          "input_tokens": 0.9176560486771884,
+          "cached_input_tokens": -1.4057063326374393,
+          "uncached_input_tokens": 0.9732355034313991,
+          "output_tokens": -0.6318181818181818,
+          "total_tokens": 0.9121336200786525
+        }
+      },
+      "equal_turn_prefix": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "native": {
+          "calls": 25,
+          "input_tokens": 1265130,
+          "cached_input_tokens": 1012092,
+          "uncached_input_tokens": 253038,
+          "output_tokens": 4193,
+          "total_tokens": 1269323
+        },
+        "saving_fraction": {
+          "input_tokens": 0.8840119197236648,
+          "cached_input_tokens": 0.8782432822312596,
+          "uncached_input_tokens": 0.907085101842411,
+          "output_tokens": 0.06200810875268303,
+          "total_tokens": 0.8812965651768698
+        }
+      },
+      "recorded_cost_upper_bounds_usd": {
+        "paged": 3.09212,
+        "native": 25.47032
+      },
+      "paged_mean_reward_paired": 0.4797619047619048,
+      "native_mean_reward_paired": 0.46354166666666663,
+      "paged_wins_ties_losses": [
+        1,
+        2,
+        1
+      ]
+    }
+  },
+  "primary_complete": true,
+  "total_recorded_cost_upper_bound_usd": 35.8466,
+  "quality_scope": "Reward and item counts include fresh scored submissions, with failures listed in all scheduled tasks. No predeclared equivalence margin. Token-usage totals include reported attempts. Unreported/unknown requests carry their reserved cost upper bound where known.",
+  "grouped_followup": {
+    "separate_design": "Additional strong compact full-information control",
+    "arm": {
+      "scheduled": 5,
+      "terminal": 5,
+      "editor_results_with_usage_accounting": 5,
+      "scored": 4,
+      "nonempty_submissions": 4,
+      "unchanged_submissions": 0,
+      "editor_status": {
+        "no_submission": 1,
+        "submitted": 4
+      },
+      "usage": {
+        "calls": 25,
+        "input_tokens": 152702,
+        "cached_input_tokens": 128465,
+        "uncached_input_tokens": 24237,
+        "output_tokens": 4855,
+        "total_tokens": 157557
+      },
+      "cost_upper_bound_usd": 3.24824,
+      "mean_reward_scored": 0.4797619047619048,
+      "effective_reward_outcomes": {
+        "host_zero_for_no_submission": 1,
+        "qualified_native_grade": 4
+      },
+      "mean_effective_reward_all_scheduled": 0.3838095238095238,
+      "counts_scored": {
+        "target_items": 57,
+        "base_correct_targets": 0,
+        "base_wrong_targets": 57,
+        "edited_correct_targets": 51,
+        "base_correct_targets_retained": 0,
+        "newly_correct_targets": 51,
+        "previously_correct_targets_lost": 0,
+        "base_correct_controls": 297,
+        "controls_retained": 289
+      }
+    },
+    "complete": true,
+    "gate_met": true,
+    "reserved_ceiling_usd": 32.5,
+    "paged_vs_grouped": {
+      "scheduled_tasks": 5,
+      "usage_pairs": 5,
+      "quality_pairs": 4,
+      "paged_token_counts_lower_equal_higher": [
+        3,
+        0,
+        2
+      ],
+      "effective_reward_pairs": 5,
+      "paged_effective_reward_wins_ties_losses": [
+        0,
+        5,
+        0
+      ],
+      "mean_effective_reward_difference_all_scheduled": 0.0,
+      "all_turns": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "grouped": {
+          "calls": 25,
+          "input_tokens": 152702,
+          "cached_input_tokens": 128465,
+          "uncached_input_tokens": 24237,
+          "output_tokens": 4855,
+          "total_tokens": 157557
+        },
+        "saving_fraction": {
+          "input_tokens": 0.03904336550929266,
+          "cached_input_tokens": 0.04075818316272917,
+          "uncached_input_tokens": 0.029954202252754025,
+          "output_tokens": 0.18990731204943356,
+          "total_tokens": 0.04369212412015966
+        }
+      },
+      "opening": {
+        "pairs": 5,
+        "paged": {
+          "calls": 5,
+          "input_tokens": 20259,
+          "cached_input_tokens": 13828,
+          "uncached_input_tokens": 6431,
+          "output_tokens": 1436,
+          "total_tokens": 21695
+        },
+        "grouped": {
+          "calls": 5,
+          "input_tokens": 21219,
+          "cached_input_tokens": 14596,
+          "uncached_input_tokens": 6623,
+          "output_tokens": 1563,
+          "total_tokens": 22782
+        },
+        "saving_fraction": {
+          "input_tokens": 0.045242471369998594,
+          "cached_input_tokens": 0.05261715538503697,
+          "uncached_input_tokens": 0.0289898837384871,
+          "output_tokens": 0.0812539987204095,
+          "total_tokens": 0.04771310683873231
+        }
+      },
+      "equal_turn_prefix": {
+        "pairs": 5,
+        "paged": {
+          "calls": 25,
+          "input_tokens": 146740,
+          "cached_input_tokens": 123229,
+          "uncached_input_tokens": 23511,
+          "output_tokens": 3933,
+          "total_tokens": 150673
+        },
+        "grouped": {
+          "calls": 25,
+          "input_tokens": 152702,
+          "cached_input_tokens": 128465,
+          "uncached_input_tokens": 24237,
+          "output_tokens": 4855,
+          "total_tokens": 157557
+        },
+        "saving_fraction": {
+          "input_tokens": 0.03904336550929266,
+          "cached_input_tokens": 0.04075818316272917,
+          "uncached_input_tokens": 0.029954202252754025,
+          "output_tokens": 0.18990731204943356,
+          "total_tokens": 0.04369212412015966
+        }
+      },
+      "recorded_cost_upper_bounds_usd": {
+        "paged": 3.09212,
+        "grouped": 3.24824
+      },
+      "paged_mean_reward_paired": 0.4797619047619048,
+      "grouped_mean_reward_paired": 0.4797619047619048,
+      "paged_wins_ties_losses": [
+        0,
+        4,
+        0
+      ]
+    },
+    "combined_cost_upper_bound_usd": 39.09484,
+    "design_sha256": "d388298242c9c63ea9af6ca2c723c448d8b39d48a4778c1b3aad4c2452540deb"
+  },
+  "complete": true,
+  "design_sha256": "e99b396be2606b6345ed664e0cdbd4a3883af142f1d0b09513570b68b0bac253"
+}

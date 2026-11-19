@@ -1,0 +1,28 @@
+{
+  "identity": "Bushnaq et al., 5 May 2026, studied a four-layer decoder-only language model with 67M total parameters. VPD decomposed 24 attention and MLP matrices using 38,912 rank-one subcomponents. Their alive threshold retained 9,972. Goodfire's study used a human-selected edit rather than an updater policy. [S1]",
+  "information_and_action_parity": "Each rank-one parameter subcomponent has a read vector and a write vector. A library of precomputed components would give a new write operand to an updater. Proposed comparison: initially return observational evidence about an existing write site and keep operands fixed across arms. Test the component catalogue as a separate treatment.",
+  "observation_provenance": "The emoticon example studied component 2359 of layer 2's MLP down projection in the authors' decomposition. A number identifies an element only within its fitted decomposition and target checkpoint. For a harness, resolve the identifier to a matrix, decomposition hash, component, axes and scale. Keep distinct identifiers for SAE directions in activation space. [S1]",
+  "diagnostic_effect": "Reported outcomes included probability of the desired token at active positions and KL divergence locally and globally. Local controls spanned positions within 20 tokens of the active token in 50 held-out examples. Comparing matched target effects at both scales exposed a tradeoff between methods. [S1]",
+  "edit_and_replay": "The authors modified a component's output direction toward a selected token's unembedding vector. A harness could export the numerical difference (replacement write vector minus old write vector, outer-product with read vector) and replay it on a pinned native matrix. Replay and behavioral identity on Gemma are [uncertain]. [S1]",
+  "patch_quality": "LoRA on 10 labeled examples beat the manual edit on local collateral at matched target effect but did not beat it on global collateral. LoRA on 947 examples won on both. The authors selected an especially localized behavior. Separately, Fel et al. reported that on OLMo-3-7B, penalizing reliance on a sycophancy direction during DPO achieved approximately DPO-level mean accuracy across six benchmarks with sycophancy close to the starting model. This supplies a relevant gradient-assisted comparator for the false-suggestion family. [S1, S2]",
+  "updater_cost": "The manual experiment did not use a model updater, so API token and episode cost cannot be inferred. Token savings in an automated harness are [uncertain]. Record tool-result tokens, cumulative input, cached input, generated tokens and external cost; measure offline decomposition separately.",
+  "target_cost": "VPD needs model-specific decomposition training before discovery. The library describes configurations for distributed training and separately staged data. A measured cost for a well-performing Gemma 3 4B IT decomposition was not established [uncertain]. Start the delivery path with already-published dictionaries and ordinary paired residual contrasts. [S3]",
+  "uncertainty": "Transfer of stable parameter components across model families, ability of an updater to select useful write sites from these observations, and sensitivity to learned probe drift remain [uncertain]. Fel et al. motivate monitoring target behavior after training and explicitly checking whether an earlier probe remains predictive. [S1, S2]",
+  "portability_and_terms": "Goodfire's param-decomp source repository has an MIT code license. That license is evidence about code distribution. A trained dictionary, target weights and derived patches each need their provenance and distribution terms. Availability of a verified Gemma 3 4B IT VPD catalogue for the pinned revision is [uncertain]. Goodfire's earlier hosted SAE demo and API are deprecated. [S3, S4, S5]",
+  "sequential_transfer": "Neither cited experiment tests an updater making several successive weight-only repairs on IWIBench; sequential accumulation, interference and cost amortization are [uncertain]. In a follow-on, evaluate each new patch on fresh tasks plus all earlier conventions, and score how cheaply an external-memory baseline serves the same requests.",
+  "sources": {
+    "S1": "https://www.goodfire.com/research/interpreting-lm-parameters (sections 3 and 6, Figure 24)",
+    "S2": "https://arxiv.org/abs/2611.07071 and https://www.goodfire.com/research/mechanistic-shaping (Figure 5)",
+    "S3": "https://github.com/goodfire-ai/param-decomp",
+    "S4": "https://raw.githubusercontent.com/goodfire-ai/param-decomp/main/LICENSE",
+    "S5": "https://www.goodfire.com/research/understanding-and-steering-llama-3"
+  },
+  "uncertain": [
+    "edit_and_replay",
+    "updater_cost",
+    "target_cost",
+    "uncertainty",
+    "portability_and_terms",
+    "sequential_transfer"
+  ]
+}
